@@ -1,10 +1,9 @@
 const Header = () => {
   return (
     <>
-      <div class="header">
+      <div classname=" text-xl flex justify-evenly">
         <nav>TARDE</nav>
-        <nav>GİRİŞ</nav>
-        dd
+        <nav className=" text-red-700">GİRİŞ</nav>
       </div>
     </>
   );
