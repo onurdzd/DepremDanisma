@@ -11,7 +11,7 @@ function App() {
       <ul className="list-of-regions">
         <li data-state="Gaziantep" className="region-card on">
           <div className="region-image">
-          {/* <img src={harita} alt="Şehir" className="rounded-start"></img> */}
+         <img src="url" alt="Şehir" className="rounded-start"></img> 
           </div>
           <div className="region-content">
             <div className="fs-6 title">Şehir İsmi</div>
@@ -20,9 +20,9 @@ function App() {
             </div>
           </div>
         </li>
-        ...
       </ul>
       <Harita></Harita>
+      {/* <img src={harita} alt="Şehir"></img>  */}
     </div>
     </div>
   );
