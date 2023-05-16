@@ -1,12 +1,11 @@
 import { useForm } from "react-hook-form";
-import { useSelector, useDispatch } from "react-redux";
-import { addEntry } from "./assets/redux-stuff/actions";
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function NewEntry() {
   const [showModal, setShowModal] = useState(false);
-  const { user, token } = useSelector((depo) => depo);
-  const dispatch = useDispatch();
+
+  let navigate = useNavigate();
 
   const {
     register,
@@ -15,8 +14,8 @@ export default function NewEntry() {
   } = useForm({ mode: "onChange" });
 
   const onSubmit = (data) => {
-    const gidecekVeri = { ...data, user_id: user.user_id };
-    dispatch(addEntry(gidecekVeri, token));
+    console.log(data)
+    navigate("/dashboard")
     closeModal();
   };
   const openModal = () => {
@@ -26,15 +25,15 @@ export default function NewEntry() {
   const closeModal = () => {
     setShowModal(false);
   };
-
-  return user ? (
+ 
+  return  (
     <div className="flex justify-center">
       {/* Buton */}
       <button
         onClick={openModal}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
-        Dwit oluştur
+        Giriş Yap
       </button>
 
       {/* Modal Ekranı */}
@@ -66,10 +65,10 @@ export default function NewEntry() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div>
                     <label
-                      htmlFor="dwit"
+                      htmlFor="username"
                       className="block text-gray-700 font-bold mb-2"
                     >
-                      Dwit
+                      Username :
                     </label>
                     {errors?.body && (
                       <span className="text-sm text-red-700">
@@ -77,8 +76,27 @@ export default function NewEntry() {
                       </span>
                     )}
                     <input
-                      id="dwit"
-                      {...register("dwit", { required: "Dwit boş olamaz" })}
+                      id="username"
+                      {...register("username", { required: "Username boş olamaz" })}
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="password"
+                      className="block text-gray-700 font-bold mb-2"
+                    >
+                      Password :
+                    </label>
+                    {errors?.body && (
+                      <span className="text-sm text-red-700">
+                        {errors.body.message}
+                      </span>
+                    )}
+                    <input
+                      id="password"
+                      type="password"
+                      {...register("password", { required: "Password boş olamaz" })}
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                   </div>
@@ -97,7 +115,7 @@ export default function NewEntry() {
                       type="submit"
                       className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
                     >
-                      Dwit Ekle
+                     Giriş Yap
                     </button>
                   </div>
                 </form>
@@ -107,5 +125,5 @@ export default function NewEntry() {
         </div>
       )}
     </div>
-  ) : null;
+  ) ;
 }
