@@ -4,6 +4,7 @@ const Header = () => {
       <div class="header">
         <nav>TARDE</nav>
         <nav>GİRİŞ</nav>
+        dd
       </div>
     </>
   );
