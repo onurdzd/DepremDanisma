@@ -4,7 +4,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import Login from "./Login"
+import Login from "./Login";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -12,9 +12,6 @@ function classNames(...classes) {
 const Header = () => {
   return (
     <>
-            <Login></Login>
-
-
       <header className="text-xl w-screen bg-white mx-auto ">
         <div className="flex justify-around flex-auto mx-10 ">
           <div className=" basis-1/5">
@@ -23,7 +20,7 @@ const Header = () => {
 
           <div className="flex flex-col justify-around  ">
             <div className="mt-6">
-              <div className=" text-blue-300  ">
+              <div className=" flex text-blue-300  ">
                 <a
                   href={"/"}
                   className="px-6 py-1 ml-10 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-900 shadow-sm border-spacing-8 hover:bg-sky-700"
@@ -118,12 +115,7 @@ const Header = () => {
                     </Menu.Items>
                   </Transition>
                 </Menu>
-                <a
-                  href="#"
-                  className="px-6 py-1 ml-6 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
-                >
-                  Giriş Yap
-                </a>
+                <Login />
               </div>
             </div>
             <div className=" flex  flex-row-reverse basis-8">
