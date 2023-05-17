@@ -69,6 +69,7 @@ const Header = () => {
                             <a
                               href="https://tarde.org.tr/yonetim-kurulu/"
                               target="_blank"
+                              rel="noreferrer"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -85,6 +86,7 @@ const Header = () => {
                             <a
                               href="https://tarde.org.tr/uyelerimiz/"
                               target="_blank"
+                              rel="noreferrer"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -131,10 +133,11 @@ const Header = () => {
               <a
                 href="https://www.instagram.com/tardeorgtr/?hl=tr"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon className="pr-5 pt-2" icon={faInstagram} />
               </a>
-              <a href="https://www.facebook.com/tardeorgtr/" target="_blank">
+              <a href="https://www.facebook.com/tardeorgtr/" target="_blank" rel="noreferrer">
                 <FontAwesomeIcon className="pr-5 pt-2" icon={faFacebook} />
               </a>
             </div>

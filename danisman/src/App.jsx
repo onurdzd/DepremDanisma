@@ -1,5 +1,5 @@
 import "./App.css";
-import { ReactComponent as Harita } from "./vectormap2.svg";
+import { ReactComponent as Harita } from "./assets/vectormap.svg";
 import Header from "./Components/Header";
 
 function App() {
