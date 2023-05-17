@@ -4,6 +4,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import Login from "./Login";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -11,13 +12,17 @@ function classNames(...classes) {
 const Header = () => {
   return (
     <>
+      <header className="text-xl w-screen bg-white mx-auto ">
+        <div className="flex justify-around flex-auto mx-10 ">
+          <div className=" basis-1/5">
+            <img className="max-h-28 py-2" src="logo.jpg" />
           </div>
 
           <div className="flex flex-col justify-around  ">
             <div className="mt-6">
-              <div className=" text-blue-300  ">
+              <div className=" flex text-blue-300  ">
                 <a
-                  href="#"
+                  href={"/"}
                   className="px-6 py-1 ml-10 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-900 shadow-sm border-spacing-8 hover:bg-sky-700"
                 >
                   Anasayfa
@@ -62,7 +67,8 @@ const Header = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="https://tarde.org.tr/yonetim-kurulu/"
+                              target="_blank"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -77,7 +83,8 @@ const Header = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="https://tarde.org.tr/uyelerimiz/"
+                              target="_blank"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -89,7 +96,11 @@ const Header = () => {
                             </a>
                           )}
                         </Menu.Item>
-                        <form method="POST" action="#">
+                        <form
+                          method="POST"
+                          action="https://tarde.org.tr/komiteler/"
+                          target="_blank"
+                        >
                           <Menu.Item>
                             {({ active }) => (
                               <button
@@ -110,12 +121,7 @@ const Header = () => {
                     </Menu.Items>
                   </Transition>
                 </Menu>
-                <a
-                  href="#"
-                  className="px-6 py-1 ml-6 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
-                >
-                  Giriş Yap
-                </a>
+                <Login />
               </div>
             </div>
             <div className=" flex  flex-row-reverse basis-8">
