@@ -11,10 +11,6 @@ function classNames(...classes) {
 const Header = () => {
   return (
     <>
-      <header className="text-xl w-screen bg-white mx-auto ">
-        <div className="flex justify-around flex-auto mx-10 ">
-          <div className=" basis-1/5">
-            <img className="max-h-28 py-2" src="logo.jpg" />
           </div>
 
           <div className="flex flex-col justify-around  ">
