@@ -1,6 +1,10 @@
 const EnvanterEkle =()=>{
     return(
-        <>test
+        <>
+        <button>
+            <a href={"/"}>Ana Sayfa</a>
+          </button>
+          envanterekle
         </>
     )
 }
