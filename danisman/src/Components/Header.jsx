@@ -67,7 +67,8 @@ const Header = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="https://tarde.org.tr/yonetim-kurulu/"
+                              target="_blank"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -82,7 +83,8 @@ const Header = () => {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="https://tarde.org.tr/uyelerimiz/"
+                              target="_blank"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -94,7 +96,11 @@ const Header = () => {
                             </a>
                           )}
                         </Menu.Item>
-                        <form method="POST" action="#">
+                        <form
+                          method="POST"
+                          action="https://tarde.org.tr/komiteler/"
+                          target="_blank"
+                        >
                           <Menu.Item>
                             {({ active }) => (
                               <button
