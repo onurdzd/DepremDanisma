@@ -19,6 +19,7 @@ body {
   &.on {
     fill: #733e1f;
   }
+  cursor: pointer;
 }
 
 .map-of-regions {
