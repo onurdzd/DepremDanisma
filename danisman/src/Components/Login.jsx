@@ -14,8 +14,8 @@ export default function NewEntry() {
   } = useForm({ mode: "onChange" });
 
   const onSubmit = (data) => {
-    console.log(data)
-    navigate("/dashboard")
+    console.log(data);
+    navigate("/dashboard");
     closeModal();
   };
   const openModal = () => {
@@ -25,13 +25,13 @@ export default function NewEntry() {
   const closeModal = () => {
     setShowModal(false);
   };
- 
-  return  (
+
+  return (
     <div className="flex justify-center">
       {/* Buton */}
       <button
         onClick={openModal}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="px-6 py-1 ml-6 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
       >
         Giriş Yap
       </button>
@@ -77,7 +77,9 @@ export default function NewEntry() {
                     )}
                     <input
                       id="username"
-                      {...register("username", { required: "Username boş olamaz" })}
+                      {...register("username", {
+                        required: "Username boş olamaz",
+                      })}
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                   </div>
@@ -96,7 +98,9 @@ export default function NewEntry() {
                     <input
                       id="password"
                       type="password"
-                      {...register("password", { required: "Password boş olamaz" })}
+                      {...register("password", {
+                        required: "Password boş olamaz",
+                      })}
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                   </div>
@@ -115,7 +119,7 @@ export default function NewEntry() {
                       type="submit"
                       className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
                     >
-                     Giriş Yap
+                      Giriş Yap
                     </button>
                   </div>
                 </form>
@@ -125,5 +129,5 @@ export default function NewEntry() {
         </div>
       )}
     </div>
-  ) ;
+  );
 }
