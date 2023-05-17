@@ -4,6 +4,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import Login from "./Login"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -11,13 +12,32 @@ function classNames(...classes) {
 const Header = () => {
   return (
     <>
+
+      <div className="text-xl w-screen bg-white">
+        <nav className="flex justify-around ">
+          <div className=" text-blue-300">
+            <a href={"/"}>TARDE</a>
+          </div>
+          <div className=" text-red-300">
+            <Login></Login>
+          </div>
+        </nav>
+      </div>
+    
+
+
+
+      <header className="text-xl w-screen bg-white mx-auto ">
+        <div className="flex justify-around flex-auto mx-10 ">
+          <div className=" basis-1/5">
+            <img className="max-h-28 py-2" src="logo.jpg" />
           </div>
 
           <div className="flex flex-col justify-around  ">
             <div className="mt-6">
               <div className=" text-blue-300  ">
                 <a
-                  href="#"
+                  href={"/"}
                   className="px-6 py-1 ml-10 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-900 shadow-sm border-spacing-8 hover:bg-sky-700"
                 >
                   Anasayfa
