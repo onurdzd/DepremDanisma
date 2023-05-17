@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="flex flex-col  items-center gap-10 bg-slate-100 h-screen w-screen">
       <div>
-        <Header></Header>
+        <Header />
       </div>
       <div>
         <div className="map-of-regions">
