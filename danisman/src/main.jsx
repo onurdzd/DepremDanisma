@@ -5,16 +5,16 @@ import App from "./App.jsx";
 import "./index.css";
 import Dashboard from "./Components/Dashboard.jsx";
 import Header from "./Components/Header.jsx";
-import Adana from "./Components/City/Adana.jsx"
-import Adiyaman from "./Components/City/Adiyaman.jsx"
-import Diyarbakir from "./Components/City/Diyarbakir.jsx"
-import Gaziantep from "./Components/City/Gaziantep.jsx"
-import Hatay from "./Components/City/Hatay.jsx"
-import Kahramanmaras from "./Components/City/Kahramanmaras.jsx"
-import Kilis from "./Components/City/Kilis.jsx"
-import Malatya from "./Components/City/Malatya.jsx"
-import Osmaniye from "./Components/City/Osmaniye.jsx"
-import Sanliurfa from "./Components/City/Sanliurfa.jsx"
+import Adana from "./Components/City/Adana.jsx";
+import Adiyaman from "./Components/City/Adiyaman.jsx";
+import Diyarbakir from "./Components/City/Diyarbakir.jsx";
+import Gaziantep from "./Components/City/Gaziantep.jsx";
+import Hatay from "./Components/City/Hatay.jsx";
+import Kahramanmaras from "./Components/City/Kahramanmaras.jsx";
+import Kilis from "./Components/City/Kilis.jsx";
+import Malatya from "./Components/City/Malatya.jsx";
+import Osmaniye from "./Components/City/Osmaniye.jsx";
+import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 import { ReactComponent as Harita } from "../src/assets/vectormap.svg";
 import SehirİsimleriEkle from "./Components/SehirİisimleriEkle.jsx";
 
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <div className="flex flex-col  items-center gap-10 bg-slate-100 h-screen w-screen">
-        <Header/>
+        <Header />
         <App />
         <Harita/>
         <SehirİsimleriEkle/>
@@ -35,7 +35,9 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Dashboard />
+        <div className="mt-8 pl-6">
+          <Dashboard />
+        </div>
       </div>
     ),
   },
@@ -73,6 +75,7 @@ const router = createBrowserRouter([
         <Header />
         <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
           <Dashboard />
+
           <Gaziantep />
         </div>
       </div>
