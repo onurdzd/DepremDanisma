@@ -5,16 +5,16 @@ import App from "./App.jsx";
 import "./index.css";
 import Dashboard from "./Components/Dashboard.jsx";
 import Header from "./Components/Header.jsx";
-import Adana from "./Components/City/Adana.jsx"
-import Adiyaman from "./Components/City/Adiyaman.jsx"
-import Diyarbakir from "./Components/City/Diyarbakir.jsx"
-import Gaziantep from "./Components/City/Gaziantep.jsx"
-import Hatay from "./Components/City/Hatay.jsx"
-import Kahramanmaras from "./Components/City/Kahramanmaras.jsx"
-import Kilis from "./Components/City/Kilis.jsx"
-import Malatya from "./Components/City/Malatya.jsx"
-import Osmaniye from "./Components/City/Osmaniye.jsx"
-import Sanliurfa from "./Components/City/Sanliurfa.jsx"
+import Adana from "./Components/City/Adana.jsx";
+import Adiyaman from "./Components/City/Adiyaman.jsx";
+import Diyarbakir from "./Components/City/Diyarbakir.jsx";
+import Gaziantep from "./Components/City/Gaziantep.jsx";
+import Hatay from "./Components/City/Hatay.jsx";
+import Kahramanmaras from "./Components/City/Kahramanmaras.jsx";
+import Kilis from "./Components/City/Kilis.jsx";
+import Malatya from "./Components/City/Malatya.jsx";
+import Osmaniye from "./Components/City/Osmaniye.jsx";
+import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Adana/>
+        <Adana />
       </div>
     ),
   },
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Osmaniye/>
+        <Osmaniye />
       </div>
     ),
   },
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Hatay/>
+        <Hatay />
       </div>
     ),
   },
@@ -66,7 +66,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Gaziantep/>
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 flex gap-10">
+          <Dashboard />
+          <Gaziantep />
+        </div>
       </div>
     ),
   },
@@ -75,7 +78,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Kilis/>
+        <Kilis />
       </div>
     ),
   },
@@ -84,7 +87,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Sanliurfa/>
+        <Sanliurfa />
       </div>
     ),
   },
@@ -93,7 +96,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Adiyaman/>
+        <Adiyaman />
       </div>
     ),
   },
@@ -102,7 +105,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Kahramanmaras/>
+        <Kahramanmaras />
       </div>
     ),
   },
@@ -111,7 +114,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Diyarbakir/>
+        <Diyarbakir />
       </div>
     ),
   },
@@ -120,7 +123,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Malatya/>
+        <Malatya />
       </div>
     ),
   },
