@@ -1,12 +1,7 @@
-import { useState } from "react";
-import DanisanEkle from "./DashboardComponents/DanisanEkle.jsx";
-import DanismanEkle from "./DashboardComponents/DanismanEkle.jsx";
-import EnvanterEkle from "./DashboardComponents/EnvanterEkle.jsx";
-import BilgiGuncelle from "./DashboardComponents/BilgiGuncelle.jsx";
+
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const [sayfaAdi, setSayfaAdi] = useState("");
   let sehir = useNavigate();
   return (
     <div className="">
