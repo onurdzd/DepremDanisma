@@ -42,7 +42,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Adana/>
+        <Adana />
       </div>
     ),
   },
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Osmaniye/>
+        <Osmaniye />
       </div>
     ),
   },
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Hatay/>
+        <Hatay />
       </div>
     ),
   },
@@ -69,7 +69,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Gaziantep/>
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 flex gap-10">
+          <Dashboard />
+          <Gaziantep />
+        </div>
       </div>
     ),
   },
@@ -78,7 +81,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Kilis/>
+        <Kilis />
       </div>
     ),
   },
@@ -87,7 +90,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Sanliurfa/>
+        <Sanliurfa />
       </div>
     ),
   },
@@ -96,7 +99,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Adiyaman/>
+        <Adiyaman />
       </div>
     ),
   },
@@ -105,7 +108,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Kahramanmaras/>
+        <Kahramanmaras />
       </div>
     ),
   },
@@ -114,7 +117,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Diyarbakir/>
+        <Diyarbakir />
       </div>
     ),
   },
@@ -123,7 +126,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Malatya/>
+        <Malatya />
       </div>
     ),
   },
