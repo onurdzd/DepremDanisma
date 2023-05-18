@@ -5,6 +5,13 @@ body {
   align-items: center;
 }
 
+.label-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  fill: rgb(49, 61, 31);
+  transform: translate(0, 3px); 
+}
+
 svg {
   width: 100%;
   display: block;
