@@ -15,13 +15,16 @@ import Kilis from "./Components/City/Kilis.jsx"
 import Malatya from "./Components/City/Malatya.jsx"
 import Osmaniye from "./Components/City/Osmaniye.jsx"
 import Sanliurfa from "./Components/City/Sanliurfa.jsx"
+import { ReactComponent as Harita } from "../src/assets/vectormap.svg";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div>
+      <div className="flex flex-col  items-center gap-10 bg-slate-100 h-screen w-screen">
+        <Header/>
         <App />
+        <Harita/>
       </div>
     ),
   },
