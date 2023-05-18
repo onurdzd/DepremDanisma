@@ -5,23 +5,26 @@ import App from "./App.jsx";
 import "./index.css";
 import Dashboard from "./Components/Dashboard.jsx";
 import Header from "./Components/Header.jsx";
-import Adana from "./Components/City/Adana.jsx";
-import Adiyaman from "./Components/City/Adiyaman.jsx";
-import Diyarbakir from "./Components/City/Diyarbakir.jsx";
-import Gaziantep from "./Components/City/Gaziantep.jsx";
-import Hatay from "./Components/City/Hatay.jsx";
-import Kahramanmaras from "./Components/City/Kahramanmaras.jsx";
-import Kilis from "./Components/City/Kilis.jsx";
-import Malatya from "./Components/City/Malatya.jsx";
-import Osmaniye from "./Components/City/Osmaniye.jsx";
-import Sanliurfa from "./Components/City/Sanliurfa.jsx";
+import Adana from "./Components/City/Adana.jsx"
+import Adiyaman from "./Components/City/Adiyaman.jsx"
+import Diyarbakir from "./Components/City/Diyarbakir.jsx"
+import Gaziantep from "./Components/City/Gaziantep.jsx"
+import Hatay from "./Components/City/Hatay.jsx"
+import Kahramanmaras from "./Components/City/Kahramanmaras.jsx"
+import Kilis from "./Components/City/Kilis.jsx"
+import Malatya from "./Components/City/Malatya.jsx"
+import Osmaniye from "./Components/City/Osmaniye.jsx"
+import Sanliurfa from "./Components/City/Sanliurfa.jsx"
+import { ReactComponent as Harita } from "../src/assets/vectormap.svg";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div>
+      <div className="flex flex-col  items-center gap-10 bg-slate-100 h-screen w-screen">
+        <Header/>
         <App />
+        <Harita/>
       </div>
     ),
   },
