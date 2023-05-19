@@ -36,7 +36,6 @@ const Header = () => {
                       />
                     </Menu.Button>
                   </div>
-
                   <Transition
                     as={Fragment}
                     enter="transition ease-out duration-100"

@@ -8,7 +8,7 @@ const AnaSayfaSolMenu=()=>{
           {" "}
           <button
             onClick={() => sehir("/gaziantep")}
-            className="mt-2  w-[17vw] bg-red-500 text-center text-white border border-solid border-blue-600 rounded-xl"
+            className="mt-2 w-[17vw] bg-red-500 text-center text-white border border-solid border-blue-600 rounded-xl"
           >
             GAZİANTEP
           </button>
