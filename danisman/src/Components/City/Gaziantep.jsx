@@ -7,18 +7,40 @@ import BilgiGuncelle from "../DashboardComponents/BilgiGuncelle";
 const Gaziantep = () => {
   const [sayfaAdi, setSayfaAdi] = useState("");
   return (
-    <div className="flex-1 bg-slate-100 border rounded-3xl border-solid border-red-600 pr-10">
-      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
-        <p className="ml-4">Personel Adı Soyadı</p>
+    <div className="flex-1 bg-slate-100   border rounded-3xl border-solid border-gray-50 pr-10  shadow-2xl  dark:bg-cyan-900 ">
+      <div className="flex ml-7 ">
+        <div className=" ml-5 mt-2 mx-12 text-lg px-2 text-gray-600 dark:text-gray-200 rounded-xl hover:bg-slate-700  focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
+          <button>
+            <a onClick={() => setSayfaAdi("danisanekle")}>Personel Ekle</a>
+          </button>
+        </div>
+        <div className="ml-5 mt-2 mx-12 text-lg px-2 text-gray-600 dark:text-gray-200 rounded-xl hover:bg-slate-700  focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
+          <button>
+            <a onClick={() => setSayfaAdi("danismanekle")}>Danışman Ekle</a>
+          </button>
+        </div>
+        <div className="ml-5 mt-2 mx-12 text-lg text-gray-600 px-2  dark:text-gray-200 rounded-xl hover:bg-slate-700 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
+          <button>
+            <a onClick={() => setSayfaAdi("envanterekle")}>Envanter Ekle</a>
+          </button>
+        </div>
+        <div className="ml-5 mt-2 mx-12 text-lg text-gray-600 px-2  dark:text-gray-200 rounded-xl hover:bg-slate-700  focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
+          <button>
+            <a onClick={() => setSayfaAdi("bilgiguncelle")}>Bilgi Güncelle</a>
+          </button>
+        </div>
       </div>
-      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
+      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+        <p className="ml-4 font-medium">Personel Adı Soyadı</p>
+      </div>
+      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-4">Sümeyra Al</p>
         <p className="ml-4">Canan Tütünen</p>
       </div>
-      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
-        <p className="ml-4">Merkezlerimiz</p>
+      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+        <p className="ml-4 font-medium">Merkezlerimiz</p>
       </div>
-      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
+      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-4">Nurdağı 1 Konteyner Kenti - Görüşme konteynerı</p>
         <p className="ml-4">
           {" "}
@@ -27,23 +49,23 @@ const Gaziantep = () => {
         </p>
       </div>
 
-      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
-        <p className="ml-4">Merkez Telefon Numaraları</p>
+      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+        <p className="ml-4 font-medium">Merkez Telefon Numaraları</p>
       </div>
-      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
+      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-4">0532 330 16 33</p>
         <p className="ml-4">0539 774 35 75</p>
       </div>
-      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
-        <p className="ml-4">Araç Sayısı</p>
+      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+        <p className="ml-4 font-medium">Araç Sayısı</p>
       </div>
-      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
+      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-4">1</p>
       </div>
-      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
-        <p className="ml-4">İş Birliği Yapılan Kurumlar</p>
+      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+        <p className="ml-4 font-medium">İş Birliği Yapılan Kurumlar</p>
       </div>
-      <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
+      <div className="bg-slate-100 mt-4  ml-12 mb-4 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-4">WHR</p>
         <p className="ml-4">AÇEV</p>
         <p className="ml-4">ASHB</p>
@@ -60,35 +82,16 @@ const Gaziantep = () => {
           iletişime geçildi).
         </p>
       </div>
-      <div className=" ml-5 mt-2 text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("danisanekle")}>Personel Ekle</a>
-        </button>
-      </div>
-      <div className="ml-5 mt-2  text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("danismanekle")}>Danışman Ekle</a>
-        </button>
-      </div>
-      <div className="ml-5 mt-2  text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("envanterekle")}>Envanter Ekle</a>
-        </button>
-      </div>
-      <div className="ml-5 mt-2  text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("bilgiguncelle")}>Bilgi Güncelle</a>
-        </button>
-      </div>
-       {sayfaAdi == "danisanekle" ? (
-          <DanisanEkle></DanisanEkle>
-        ) : sayfaAdi == "danismanekle" ? (
-          <DanismanEkle></DanismanEkle>
-        ) : sayfaAdi == "envanterekle" ? (
-          <EnvanterEkle> </EnvanterEkle>
-        ) : sayfaAdi == "bilgiguncelle" ? (
-          <BilgiGuncelle></BilgiGuncelle>
-        ) : null}
+
+      {sayfaAdi == "danisanekle" ? (
+        <DanisanEkle></DanisanEkle>
+      ) : sayfaAdi == "danismanekle" ? (
+        <DanismanEkle></DanismanEkle>
+      ) : sayfaAdi == "envanterekle" ? (
+        <EnvanterEkle> </EnvanterEkle>
+      ) : sayfaAdi == "bilgiguncelle" ? (
+        <BilgiGuncelle></BilgiGuncelle>
+      ) : null}
     </div>
   );
 };
