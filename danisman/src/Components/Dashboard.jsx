@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   return (
     <div className="">
-     <div className="flex ml-7 ">
+     <div className="flex ml-7 justify-center">
         <div className=" ml-5 mt-2 mx-12 text-lg px-2 text-gray-600 dark:text-gray-200 rounded-xl hover:bg-slate-700  focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
           <button>
             <a onClick={() => setSayfaAdi("danisanekle")}>Personel Ekle</a>

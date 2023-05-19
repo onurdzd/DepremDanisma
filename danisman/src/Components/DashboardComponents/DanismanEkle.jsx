@@ -1,11 +1,93 @@
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+
 const DanismanEkle = () => {
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
   return (
-    <>
-      <section className="min-h-min bg-cover ml-12 mr-12 border rounded-2xl border-solid bg-[url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')]  ">
-        <div className="flex flex-col  min-h-min border rounded-2xl border-solid bg-black/60">
-          <div className="container flex flex-col flex-1 px-5 py-6 mx-auto">
-            <div className="flex-1 lg:flex lg:items-center lg:-mx-1">
-              <div className="mt-24 lg:w-1/2 lg:mx-1">
+    <div className="w-3/4 mx-auto">
+      <section className="flex min-h-min bg-cover  border rounded-2xl border-solid bg-[url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')]  ">
+        <div className="w-[40vw] flex flex-col items-center justify-center">
+          <Menu as="div" className="relative inline-block text-center">
+            <div>
+              <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                Şehir Listesi
+                <ChevronDownIcon
+                  className="-mr-1 h-5 w-5 text-gray-400"
+                  aria-hidden="true"
+                />
+              </Menu.Button>
+            </div>
+
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
+            >
+              <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <div className="py-1">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <a
+                        href="#"
+                        className={classNames(
+                          active
+                            ? "bg-gray-100 text-gray-900"
+                            : "text-gray-700",
+                          "block px-4 py-2 text-sm"
+                        )}
+                      >
+                        Diyarbakır
+                      </a>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <a
+                        href="#"
+                        className={classNames(
+                          active
+                            ? "bg-gray-100 text-gray-900"
+                            : "text-gray-700",
+                          "block px-4 py-2 text-sm"
+                        )}
+                      >
+                        Kilis
+                      </a>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <a
+                        href="#"
+                        className={classNames(
+                          active
+                            ? "bg-gray-100 text-gray-900"
+                            : "text-gray-700",
+                          "block px-4 py-2 text-sm"
+                        )}
+                      >
+                        Şanlıurfa
+                      </a>
+                    )}
+                  </Menu.Item>
+                </div>
+              </Menu.Items>
+            </Transition>
+          </Menu>
+          <div className="text-white text-xl">Danışman Listesi</div>
+        </div>
+
+        <div className="flex flex-col min-h-min border border-solid item bg-black/60 w-[60vw]">
+          <div className="container flex flex-col items-center flex-1 px-5 py-6 mx-auto">
+            <div className="flex-1 lg:flex lg:items-center ">
+              <div className="lg:mx-1">
                 <div className="w-full px-16 py-5 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl dark:bg-gray-900 lg:max-w-xl">
                   <h1 className="text-x font-medium text-gray-700 dark:text-gray-200">
                     Danışman Kayıt Formu
@@ -72,7 +154,7 @@ const DanismanEkle = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
