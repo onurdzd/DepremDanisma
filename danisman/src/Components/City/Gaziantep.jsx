@@ -1,35 +1,8 @@
-import { useState } from "react";
-import DanisanEkle from "../DashboardComponents/DanisanEkle";
-import DanismanEkle from "../DashboardComponents/DanismanEkle";
-import EnvanterEkle from "../DashboardComponents/EnvanterEkle";
-import BilgiGuncelle from "../DashboardComponents/BilgiGuncelle";
 
 const Gaziantep = () => {
-  const [sayfaAdi, setSayfaAdi] = useState("");
+
   return (
-    <div className="flex-1 bg-slate-100   border rounded-3xl border-solid border-gray-50 pr-10  shadow-2xl  dark:bg-cyan-900 ">
-      <div className="flex ml-7 ">
-        <div className=" ml-5 mt-2 mx-12 text-lg px-2 text-gray-600 dark:text-gray-200 rounded-xl hover:bg-slate-700  focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-          <button>
-            <a onClick={() => setSayfaAdi("danisanekle")}>Personel Ekle</a>
-          </button>
-        </div>
-        <div className="ml-5 mt-2 mx-12 text-lg px-2 text-gray-600 dark:text-gray-200 rounded-xl hover:bg-slate-700  focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
-          <button>
-            <a onClick={() => setSayfaAdi("danismanekle")}>Danışman Ekle</a>
-          </button>
-        </div>
-        <div className="ml-5 mt-2 mx-12 text-lg text-gray-600 px-2  dark:text-gray-200 rounded-xl hover:bg-slate-700 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
-          <button>
-            <a onClick={() => setSayfaAdi("envanterekle")}>Envanter Ekle</a>
-          </button>
-        </div>
-        <div className="ml-5 mt-2 mx-12 text-lg text-gray-600 px-2  dark:text-gray-200 rounded-xl hover:bg-slate-700  focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-          <button>
-            <a onClick={() => setSayfaAdi("bilgiguncelle")}>Bilgi Güncelle</a>
-          </button>
-        </div>
-      </div>
+    <div className="flex-1 w-[70vw] mt-8 mx-auto pl-6 bg-slate-100 border rounded-3xl border-solid border-gray-50 pr-10  shadow-2xl  dark:bg-cyan-900 ">
       <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-4 font-medium">Personel Adı Soyadı</p>
       </div>
@@ -48,7 +21,6 @@ const Gaziantep = () => {
           Okulları, Nurdağı 2, Fatih Mah. Yeni Mah. Kurudere Mah. )
         </p>
       </div>
-
       <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-4 font-medium">Merkez Telefon Numaraları</p>
       </div>
@@ -82,16 +54,6 @@ const Gaziantep = () => {
           iletişime geçildi).
         </p>
       </div>
-
-      {sayfaAdi == "danisanekle" ? (
-        <DanisanEkle></DanisanEkle>
-      ) : sayfaAdi == "danismanekle" ? (
-        <DanismanEkle></DanismanEkle>
-      ) : sayfaAdi == "envanterekle" ? (
-        <EnvanterEkle> </EnvanterEkle>
-      ) : sayfaAdi == "bilgiguncelle" ? (
-        <BilgiGuncelle></BilgiGuncelle>
-      ) : null}
     </div>
   );
 };
