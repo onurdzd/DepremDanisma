@@ -26,10 +26,7 @@ const router = createBrowserRouter([
       <div className="flex flex-col  items-center gap-10 bg-slate-100 h-screen w-screen">
         <Header />
         <App />
-        <div className="flex">
-        <AnaSayfaSolMenu/>
         <Harita/>
-        </div>
         <SehirİsimleriEkle/>
       </div>
     ),
@@ -50,7 +47,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Adana />
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
+          <Dashboard />
+          <Adana />
+        </div>
       </div>
     ),
   },
@@ -59,7 +59,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Osmaniye />
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
+          <Dashboard />
+          <Osmaniye />
+        </div>
       </div>
     ),
   },
@@ -68,7 +71,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Hatay />
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
+          <Dashboard />
+          <Hatay />
+        </div>
       </div>
     ),
   },
@@ -89,7 +95,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Kilis />
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
+          <Dashboard />
+          <Kilis />
+        </div>
       </div>
     ),
   },
@@ -98,7 +107,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Sanliurfa />
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
+          <Dashboard />
+          <Sanliurfa />
+        </div>
       </div>
     ),
   },
@@ -107,7 +119,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Adiyaman />
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
+          <Dashboard />
+          <Adiyaman />
+        </div>
       </div>
     ),
   },
@@ -116,7 +131,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Kahramanmaras />
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
+          <Dashboard />
+          <Kahramanmaras />
+        </div>
       </div>
     ),
   },
@@ -125,7 +143,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Diyarbakir />
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
+          <Dashboard />
+          <Diyarbakir />
+        </div>
       </div>
     ),
   },
@@ -134,7 +155,10 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <Malatya />
+        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
+          <Dashboard />
+          <Malatya />
+        </div>
       </div>
     ),
   },
