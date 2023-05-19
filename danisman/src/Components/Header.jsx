@@ -137,7 +137,11 @@ const Header = () => {
               >
                 <FontAwesomeIcon className="pr-5 pt-2" icon={faInstagram} />
               </a>
-              <a href="https://www.facebook.com/tardeorgtr/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.facebook.com/tardeorgtr/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon className="pr-5 pt-2" icon={faFacebook} />
               </a>
             </div>
