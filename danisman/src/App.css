@@ -38,6 +38,7 @@ svg {
 
     &:hover {
       fill: #e5f815f7;
+      transform: scale(1.02)
     }
 
     &.on {
