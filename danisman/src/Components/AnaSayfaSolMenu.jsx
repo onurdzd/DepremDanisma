@@ -12,31 +12,31 @@ const AnaSayfaSolMenu=()=>{
           >
             GAZİANTEP
           </button>
-          <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
+          <button onClick={() => sehir("/adiyaman")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
             ADIYAMAN
           </button>
-          <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
+          <button onClick={() => sehir("/kahramanmaras")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
             KAHRAMANMARAŞ
           </button>
-          <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
+          <button onClick={() => sehir("/malatya")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
             MALATYA
           </button>
-          <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
+          <button onClick={() => sehir("/diyarbakir")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
             DİYARBAKIR
           </button>
-          <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
+          <button onClick={() => sehir("/sanliurfa")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
             ŞANLIURFA
           </button>
-          <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
+          <button onClick={() => sehir("/kilis")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
             KİLİS
           </button>
-          <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
+          <button onClick={() => sehir("/hatay")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
             HATAY
           </button>
-          <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
+          <button onClick={() => sehir("/adana")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
             ADANA
           </button>
-          <button className="mt-2 mb-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
+          <button onClick={() => sehir("/osmaniye")} className="mt-2 mb-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
             OSMANİYE
           </button>
         </div>

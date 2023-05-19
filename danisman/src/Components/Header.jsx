@@ -12,12 +12,11 @@ function classNames(...classes) {
 const Header = () => {
   return (
     <>
-      <header className="text-xl w-screen bg-white mx-auto ">
+      <header className="text-xl w-screen bg-white mx-auto pb-5 pt-5">
         <div className="flex justify-around flex-auto mx-10 ">
           <div className=" basis-1/5">
-            <img className="max-h-28 py-2" src="logo.jpg" />
+            <img className="max-h-[150px] py-2" src="logo.jpg" />
           </div>
-
           <div className="flex flex-col justify-around  ">
             <div className="mt-6">
               <div className=" flex text-blue-300  ">

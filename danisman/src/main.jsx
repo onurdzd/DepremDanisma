@@ -15,19 +15,14 @@ import Kilis from "./Components/City/Kilis.jsx";
 import Malatya from "./Components/City/Malatya.jsx";
 import Osmaniye from "./Components/City/Osmaniye.jsx";
 import Sanliurfa from "./Components/City/Sanliurfa.jsx";
-import { ReactComponent as Harita } from "../src/assets/vectormap.svg";
-import SehirİsimleriEkle from "./Components/SehirİisimleriEkle.jsx";
-import AnaSayfaSolMenu from "./Components/AnaSayfaSolMenu.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="flex flex-col  items-center gap-10 bg-slate-100 h-screen w-screen">
+      <div className="flex flex-col  items-center  bg-slate-100 h-screen w-screen">
         <Header />
         <App />
-        <Harita/>
-        <SehirİsimleriEkle/>
       </div>
     ),
   },
@@ -47,8 +42,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
-          <Dashboard />
+        <div className="flex w-[50vw] mt-8 pl-6 ">
           <Adana />
         </div>
       </div>
@@ -59,8 +53,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
-          <Dashboard />
+        <div className="flex w-[50vw] mt-8 pl-6 ">
           <Osmaniye />
         </div>
       </div>
@@ -71,8 +64,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
-          <Dashboard />
+        <div className="flex w-[50vw] mt-8 pl-6 ">
           <Hatay />
         </div>
       </div>
@@ -81,12 +73,9 @@ const router = createBrowserRouter([
   {
     path: "/gaziantep",
     element: (
-      <div className="h-screen">
+      <div className="h-screen ">
         <Header />
-        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
-          <Dashboard />
-          <Gaziantep />
-        </div>
+        <Gaziantep />
       </div>
     ),
   },
@@ -95,8 +84,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
-          <Dashboard />
+        <div className="flex w-[50vw] mt-8 pl-6 ">
           <Kilis />
         </div>
       </div>
@@ -107,8 +95,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
-          <Dashboard />
+        <div className="flex w-[50vw] mt-8 pl-6 ">
           <Sanliurfa />
         </div>
       </div>
@@ -119,8 +106,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
-          <Dashboard />
+        <div className="flex w-[50vw] mt-8 pl-6 ">
           <Adiyaman />
         </div>
       </div>
@@ -131,8 +117,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
-          <Dashboard />
+        <div className="flex w-[50vw] mt-8 pl-6 ">
           <Kahramanmaras />
         </div>
       </div>
@@ -143,8 +128,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
-          <Dashboard />
+        <div className="flex w-[50vw] mt-8 pl-6 ">
           <Diyarbakir />
         </div>
       </div>
@@ -155,8 +139,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen">
         <Header />
-        <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
-          <Dashboard />
+        <div className="flex w-[50vw] mt-8 pl-6 ">
           <Malatya />
         </div>
       </div>
