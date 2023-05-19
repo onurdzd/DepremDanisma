@@ -1,11 +1,5 @@
-import { useState } from "react";
-import DanisanEkle from "../DashboardComponents/DanisanEkle";
-import DanismanEkle from "../DashboardComponents/DanismanEkle";
-import EnvanterEkle from "../DashboardComponents/EnvanterEkle";
-import BilgiGuncelle from "../DashboardComponents/BilgiGuncelle";
 
 const Gaziantep = () => {
-  const [sayfaAdi, setSayfaAdi] = useState("");
   return (
     <div className="flex-1 bg-slate-100 border rounded-3xl border-solid border-red-600 pr-10">
       <div className="bg-slate-100 mt-4  ml-12 w-[60vw] h-auto  text-left border rounded-3xl border-solid border-red-600">
@@ -60,35 +54,6 @@ const Gaziantep = () => {
           iletişime geçildi).
         </p>
       </div>
-      <div className=" ml-5 mt-2 text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("danisanekle")}>Personel Ekle</a>
-        </button>
-      </div>
-      <div className="ml-5 mt-2  text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("danismanekle")}>Danışman Ekle</a>
-        </button>
-      </div>
-      <div className="ml-5 mt-2  text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("envanterekle")}>Envanter Ekle</a>
-        </button>
-      </div>
-      <div className="ml-5 mt-2  text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("bilgiguncelle")}>Bilgi Güncelle</a>
-        </button>
-      </div>
-       {sayfaAdi == "danisanekle" ? (
-          <DanisanEkle></DanisanEkle>
-        ) : sayfaAdi == "danismanekle" ? (
-          <DanismanEkle></DanismanEkle>
-        ) : sayfaAdi == "envanterekle" ? (
-          <EnvanterEkle> </EnvanterEkle>
-        ) : sayfaAdi == "bilgiguncelle" ? (
-          <BilgiGuncelle></BilgiGuncelle>
-        ) : null}
     </div>
   );
 };

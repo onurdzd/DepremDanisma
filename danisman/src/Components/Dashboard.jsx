@@ -1,47 +1,43 @@
-
-import { useNavigate } from "react-router-dom";
+import DanisanEkle from "./DashboardComponents/DanisanEkle";
+import DanismanEkle from "./DashboardComponents/DanismanEkle";
+import EnvanterEkle from "./DashboardComponents/EnvanterEkle";
+import BilgiGuncelle from "./DashboardComponents/BilgiGuncelle";
+import { useState } from "react";
 
 const Dashboard = () => {
-  let sehir = useNavigate();
+  const [sayfaAdi, setSayfaAdi] = useState("");
+ 
   return (
-    <div className="">
-      <div className=" bg-slate-100 w-[20vw] h-[60%vh] text-center border rounded-3xl border-solid border-red-600  ">
-        {" "}
-        <button
-          onClick={() => sehir("/gaziantep")}
-          className="mt-2  w-[17vw] bg-red-500 text-center text-white border border-solid border-blue-600 rounded-xl"
-        >
-          GAZİANTEP
-        </button>
-        <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-          ADIYAMAN
-        </button>
-        <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-          KAHRAMANMARAŞ
-        </button>
-        <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-          MALATYA
-        </button>
-        <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-          DİYARBAKIR
-        </button>
-        <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-          ŞANLIURFA
-        </button>
-        <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-          KİLİS
-        </button>
-        <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-          HATAY
-        </button>
-        <button className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-          ADANA
-        </button>
-        <button className="mt-2 mb-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-          OSMANİYE
+   <>
+     <div className=" ml-5 mt-2 text-red-300 ">
+        <button>
+          <a onClick={() => setSayfaAdi("danisanekle")}>Personel Ekle</a>
         </button>
       </div>
-    </div>
+      <div className="ml-5 mt-2  text-red-300 ">
+        <button>
+          <a onClick={() => setSayfaAdi("danismanekle")}>Danışman Ekle</a>
+        </button>
+      </div>
+      <div className="ml-5 mt-2  text-red-300 ">
+        <button>
+          <a onClick={() => setSayfaAdi("envanterekle")}>Envanter Ekle</a>
+        </button>
+      </div>
+      <div className="ml-5 mt-2  text-red-300 ">
+        <button>
+          <a onClick={() => setSayfaAdi("bilgiguncelle")}>Bilgi Güncelle</a>
+        </button>
+      </div>
+       {sayfaAdi == "danisanekle" ? (
+    <DanisanEkle></DanisanEkle>
+  ) : sayfaAdi == "danismanekle" ? (
+    <DanismanEkle></DanismanEkle>
+  ) : sayfaAdi == "envanterekle" ? (
+    <EnvanterEkle> </EnvanterEkle>
+  ) : sayfaAdi == "bilgiguncelle" ? (
+    <BilgiGuncelle></BilgiGuncelle>
+  ) : null}</>
   );
 };
 

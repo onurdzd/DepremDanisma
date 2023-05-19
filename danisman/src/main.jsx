@@ -17,6 +17,7 @@ import Osmaniye from "./Components/City/Osmaniye.jsx";
 import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 import { ReactComponent as Harita } from "../src/assets/vectormap.svg";
 import SehirİsimleriEkle from "./Components/SehirİisimleriEkle.jsx";
+import AnaSayfaSolMenu from "./Components/AnaSayfaSolMenu.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,10 @@ const router = createBrowserRouter([
       <div className="flex flex-col  items-center gap-10 bg-slate-100 h-screen w-screen">
         <Header />
         <App />
+        <div className="flex">
+        <AnaSayfaSolMenu/>
         <Harita/>
+        </div>
         <SehirİsimleriEkle/>
       </div>
     ),
@@ -75,7 +79,6 @@ const router = createBrowserRouter([
         <Header />
         <div className="flex h-[auto] w-[30vw] mt-8 pl-6 gap-10">
           <Dashboard />
-
           <Gaziantep />
         </div>
       </div>
