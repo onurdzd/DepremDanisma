@@ -10,7 +10,7 @@ router.get("/", async (req, res, next) => {
     }
   });
 
-router.get("/:id", mwuser.idIsValid, async (req, res, next) => {
+router.get("/:id",  async (req, res, next) => {
     try {
       res.status(201).json(req.user);
     } catch (error) {
