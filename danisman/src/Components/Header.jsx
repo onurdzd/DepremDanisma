@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitterSquare,
+} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
@@ -15,7 +19,7 @@ const Header = () => {
       <header className="text-xl w-screen bg-white mx-auto pb-5 pt-5">
         <div className="flex justify-around flex-auto mx-10 ">
           <div className=" basis-1/5">
-            <img className="max-h-[150px] py-2" src="logo.jpg" />
+            <img className="max-h-[125px] py-2" src="logo.jpg" />
           </div>
           <div className="flex flex-col justify-around  ">
             <div className="mt-6">
@@ -125,22 +129,35 @@ const Header = () => {
               </div>
             </div>
             <div className=" flex  flex-row-reverse basis-8">
-              <a href="#">
-                <FontAwesomeIcon className="pr-2 pt-2" icon={faEnvelope} />
+              <a
+                href="https://twitter.com/tardeorgtr"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon
+                  className="pr-5 pt-8 text-gray-600 hover:text-gray-500"
+                  icon={faTwitterSquare}
+                />
               </a>
               <a
                 href="https://www.instagram.com/tardeorgtr/?hl=tr"
                 target="_blank"
                 rel="noreferrer"
               >
-                <FontAwesomeIcon className="pr-5 pt-2" icon={faInstagram} />
+                <FontAwesomeIcon
+                  className="pr-5 pt-8 text-gray-600 hover:text-gray-500"
+                  icon={faInstagram}
+                />
               </a>
               <a
                 href="https://www.facebook.com/tardeorgtr/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <FontAwesomeIcon className="pr-5 pt-2" icon={faFacebook} />
+                <FontAwesomeIcon
+                  className="pr-5 pt-8 text-gray-600 hover:text-gray-500"
+                  icon={faFacebook}
+                />
               </a>
             </div>
           </div>
