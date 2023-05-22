@@ -1,47 +1,74 @@
 import { useNavigate } from "react-router-dom";
 
-const AnaSayfaSolMenu=()=>{
-    let sehir = useNavigate();
-    return(
-        <div className="">
-        <div className=" bg-slate-100 w-[20vw] h-[60%vh] text-center border rounded-3xl border-solid border-red-600  ">
-          {" "}
-          <button
-            onClick={() => sehir("/gaziantep")}
-            className="mt-2 w-[17vw] bg-red-500 text-center text-white border border-solid border-blue-600 rounded-xl"
-          >
-            GAZİANTEP
-          </button>
-          <button onClick={() => sehir("/adiyaman")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-            ADIYAMAN
-          </button>
-          <button onClick={() => sehir("/kahramanmaras")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-            KAHRAMANMARAŞ
-          </button>
-          <button onClick={() => sehir("/malatya")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-            MALATYA
-          </button>
-          <button onClick={() => sehir("/diyarbakir")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-            DİYARBAKIR
-          </button>
-          <button onClick={() => sehir("/sanliurfa")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-            ŞANLIURFA
-          </button>
-          <button onClick={() => sehir("/kilis")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-            KİLİS
-          </button>
-          <button onClick={() => sehir("/hatay")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-            HATAY
-          </button>
-          <button onClick={() => sehir("/adana")} className="mt-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-            ADANA
-          </button>
-          <button onClick={() => sehir("/osmaniye")} className="mt-2 mb-2 w-[17vw] bg-red-500 text-white border border-solid border-blue-600 rounded-xl">
-            OSMANİYE
-          </button>
-        </div>
+const AnaSayfaSolMenu = () => {
+  let sehir = useNavigate();
+  return (
+    <div className="">
+      <div className=" mx-10 w-[18vw] h-[50%vh] text-center   ">
+        {" "}
+        <button
+          onClick={() => sehir("/gaziantep")}
+          className="w-[17vw]   my-1 text-center text-slate-800  border-solid border-cyan-700 border-x-4 border-y-2  rounded-lg hover:bg-cyan-700 hover:text-white  focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          GAZİANTEP
+        </button>
+        <button
+          onClick={() => sehir("/adiyaman")}
+          className="w-[17vw]  my-1 text-center text-slate-800  border-solid border-cyan-700 border-x-4 border-y-2  rounded-lg hover:bg-cyan-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          ADIYAMAN
+        </button>
+        <button
+          onClick={() => sehir("/kahramanmaras")}
+          className="w-[17vw]  my-1 text-center text-slate-800  border-solid border-cyan-700 border-x-4 border-y-2  rounded-lg hover:bg-cyan-700 hover:text-white focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          KAHRAMANMARAŞ
+        </button>
+        <button
+          onClick={() => sehir("/malatya")}
+          className="w-[17vw]  my-1 text-center text-slate-800  border-solid border-cyan-700 border-x-4 border-y-2  rounded-lg hover:bg-cyan-700  hover:text-white focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          MALATYA
+        </button>
+        <button
+          onClick={() => sehir("/diyarbakir")}
+          className="w-[17vw]  my-1 text-center text-slate-800  border-solid border-cyan-700 border-x-4 border-y-2  rounded-lg hover:bg-cyan-700  hover:text-white focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          DİYARBAKIR
+        </button>
+        <button
+          onClick={() => sehir("/sanliurfa")}
+          className="w-[17vw]  my-1 text-center text-slate-800  border-solid border-cyan-700 border-x-4 border-y-2  rounded-lg hover:bg-cyan-700  hover:text-white focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          ŞANLIURFA
+        </button>
+        <button
+          onClick={() => sehir("/kilis")}
+          className="w-[17vw]  my-1 text-center text-slate-800  border-solid border-cyan-700 border-x-4 border-y-2  rounded-lg hover:bg-cyan-700  hover:text-white focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          KİLİS
+        </button>
+        <button
+          onClick={() => sehir("/hatay")}
+          className="w-[17vw] my-1 text-center text-slate-800  border-solid border-cyan-700 border-x-4 border-y-2  rounded-lg hover:bg-cyan-700  hover:text-white focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          HATAY
+        </button>
+        <button
+          onClick={() => sehir("/adana")}
+          className="w-[17vw] my-1 text-center text-slate-800  border-solid border-cyan-700 border-x-4 border-y-2  rounded-lg hover:bg-cyan-700  hover:text-white focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          ADANA
+        </button>
+        <button
+          onClick={() => sehir("/osmaniye")}
+          className="w-[17vw]  my-0 text-center text-slate-800  border-solid border-cyan-700 border-x-4 border-y-2  rounded-lg hover:bg-cyan-700  hover:text-white focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+        >
+          OSMANİYE
+        </button>
       </div>
-    )
-}
+    </div>
+  );
+};
 
-export default AnaSayfaSolMenu
+export default AnaSayfaSolMenu;

@@ -7,10 +7,10 @@ body {
 
 .label-text {
   font-family: sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-style: italic;
-  font-weight: 600;
-  fill: rgb(49, 61, 31);
+  font-weight: 700;
+  fill: rgb(193, 202, 202);
   transform: translate(0, 3px);
 }
 
@@ -28,7 +28,7 @@ svg {
   .region7,
   .region8,
   .region9 {
-    stroke: #ccc;
+    stroke: #444141;
     stroke-linejoin: round;
     fill-rule: evenodd;
     clip-rule: evenodd;
@@ -37,56 +37,55 @@ svg {
     transition: all 300ms ease-in;
 
     &:hover {
-      fill: #e5f815f7;
-      transform: scale(1.02)
+      fill: #385463f7;
+      transform: scale(1.02);
     }
 
     &.on {
-      fill: #6fd9b2;
+      fill: #2b423a;
     }
   }
 
   .region0 {
-    fill: #4e7da2;
+    fill: #63a39e;
   }
 
   .region1 {
-    fill: #aa8da2;
+    fill: #4e9093;
   }
 
   .region2 {
-    fill: #7d95a7;
+    fill: #33737a;
   }
 
   .region3 {
-    fill: #2ce25d;
+    fill: #27767f;
   }
 
   .region4 {
-    fill: #46bb92;
+    fill: #27909e;
   }
 
   .region5 {
-    fill: #d1c187;
+    fill: #3d6c76;
   }
 
   .region6 {
-    fill: #f97f64;
+    fill: #2a7387;
   }
 
   .region7 {
-    fill: #a24e70;
+    fill: #326474;
   }
 
   .region8 {
-    fill: #6ea24e;
+    fill: #3f747d;
   }
 
   .region9 {
-    fill: #a27c4e;
+    fill: #3f7b9b;
   }
 }
-
 
 .relative:hover .absolute {
   display: block;

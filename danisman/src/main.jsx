@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import "./index.css";
 import Dashboard from "./Components/Dashboard.jsx";
 import Header from "./Components/Header.jsx";
+import İletisim from "./Components/İletisim.jsx";
 import Adana from "./Components/City/Adana.jsx";
 import Adiyaman from "./Components/City/Adiyaman.jsx";
 import Diyarbakir from "./Components/City/Diyarbakir.jsx";
@@ -15,6 +16,7 @@ import Kilis from "./Components/City/Kilis.jsx";
 import Malatya from "./Components/City/Malatya.jsx";
 import Osmaniye from "./Components/City/Osmaniye.jsx";
 import Sanliurfa from "./Components/City/Sanliurfa.jsx";
+import Footer from "./Components/Footer.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,7 @@ const router = createBrowserRouter([
       <div className="flex flex-col  items-center  bg-slate-100 h-screen w-screen">
         <Header />
         <App />
+        <Footer />
       </div>
     ),
   },
@@ -34,6 +37,7 @@ const router = createBrowserRouter([
         <div className="mt-8 pl-6">
           <Dashboard />
         </div>
+        <Footer />
       </div>
     ),
   },
@@ -45,6 +49,7 @@ const router = createBrowserRouter([
         <div className="flex w-[50vw] mt-8 pl-6 ">
           <Adana />
         </div>
+        <Footer />
       </div>
     ),
   },
@@ -56,6 +61,7 @@ const router = createBrowserRouter([
         <div className="flex w-[50vw] mt-8 pl-6 ">
           <Osmaniye />
         </div>
+        <Footer />
       </div>
     ),
   },
@@ -67,6 +73,7 @@ const router = createBrowserRouter([
         <div className="flex w-[50vw] mt-8 pl-6 ">
           <Hatay />
         </div>
+        <Footer />
       </div>
     ),
   },
@@ -76,6 +83,7 @@ const router = createBrowserRouter([
       <div className="h-screen ">
         <Header />
         <Gaziantep />
+        <Footer />
       </div>
     ),
   },
@@ -87,6 +95,7 @@ const router = createBrowserRouter([
         <div className="flex w-[50vw] mt-8 pl-6 ">
           <Kilis />
         </div>
+        <Footer />
       </div>
     ),
   },
@@ -98,6 +107,7 @@ const router = createBrowserRouter([
         <div className="flex w-[50vw] mt-8 pl-6 ">
           <Sanliurfa />
         </div>
+        <Footer />
       </div>
     ),
   },
@@ -109,6 +119,7 @@ const router = createBrowserRouter([
         <div className="flex w-[50vw] mt-8 pl-6 ">
           <Adiyaman />
         </div>
+        <Footer />
       </div>
     ),
   },
@@ -120,6 +131,7 @@ const router = createBrowserRouter([
         <div className="flex w-[50vw] mt-8 pl-6 ">
           <Kahramanmaras />
         </div>
+        <Footer />
       </div>
     ),
   },
@@ -131,6 +143,7 @@ const router = createBrowserRouter([
         <div className="flex w-[50vw] mt-8 pl-6 ">
           <Diyarbakir />
         </div>
+        <Footer />
       </div>
     ),
   },
@@ -142,6 +155,19 @@ const router = createBrowserRouter([
         <div className="flex w-[50vw] mt-8 pl-6 ">
           <Malatya />
         </div>
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/iletisim",
+    element: (
+      <div className="h-screen">
+        <Header />
+        <div className="mt-8 pl-6">
+          <İletisim />
+        </div>
+        <Footer />
       </div>
     ),
   },
