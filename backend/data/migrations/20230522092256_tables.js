@@ -40,7 +40,7 @@ exports.up = function (knex) {
     .createTable("merkez", (t) => {
       t.increments("merkez_id");
       t.string("merkez_isim", 128).unique().notNullable();
-      t.integer("tel", 10).unique().notNullable();
+      t.integer("tel", 10).notNullable();
       t.string("adres", 128).notNullable();
       t.integer("sehir_id")
         .unsigned()
