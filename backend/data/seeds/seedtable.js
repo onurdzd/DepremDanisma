@@ -41,23 +41,6 @@ exports.seed = async function (knex) {
       /*1234*/ role_id: 2,
     },
   ]);
-  await knex("personel").insert([
-    {
-      firstname: "ali",
-      surname: "yılmaz",
-      merkez_id: 1,
-    },
-    {
-      firstname: "veli",
-      surname: "yılmaz",
-      merkez_id: 2,
-    },
-    {
-      firstname: "ayşe",
-      surname: "yılmaz",
-      merkez_id: 2,
-    },
-  ]);
   await knex("sehir").insert([
     { sehir_isim: "Gaziantep" },
     { sehir_isim: "Adana" },
@@ -96,6 +79,24 @@ exports.seed = async function (knex) {
       sehir_id: 7,
     },
   ]);
+  await knex("personel").insert([
+    {
+      firstname: "ali",
+      surname: "yılmaz",
+      merkez_id: 1,
+    },
+    {
+      firstname: "veli",
+      surname: "yılmaz",
+      merkez_id: 2,
+    },
+    {
+      firstname: "ayşe",
+      surname: "yılmaz",
+      merkez_id: 2,
+    },
+  ]);
+
   await knex("danisan").insert([
     {
       firstname: "Mert",
