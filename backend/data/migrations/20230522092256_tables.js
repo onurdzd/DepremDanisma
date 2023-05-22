@@ -39,9 +39,9 @@ exports.up = function (knex) {
     })
     .createTable("merkez", (t) => {
       t.increments("merkez_id");
-      t.string("merkez_isim", 20).unique().notNullable();
-      t.integer("tel", 20).unique().notNullable();
-      t.string("adres", 20).notNullable();
+      t.string("merkez_isim", 128).unique().notNullable();
+      t.integer("tel", 10).unique().notNullable();
+      t.string("adres", 128).notNullable();
       t.integer("sehir_id")
         .unsigned()
         .notNullable()
@@ -54,8 +54,8 @@ exports.up = function (knex) {
     .createTable("danisan", (t) => {
       t.increments("danisan_id");
       t.timestamp("created_at").defaultTo(knex.fn.now());
-      t.string("firstname", 20).unique().notNullable();
-      t.string("surname", 20).unique().notNullable();
+      t.string("firstname", 20).notNullable();
+      t.string("surname", 20).notNullable();
       t.integer("merkez_id")
         .unsigned()
         .notNullable()
@@ -67,11 +67,11 @@ exports.up = function (knex) {
     .createTable("kurumlar", (t) => {
       t.increments("kurumlar_id");
       t.string("kurum_isim", 128).notNullable();
-      t.integer("merkez_id")
+      t.integer("sehir_id")
         .unsigned()
         .notNullable()
-        .references("merkez_id")
-        .inTable("merkez")
+        .references("sehir_id")
+        .inTable("sehir")
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
     })
@@ -85,17 +85,6 @@ exports.up = function (knex) {
         .inTable("merkez")
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
-      t.integer("envanter_tur_id")
-        .unsigned()
-        .notNullable()
-        .references("envanter_tur_id")
-        .inTable("envanter_tur")
-        .onUpdate("CASCADE")
-        .onDelete("CASCADE");
-    })
-    .createTable("envanter_tur", (t) => {
-      t.increments("envanter_tur_id");
-      t.string("envanter_tur", 128).notNullable();
     });
 };
 
@@ -105,7 +94,6 @@ exports.up = function (knex) {
  */
 exports.down = function (knex) {
   return knex.schema
-    .dropTableIfExists("envanter_tur")
     .dropTableIfExists("envanterler")
     .dropTableIfExists("kurumlar")
     .dropTableIfExists("danisan")
