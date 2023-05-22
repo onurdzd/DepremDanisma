@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-const AnaSayfaSolMenu = () => {
+const SolSehirMenu = () => {
   let sehir = useNavigate();
   return (
-    <div className="">
-      <div className=" mx-10 w-[18vw] h-[50%vh] text-center   ">
+    <div className="mt-8">
+      <div className=" mx-10 w-[18vw] h-[50%vh] text-center">
         {" "}
         <button
           onClick={() => sehir("/gaziantep")}
@@ -71,4 +71,4 @@ const AnaSayfaSolMenu = () => {
   );
 };
 
-export default AnaSayfaSolMenu;
+export default SolSehirMenu;
