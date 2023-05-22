@@ -25,11 +25,6 @@ const Dashboard = () => {
             <a onClick={() => setSayfaAdi("envanterekle")}>Envanter Ekle</a>
           </button>
         </div>
-        <div className="ml-5 mt-2 mx-12 text-lg text-gray-600 px-8 dark:text-gray-800   rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-          <button>
-            <a onClick={() => setSayfaAdi("bilgiguncelle")}>Bilgi Güncelle</a>
-          </button>
-        </div>
       </div>
       {sayfaAdi=="" ? <div className="text-xl font-bold text-center h-full flex flex-col justify-center">Lütfen üst menüden seçim yapın</div> : sayfaAdi == "danisanekle" ? (
         <DanisanEkle></DanisanEkle>
@@ -37,8 +32,6 @@ const Dashboard = () => {
         <DanismanEkle></DanismanEkle>
       ) : sayfaAdi == "envanterekle" ? (
         <EnvanterEkle> </EnvanterEkle>
-      ) : sayfaAdi == "bilgiguncelle" ? (
-        <BilgiGuncelle></BilgiGuncelle>
       ) : null}
     </div>
   );
