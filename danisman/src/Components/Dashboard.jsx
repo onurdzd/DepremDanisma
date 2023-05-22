@@ -1,7 +1,6 @@
 import DanisanEkle from "./DashboardComponents/DanisanEkle";
 import DanismanEkle from "./DashboardComponents/DanismanEkle";
 import EnvanterEkle from "./DashboardComponents/EnvanterEkle";
-import BilgiGuncelle from "./DashboardComponents/BilgiGuncelle";
 import { useState } from "react";
 
 const Dashboard = () => {
