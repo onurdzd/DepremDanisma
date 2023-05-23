@@ -1,7 +1,7 @@
 const db=require("../../data/dbconfig")
 
 const getAll = ()=>{
-    return db("personel as p")
+    return db("personel as p").leftJoin("merkez as m","m.merkez_id","p.merkez_id").leftJoin("sehir as s","s.sehir_id","m.sehir_id")
 }
 const getById =async (personel_id)=>{
     const personel = await db("personel as p")
