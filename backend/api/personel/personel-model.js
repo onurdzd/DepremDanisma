@@ -17,13 +17,13 @@ const add = async(personel)=>{
 }
 
 const change = async(updateInfos, id)=>{
-    await db("personels").where("personel_id", id).update(updateInfos);
+    await db("personel").where("personel_id", id).first().update(updateInfos);
     const updatedPersonel = await getBy({ personel_id: id });
     return updatedPersonel;
 }
 
-const remove = ()=>{
-    return db("personels").where("personel_id", personel_id).delete();
+const remove = (personel_id)=>{
+    return db("personel").where("personel_id", personel_id).delete();
 }
 
 module.exports = {
