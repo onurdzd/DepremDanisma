@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
+import axios from "axios"
 
 const GridTable = () => {
-  // Örnek veri
   const [data, setData] = useState([
     {
       id: 1,
@@ -13,6 +13,12 @@ const GridTable = () => {
     },
   ]);
 
+  useEffect(()=>{
+    axios.get("http://localhost:5000/api/personel").then(res=>setData(res.data))
+  },[])
+
+  console.log(data)
+  
   // Düzenleme durumunu tutmak için state
   const [editingRowId, setEditingRowId] = useState(null);
 
@@ -83,20 +89,20 @@ const GridTable = () => {
         </thead>
         <tbody className="text-center">
           {data.map((row) => (
-            <tr key={row.id}>
-              <td className="px-4 py-2 border-b">{row.id}</td>
+            <tr key={row.personel_id}>
+              <td className="px-4 py-2 border-b">{row.personel_id}</td>
               <td className="px-4 py-2 border-b">
                 {editingRowId === row.id ? (
                   <input
                     type="text"
-                    value={row.name}
+                    value={row.firstname}
                     onChange={(e) =>
-                      updateRow(row.id, { name: e.target.value })
+                      updateRow(row.id, { firstname: e.target.value })
                     }
                     className="border  rounded px-2 py-1"
                   />
                 ) : (
-                  row.name
+                  row.firstname
                 )}
               </td>
               <td className="px-4 py-2 border-b">
@@ -117,42 +123,42 @@ const GridTable = () => {
                 {editingRowId === row.id ? (
                   <input
                     type="text"
-                    value={row.city}
+                    value={row.sehir_isim}
                     onChange={(e) =>
-                      updateRow(row.id, { city: e.target.value })
+                      updateRow(row.id, { sehir_isim: e.target.value })
                     }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.city
+                  row.sehir_isim
                 )}
               </td>
               <td className="px-4 py-2 border-b">
                 {editingRowId === row.id ? (
                   <input
                     type="text"
-                    value={row.center}
+                    value={row.merkez_isim}
                     onChange={(e) =>
-                      updateRow(row.id, { center: e.target.value })
+                      updateRow(row.id, { merkez_isim: e.target.value })
                     }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.center
+                  row.merkez_isim
                 )}
               </td>
               <td className="px-4 py-2 border-b">
                 {editingRowId === row.id ? (
                   <input
                     type="text"
-                    value={row.phone}
+                    value={row.tel}
                     onChange={(e) =>
-                      updateRow(row.id, { phone: e.target.value })
+                      updateRow(row.id, { tel: e.target.value })
                     }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.phone
+                  row.tel
                 )}
               </td>
               <td className="px-4 py-2 border-b">
@@ -197,9 +203,9 @@ const GridTable = () => {
         <input
           type="text"
           placeholder="Ad"
-          value={newRowData.name}
+          value={newRowData.firstname}
           onChange={(e) =>
-            setNewRowData((prevData) => ({ ...prevData, name: e.target.value }))
+            setNewRowData((prevData) => ({ ...prevData, firstname: e.target.value }))
           }
           className="border rounded px-2 py-1 mr-2"
         />
@@ -218,11 +224,11 @@ const GridTable = () => {
         <input
           type="text"
           placeholder="Şehir"
-          value={newRowData.city}
+          value={newRowData.sehir_isim}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
-              city: e.target.value,
+              sehir_isim: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
@@ -230,11 +236,11 @@ const GridTable = () => {
         <input
           type="text"
           placeholder="Merkez"
-          value={newRowData.center}
+          value={newRowData.merkez_isim}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
-              center: e.target.value,
+              merkez_isim: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
@@ -242,11 +248,11 @@ const GridTable = () => {
         <input
           type="text"
           placeholder="Telefon"
-          value={newRowData.phone}
+          value={newRowData.tel}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
-              phone: e.target.value,
+              tel: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
