@@ -1,11 +1,16 @@
-import {useState} from "react"
+import { useState } from "react";
 
 const GridTable = () => {
   // Örnek veri
   const [data, setData] = useState([
-    { id: 1, name: "Öğe 1", description: "Açıklama 1" },
-    { id: 2, name: "Öğe 2", description: "Açıklama 2" },
-    { id: 3, name: "Öğe 3", description: "Açıklama 3" },
+    {
+      id: 1,
+      name: "Mert",
+      surname: "Gök",
+      city: "Hatay",
+      center: "Defne",
+      phone: 1234567890,
+    },
   ]);
 
   // Düzenleme durumunu tutmak için state
@@ -15,7 +20,10 @@ const GridTable = () => {
   const [newRowData, setNewRowData] = useState({
     id: "",
     name: "",
-    description: "",
+    surname: "",
+    city: "",
+    center: "",
+    telefon: 0,
   });
 
   // Satır düzenlemesini başlatan fonksiyon
@@ -49,7 +57,14 @@ const GridTable = () => {
   const addRow = () => {
     const newRow = { ...newRowData, id: data.length + 1 };
     setData((prevData) => [...prevData, newRow]);
-    setNewRowData({ id: "", name: "", description: "" });
+    setNewRowData({
+      id: "",
+      name: "",
+      surname: "",
+      city: "",
+      center: "",
+      phone: 0,
+    });
   };
 
   return (
@@ -57,13 +72,16 @@ const GridTable = () => {
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr>
-            <th className="px-4 py-2 border-b">ID</th>
+            <th className="px-4 py-2 border-b">Personel ID</th>
             <th className="px-4 py-2 border-b">Ad</th>
-            <th className="px-4 py-2 border-b">Açıklama</th>
+            <th className="px-4 py-2 border-b">Soyad</th>
+            <th className="px-4 py-2 border-b">Şehir</th>
+            <th className="px-4 py-2 border-b">Merkez</th>
+            <th className="px-4 py-2 border-b">Telefon</th>
             <th className="px-4 py-2 border-b">İşlemler</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-center">
           {data.map((row) => (
             <tr key={row.id}>
               <td className="px-4 py-2 border-b">{row.id}</td>
@@ -75,7 +93,7 @@ const GridTable = () => {
                     onChange={(e) =>
                       updateRow(row.id, { name: e.target.value })
                     }
-                    className="border rounded px-2 py-1"
+                    className="border  rounded px-2 py-1"
                   />
                 ) : (
                   row.name
@@ -85,14 +103,56 @@ const GridTable = () => {
                 {editingRowId === row.id ? (
                   <input
                     type="text"
-                    value={row.description}
+                    value={row.surname}
                     onChange={(e) =>
-                      updateRow(row.id, { description: e.target.value })
+                      updateRow(row.id, { surname: e.target.value })
                     }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.description
+                  row.surname
+                )}
+              </td>{" "}
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.id ? (
+                  <input
+                    type="text"
+                    value={row.city}
+                    onChange={(e) =>
+                      updateRow(row.id, { city: e.target.value })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.city
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.id ? (
+                  <input
+                    type="text"
+                    value={row.center}
+                    onChange={(e) =>
+                      updateRow(row.id, { center: e.target.value })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.center
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.id ? (
+                  <input
+                    type="text"
+                    value={row.phone}
+                    onChange={(e) =>
+                      updateRow(row.id, { phone: e.target.value })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.phone
                 )}
               </td>
               <td className="px-4 py-2 border-b">
@@ -145,12 +205,48 @@ const GridTable = () => {
         />
         <input
           type="text"
-          placeholder="Açıklama"
-          value={newRowData.description}
+          placeholder="Soyad"
+          value={newRowData.surname}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
-              description: e.target.value,
+              surname: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Şehir"
+          value={newRowData.city}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              city: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Merkez"
+          value={newRowData.center}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              center: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Telefon"
+          value={newRowData.phone}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              phone: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
