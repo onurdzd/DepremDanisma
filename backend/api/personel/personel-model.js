@@ -11,7 +11,7 @@ const getBy = (filter)=>{
     return db("personel as p").where(filter).first();
 }
 const add = async(personel)=>{
-    const newPersonelId = await db("personels").insert(personel);
+    const newPersonelId = await db("personel").insert(personel);
     const newPersonel = await getBy({ personel_id: newPersonelId[0] });
     return newPersonel  
 }

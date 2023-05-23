@@ -7,15 +7,16 @@ const GridTable = () => {
       id: 1,
       name: "Mert",
       surname: "Gök",
-      city: "Hatay",
-      center: "Defne",
+      sehir_isim: "Hatay",
+      merkez_isim: "Defne",
       phone: 1234567890,
     },
   ]);
 
+  const dataAl=()=>axios.get("http://localhost:5000/api/personel").then(res=>setData(res.data))
   useEffect(()=>{
-    axios.get("http://localhost:5000/api/personel").then(res=>setData(res.data))
-  },[])
+    dataAl()
+  },[data])
 
   console.log(data)
   
@@ -24,12 +25,9 @@ const GridTable = () => {
 
   // Yeni satır verilerini tutmak için state
   const [newRowData, setNewRowData] = useState({
-    id: "",
-    name: "",
+    firstname: "",
     surname: "",
-    city: "",
-    center: "",
-    telefon: 0,
+    merkez_id: "",
   });
 
   // Satır düzenlemesini başlatan fonksiyon
@@ -61,16 +59,10 @@ const GridTable = () => {
 
   // Yeni satır ekleme fonksiyonu
   const addRow = () => {
-    const newRow = { ...newRowData, id: data.length + 1 };
+    const newRow = { ...newRowData};
+    axios.post("http://localhost:5000/api/personel",newRow)
     setData((prevData) => [...prevData, newRow]);
-    setNewRowData({
-      id: "",
-      name: "",
-      surname: "",
-      city: "",
-      center: "",
-      phone: 0,
-    });
+    dataAl()
   };
 
   return (
@@ -190,16 +182,7 @@ const GridTable = () => {
       </table>
 
       {/* Yeni satır ekleme formu */}
-      <div className="mt-4">
-        <input
-          type="text"
-          placeholder="ID"
-          value={newRowData.id}
-          onChange={(e) =>
-            setNewRowData((prevData) => ({ ...prevData, id: e.target.value }))
-          }
-          className="border rounded px-2 py-1 mr-2"
-        />
+      <div className="mt-4 text-center">
         <input
           type="text"
           placeholder="Ad"
@@ -223,36 +206,12 @@ const GridTable = () => {
         />
         <input
           type="text"
-          placeholder="Şehir"
-          value={newRowData.sehir_isim}
+          placeholder="Merkez id"
+          value={newRowData.merkez_id}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
-              sehir_isim: e.target.value,
-            }))
-          }
-          className="border rounded px-2 py-1 mr-2"
-        />
-        <input
-          type="text"
-          placeholder="Merkez"
-          value={newRowData.merkez_isim}
-          onChange={(e) =>
-            setNewRowData((prevData) => ({
-              ...prevData,
-              merkez_isim: e.target.value,
-            }))
-          }
-          className="border rounded px-2 py-1 mr-2"
-        />
-        <input
-          type="text"
-          placeholder="Telefon"
-          value={newRowData.tel}
-          onChange={(e) =>
-            setNewRowData((prevData) => ({
-              ...prevData,
-              tel: e.target.value,
+              merkez_id: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
