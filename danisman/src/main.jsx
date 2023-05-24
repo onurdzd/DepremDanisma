@@ -17,7 +17,7 @@ import Malatya from "./Components/City/Malatya.jsx";
 import Osmaniye from "./Components/City/Osmaniye.jsx";
 import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 import Footer from "./Components/Footer.jsx";
-import GridTable from "./Components/GridTable.jsx";
+import GridTablePersonel from "./Components/GridTables/GridTablePersonel.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       <div className="flex flex-col  items-center  bg-slate-100 h-screen w-screen">
         <Header />
         <App />
-        <GridTable/>
+        <GridTablePersonel/>
         <Footer />
       </div>
     ),
