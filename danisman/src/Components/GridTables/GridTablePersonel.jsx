@@ -7,7 +7,7 @@ const GridTablePersonel = () => {
       id: 1,
       firsname: "Mert",
       surname: "Gök",
-      telefon1: 5333333333,
+      telefon1: 5333333332,
       TC: 33333333333,
       kan_grubu: "A+",
       ikamet_adresi: "zart mahallesi zort sokak zırt ap no:23 d:4",
@@ -146,7 +146,7 @@ const GridTablePersonel = () => {
               <td className="px-4 py-2 border-b">
                 {editingRowId === row.personel_id ? (
                   <input
-                    type="text"
+                    type="tel"
                     value={row.telefon1}
                     onChange={(e) =>
                       updateRow(row.personel_id, { telefon1: e.target.value })
@@ -160,7 +160,7 @@ const GridTablePersonel = () => {
               <td className="px-4 py-2 border-b">
                 {editingRowId === row.personel_id ? (
                   <input
-                    type="number"
+                    type="tel"
                     value={row.telefon2}
                     onChange={(e) =>
                       updateRow(row.personel_id, { telefon2: e.target.value })
@@ -367,7 +367,7 @@ const GridTablePersonel = () => {
           className="border rounded px-2 py-1 mr-2"
         />
         <input
-          type="number"
+          type="tel"
           placeholder="telefon no 5xxxxxxxxx"
           value={newRowData.telefon1}
           onChange={(e) =>
@@ -379,7 +379,7 @@ const GridTablePersonel = () => {
           className="border rounded px-2 py-1 mr-2"
         />
         <input
-          type="number"
+          type="tel"
           placeholder="telefon no 5xxxxxxxxx"
           value={newRowData.telefon2}
           onChange={(e) =>
@@ -477,11 +477,11 @@ const GridTablePersonel = () => {
         <input
           type="text"
           placeholder="Aranacak Kişi Bağı"
-          value={newRowData.ADAK_telefon}
+          value={newRowData.ADAK_Bağı}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
-              ADAK_telefon: e.target.value,
+              ADAK_Bağı: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
@@ -498,18 +498,7 @@ const GridTablePersonel = () => {
           }
           className="border rounded px-2 py-1 mr-2"
         />
-        <input
-          type="text"
-          placeholder="Merkez id"
-          value={newRowData.merkez_id}
-          onChange={(e) =>
-            setNewRowData((prevData) => ({
-              ...prevData,
-              merkez_id: e.target.value,
-            }))
-          }
-          className="border rounded px-2 py-1 mr-2"
-        />
+
         <button
           onClick={addRow}
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded"
