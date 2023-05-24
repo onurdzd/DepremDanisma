@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const GridTable = () => {
+const GridTablePersonel = () => {
   const [data, setData] = useState([
     {
       id: 1,
@@ -228,4 +228,4 @@ const GridTable = () => {
   );
 };
 
-export default GridTable;
+export default GridTablePersonel;
