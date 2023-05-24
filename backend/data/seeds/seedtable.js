@@ -118,6 +118,20 @@ exports.seed = async function (knex) {
       ADAK_Bağı: "Anne",
       merkez_id: 1,
     },
+    {
+      firstname: "veli",
+      surname: "yılmaz",
+      telefon1: 05333333323,
+      TC: 33333333334,
+      kan_grubu: "A+",
+      ikamet_adresi: "zart mahallesi zort sokak zırt ap no:23 d:4",
+      calisma_durumu: true,
+      proje_saha_adresi: "zort mahallesi zart sokak konteyner no:2",
+      ADAK_adı_soyadı: "Mahmut Mert",
+      ADAK_telefon: 05444454444,
+      ADAK_Bağı: "Anne",
+      merkez_id: 1,
+    },
   ]);
   await knex("kurum").insert([
     { kurum_adi: "İzmit Belediyesi", kurum_adi_kisaltma: "İB", merkez_id: 1 },
