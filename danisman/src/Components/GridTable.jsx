@@ -15,7 +15,7 @@ const GridTable = () => {
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:5000/api/personel")
+      .get("http://localhost:9000/api/personel")
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
@@ -42,8 +42,8 @@ const GridTable = () => {
   };
 
   // Satırı güncelleyen fonksiyon
-  const updateRow = async(rowId, newData) => {
-    await axios.put(`http://localhost:5000/api/personel/${rowId}`,newData);
+  const updateRow = async (rowId, newData) => {
+    await axios.put(`http://localhost:9000/api/personel/${rowId}`, newData);
     setData((prevData) =>
       prevData.map((row) => {
         if (row.personel_id === rowId) {
@@ -56,13 +56,13 @@ const GridTable = () => {
 
   // Satırı silen fonksiyon
   const deleteRow = async (rowId) => {
-    await axios.delete(`http://localhost:5000/api/personel/${rowId}`);
+    await axios.delete(`http://localhost:9000/api/personel/${rowId}`);
   };
 
   // Yeni satır ekleme fonksiyonu
   const addRow = async () => {
     const newRow = { ...newRowData };
-    await axios.post("http://localhost:5000/api/personel", newRow);
+    await axios.post("http://localhost:9000/api/personel", newRow);
     dataAl();
   };
 
@@ -132,7 +132,9 @@ const GridTable = () => {
                     type="text"
                     value={row.merkez_isim}
                     onChange={(e) =>
-                      updateRow(row.personel_id, { merkez_isim: e.target.value })
+                      updateRow(row.personel_id, {
+                        merkez_isim: e.target.value,
+                      })
                     }
                     className="border rounded px-2 py-1"
                   />
@@ -145,7 +147,9 @@ const GridTable = () => {
                   <input
                     type="text"
                     value={row.tel}
-                    onChange={(e) => updateRow(row.personel_id, { tel: e.target.value })}
+                    onChange={(e) =>
+                      updateRow(row.personel_id, { tel: e.target.value })
+                    }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
