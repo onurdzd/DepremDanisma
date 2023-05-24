@@ -4,7 +4,6 @@ const getAll = ()=>{
     return db("sehir as s")
 }
 const getById =async (sehir_id)=>{
-    const sehir = await db("sehir as s")
     return db("sehir as s").where("s.sehir_id", sehir_id).first();
 }
 const getBy = (filter)=>{
