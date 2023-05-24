@@ -17,7 +17,7 @@ import Malatya from "./Components/City/Malatya.jsx";
 import Osmaniye from "./Components/City/Osmaniye.jsx";
 import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 import Footer from "./Components/Footer.jsx";
-import SolSehirMenu from "./Components/SolSehirMenu.jsx";
+import GridTablePersonel from "./Components/GridTables/GridTablePersonel.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +26,7 @@ const router = createBrowserRouter([
       <div className="flex flex-col  items-center  bg-slate-100 h-screen w-screen">
         <Header />
         <App />
+        <GridTablePersonel/>
         <Footer />
       </div>
     ),
@@ -45,10 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/adana",
     element: (
-      <div className="h-screen">
+      <div className="h-screen w-[90vw]">
         <Header />
-        <div className="flex w-[80vw] mt-8 pl-6 justify-between">
-          <SolSehirMenu />
+        <div className="flex justify-between">
+          <App />
           <Adana />
         </div>
         <Footer />
@@ -58,10 +59,10 @@ const router = createBrowserRouter([
   {
     path: "/osmaniye",
     element: (
-      <div className="h-screen">
+      <div className="h-screen w-[90vw]">
         <Header />
-        <div className="flex w-[80vw] mt-8 pl-6 justify-between">
-          <SolSehirMenu />
+        <div className="flex justify-between">
+          <App />
           <Osmaniye />
         </div>
         <Footer />
@@ -71,10 +72,10 @@ const router = createBrowserRouter([
   {
     path: "/hatay",
     element: (
-      <div className="h-screen">
+      <div className="h-screen w-[90vw]">
         <Header />
-        <div className="flex w-[80vw] mt-8 pl-6 justify-between">
-          <SolSehirMenu />
+        <div className="flex justify-between">
+          <App />
           <Hatay />
         </div>
         <Footer />
@@ -84,10 +85,10 @@ const router = createBrowserRouter([
   {
     path: "/gaziantep",
     element: (
-      <div className="h-screen ">
+      <div className="h-screen w-[90vw]">
         <Header />
-        <div className="flex w-[80vw] mt-8 pl-6 justify-between">
-          <SolSehirMenu />
+        <div className="flex justify-between">
+          <App />
           <Gaziantep />
         </div>
         <Footer />
@@ -97,10 +98,10 @@ const router = createBrowserRouter([
   {
     path: "/kilis",
     element: (
-      <div className="h-screen">
+      <div className="h-screen w-[90vw]">
         <Header />
-        <div className="flex w-[80vw] mt-8 pl-6 justify-between">
-          <SolSehirMenu />
+        <div className="flex justify-between">
+          <App />
           <Kilis />
         </div>
         <Footer />
@@ -110,10 +111,10 @@ const router = createBrowserRouter([
   {
     path: "/sanliurfa",
     element: (
-      <div className="h-screen">
+      <div className="h-screen w-[90vw]">
         <Header />
-        <div className="flex w-[80vw] mt-8 pl-6 justify-between">
-          <SolSehirMenu />
+        <div className="flex justify-between">
+          <App />
           <Sanliurfa />
         </div>
         <Footer />
@@ -123,10 +124,10 @@ const router = createBrowserRouter([
   {
     path: "/adiyaman",
     element: (
-      <div className="h-screen">
+      <div className="h-screen w-[90vw]">
         <Header />
-        <div className="flex w-[80vw] mt-8 pl-6 justify-between">
-          <SolSehirMenu />
+        <div className="flex justify-between">
+          <App />
           <Adiyaman />
         </div>
         <Footer />
@@ -136,10 +137,10 @@ const router = createBrowserRouter([
   {
     path: "/kahramanmaras",
     element: (
-      <div className="h-screen">
+      <div className="h-screen w-[90vw]">
         <Header />
-        <div className="flex w-[80vw] mt-8 pl-6 justify-between">
-          <SolSehirMenu />
+        <div className="flex justify-between">
+          <App />
           <Kahramanmaras />
         </div>
         <Footer />
@@ -149,10 +150,10 @@ const router = createBrowserRouter([
   {
     path: "/diyarbakir",
     element: (
-      <div className="h-screen">
+      <div className="h-screen w-[90vw]">
         <Header />
-        <div className="flex w-[80vw] mt-8 pl-6 justify-between">
-          <SolSehirMenu />
+        <div className="flex justify-between">
+          <App />
           <Diyarbakir />
         </div>
         <Footer />
@@ -162,10 +163,10 @@ const router = createBrowserRouter([
   {
     path: "/malatya",
     element: (
-      <div className="h-screen">
+      <div className="h-screen w-[90vw]">
         <Header />
-        <div className="flex w-[80vw] mt-8 pl-6 justify-between">
-          <SolSehirMenu />
+        <div className="flex justify-between">
+          <App />
           <Malatya />
         </div>
         <Footer />
@@ -175,7 +176,7 @@ const router = createBrowserRouter([
   {
     path: "/iletisim",
     element: (
-      <div className="h-screen">
+      <div className="h-screen ">
         <Header />
         <div className="mt-8 pl-6">
           <İletisim />
