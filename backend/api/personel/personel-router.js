@@ -26,4 +26,33 @@ router.get("/:name",  async (req, res, next) => {
   }
 });
 
+router.post("/",  async (req, res, next) => {
+  try {
+    const newPersonel=Personels.add(req.body)
+    res.status(201).json(newPersonel);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.delete("/:id",  async (req, res, next) => {
+  try {
+    console.log(req.params.id)
+    await Personels.remove(req.params.id)
+    res.status(201).json({message:`${req.params.id} id nolu personel silindi`});
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.put('/:id', async (req,res,next)=> {
+  try {
+    await Personels.change(req.body, req.params.id);
+    res.status(201).json({message:`${req.params.id} id nolu personel silindi`});
+  } catch (error) {
+    next(error);
+  }
+})
+
+
 module.exports = router;
