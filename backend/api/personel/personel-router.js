@@ -12,7 +12,8 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:id",  async (req, res, next) => {
   try {
-    res.status(201).json(req.params.id);
+    const personel = await Personels.getById(req.params.id);
+    res.status(201).json(personel);
   } catch (error) {
     next(error);
   }
@@ -20,7 +21,8 @@ router.get("/:id",  async (req, res, next) => {
 
 router.get("/:name",  async (req, res, next) => {
   try {
-    res.status(201).json(req.params.name);
+    const personel = await Personels.getBy(req.params.name);
+    res.status(201).json(personel);
   } catch (error) {
     next(error);
   }
