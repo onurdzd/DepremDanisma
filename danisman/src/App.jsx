@@ -5,7 +5,7 @@ import SehirİsimleriEkle from "./Components/SehirİisimleriEkle.jsx";
 function App() {
   return (
     <>
-    <div className="flex h-screen items-center mt-8">
+    <div className="flex items-center mt-8 w-[45vw] ">
         <Harita/>
         </div>
         <SehirİsimleriEkle/>
