@@ -5,11 +5,18 @@ const GridTablePersonel = () => {
   const [data, setData] = useState([
     {
       id: 1,
-      name: "Mert",
+      firsname: "Mert",
       surname: "Gök",
-      sehir_isim: "Hatay",
-      merkez_isim: "Defne",
-      phone: 1234567890,
+      telefon1: 5333333333,
+      TC: 33333333333,
+      kan_grubu: "A+",
+      ikamet_adresi: "zart mahallesi zort sokak zırt ap no:23 d:4",
+      calisma_durumu: true,
+      proje_saha_adresi: "zort mahallesi zart sokak konteyner no:2",
+      ADAK_adı_soyadı: "Mahmut Tuncer",
+      ADAK_telefon: 5444444444,
+      ADAK_Bağı: "Anne",
+      merkez_id: 1,
     },
   ]);
 
@@ -28,7 +35,17 @@ const GridTablePersonel = () => {
   const [newRowData, setNewRowData] = useState({
     firstname: "",
     surname: "",
-    merkez_id: "",
+    telefon1: "",
+    telefon2: "",
+    TC: null,
+    kan_grubu: "",
+    ikamet_adresi: "",
+    calisma_durumu: null,
+    proje_saha_adresi: "",
+    ADAK_adı_soyadı: "",
+    ADAK_telefon: null,
+    ADAK_Bağı: "",
+    merkez_id: null,
   });
 
   // Satır düzenlemesini başlatan fonksiyon
@@ -42,8 +59,8 @@ const GridTablePersonel = () => {
   };
 
   // Satırı güncelleyen fonksiyon
-  const updateRow = async(rowId, newData) => {
-    await axios.put(`http://localhost:9000/api/personel/${rowId}`,newData);
+  const updateRow = async (rowId, newData) => {
+    await axios.put(`http://localhost:9000/api/personel/${rowId}`, newData);
     setData((prevData) =>
       prevData.map((row) => {
         if (row.personel_id === rowId) {
@@ -74,9 +91,23 @@ const GridTablePersonel = () => {
             <th className="px-4 py-2 border-b">Personel ID</th>
             <th className="px-4 py-2 border-b">Ad</th>
             <th className="px-4 py-2 border-b">Soyad</th>
-            <th className="px-4 py-2 border-b">Şehir</th>
+            <th className="px-4 py-2 border-b">Telefon Numarası</th>
+            <th className="px-4 py-2 border-b">Telefon Numarası</th>
+            <th className="px-4 py-2 border-b">TC kimlik no</th>
+            <th className="px-4 py-2 border-b">Kan Grubu</th>
+            <th className="px-4 py-2 border-b">İkamet Adresi</th>
+            <th className="px-4 py-2 border-b">Çalışma Durumu</th>
+            <th className="px-4 py-2 border-b">Proje Saha Adresi</th>
+            <th className="px-4 py-2 border-b">
+              Acil Durumda Aranacak kişi Adı Soyadı
+            </th>
+            <th className="px-4 py-2 border-b">
+              Acil Durumda Aranacak kişi telefon no
+            </th>
+            <th className="px-4 py-2 border-b">
+              Acil Durumda Aranacak kişi Bağı
+            </th>
             <th className="px-4 py-2 border-b">Merkez</th>
-            <th className="px-4 py-2 border-b">Telefon</th>
             <th className="px-4 py-2 border-b">İşlemler</th>
           </tr>
         </thead>
@@ -116,40 +147,170 @@ const GridTablePersonel = () => {
                 {editingRowId === row.personel_id ? (
                   <input
                     type="text"
-                    value={row.sehir_isim}
+                    value={row.telefon1}
                     onChange={(e) =>
-                      updateRow(row.personel_id, { sehir_isim: e.target.value })
+                      updateRow(row.personel_id, { telefon1: e.target.value })
                     }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.sehir_isim
+                  row.telefon1
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.personel_id ? (
+                  <input
+                    type="number"
+                    value={row.telefon2}
+                    onChange={(e) =>
+                      updateRow(row.personel_id, { telefon2: e.target.value })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.telefon2
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.TC ? (
+                  <input
+                    type="text"
+                    value={row.TC}
+                    onChange={(e) =>
+                      updateRow(row.TC, {
+                        TC: e.target.value,
+                      })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.TC
                 )}
               </td>
               <td className="px-4 py-2 border-b">
                 {editingRowId === row.personel_id ? (
                   <input
                     type="text"
-                    value={row.merkez_isim}
+                    value={row.kan_grubu}
                     onChange={(e) =>
-                      updateRow(row.personel_id, { merkez_isim: e.target.value })
+                      updateRow(row.kan_grubu, { kan_grubu: e.target.value })
                     }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.merkez_isim
+                  row.kan_grubu
                 )}
               </td>
               <td className="px-4 py-2 border-b">
                 {editingRowId === row.personel_id ? (
                   <input
                     type="text"
-                    value={row.tel}
-                    onChange={(e) => updateRow(row.personel_id, { tel: e.target.value })}
+                    value={row.ikamet_adresi}
+                    onChange={(e) =>
+                      updateRow(row.ikamet_adresi, {
+                        ikamet_adresi: e.target.value,
+                      })
+                    }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.tel
+                  row.ikamet_adresi
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.personel_id ? (
+                  <input
+                    type="text"
+                    value={row.calisma_durumu}
+                    onChange={(e) =>
+                      updateRow(row.calisma_durumu, {
+                        calisma_durumu: e.target.value,
+                      })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.calisma_durumu
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.personel_id ? (
+                  <input
+                    type="text"
+                    value={row.proje_saha_adresi}
+                    onChange={(e) =>
+                      updateRow(row.proje_saha_adresi, {
+                        proje_saha_adresi: e.target.value,
+                      })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.proje_saha_adresi
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.ADAK_adı_soyadı ? (
+                  <input
+                    type="text"
+                    value={row.ADAK_adı_soyadı}
+                    onChange={(e) =>
+                      updateRow(row.ADAK_adı_soyadı, {
+                        ADAK_adı_soyadı: e.target.value,
+                      })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.ADAK_adı_soyadı
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.ADAK_telefon ? (
+                  <input
+                    type="text"
+                    value={row.ADAK_telefon}
+                    onChange={(e) =>
+                      updateRow(row.ADAK_telefon, {
+                        ADAK_telefon: e.target.value,
+                      })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.ADAK_telefon
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.ADAK_Bağı ? (
+                  <input
+                    type="text"
+                    value={row.ADAK_Bağı}
+                    onChange={(e) =>
+                      updateRow(row.ADAK_Bağı, {
+                        ADAK_Bağı: e.target.value,
+                      })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.ADAK_Bağı
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.merkez_id ? (
+                  <input
+                    type="text"
+                    value={row.merkez_id}
+                    onChange={(e) =>
+                      updateRow(row.merkez_id, {
+                        merkez_id: e.target.value,
+                      })
+                    }
+                    className="border rounded px-2 py-1"
+                  />
+                ) : (
+                  row.merkez_id
                 )}
               </td>
               <td className="px-4 py-2 border-b">
@@ -201,6 +362,138 @@ const GridTablePersonel = () => {
             setNewRowData((prevData) => ({
               ...prevData,
               surname: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="number"
+          placeholder="telefon no 5xxxxxxxxx"
+          value={newRowData.telefon1}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              telefon1: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="number"
+          placeholder="telefon no 5xxxxxxxxx"
+          value={newRowData.telefon2}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              telefon2: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="number"
+          placeholder="TC kimlik no"
+          value={newRowData.TC}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              TC: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Kan Grubu"
+          value={newRowData.kan_grubu}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              kan_grubu: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="İkamet Adresi"
+          value={newRowData.ikamet_adresi}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              ikamet_adresi: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Çalışma Durumu"
+          value={newRowData.calisma_durumu}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              calisma_durumu: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Proje Saha Adresi"
+          value={newRowData.proje_saha_adresi}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              proje_saha_adresi: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Aranacak Kişi ad soyad"
+          value={newRowData.ADAK_adı_soyadı}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              ADAK_adı_soyadı: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="number"
+          placeholder="Aranacak Kişi Telefon no"
+          value={newRowData.ADAK_telefon}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              ADAK_telefon: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Aranacak Kişi Bağı"
+          value={newRowData.ADAK_telefon}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              ADAK_telefon: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Merkez"
+          value={newRowData.merkez_id}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              merkez_id: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
