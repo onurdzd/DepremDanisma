@@ -6,13 +6,12 @@ exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex("roles").truncate();
   await knex("users").truncate();
-  await knex("personel").truncate();
   await knex("sehir").truncate();
   await knex("merkez").truncate();
-  await knex("danisan").truncate();
-  await knex("kurumlar").truncate();
-  await knex("envanterler").truncate();
-
+  await knex("personel").truncate();
+  await knex("kurum").truncate();
+  await knex("envanter").truncate();
+  await knex("hizmet").truncate();
   await knex("roles").insert([{ role_name: "admin" }, { role_name: "user" }]);
   await knex("users").insert([
     {
@@ -42,40 +41,65 @@ exports.seed = async function (knex) {
     },
   ]);
   await knex("sehir").insert([
-    { sehir_isim: "Gaziantep" },
-    { sehir_isim: "Adana" },
-    { sehir_isim: "Malatya" },
-    { sehir_isim: "Adıyaman" },
-    { sehir_isim: "Osmaniye" },
-    { sehir_isim: "Kilis" },
-    { sehir_isim: "Hatay" },
-    { sehir_isim: "Şanlıurfa" },
-    { sehir_isim: "Kahramanmaraş" },
-    { sehir_isim: "Diyarbakır" },
+    {
+      sehir_isim: "Gaziantep",
+      sehir_merkezi_kordinati_x: 37.065925,
+      sehir_merkezi_kordinati_y: 37.378097,
+    },
+    {
+      sehir_isim: "Adana",
+      sehir_merkezi_kordinati_x: 36.991407,
+      sehir_merkezi_kordinati_y: 35.330828,
+    },
+    {
+      sehir_isim: "Malatya",
+      sehir_merkezi_kordinati_x: 38.355351,
+      sehir_merkezi_kordinati_y: 38.333525,
+    },
+    {
+      sehir_isim: "Adıyaman",
+      sehir_merkezi_kordinati_x: 37.763639,
+      sehir_merkezi_kordinati_y: 38.277259,
+    },
+    {
+      sehir_isim: "Osmaniye",
+      sehir_merkezi_kordinati_x: 37.074617,
+      sehir_merkezi_kordinati_y: 36.246401,
+    },
+    {
+      sehir_isim: "Kilis",
+      sehir_merkezi_kordinati_x: 36.716469,
+      sehir_merkezi_kordinati_y: 37.114661,
+    },
+    {
+      sehir_isim: "Hatay",
+      sehir_merkezi_kordinati_x: 36.202591,
+      sehir_merkezi_kordinati_y: 36.160403,
+    },
+    {
+      sehir_isim: "Şanlıurfa",
+      sehir_merkezi_kordinati_x: 37.167395,
+      sehir_merkezi_kordinati_y: 38.795517,
+    },
+    {
+      sehir_isim: "Kahramanmaraş",
+      sehir_merkezi_kordinati_x: 37.575263,
+      sehir_merkezi_kordinati_y: 36.922816,
+    },
+    {
+      sehir_isim: "Diyarbakır",
+      sehir_merkezi_kordinati_x: 37.924966,
+      sehir_merkezi_kordinati_y: 40.210992,
+    },
   ]);
   await knex("merkez").insert([
     {
       merkez_isim: "İbb afet kordinasyon merkezi",
-      tel: 5332890061,
-      adres: "İskenderun",
-      sehir_id: 7,
-    },
-    {
-      merkez_isim: "Harbiye / Hidropark Çadırkent",
-      tel: 5332890061,
-      adres: "İskenderun",
-      sehir_id: 7,
-    },
-    {
-      merkez_isim: "Samandağ Konteyner Kent",
-      tel: 5356289052,
-      adres: "Samandağ",
-      sehir_id: 7,
-    },
-    {
-      merkez_isim: "Orhanlı Konteyner Kent",
-      tel: 5356289052,
-      adres: "Antakya",
+      telefon1: 25332890061,
+      merkez_adres: "İskenderun",
+      merkez_kordinati_x: 36.540673,
+      merkez_kordinati_y: 36.540673,
+      hizmet_baslangıc_tarihi: "08-03-2023",
       sehir_id: 7,
     },
   ]);
@@ -83,49 +107,36 @@ exports.seed = async function (knex) {
     {
       firstname: "ali",
       surname: "yılmaz",
+      telefon1: 05333333333,
+      TC: 33333333333,
+      kan_grubu: "A+",
+      ikamet_adresi: "zart mahallesi zort sokak zırt ap no:23 d:4",
+      calisma_durumu: true,
+      proje_saha_adresi: "zort mahallesi zart sokak konteyner no:2",
+      ADAK_adı_soyadı: "Mahmut Tuncer",
+      ADAK_telefon: 05444444444,
+      ADAK_Bağı: "Anne",
+      merkez_id: 1,
+    },
+  ]);
+  await knex("kurum").insert([
+    { kurum_adi: "İzmit Belediyesi", kurum_adi_kisaltma: "İB", merkez_id: 1 },
+  ]);
+  await knex("envanter").insert([
+    { envanter_adi: "Araba", tür: "Araç", merkez_id: 1 },
+  ]);
+  await knex("hizmet").insert([
+    {
+      donem: "05-2023",
+      hizmet_tipi: "Psikolojik Destek",
+      erisilen_kisi_sayisi: 20,
       merkez_id: 1,
     },
     {
-      firstname: "veli",
-      surname: "yılmaz",
-      merkez_id: 2,
-    },
-    {
-      firstname: "ayşe",
-      surname: "yılmaz",
-      merkez_id: 2,
-    },
-  ]);
-
-  await knex("danisan").insert([
-    {
-      firstname: "Mert",
-      surname: "random",
-      merkez_id: 2,
-    },
-    {
-      firstname: "Ali",
-      surname: "random",
-      merkez_id: 3,
-    },
-    {
-      firstname: "Veli",
-      surname: "random",
+      donem: "05-2023",
+      hizmet_tipi: "Sağlık Tedavi Desteği",
+      erisilen_kisi_sayisi: 10,
       merkez_id: 1,
     },
-    {
-      firstname: "Onur",
-      surname: "random",
-      merkez_id: 2,
-    },
   ]);
-  await knex("kurumlar").insert([
-    { kurum_isim: "İzmit Belediyesi", sehir_id: 7 },
-    { kurum_isim: "AÇEV", sehir_id: 7 },
-    { kurum_isim: "İBB", sehir_id: 7 },
-    { kurum_isim: "UNİCEF", sehir_id: 7 },
-    { kurum_isim: "MOR Yerleşke", sehir_id: 7 },
-  ]);
-
-  await knex("envanterler").insert([{ envanter_adi: "Araç", merkez_id: 3 }]);
 };
