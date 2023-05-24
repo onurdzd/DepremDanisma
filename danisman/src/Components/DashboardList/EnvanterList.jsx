@@ -115,7 +115,7 @@ const EnvanterList = () => {
             </thead>
             <tbody>
               {TABLE_ROWS.map(
-                ({ img, name, email, job, org, online, date }, index) => {
+                ({  name, email, job, org, online, date }, index) => {
                   const isLast = index === TABLE_ROWS.length - 1;
                   const classes = isLast
                     ? "p-4"
