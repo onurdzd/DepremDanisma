@@ -5,7 +5,7 @@ const GridTablePersonel = () => {
   const [data, setData] = useState([
     {
       id: 1,
-      firsname: "Mert",
+      firstname: "Mert",
       surname: "Gök",
       telefon1: 5333333332,
       TC: 33333333333,
@@ -83,36 +83,82 @@ const GridTablePersonel = () => {
     dataAl();
   };
 
+  //sıralama&filtreleme
+  const [sortConfig, setSortConfig] = useState({ key: '', direction: '' });
+  const [filterValue, setFilterValue] = useState('');
+
+  const handleSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const handleFilter = (e) => {
+    setFilterValue(e.target.value);
+  };
+
+  const filterData = (item) => {
+    const filterKeys = Object.keys(item);
+    for (let i = 0; i < filterKeys.length; i++) {
+      const key = filterKeys[i];
+      if (item[key]?.toString().toLowerCase().includes(filterValue.toLowerCase())) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  const sortedData = [...data].sort((a, b) => {
+    if (a[sortConfig.key] < b[sortConfig.key]) {
+      return sortConfig.direction === 'asc' ? -1 : 1;
+    }
+    if (a[sortConfig.key] > b[sortConfig.key]) {
+      return sortConfig.direction === 'asc' ? 1 : -1;
+    }
+    return 0;
+  });
+
+  const filteredData = sortedData.filter(filterData);
+
   return (
-    <div className=" w-[80vw]   p-4">
+    <div className="w-[90vw] p-4">
+       <input
+       className="border"
+        type="text"
+        placeholder="Arama yapın..."
+        value={filterValue}
+        onChange={handleFilter}
+      />
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr>
-            <th className="px-4 py-2 text-xs border-b">Personel ID</th>
-            <th className="px-4 py-2 text-xs border-b">Ad</th>
-            <th className="px-4 py-2 text-xs border-b">Soyad</th>
-            <th className="px-4 py-2 text-xs border-b">Telefon Numarası</th>
-            <th className="px-4 py-2 text-xs border-b">Telefon Numarası</th>
-            <th className="px-4 py-2 text-xs border-b">TC kimlik no</th>
-            <th className="px-4 py-2 text-xs border-b">Kan Grubu</th>
-            <th className="px-4 py-2 text-xs border-b">İkamet Adresi</th>
-            <th className="px-4 py-2 text-xs border-b">Çalışma Durumu</th>
-            <th className="px-4 py-2 text-xs border-b">Proje Saha Adresi</th>
-            <th className="px-4 py-2 text-xs border-b">
+            <th onClick={() => handleSort('personel_id')} className="cursor-pointer px-4 py-2 text-xs border-b">Personel ID</th>
+            <th onClick={() => handleSort('firstname')} className="cursor-pointer px-4 py-2 text-xs border-b">Ad</th>
+            <th onClick={() => handleSort('surname')} className="cursor-pointer px-4 py-2 text-xs border-b">Soyad</th>
+            <th onClick={() => handleSort('p_telefon1')} className="cursor-pointer px-4 py-2 text-xs border-b">Telefon Numarası</th>
+            <th onClick={() => handleSort('p_telefon2')} className="cursor-pointer px-4 py-2 text-xs border-b">Telefon Numarası</th>
+            <th onClick={() => handleSort('TC')} className="cursor-pointer px-4 py-2 text-xs border-b">TC kimlik no</th>
+            <th onClick={() => handleSort('kan_grubu')} className="cursor-pointer px-4 py-2 text-xs border-b">Kan Grubu</th>
+            <th onClick={() => handleSort('ikamet_adresi')} className="cursor-pointer px-4 py-2 text-xs border-b">İkamet Adresi</th>
+            <th onClick={() => handleSort('calisma_durumu')} className="cursor-pointer px-4 py-2 text-xs border-b">Çalışma Durumu</th>
+            <th onClick={() => handleSort('proje_saha_adresi')} className="cursor-pointer px-4 py-2 text-xs border-b">Proje Saha Adresi</th>
+            <th onClick={() => handleSort('ADAK_adı_soyadı')} className="cursor-pointer px-4 py-2 text-xs border-b">
               Acil Durumda Aranacak kişi Adı Soyadı
             </th>
-            <th className="px-4 py-2 text-xs border-b">
+            <th onClick={() => handleSort('ADAK_telefon')} className="cursor-pointer px-4 py-2 text-xs border-b">
               Acil Durumda Aranacak kişi telefon no
             </th>
-            <th className="px-4 py-2 text-xs border-b">
+            <th onClick={() => handleSort('ADAK_Bağı')} className="cursor-pointer px-4 py-2 text-xs border-b">
               Acil Durumda Aranacak kişi Bağı
             </th>
-            <th className="px-4 py-2 text-xs border-b">Merkez</th>
+            <th onClick={() => handleSort('merkez_id')} className="cursor-pointer px-4 py-2 text-xs border-b">Merkez</th>
             <th className="px-4 py-2 text-xs border-b">İşlemler</th>
           </tr>
         </thead>
         <tbody className="text-center">
-          {data.map((row, index) => (
+          {filteredData.map((row, index) => (
             <tr key={index}>
               <td className="px-4 py-2 border-b">{row.personel_id}</td>
               <td className="px-4 py-2 border-b">
@@ -230,7 +276,7 @@ const GridTablePersonel = () => {
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.calisma_durumu
+                  row.calisma_durumu ==1 ? "Çalışıyor" : "Çalışmıyor"
                 )}
               </td>
               <td className="px-4 py-2 border-b">
@@ -301,16 +347,16 @@ const GridTablePersonel = () => {
                 {editingRowId === row.merkez_id ? (
                   <input
                     type="text"
-                    value={row.merkez_id}
+                    value={row.merkez_isim}
                     onChange={(e) =>
                       updateRow(row.personel_id, {
-                        merkez_id: e.target.value,
+                        merkez_isim: e.target.value,
                       })
                     }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.merkez_id
+                  row.merkez_isim
                 )}
               </td>
               <td className="px-4 py-2 border-b">

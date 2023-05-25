@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-screen flex flex-col justify-between">
         <Header />
-        <div className="flex-grow mt-8 pl-6">
+        <div className="flex-grow flex flex-col items-center mt-8 pl-6">
           <Dashboard />
         </div>
         <Footer />
