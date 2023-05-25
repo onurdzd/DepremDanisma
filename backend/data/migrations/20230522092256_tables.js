@@ -89,6 +89,7 @@ exports.up = function (knex) {
       t.string("envanter_adi", 128).notNullable();
       t.string("tür", 50).notNullable();
       t.string("envanter_aciklama", 500);
+      t.integer("envanter_adet", 3).notNullable();
       t.integer("merkez_id")
         .unsigned()
         .notNullable()
