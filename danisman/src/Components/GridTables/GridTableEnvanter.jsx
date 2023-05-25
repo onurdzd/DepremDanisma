@@ -7,6 +7,8 @@ const GridTableEnvanter = () => {
       envanter_id: 1,
       envanter_adi: "Araba",
       tür: "Araç",
+      envanter_aciklama:
+        "2 tane araba var birisi peronelin ulaşımı için diğeride danışanların hizmetinde kullanılıyor",
       envanter_adet: 2,
       merkez_id: 1,
     },
@@ -74,7 +76,9 @@ const GridTableEnvanter = () => {
         <thead>
           <tr>
             <th className="px-4 py-2 text-xs border-b">Envanter ID</th>
+            <th className="px-4 py-2 text-xs border-b">Envanter Adı</th>
             <th className="px-4 py-2 text-xs border-b">Envanter Türü</th>
+            <th className="px-4 py-2 text-xs border-b">Envanter Açıklama</th>
             <th className="px-4 py-2 text-xs border-b">Envanter Miktarı</th>
             <th className="px-4 py-2 text-xs border-b">Bağlı olduğu Merkez</th>
             <th className="px-4 py-2 text-xs border-b">İşlemler</th>
@@ -88,14 +92,48 @@ const GridTableEnvanter = () => {
                 {editingRowId === row.envanter_id ? (
                   <input
                     type="text"
+                    value={row.envanter_adi}
+                    onChange={(e) =>
+                      updateRow(row.envanter_id, {
+                        envanter_adi: e.target.value,
+                      })
+                    }
+                    className="border  rounded px-2 py-1"
+                  />
+                ) : (
+                  row.envanter_adi
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.envanter_id ? (
+                  <input
+                    type="text"
                     value={row.tür}
                     onChange={(e) =>
-                      updateRow(row.envanter_id, { tür: e.target.value })
+                      updateRow(row.envanter_id, {
+                        tür: e.target.value,
+                      })
                     }
                     className="border  rounded px-2 py-1"
                   />
                 ) : (
                   row.tür
+                )}
+              </td>
+              <td className="px-4 py-2 max-w-[5rem] border-b">
+                {editingRowId === row.envanter_id ? (
+                  <input
+                    type="text"
+                    value={row.envanter_aciklama}
+                    onChange={(e) =>
+                      updateRow(row.envanter_id, {
+                        envanter_aciklama: e.target.value,
+                      })
+                    }
+                    className="border  rounded px-2 py-1"
+                  />
+                ) : (
+                  row.envanter_aciklama
                 )}
               </td>
               <td className="px-4 py-2 border-b">
@@ -160,12 +198,36 @@ const GridTableEnvanter = () => {
       <div className="mt-4 text-center">
         <input
           type="text"
+          placeholder="Envanter Adı"
+          value={newRowData.envanter_adi}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              envanter_adi: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
           placeholder="Envanter türü"
           value={newRowData.tür}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
               tür: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Envanter Açıklama"
+          value={newRowData.envanter_aciklama}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              envanter_aciklama: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
