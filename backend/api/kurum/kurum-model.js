@@ -1,7 +1,9 @@
 const db = require("../../data/dbconfig");
 
 const getAll = () => {
-  return db("kurum as k");
+  return db("kurum as k")
+    .leftJoin("merkez as m", "m.merkez_id", "k.merkez_id")
+    .leftJoin("sehir as s", "s.sehir_id", "m.sehir_id");
 };
 const getById = async (kurum_id) => {
   return db("kurum as k").where("k.kurum_id", kurum_id).first();
