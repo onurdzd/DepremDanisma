@@ -3,6 +3,8 @@ import { useState } from "react";
 import GridTableEnvanter from "./GridTables/GridTableEnvanter";
 import GridTablePersonel from "./GridTables/GridTablePersonel";
 import GridTableMerkez from "./GridTables/GridTableMerkez";
+import GridTableKurum from "./GridTables/GridTableKurum";
+import GridTableHizmet from "./GridTables/GridTableHizmet";
 
 const Dashboard = () => {
   const [sayfaAdi, setSayfaAdi] = useState("");
@@ -25,6 +27,16 @@ const Dashboard = () => {
             <a onClick={() => setSayfaAdi("envantertablo")}>Envanter Tablo</a>
           </button>
         </div>
+        <div className="ml-5 mt-2 mx-12 text-lg px-8 text-gray-600 dark:text-gray-800   rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
+          <button>
+            <a onClick={() => setSayfaAdi("kurumtablo")}>Kurum Tablo</a>
+          </button>
+        </div>
+        <div className="ml-5 mt-2 mx-12 text-lg px-8 text-gray-600 dark:text-gray-800   rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
+          <button>
+            <a onClick={() => setSayfaAdi("hizmettablo")}>Hizmet Tablo</a>
+          </button>
+        </div>
       </div>
       {sayfaAdi == "" ? (
         <div className="text-xl font-bold text-center h-full flex flex-col justify-center">
@@ -36,6 +48,10 @@ const Dashboard = () => {
         <GridTablePersonel />
       ) : sayfaAdi == "envantertablo" ? (
         <GridTableEnvanter />
+      ) : sayfaAdi == "kurumtablo" ? (
+        <GridTableKurum />
+      ) : sayfaAdi == "hizmettablo" ? (
+        <GridTableHizmet />
       ) : null}
     </div>
   );
