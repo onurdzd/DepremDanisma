@@ -11,6 +11,8 @@ function classNames(...classes) {
 const GridTablePersonel = () => {
   const [data, setData] = useState([]);
   const [editToggle,setEditToggle]=useState(false)
+  const [newPersonelToggle,setNewPersonelToggle]=useState(false)
+
   let merkezIsimleri = [];
   data.map((item) => merkezIsimleri.push({"merkez_id":item.merkez_id,"merkez_isim":item.merkez_isim}));
   const uniqueMerkez = [];
@@ -500,7 +502,7 @@ const GridTablePersonel = () => {
         </tbody>
       </table>
       {/* Yeni satır ekleme formu */}
-      <div className="mt-4 text-center">
+      {!newPersonelToggle ? <div className="w-[90%] mt-8 flex justify-center"><button onClick={()=>setNewPersonelToggle(!newPersonelToggle)} className="bg-green-600 p-3 border rounded font-sans font-bold hover:bg-green-500">Yeni Personel Ekle</button></div> : <div className="mt-4 text-center">
         <input
           type="text"
           placeholder="Ad"
@@ -695,12 +697,12 @@ const GridTablePersonel = () => {
           </Transition>
         </Menu>
         <button
-          onClick={addRow}
+          onClick={()=>{addRow();setNewPersonelToggle(!newPersonelToggle)}}
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded"
         >
           Ekle
         </button>
-      </div>
+      </div>}
     </div>
   );
 };
