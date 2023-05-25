@@ -26,7 +26,7 @@ const GridTablePersonel = () => {
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
-  }, [data]);
+  }, []);
 
   // Düzenleme durumunu tutmak için state
   const [editingRowId, setEditingRowId] = useState(null);
@@ -35,8 +35,8 @@ const GridTablePersonel = () => {
   const [newRowData, setNewRowData] = useState({
     firstname: "",
     surname: "",
-    telefon1: "",
-    telefon2: "",
+    p_telefon1: "",
+    p_telefon2: "",
     TC: null,
     kan_grubu: "",
     ikamet_adresi: "",
@@ -147,37 +147,37 @@ const GridTablePersonel = () => {
                 {editingRowId === row.personel_id ? (
                   <input
                     type="tel"
-                    value={row.telefon1}
+                    value={row.p_telefon1}
                     onChange={(e) =>
-                      updateRow(row.personel_id, { telefon1: e.target.value })
+                      updateRow(row.personel_id, { p_telefon1: e.target.value })
                     }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.telefon1
+                  row.p_telefon1
                 )}
               </td>
               <td className="px-4 py-2 border-b">
                 {editingRowId === row.personel_id ? (
                   <input
                     type="tel"
-                    value={row.telefon2}
+                    value={row.p_telefon2}
                     onChange={(e) =>
-                      updateRow(row.personel_id, { telefon2: e.target.value })
+                      updateRow(row.personel_id, { p_telefon2: e.target.value })
                     }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
-                  row.telefon2
+                  row.p_telefon2
                 )}
               </td>
               <td className="px-4 py-2 border-b">
-                {editingRowId === row.TC ? (
+                {editingRowId === row.personel_id ? (
                   <input
                     type="text"
                     value={row.TC}
                     onChange={(e) =>
-                      updateRow(row.TC, {
+                      updateRow(row.personel_id, {
                         TC: e.target.value,
                       })
                     }
@@ -193,7 +193,7 @@ const GridTablePersonel = () => {
                     type="text"
                     value={row.kan_grubu}
                     onChange={(e) =>
-                      updateRow(row.kan_grubu, { kan_grubu: e.target.value })
+                      updateRow(row.personel_id, { kan_grubu: e.target.value })
                     }
                     className="border rounded px-2 py-1"
                   />
@@ -207,7 +207,7 @@ const GridTablePersonel = () => {
                     type="text"
                     value={row.ikamet_adresi}
                     onChange={(e) =>
-                      updateRow(row.ikamet_adresi, {
+                      updateRow(row.personel_id, {
                         ikamet_adresi: e.target.value,
                       })
                     }
@@ -223,7 +223,7 @@ const GridTablePersonel = () => {
                     type="text"
                     value={row.calisma_durumu}
                     onChange={(e) =>
-                      updateRow(row.calisma_durumu, {
+                      updateRow(row.personel_id, {
                         calisma_durumu: e.target.value,
                       })
                     }
@@ -239,7 +239,7 @@ const GridTablePersonel = () => {
                     type="text"
                     value={row.proje_saha_adresi}
                     onChange={(e) =>
-                      updateRow(row.proje_saha_adresi, {
+                      updateRow(row.personel_id, {
                         proje_saha_adresi: e.target.value,
                       })
                     }
@@ -250,12 +250,12 @@ const GridTablePersonel = () => {
                 )}
               </td>
               <td className="px-4 py-2 border-b">
-                {editingRowId === row.ADAK_adı_soyadı ? (
+                {editingRowId === row.personel_id ? (
                   <input
                     type="text"
                     value={row.ADAK_adı_soyadı}
                     onChange={(e) =>
-                      updateRow(row.ADAK_adı_soyadı, {
+                      updateRow(row.personel_id, {
                         ADAK_adı_soyadı: e.target.value,
                       })
                     }
@@ -266,12 +266,12 @@ const GridTablePersonel = () => {
                 )}
               </td>
               <td className="px-4 py-2 border-b">
-                {editingRowId === row.ADAK_telefon ? (
+                {editingRowId === row.personel_id ? (
                   <input
                     type="text"
                     value={row.ADAK_telefon}
                     onChange={(e) =>
-                      updateRow(row.ADAK_telefon, {
+                      updateRow(row.personel_id, {
                         ADAK_telefon: e.target.value,
                       })
                     }
@@ -282,12 +282,12 @@ const GridTablePersonel = () => {
                 )}
               </td>
               <td className="px-4 py-2 border-b">
-                {editingRowId === row.ADAK_Bağı ? (
+                {editingRowId === row.personel_id ? (
                   <input
                     type="text"
                     value={row.ADAK_Bağı}
                     onChange={(e) =>
-                      updateRow(row.ADAK_Bağı, {
+                      updateRow(row.personel_id, {
                         ADAK_Bağı: e.target.value,
                       })
                     }
@@ -303,7 +303,7 @@ const GridTablePersonel = () => {
                     type="text"
                     value={row.merkez_id}
                     onChange={(e) =>
-                      updateRow(row.merkez_id, {
+                      updateRow(row.personel_id, {
                         merkez_id: e.target.value,
                       })
                     }
@@ -369,11 +369,11 @@ const GridTablePersonel = () => {
         <input
           type="tel"
           placeholder="telefon no 5xxxxxxxxx"
-          value={newRowData.telefon1}
+          value={newRowData.p_telefon1}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
-              telefon1: e.target.value,
+              p_telefon1: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
@@ -381,11 +381,11 @@ const GridTablePersonel = () => {
         <input
           type="tel"
           placeholder="telefon no 5xxxxxxxxx"
-          value={newRowData.telefon2}
+          value={newRowData.p_telefon2}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
-              telefon2: e.target.value,
+              p_telefon2: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"

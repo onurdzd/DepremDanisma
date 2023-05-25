@@ -95,7 +95,7 @@ exports.seed = async function (knex) {
   await knex("merkez").insert([
     {
       merkez_isim: "İbb afet kordinasyon merkezi",
-      telefon1: 25332890061,
+      m_telefon1: 25332890061,
       merkez_adres: "İskenderun",
       merkez_kordinati_x: 36.540673,
       merkez_kordinati_y: 36.540673,
@@ -107,7 +107,7 @@ exports.seed = async function (knex) {
     {
       firstname: "ali",
       surname: "yılmaz",
-      telefon1: 5333333333,
+      p_telefon1: 5333333333,
       TC: 33333333333,
       kan_grubu: "A+",
       ikamet_adresi: "zart mahallesi zort sokak zırt ap no:23 d:4",
@@ -121,8 +121,8 @@ exports.seed = async function (knex) {
     {
       firstname: "veli",
       surname: "yılmaz",
-      telefon1: 5333333323,
-      TC: 33333333334,
+      p_telefon1: 5333333322,
+      TC: 12345673334,
       kan_grubu: "A+",
       ikamet_adresi: "zart mahallesi zort sokak zırt ap no:23 d:4",
       calisma_durumu: true,
