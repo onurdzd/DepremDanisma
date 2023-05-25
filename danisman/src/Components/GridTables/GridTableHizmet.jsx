@@ -4,10 +4,11 @@ import axios from "axios";
 const GridTableHizmet = () => {
   const [data, setData] = useState([
     {
-      envanter_id: 1,
-      envanter_adi: "Araba",
-      tür: "Araç",
-      envanter_adet: 2,
+      hizmet_id: 1,
+      hizmet_created_at: null,
+      donem: "05-2023",
+      hizmet_tipi: "Psikolojik Destek",
+      erisilen_kisi_sayisi: 20,
       merkez_id: 1,
     },
   ]);
@@ -25,9 +26,9 @@ const GridTableHizmet = () => {
 
   // Yeni satır verilerini tutmak için state
   const [newRowData, setNewRowData] = useState({
-    envanter_adi: "",
-    tür: "",
-    envanter_adet: null,
+    donem: "",
+    hizmet_tipi: "",
+    erisilen_kisi_sayisi: null,
     merkez_id: null,
   });
 
@@ -46,7 +47,7 @@ const GridTableHizmet = () => {
     /*  await axios.put(`http://localhost:9000/api/merkez/${rowId}`, newData); */
     setData((prevData) =>
       prevData.map((row) => {
-        if (row.envanter_id === rowId) {
+        if (row.hizmet_id === rowId) {
           return { ...row, ...newData };
         }
         return row;
@@ -57,12 +58,12 @@ const GridTableHizmet = () => {
   // Satırı silen fonksiyon
   const deleteRow = async (rowId) => {
     /*  await axios.delete(`http://localhost:9000/api/merkez/${rowId}`); */
-    setData((prevData) => prevData.filter((row) => row.envanter_id !== rowId));
+    setData((prevData) => prevData.filter((row) => row.hizmet_id !== rowId));
   };
 
   // Yeni satır ekleme fonksiyonu
   const addRow = async () => {
-    const newRow = { ...newRowData, envanter_id: data.length + 1 };
+    const newRow = { ...newRowData, hizmet_id: data.length + 1 };
     setData((prevData) => [...prevData, newRow]);
     /*     await axios.post("http://localhost:9000/api/merkez", newRow);
     dataAl(); */
@@ -73,9 +74,11 @@ const GridTableHizmet = () => {
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr>
-            <th className="px-4 py-2 text-xs border-b">Envanter ID</th>
-            <th className="px-4 py-2 text-xs border-b">Envanter Türü</th>
-            <th className="px-4 py-2 text-xs border-b">Envanter Miktarı</th>
+            <th className="px-4 py-2 text-xs border-b">Hizmet ID</th>
+            <th className="px-4 py-2 text-xs border-b">Veri Giriş Tarihi</th>
+            <th className="px-4 py-2 text-xs border-b">Hizmet Tarihi</th>
+            <th className="px-4 py-2 text-xs border-b">Hizmet Tipi</th>
+            <th className="px-4 py-2 text-xs border-b">Erişilen Kişi Sayısı</th>
             <th className="px-4 py-2 text-xs border-b">Bağlı olduğu Merkez</th>
             <th className="px-4 py-2 text-xs border-b">İşlemler</th>
           </tr>
@@ -83,44 +86,78 @@ const GridTableHizmet = () => {
         <tbody className="text-center">
           {data.map((row, index) => (
             <tr key={index}>
-              <td className="px-4 py-2 border-b">{row.envanter_id}</td>
+              <td className="px-4 py-2 border-b">{row.hizmet_id}</td>
               <td className="px-4 py-2 border-b">
-                {editingRowId === row.envanter_id ? (
+                {editingRowId === row.hizmet_id ? (
                   <input
                     type="text"
                     value={row.tür}
                     onChange={(e) =>
-                      updateRow(row.envanter_id, { tür: e.target.value })
-                    }
-                    className="border  rounded px-2 py-1"
-                  />
-                ) : (
-                  row.tür
-                )}
-              </td>
-              <td className="px-4 py-2 border-b">
-                {editingRowId === row.envanter_id ? (
-                  <input
-                    type="text"
-                    value={row.envanter_adet}
-                    onChange={(e) =>
-                      updateRow(row.envanter_id, {
-                        envanter_adet: e.target.value,
+                      updateRow(row.hizmet_id, {
+                        hizmet_created_at: e.target.value,
                       })
                     }
                     className="border  rounded px-2 py-1"
                   />
                 ) : (
-                  row.envanter_adet
+                  row.hizmet_created_at
                 )}
               </td>
               <td className="px-4 py-2 border-b">
-                {editingRowId === row.envanter_id ? (
+                {editingRowId === row.hizmet_id ? (
+                  <input
+                    type="text"
+                    value={row.donem}
+                    onChange={(e) =>
+                      updateRow(row.hizmet_id, {
+                        donem: e.target.value,
+                      })
+                    }
+                    className="border  rounded px-2 py-1"
+                  />
+                ) : (
+                  row.donem
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.hizmet_id ? (
+                  <input
+                    type="text"
+                    value={row.hizmet_tipi}
+                    onChange={(e) =>
+                      updateRow(row.hizmet_id, { hizmet_tipi: e.target.value })
+                    }
+                    className="border  rounded px-2 py-1"
+                  />
+                ) : (
+                  row.hizmet_tipi
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.hizmet_id ? (
+                  <input
+                    type="text"
+                    value={row.erisilen_kisi_sayisi}
+                    onChange={(e) =>
+                      updateRow(row.hizmet_id, {
+                        erisilen_kisi_sayisi: e.target.value,
+                      })
+                    }
+                    className="border  rounded px-2 py-1"
+                  />
+                ) : (
+                  row.erisilen_kisi_sayisi
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.hizmet_id ? (
                   <input
                     type="text"
                     value={row.merkez_id}
                     onChange={(e) =>
-                      updateRow(row.envanter_id, { merkez_id: e.target.value })
+                      updateRow(row.hizmet_id, {
+                        merkez_id: e.target.value,
+                      })
                     }
                     className="border  rounded px-2 py-1"
                   />
@@ -130,7 +167,7 @@ const GridTableHizmet = () => {
               </td>
 
               <td className="px-4 py-2 border-b">
-                {editingRowId === row.envanter_id ? (
+                {editingRowId === row.hizmet_id ? (
                   <button
                     onClick={() => stopEditing()}
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mr-2"
@@ -139,14 +176,14 @@ const GridTableHizmet = () => {
                   </button>
                 ) : (
                   <button
-                    onClick={() => startEditing(row.envanter_id)}
+                    onClick={() => startEditing(row.hizmet_id)}
                     className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded mr-2"
                   >
                     Düzenle
                   </button>
                 )}
                 <button
-                  onClick={() => deleteRow(row.envanter_id)}
+                  onClick={() => deleteRow(row.hizmet_id)}
                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
                 >
                   Sil
@@ -160,31 +197,43 @@ const GridTableHizmet = () => {
       <div className="mt-4 text-center">
         <input
           type="text"
-          placeholder="Envanter türü"
-          value={newRowData.tür}
+          placeholder="Hizmet Tarihi"
+          value={newRowData.donem}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
-              tür: e.target.value,
+              donem: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
         />
         <input
-          type="number"
-          placeholder="Adet"
-          value={newRowData.envanter_adet}
+          type="text"
+          placeholder="Hizmet Tipi"
+          value={newRowData.hizmet_tipi}
           onChange={(e) =>
             setNewRowData((prevData) => ({
               ...prevData,
-              envanter_adet: e.target.value,
+              hizmet_tipi: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
         />
 
         <input
-          type="text"
+          type="number"
+          placeholder="Kişi Sayısı"
+          value={newRowData.erisilen_kisi_sayisi}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              erisilen_kisi_sayisi: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="number"
           placeholder="Merkez"
           value={newRowData.merkez_id}
           onChange={(e) =>
