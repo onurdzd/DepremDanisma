@@ -84,31 +84,31 @@ const GridTablePersonel = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className=" w-[80vw]   p-4">
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr>
-            <th className="px-4 py-2 border-b">Personel ID</th>
-            <th className="px-4 py-2 border-b">Ad</th>
-            <th className="px-4 py-2 border-b">Soyad</th>
-            <th className="px-4 py-2 border-b">Telefon Numarası</th>
-            <th className="px-4 py-2 border-b">Telefon Numarası</th>
-            <th className="px-4 py-2 border-b">TC kimlik no</th>
-            <th className="px-4 py-2 border-b">Kan Grubu</th>
-            <th className="px-4 py-2 border-b">İkamet Adresi</th>
-            <th className="px-4 py-2 border-b">Çalışma Durumu</th>
-            <th className="px-4 py-2 border-b">Proje Saha Adresi</th>
-            <th className="px-4 py-2 border-b">
+            <th className="px-4 py-2 text-xs border-b">Personel ID</th>
+            <th className="px-4 py-2 text-xs border-b">Ad</th>
+            <th className="px-4 py-2 text-xs border-b">Soyad</th>
+            <th className="px-4 py-2 text-xs border-b">Telefon Numarası</th>
+            <th className="px-4 py-2 text-xs border-b">Telefon Numarası</th>
+            <th className="px-4 py-2 text-xs border-b">TC kimlik no</th>
+            <th className="px-4 py-2 text-xs border-b">Kan Grubu</th>
+            <th className="px-4 py-2 text-xs border-b">İkamet Adresi</th>
+            <th className="px-4 py-2 text-xs border-b">Çalışma Durumu</th>
+            <th className="px-4 py-2 text-xs border-b">Proje Saha Adresi</th>
+            <th className="px-4 py-2 text-xs border-b">
               Acil Durumda Aranacak kişi Adı Soyadı
             </th>
-            <th className="px-4 py-2 border-b">
+            <th className="px-4 py-2 text-xs border-b">
               Acil Durumda Aranacak kişi telefon no
             </th>
-            <th className="px-4 py-2 border-b">
+            <th className="px-4 py-2 text-xs border-b">
               Acil Durumda Aranacak kişi Bağı
             </th>
-            <th className="px-4 py-2 border-b">Merkez</th>
-            <th className="px-4 py-2 border-b">İşlemler</th>
+            <th className="px-4 py-2 text-xs border-b">Merkez</th>
+            <th className="px-4 py-2 text-xs border-b">İşlemler</th>
           </tr>
         </thead>
         <tbody className="text-center">
