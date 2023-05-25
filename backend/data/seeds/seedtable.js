@@ -137,7 +137,7 @@ exports.seed = async function (knex) {
     { kurum_adi: "İzmit Belediyesi", kurum_adi_kisaltma: "İB", merkez_id: 1 },
   ]);
   await knex("envanter").insert([
-    { envanter_adi: "Araba", tür: "Araç", merkez_id: 1 },
+    { envanter_adi: "Araba", tür: "Araç", envanter_adet: 2, merkez_id: 1 },
   ]);
   await knex("hizmet").insert([
     {
