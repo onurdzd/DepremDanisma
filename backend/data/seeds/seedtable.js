@@ -107,7 +107,7 @@ exports.seed = async function (knex) {
     {
       firstname: "ali",
       surname: "yılmaz",
-      telefon1: 05333333333,
+      telefon1: 5333333333,
       TC: 33333333333,
       kan_grubu: "A+",
       ikamet_adresi: "zart mahallesi zort sokak zırt ap no:23 d:4",
@@ -121,7 +121,7 @@ exports.seed = async function (knex) {
     {
       firstname: "veli",
       surname: "yılmaz",
-      telefon1: 05333333323,
+      telefon1: 5333333323,
       TC: 33333333334,
       kan_grubu: "A+",
       ikamet_adresi: "zart mahallesi zort sokak zırt ap no:23 d:4",

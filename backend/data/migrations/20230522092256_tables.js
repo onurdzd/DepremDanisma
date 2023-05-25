@@ -50,7 +50,7 @@ exports.up = function (knex) {
       t.timestamp("personel_created_at").defaultTo(knex.fn.now());
       t.string("firstname", 20).notNullable();
       t.string("surname", 20).notNullable();
-      t.integer("telefon1", 11).notNullable().unique();
+      t.integer("telefon1", 10).notNullable().unique();
       t.integer("telefon2", 11).unique();
       t.integer("TC", 11).notNullable().unique();
       t.string("kan_grubu", 10).notNullable();
