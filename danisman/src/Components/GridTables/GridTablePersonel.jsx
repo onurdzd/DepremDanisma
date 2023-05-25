@@ -544,7 +544,6 @@ const GridTablePersonel = () => {
           }
           className="border rounded px-2 py-1 mr-2"
         />
-
         <button
           onClick={addRow}
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded"
