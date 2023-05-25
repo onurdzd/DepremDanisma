@@ -12,6 +12,12 @@ const GridTablePersonel = () => {
   const [data, setData] = useState([]);
   const [editToggle,setEditToggle]=useState(false)
   const [newPersonelToggle,setNewPersonelToggle]=useState(false)
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = (event) => {
+    const { scrollLeft } = event.target;
+    setScrollPosition(scrollLeft);
+  };
 
   let merkezIsimleri = [];
   data.map((item) => merkezIsimleri.push({"merkez_id":item.merkez_id,"merkez_isim":item.merkez_isim}));
@@ -126,9 +132,10 @@ const GridTablePersonel = () => {
   });
 
   const filteredData = sortedData.filter(filterData);
-
+  console.log(scrollPosition)
   return (
-    <div className="w-[90vw] p-4">
+    <div className="w-[90vw] p-4 overflow-x-auto " onScroll={handleScroll}>
+      <div className="relative w-full" style={{ transform: `translateX(-${scrollPosition}px)` }}>
       <input
         className="border"
         type="text"
@@ -702,7 +709,7 @@ const GridTablePersonel = () => {
         >
           Ekle
         </button>
-      </div>}
+      </div>}</div>
     </div>
   );
 };
