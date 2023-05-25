@@ -100,10 +100,9 @@ const GridTablePersonel = () => {
   };
 
   const filterData = (item) => {
-    const filterKeys = Object.keys(item).filter((key) => key !== 'personel_id');
+    const filterKeys = Object.keys(item);
     for (let i = 0; i < filterKeys.length; i++) {
       const key = filterKeys[i];
-    console.log(item[key])
       if (item[key]?.toString().toLowerCase().includes(filterValue.toLowerCase())) {
         return true;
       }
