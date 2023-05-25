@@ -1,7 +1,8 @@
 import { useState } from "react";
-import EnvanterList from "./DashboardList/EnvanterList";
-import MerkezList from "./DashboardList/MerkezList";
-import PersonelList from "./DashboardList/PersonelList";
+
+import GridTableEnvanter from "./GridTables/GridTableEnvanter";
+import GridTablePersonel from "./GridTables/GridTablePersonel";
+import GridTableMerkez from "./GridTables/GridTableMerkez";
 
 const Dashboard = () => {
   const [sayfaAdi, setSayfaAdi] = useState("");
@@ -30,11 +31,11 @@ const Dashboard = () => {
           Lütfen üst menüden seçim yapın
         </div>
       ) : sayfaAdi == "merkeztablo" ? (
-        <MerkezList></MerkezList>
+        <GridTableMerkez />
       ) : sayfaAdi == "personeltablo" ? (
-        <PersonelList></PersonelList>
+        <GridTablePersonel />
       ) : sayfaAdi == "envantertablo" ? (
-        <EnvanterList> </EnvanterList>
+        <GridTableEnvanter />
       ) : null}
     </div>
   );
