@@ -1,29 +1,34 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 const GridTablePersonel = () => {
-  const [data, setData] = useState([
-    {
-      id: 1,
-      firstname: "Mert",
-      surname: "Gök",
-      telefon1: 5333333332,
-      TC: 33333333333,
-      kan_grubu: "A+",
-      ikamet_adresi: "zart mahallesi zort sokak zırt ap no:23 d:4",
-      calisma_durumu: true,
-      proje_saha_adresi: "zort mahallesi zart sokak konteyner no:2",
-      ADAK_adı_soyadı: "Mahmut Tuncer",
-      ADAK_telefon: 5444444444,
-      ADAK_Bağı: "Anne",
-      merkez_id: 1,
-    },
-  ]);
+  const [data, setData] = useState([]);
+  const [editToggle,setEditToggle]=useState(false)
+  let merkezIsimleri = [];
+  data.map((item) => merkezIsimleri.push({"merkez_id":item.merkez_id,"merkez_isim":item.merkez_isim}));
+  const uniqueMerkez = [];
+  
+  const unique = merkezIsimleri.filter(element => {
+  const isDuplicate = uniqueMerkez.includes(element.merkez_id);
+  if (!isDuplicate) {
+    uniqueMerkez.push(element.merkez_id);
+    return true;
+  }
+  return false;
+});
 
   const dataAl = async () =>
     await axios
       .get("http://localhost:9000/api/personel")
       .then((res) => setData(res.data));
+
   useEffect(() => {
     dataAl();
   }, []);
@@ -51,29 +56,25 @@ const GridTablePersonel = () => {
   // Satır düzenlemesini başlatan fonksiyon
   const startEditing = (rowId) => {
     setEditingRowId(rowId);
+    setEditToggle(true)
   };
 
   // Satır düzenlemesini bitiren fonksiyon
   const stopEditing = () => {
     setEditingRowId(null);
+    setEditToggle(false)
   };
 
   // Satırı güncelleyen fonksiyon
   const updateRow = async (rowId, newData) => {
     await axios.put(`http://localhost:9000/api/personel/${rowId}`, newData);
-    setData((prevData) =>
-      prevData.map((row) => {
-        if (row.personel_id === rowId) {
-          return { ...row, ...newData };
-        }
-        return row;
-      })
-    );
+    dataAl();
   };
 
   // Satırı silen fonksiyon
   const deleteRow = async (rowId) => {
     await axios.delete(`http://localhost:9000/api/personel/${rowId}`);
+    dataAl();
   };
 
   // Yeni satır ekleme fonksiyonu
@@ -84,13 +85,13 @@ const GridTablePersonel = () => {
   };
 
   //sıralama&filtreleme
-  const [sortConfig, setSortConfig] = useState({ key: '', direction: '' });
-  const [filterValue, setFilterValue] = useState('');
+  const [sortConfig, setSortConfig] = useState({ key: "", direction: "" });
+  const [filterValue, setFilterValue] = useState("");
 
   const handleSort = (key) => {
-    let direction = 'asc';
-    if (sortConfig.key === key && sortConfig.direction === 'asc') {
-      direction = 'desc';
+    let direction = "asc";
+    if (sortConfig.key === key && sortConfig.direction === "asc") {
+      direction = "desc";
     }
     setSortConfig({ key, direction });
   };
@@ -103,7 +104,9 @@ const GridTablePersonel = () => {
     const filterKeys = Object.keys(item);
     for (let i = 0; i < filterKeys.length; i++) {
       const key = filterKeys[i];
-      if (item[key]?.toString().toLowerCase().includes(filterValue.toLowerCase())) {
+      if (
+        item[key]?.toString().toLowerCase().includes(filterValue.toLowerCase())
+      ) {
         return true;
       }
     }
@@ -112,10 +115,10 @@ const GridTablePersonel = () => {
 
   const sortedData = [...data].sort((a, b) => {
     if (a[sortConfig.key] < b[sortConfig.key]) {
-      return sortConfig.direction === 'asc' ? -1 : 1;
+      return sortConfig.direction === "asc" ? -1 : 1;
     }
     if (a[sortConfig.key] > b[sortConfig.key]) {
-      return sortConfig.direction === 'asc' ? 1 : -1;
+      return sortConfig.direction === "asc" ? 1 : -1;
     }
     return 0;
   });
@@ -124,8 +127,8 @@ const GridTablePersonel = () => {
 
   return (
     <div className="w-[90vw] p-4">
-       <input
-       className="border"
+      <input
+        className="border"
         type="text"
         placeholder="Arama yapın..."
         value={filterValue}
@@ -134,26 +137,90 @@ const GridTablePersonel = () => {
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr>
-            <th onClick={() => handleSort('personel_id')} className="cursor-pointer px-4 py-2 text-xs border-b">Personel ID</th>
-            <th onClick={() => handleSort('firstname')} className="cursor-pointer px-4 py-2 text-xs border-b">Ad</th>
-            <th onClick={() => handleSort('surname')} className="cursor-pointer px-4 py-2 text-xs border-b">Soyad</th>
-            <th onClick={() => handleSort('p_telefon1')} className="cursor-pointer px-4 py-2 text-xs border-b">Telefon Numarası</th>
-            <th onClick={() => handleSort('p_telefon2')} className="cursor-pointer px-4 py-2 text-xs border-b">Telefon Numarası</th>
-            <th onClick={() => handleSort('TC')} className="cursor-pointer px-4 py-2 text-xs border-b">TC kimlik no</th>
-            <th onClick={() => handleSort('kan_grubu')} className="cursor-pointer px-4 py-2 text-xs border-b">Kan Grubu</th>
-            <th onClick={() => handleSort('ikamet_adresi')} className="cursor-pointer px-4 py-2 text-xs border-b">İkamet Adresi</th>
-            <th onClick={() => handleSort('calisma_durumu')} className="cursor-pointer px-4 py-2 text-xs border-b">Çalışma Durumu</th>
-            <th onClick={() => handleSort('proje_saha_adresi')} className="cursor-pointer px-4 py-2 text-xs border-b">Proje Saha Adresi</th>
-            <th onClick={() => handleSort('ADAK_adı_soyadı')} className="cursor-pointer px-4 py-2 text-xs border-b">
+            <th
+              onClick={() => handleSort("personel_id")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              Personel ID
+            </th>
+            <th
+              onClick={() => handleSort("firstname")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              Ad
+            </th>
+            <th
+              onClick={() => handleSort("surname")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              Soyad
+            </th>
+            <th
+              onClick={() => handleSort("p_telefon1")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              Telefon Numarası
+            </th>
+            <th
+              onClick={() => handleSort("p_telefon2")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              Telefon Numarası
+            </th>
+            <th
+              onClick={() => handleSort("TC")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              TC kimlik no
+            </th>
+            <th
+              onClick={() => handleSort("kan_grubu")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              Kan Grubu
+            </th>
+            <th
+              onClick={() => handleSort("ikamet_adresi")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              İkamet Adresi
+            </th>
+            <th
+              onClick={() => handleSort("calisma_durumu")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              Çalışma Durumu
+            </th>
+            <th
+              onClick={() => handleSort("proje_saha_adresi")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              Proje Saha Adresi
+            </th>
+            <th
+              onClick={() => handleSort("ADAK_adı_soyadı")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
               Acil Durumda Aranacak kişi Adı Soyadı
             </th>
-            <th onClick={() => handleSort('ADAK_telefon')} className="cursor-pointer px-4 py-2 text-xs border-b">
+            <th
+              onClick={() => handleSort("ADAK_telefon")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
               Acil Durumda Aranacak kişi telefon no
             </th>
-            <th onClick={() => handleSort('ADAK_Bağı')} className="cursor-pointer px-4 py-2 text-xs border-b">
+            <th
+              onClick={() => handleSort("ADAK_Bağı")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
               Acil Durumda Aranacak kişi Bağı
             </th>
-            <th onClick={() => handleSort('merkez_id')} className="cursor-pointer px-4 py-2 text-xs border-b">Merkez</th>
+            <th
+              onClick={() => handleSort("merkez_id")}
+              className="cursor-pointer px-4 py-2 text-xs border-b"
+            >
+              Merkez
+            </th>
             <th className="px-4 py-2 text-xs border-b">İşlemler</th>
           </tr>
         </thead>
@@ -275,8 +342,10 @@ const GridTablePersonel = () => {
                     }
                     className="border rounded px-2 py-1"
                   />
+                ) : row.calisma_durumu == 1 ? (
+                  "Çalışıyor"
                 ) : (
-                  row.calisma_durumu ==1 ? "Çalışıyor" : "Çalışmıyor"
+                  "Çalışmıyor"
                 )}
               </td>
               <td className="px-4 py-2 border-b">
@@ -345,19 +414,63 @@ const GridTablePersonel = () => {
               </td>
               <td className="px-4 py-2 border-b">
                 {editingRowId === row.merkez_id ? (
-                  <input
+                  !editToggle && <input
                     type="text"
                     value={row.merkez_isim}
-                    onChange={(e) =>
-                      updateRow(row.personel_id, {
-                        merkez_isim: e.target.value,
-                      })
-                    }
                     className="border rounded px-2 py-1"
                   />
                 ) : (
                   row.merkez_isim
                 )}
+                {editToggle &&
+                <Menu as="div" className="relative inline-block text-left">
+          <div>
+            <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+              Merkez Seç
+              <ChevronDownIcon
+                className="-mr-1 h-5 w-5 text-gray-400"
+                aria-hidden="true"
+              />
+            </Menu.Button>
+          </div>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="py-1">
+                {unique.map((item,index) => (
+                  <div key={index}>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a 
+                          onClick={() =>
+                            updateRow(row.personel_id, {
+                              merkez_id: item.merkez_id,
+                            })}
+                          href="#"
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          {item.merkez_isim}
+                        </a>
+                      )}
+                    </Menu.Item>
+                  </div>
+                ))}
+              </div>
+            </Menu.Items>
+          </Transition>
+        </Menu>}
               </td>
               <td className="px-4 py-2 border-b">
                 {editingRowId === row.personel_id ? (
@@ -532,18 +645,55 @@ const GridTablePersonel = () => {
           }
           className="border rounded px-2 py-1 mr-2"
         />
-        <input
-          type="text"
-          placeholder="Merkez"
-          value={newRowData.merkez_id}
-          onChange={(e) =>
-            setNewRowData((prevData) => ({
-              ...prevData,
-              merkez_id: e.target.value,
-            }))
-          }
-          className="border rounded px-2 py-1 mr-2"
-        />
+        <Menu as="div" className="relative inline-block text-left">
+          <div>
+            <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+              Merkez Seç
+              <ChevronDownIcon
+                className="-mr-1 h-5 w-5 text-gray-400"
+                aria-hidden="true"
+              />
+            </Menu.Button>
+          </div>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="py-1">
+                {unique.map((item,index) => (
+                  <div key={index}>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a 
+                          onClick={() =>
+                            setNewRowData((prevData) => ({
+                              ...prevData,
+                              merkez_id: item.merkez_id,
+                            }))}
+                          href="#"
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          {item.merkez_isim}
+                        </a>
+                      )}
+                    </Menu.Item>
+                  </div>
+                ))}
+              </div>
+            </Menu.Items>
+          </Transition>
+        </Menu>
         <button
           onClick={addRow}
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded"

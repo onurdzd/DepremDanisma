@@ -14,7 +14,6 @@ function classNames(...classes) {
 }
 const Header = () => {
   return (
-    <>
       <header className="text-xl w-screen bg-white mx-auto pb-5 pt-5">
         <div className="flex justify-around flex-auto mx-10 ">
           <div className=" basis-1/5">
@@ -162,7 +161,6 @@ const Header = () => {
           </div>
         </div>
       </header>
-    </>
   );
 };
 
