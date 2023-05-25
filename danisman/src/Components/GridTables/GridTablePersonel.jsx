@@ -13,6 +13,14 @@ const GridTablePersonel = () => {
   const [editToggle,setEditToggle]=useState(false)
   const [newPersonelToggle,setNewPersonelToggle]=useState(false)
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const itemsPerPage = 5;
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const handleClickPage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+ 
 
   const handleScroll = (event) => {
     const { scrollLeft } = event.target;
@@ -132,7 +140,10 @@ const GridTablePersonel = () => {
   });
 
   const filteredData = sortedData.filter(filterData);
-  console.log(scrollPosition)
+  const paginatedData =filteredData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
   return (
     <div className="w-[90vw] p-4 overflow-x-auto " onScroll={handleScroll}>
       <div className="relative w-full" style={{ transform: `translateX(-${scrollPosition}px)` }}>
@@ -143,7 +154,7 @@ const GridTablePersonel = () => {
         value={filterValue}
         onChange={handleFilter}
       />
-      <table className="min-w-full bg-white border border-gray-300">
+      <table className="min-w-full bg-white border border-gray-300 table-fixed">
         <thead>
           <tr>
             <th
@@ -234,7 +245,7 @@ const GridTablePersonel = () => {
           </tr>
         </thead>
         <tbody className="text-center">
-          {filteredData.map((row, index) => (
+          {paginatedData.map((row, index) => (
             <tr key={index}>
               <td className="px-4 py-2 border-b">{row.personel_id}</td>
               <td className="px-4 py-2 border-b">
@@ -508,6 +519,22 @@ const GridTablePersonel = () => {
           ))}
         </tbody>
       </table>
+      {/* pagination sayfa number */}
+      <div className="flex justify-center mt-4">
+        {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+          (pageNumber) => (
+            <button
+              key={pageNumber}
+              className={`mx-1 px-4 py-2 rounded ${
+                currentPage === pageNumber ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'
+              }`}
+              onClick={() => handleClickPage(pageNumber)}
+            >
+              {pageNumber}
+            </button>
+          )
+        )}
+      </div>
       {/* Yeni satır ekleme formu */}
       {!newPersonelToggle ? <div className="w-[90%] mt-8 flex justify-center"><button onClick={()=>setNewPersonelToggle(!newPersonelToggle)} className="bg-green-600 p-3 border rounded font-sans font-bold hover:bg-green-500">Yeni Personel Ekle</button></div> : <div className="mt-4 text-center">
         <input
@@ -710,6 +737,7 @@ const GridTablePersonel = () => {
           Ekle
         </button>
       </div>}</div>
+      
     </div>
   );
 };
