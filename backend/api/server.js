@@ -11,7 +11,7 @@ const corsOptions = {
 };
 
 server.use(cors(corsOptions));
-
+const authRouter = require("./auth/auth-router");
 const userRouter = require("./users/users-router");
 const personelRouter = require("./personel/personel-router");
 const sehirRouter = require("./sehir/sehir-router");
@@ -33,6 +33,7 @@ server.use("/api/merkez", merkezRouter);
 server.use("/api/hizmet", hizmetRouter);
 server.use("/api/kurum", kurumRouter);
 server.use("/api/envanter", envanterRouter);
+server.use("/api/auth", authRouter);
 
 server.use((err, req, res, next) => {
   res.status(err.status || 500).json({

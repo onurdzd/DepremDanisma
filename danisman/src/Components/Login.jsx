@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function NewEntry() {
   const [showModal, setShowModal] = useState(false);
@@ -13,11 +14,25 @@ export default function NewEntry() {
     formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    navigate("/dashboard");
-    closeModal();
+  const onSubmit = async (data) => {
+    console.log(data.username, data.password);
+    try {
+      await axios
+        .post("http://localhost:9000/api/auth/login", {
+          username: data.username,
+          password: data.password,
+        })
+        .then((res) => localStorage.setItem("user", JSON.stringify(res.data)));
+
+      // İsteğe bağlı olarak başka işlemler yapabilirsiniz
+      navigate("/dashboard");
+      closeModal();
+    } catch (error) {
+      console.error(error);
+      // Hata işleme
+    }
   };
+
   const openModal = () => {
     setShowModal(true);
   };
