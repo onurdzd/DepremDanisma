@@ -15,6 +15,18 @@ const add = async (user) => {
   const newUser = await getBy({ user_id: newUserId[0] });
   return newUser;
 };
+const createUser = async (user) => {
+  const { role_id } = await db("roles")
+    .where("role_name", user.role_name)
+    .first();
+  const newUser = {
+    username: user.username,
+    passhash: user.passhash,
+    role_id: role_id,
+  };
+  const insertedId = await db("users").insert(newUser);
+  return getByFilter({ "u.userId": insertedId[0] });
+};
 
 const change = async (updateInfos, id) => {
   await db("users").where("user_id", id).update(updateInfos);
@@ -33,4 +45,5 @@ module.exports = {
   change,
   remove,
   getById,
+  createUser,
 };
