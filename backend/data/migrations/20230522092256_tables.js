@@ -31,8 +31,8 @@ exports.up = function (knex) {
     .createTable("merkez", (t) => {
       t.increments("merkez_id");
       t.string("merkez_isim", 128).unique().notNullable();
-      t.integer("telefon1", 11).notNullable();
-      t.integer("telefon2", 11);
+      t.integer("m_telefon1", 11).notNullable();
+      t.integer("m_telefon2", 11);
       t.string("merkez_adres", 128).notNullable();
       t.decimal("merkez_kordinati_x", 9).notNullable();
       t.decimal("merkez_kordinati_y", 9).notNullable();
@@ -50,8 +50,8 @@ exports.up = function (knex) {
       t.timestamp("personel_created_at").defaultTo(knex.fn.now());
       t.string("firstname", 20).notNullable();
       t.string("surname", 20).notNullable();
-      t.integer("telefon1", 11).notNullable().unique();
-      t.integer("telefon2", 11).unique();
+      t.integer("p_telefon1", 10).notNullable().unique();
+      t.integer("p_telefon2", 11).unique();
       t.integer("TC", 11).notNullable().unique();
       t.string("kan_grubu", 10).notNullable();
       t.string("ikamet_adresi", 256).notNullable();
@@ -89,6 +89,7 @@ exports.up = function (knex) {
       t.string("envanter_adi", 128).notNullable();
       t.string("tür", 50).notNullable();
       t.string("envanter_aciklama", 500);
+      t.integer("envanter_adet", 3).notNullable();
       t.integer("merkez_id")
         .unsigned()
         .notNullable()

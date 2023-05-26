@@ -1,10 +1,9 @@
 const db=require("../../data/dbconfig")
 
 const getAll = ()=>{
-    return db("personel as p").leftJoin("merkez as m","m.merkez_id","p.merkez_id").leftJoin("sehir as s","s.sehir_id","m.sehir_id")
+    return db("personel as p").leftJoin("merkez as m","m.merkez_id","p.merkez_id").leftJoin("sehir as s","s.sehir_id","m.sehir_id").select("personel_id","firstname","surname","p_telefon1","p_telefon2","TC","kan_grubu","ikamet_adresi","calisma_durumu","proje_saha_adresi","ADAK_adı_soyadı","ADAK_telefon","ADAK_Bağı","m.merkez_id","merkez_isim")
 }
 const getById =async (personel_id)=>{
-    const personel = await db("personel as p")
     return db("personel as p").where("p.personel_id", personel_id).first();
 }
 const getBy = (filter)=>{
