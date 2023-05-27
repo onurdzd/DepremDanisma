@@ -1,18 +1,35 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import * as yup from "yup";
 
+import { yupResolver } from "@hookform/resolvers/yup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
+const validationSchema = yup.object().shape({
+  username: yup.string().required("Username boş olamaz"),
+  password: yup.string().required("Password boş olamaz"),
+});
 export default function NewEntry() {
   const [showModal, setShowModal] = useState(false);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("user")); // Check if user exists in localStorage
   let navigate = useNavigate();
-
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm({ mode: "onChange" });
+  } = useForm({
+    mode: "onChange",
+    resolver: yupResolver(validationSchema),
+  });
 
   const onSubmit = async (data) => {
     console.log(data.username, data.password);
@@ -24,11 +41,13 @@ export default function NewEntry() {
         })
         .then((res) => localStorage.setItem("user", JSON.stringify(res.data)));
 
-      // İsteğe bağlı olarak başka işlemler yapabilirsiniz
+      setIsLoggedIn(true); // Başarılı oturum açtıktan sonra isLoggedIn'i true olarak ayarla
       navigate("/dashboard");
       closeModal();
+      toast.success("Giriş yapıldı");
     } catch (error) {
       console.error(error);
+      toast.error("Giriş yapılamadı");
       // Hata işleme
     }
   };
@@ -40,16 +59,32 @@ export default function NewEntry() {
   const closeModal = () => {
     setShowModal(false);
   };
+  const handleLogout = () => {
+    localStorage.removeItem("user"); // Kullanıcıyı localStorage'dan kaldır
+    setIsLoggedIn(false); // isLoggedIn öğesini false olarak ayarlayın
+    navigate("/"); // çıkış yapınca ana sayfaya yönlendir
+    toast.info("Çıkış yapıldı");
+  };
 
   return (
     <div className="flex justify-center">
       {/* Buton */}
-      <button
-        onClick={openModal}
-        className="px-6 py-1 ml-6 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
-      >
-        Giriş Yap
-      </button>
+
+      {isLoggedIn ? (
+        <button
+          onClick={handleLogout} // Use handleLogout instead of openModal
+          className="px-6 py-1 ml-6 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
+        >
+          Çıkış Yap
+        </button>
+      ) : (
+        <button
+          onClick={openModal}
+          className="px-6 py-1 ml-6 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
+        >
+          Giriş Yap
+        </button>
+      )}
 
       {/* Modal Ekranı */}
       {showModal && (
@@ -97,7 +132,13 @@ export default function NewEntry() {
                       })}
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
+                    {errors.username && (
+                      <span className="text-sm text-red-700">
+                        {errors.username.message}
+                      </span>
+                    )}
                   </div>
+
                   <div>
                     <label
                       htmlFor="password"
@@ -110,14 +151,27 @@ export default function NewEntry() {
                         {errors.body.message}
                       </span>
                     )}
-                    <input
-                      id="password"
-                      type="password"
-                      {...register("password", {
-                        required: "Password boş olamaz",
-                      })}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    />
+                    <div className="relative">
+                      <input
+                        id="password"
+                        type={showPassword ? "text" : "password"}
+                        {...register("password", {
+                          required: "Password boş olamaz",
+                        })}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
+                      />
+                      <button
+                        type="button"
+                        onClick={togglePasswordVisibility}
+                        className="absolute right-0 top-0 bottom-0 flex items-center justify-center px-3"
+                      >
+                        <FontAwesomeIcon
+                          icon={showPassword ? faEyeSlash : faEye}
+                          size="xs"
+                          style={{ color: "#000000", cursor: "pointer" }}
+                        />
+                      </button>
+                    </div>
                   </div>
 
                   <div className="mt-4"></div>
@@ -143,6 +197,18 @@ export default function NewEntry() {
           </div>
         </div>
       )}
+      <ToastContainer
+        position="top-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      />
     </div>
   );
 }
