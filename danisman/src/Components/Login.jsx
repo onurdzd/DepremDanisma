@@ -5,7 +5,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import * as yup from "yup";
-
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -120,11 +119,7 @@ export default function NewEntry() {
                     >
                       Username :
                     </label>
-                    {errors?.body && (
-                      <span className="text-sm text-red-700">
-                        {errors.body.message}
-                      </span>
-                    )}
+
                     <input
                       id="username"
                       {...register("username", {
@@ -146,11 +141,7 @@ export default function NewEntry() {
                     >
                       Password :
                     </label>
-                    {errors?.body && (
-                      <span className="text-sm text-red-700">
-                        {errors.body.message}
-                      </span>
-                    )}
+
                     <div className="relative">
                       <input
                         id="password"
@@ -160,6 +151,7 @@ export default function NewEntry() {
                         })}
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
                       />
+
                       <button
                         type="button"
                         onClick={togglePasswordVisibility}
@@ -168,10 +160,15 @@ export default function NewEntry() {
                         <FontAwesomeIcon
                           icon={showPassword ? faEyeSlash : faEye}
                           size="xs"
-                          style={{ color: "#000000", cursor: "pointer" }}
+                          style={{ color: "#00000092", cursor: "pointer" }}
                         />
                       </button>
                     </div>
+                    {errors.password && (
+                      <span className="text-sm text-red-700">
+                        {errors.password.message}
+                      </span>
+                    )}
                   </div>
 
                   <div className="mt-4"></div>
