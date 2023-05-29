@@ -30,13 +30,20 @@ const GridTableEnvanter = () => {
     setScrollPosition(scrollLeft);
   };
 
+  const [merkezIsimAl,setMerkezIsimAl]=useState([])
   let merkezIsimleri = [];
-  data.map((item) =>
-    merkezIsimleri.push({
-      merkez_id: item.merkez_id,
-      merkez_isim: item.merkez_isim,
-    })
-  );
+  useEffect(()=>{
+    axios
+    .get("http://localhost:9000/api/merkez")
+    .then((res) => setMerkezIsimAl(res.data));
+  },[])
+
+  merkezIsimAl.map(item=>merkezIsimleri.push({
+    merkez_id: item.merkez_id,
+    merkez_isim: item.merkez_isim,
+  })
+);
+
   const uniqueMerkez = [];
 
   const unique = merkezIsimleri.filter((element) => {
