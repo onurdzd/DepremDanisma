@@ -32,7 +32,6 @@ export default function NewEntry() {
   });
 
   const onSubmit = async (data) => {
-    console.log(data.username, data.password);
     try {
       await axios
         .post("http://localhost:9000/api/auth/login", {
@@ -74,7 +73,7 @@ export default function NewEntry() {
         <div className="flex items-center">
         <button
           onClick={handleLogout} // Use handleLogout instead of openModal
-          className="px-6 py-1 ml-6 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
+          className="px-6 py-1 ml-10 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
         >
           Çıkış Yap
         </button>
@@ -84,7 +83,7 @@ export default function NewEntry() {
       ) : (
         <button
           onClick={openModal}
-          className="px-6 py-1 ml-6 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
+          className="px-6 py-1 ml-10 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
         >
           Giriş Yap
         </button>
