@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { RxDashboard} from "react-icons/rx";
 
 const validationSchema = yup.object().shape({
   username: yup.string().required("Username boş olamaz"),
@@ -70,12 +71,16 @@ export default function NewEntry() {
       {/* Buton */}
 
       {isLoggedIn ? (
+        <div className="flex items-center">
         <button
           onClick={handleLogout} // Use handleLogout instead of openModal
           className="px-6 py-1 ml-6 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
         >
           Çıkış Yap
         </button>
+        <div title="Dashboard" onClick={()=>navigate("/dashboard")} className="ml-2 cursor-pointer hover:scale-125">
+        <RxDashboard></RxDashboard></div>
+        </div>
       ) : (
         <button
           onClick={openModal}
