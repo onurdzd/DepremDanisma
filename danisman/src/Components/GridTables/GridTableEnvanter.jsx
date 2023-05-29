@@ -14,13 +14,13 @@ const GridTableEnvanter = () => {
     },
   ]);
 
-  /*  const dataAl = async () =>
+  const dataAl = async () =>
     await axios
-      .get("http://localhost:9000/api/merkez")
+      .get("http://localhost:9000/api/envanter")
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
-  }, []); */
+  }, []);
 
   // Düzenleme durumunu tutmak için state
   const [editingRowId, setEditingRowId] = useState(null);
@@ -29,6 +29,7 @@ const GridTableEnvanter = () => {
   const [newRowData, setNewRowData] = useState({
     envanter_adi: "",
     tür: "",
+    envanter_aciklama: "",
     envanter_adet: null,
     merkez_id: null,
   });
@@ -45,29 +46,21 @@ const GridTableEnvanter = () => {
 
   // Satırı güncelleyen fonksiyon
   const updateRow = async (rowId, newData) => {
-    /*  await axios.put(`http://localhost:9000/api/merkez/${rowId}`, newData); */
-    setData((prevData) =>
-      prevData.map((row) => {
-        if (row.envanter_id === rowId) {
-          return { ...row, ...newData };
-        }
-        return row;
-      })
-    );
+    await axios.put(`http://localhost:9000/api/envanter/${rowId}`, newData);
+    dataAl();
   };
 
   // Satırı silen fonksiyon
   const deleteRow = async (rowId) => {
-    /*  await axios.delete(`http://localhost:9000/api/merkez/${rowId}`); */
-    setData((prevData) => prevData.filter((row) => row.envanter_id !== rowId));
+    await axios.delete(`http://localhost:9000/api/envanter/${rowId}`);
+    dataAl();
   };
 
   // Yeni satır ekleme fonksiyonu
   const addRow = async () => {
-    const newRow = { ...newRowData, envanter_id: data.length + 1 };
-    setData((prevData) => [...prevData, newRow]);
-    /*     await axios.post("http://localhost:9000/api/merkez", newRow);
-    dataAl(); */
+    const newRow = { ...newRowData };
+    await axios.post("http://localhost:9000/api/envanter", newRow);
+    dataAl();
   };
 
   return (

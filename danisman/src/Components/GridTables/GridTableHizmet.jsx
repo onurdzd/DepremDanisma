@@ -13,13 +13,13 @@ const GridTableHizmet = () => {
     },
   ]);
 
-  /*  const dataAl = async () =>
+  const dataAl = async () =>
     await axios
-      .get("http://localhost:9000/api/merkez")
+      .get("http://localhost:9000/api/hizmet")
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
-  }, []); */
+  }, []);
 
   // Düzenleme durumunu tutmak için state
   const [editingRowId, setEditingRowId] = useState(null);
@@ -44,29 +44,21 @@ const GridTableHizmet = () => {
 
   // Satırı güncelleyen fonksiyon
   const updateRow = async (rowId, newData) => {
-    /*  await axios.put(`http://localhost:9000/api/merkez/${rowId}`, newData); */
-    setData((prevData) =>
-      prevData.map((row) => {
-        if (row.hizmet_id === rowId) {
-          return { ...row, ...newData };
-        }
-        return row;
-      })
-    );
+    await axios.put(`http://localhost:9000/api/hizmet/${rowId}`, newData);
+    dataAl();
   };
 
   // Satırı silen fonksiyon
   const deleteRow = async (rowId) => {
-    /*  await axios.delete(`http://localhost:9000/api/merkez/${rowId}`); */
-    setData((prevData) => prevData.filter((row) => row.hizmet_id !== rowId));
+    await axios.delete(`http://localhost:9000/api/hizmet/${rowId}`);
+    dataAl();
   };
 
   // Yeni satır ekleme fonksiyonu
   const addRow = async () => {
-    const newRow = { ...newRowData, hizmet_id: data.length + 1 };
-    setData((prevData) => [...prevData, newRow]);
-    /*     await axios.post("http://localhost:9000/api/merkez", newRow);
-    dataAl(); */
+    const newRow = { ...newRowData };
+    await axios.post("http://localhost:9000/api/hizmet", newRow);
+    dataAl();
   };
 
   return (

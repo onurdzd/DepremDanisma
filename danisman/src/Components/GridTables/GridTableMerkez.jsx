@@ -15,13 +15,13 @@ const GridTableMerkez = () => {
     },
   ]);
 
-  /*  const dataAl = async () =>
+  const dataAl = async () =>
     await axios
       .get("http://localhost:9000/api/merkez")
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
-  }, []); */
+  }, []);
 
   // Düzenleme durumunu tutmak için state
   const [editingRowId, setEditingRowId] = useState(null);
@@ -49,29 +49,21 @@ const GridTableMerkez = () => {
 
   // Satırı güncelleyen fonksiyon
   const updateRow = async (rowId, newData) => {
-    /*  await axios.put(`http://localhost:9000/api/merkez/${rowId}`, newData); */
-    setData((prevData) =>
-      prevData.map((row) => {
-        if (row.merkez_id === rowId) {
-          return { ...row, ...newData };
-        }
-        return row;
-      })
-    );
+    await axios.put(`http://localhost:9000/api/merkez/${rowId}`, newData);
+    dataAl();
   };
 
   // Satırı silen fonksiyon
   const deleteRow = async (rowId) => {
-    /*  await axios.delete(`http://localhost:9000/api/merkez/${rowId}`); */
-    setData((prevData) => prevData.filter((row) => row.merkez_id !== rowId));
+    await axios.delete(`http://localhost:9000/api/merkez/${rowId}`);
+    dataAl();
   };
 
   // Yeni satır ekleme fonksiyonu
   const addRow = async () => {
-    const newRow = { ...newRowData, merkez_id: data.length + 1 };
-    setData((prevData) => [...prevData, newRow]);
-    /*     await axios.post("http://localhost:9000/api/merkez", newRow);
-    dataAl(); */
+    const newRow = { ...newRowData };
+    await axios.post("http://localhost:9000/api/merkez", newRow);
+    dataAl();
   };
 
   return (
@@ -81,6 +73,7 @@ const GridTableMerkez = () => {
           <tr>
             <th className="px-4 py-2 text-xs border-b">Merkez ID</th>
             <th className="px-4 py-2 text-xs border-b">Merkez Adı</th>
+            <th className="px-4 py-2 text-xs border-b">Merkez Telefon</th>
             <th className="px-4 py-2 text-xs border-b">Merkez Adresi</th>
             <th className="px-4 py-2 text-xs border-b">Merkez Kordinat X</th>
             <th className="px-4 py-2 text-xs border-b">Merkez Kordinat Y</th>
@@ -107,6 +100,20 @@ const GridTableMerkez = () => {
                   />
                 ) : (
                   row.merkez_isim
+                )}
+              </td>
+              <td className="px-4 py-2 border-b">
+                {editingRowId === row.merkez_id ? (
+                  <input
+                    type="text"
+                    value={row.m_telefon1}
+                    onChange={(e) =>
+                      updateRow(row.merkez_id, { m_telefon1: e.target.value })
+                    }
+                    className="border  rounded px-2 py-1"
+                  />
+                ) : (
+                  row.m_telefon1
                 )}
               </td>
               <td className="px-4 py-2 border-b">
@@ -225,6 +232,18 @@ const GridTableMerkez = () => {
             setNewRowData((prevData) => ({
               ...prevData,
               merkez_isim: e.target.value,
+            }))
+          }
+          className="border rounded px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Merkez Telefon"
+          value={newRowData.m_telefon1}
+          onChange={(e) =>
+            setNewRowData((prevData) => ({
+              ...prevData,
+              m_telefon1: e.target.value,
             }))
           }
           className="border rounded px-2 py-1 mr-2"
