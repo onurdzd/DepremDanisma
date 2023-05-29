@@ -285,7 +285,7 @@ const GridTableEnvanter = () => {
             </button>
           </div>
         )}
-        <div className="font-medium text-lg">Database Envanter Sayısı: <span className="text-red-400">{data.length}</span></div>
+        <div className="font-medium text-lg mt-4">Database Envanter Sayısı: <span className="text-red-400">{data.length}</span></div>
         <div>
           <input
             className="border p-1 mt-2 rounded text-lg font-sans font-bold"
