@@ -18,6 +18,8 @@ import Osmaniye from "./Components/City/Osmaniye.jsx";
 import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 import Footer from "./Components/Footer.jsx";
 
+const localToken=JSON.parse(localStorage.getItem("user"))
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,13 +34,15 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
+      <>
       <div className="h-screen flex flex-col justify-between">
         <Header />
         <div className="flex-grow flex flex-col items-center mt-8 pl-6">
-          <Dashboard />
+        {localToken ? <Dashboard/> : <div className="h-full flex flex-col justify-center font-bold text-xl">Dashboard ekranına ulaşmak için önce giriş yapın</div>}
         </div>
         <Footer />
-      </div>
+      </div> 
+      </>
     ),
   },
   {

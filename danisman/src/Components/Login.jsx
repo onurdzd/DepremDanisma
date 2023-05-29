@@ -32,7 +32,6 @@ export default function NewEntry() {
   });
 
   const onSubmit = async (data) => {
-    console.log(data.username, data.password);
     try {
       await axios
         .post("http://localhost:9000/api/auth/login", {
