@@ -31,20 +31,21 @@ const GridTablePersonel = () => {
     setScrollPosition(scrollLeft);
   };
 
-  const [merkezIsimAl,setMerkezIsimAl]=useState([])
+  const [merkezIsimAl, setMerkezIsimAl] = useState([]);
   let merkezIsimleri = [];
-  useEffect(()=>{
+  useEffect(() => {
     axios
-    .get("http://localhost:9000/api/merkez")
-    .then((res) => setMerkezIsimAl(res.data));
-  },[])
+      .get("http://localhost:9000/api/merkez")
+      .then((res) => setMerkezIsimAl(res.data));
+  }, []);
 
-  merkezIsimAl.map(item=>merkezIsimleri.push({
-    merkez_id: item.merkez_id,
-    merkez_isim: item.merkez_isim,
-  })
-);
-  
+  merkezIsimAl.map((item) =>
+    merkezIsimleri.push({
+      merkez_id: item.merkez_id,
+      merkez_isim: item.merkez_isim,
+    })
+  );
+
   const uniqueMerkez = [];
 
   const unique = merkezIsimleri.filter((element) => {
@@ -85,6 +86,13 @@ const GridTablePersonel = () => {
     merkez_id: null,
   });
 
+  const [tableData, setTableData] = useState([]);
+  const cancelEditingSatır = (index) => {
+    const updatedData = [...tableData];
+    updatedData[index] = originalData[index]; // Geri dönüş yapılacak orijinal veriler
+    setTableData(updatedData);
+    setEditingRowId(null);
+  };
   // Satır düzenlemesini başlatan fonksiyon
   const startEditing = (rowId) => {
     setEditingRowId(rowId);
@@ -110,8 +118,8 @@ const GridTablePersonel = () => {
   };
   //düzenleme kapatan
   const cancelEditing = () => {
-    setEditingRowId(null);
-    setEditToggle(false);
+    setNewPersonelToggle(false);
+    // Reset newRowData or perform any other necessary actions
   };
   // Yeni satır ekleme fonksiyonu
   const addRow = async () => {
@@ -622,7 +630,7 @@ const GridTablePersonel = () => {
 
                     {editingRowId === row.personel_id ? (
                       <button
-                        onClick={() => cancelEditing()}
+                        onClick={() => cancelEditingSatır(editingRowId)}
                         className="hover:bg-slate-300 hover:text-slate-200 text-white font-bold py-1 px-2 rounded flex-auto"
                       >
                         <BiX
@@ -989,27 +997,24 @@ const GridTablePersonel = () => {
                 addRow();
                 setNewPersonelToggle(!newPersonelToggle);
               }}
-              className="min-w-[8rem] px-3 pb-3 pt-2 text-s border "
+              className="min-w-[8rem] px-3 pt-[0.3rem]  pb-[2.4rem]  text-s border text-gray-400 "
             >
-              <>
-                <BsFillFileArrowUpFill
-                  className="text-gray-400  hover:text-slate-200  "
-                  size="20"
-                ></BsFillFileArrowUpFill>
-              </>
+              <BiSave
+                className="text-gray-500  hover:text-gray-700 "
+                size="22"
+              ></BiSave>
             </button>
-            <input
-              type="text"
-              placeholder="Personel ID"
-              value={newRowData.firstname}
-              onChange={(e) =>
-                setNewRowData((prevData) => ({
-                  ...prevData,
-                  firstname: e.target.value,
-                }))
-              }
-              className="max-w-[8rem]  px-3 py-2 text-s border "
-            />
+
+            <button
+              onClick={() => cancelEditing()}
+              className="hover:bg-slate-50 hover:text-slate-100 text-white font-bold py-1 px-2  flex-auto min-w-[8rem]  pt-[0.3rem] pb-[2.4rem] text-s border"
+            >
+              <BiX
+                className="text-gray-500 hover:text-gray-700"
+                size="22"
+              ></BiX>
+            </button>
+
             <input
               type="text"
               placeholder="Ad"
@@ -1020,7 +1025,7 @@ const GridTablePersonel = () => {
                   firstname: e.target.value,
                 }))
               }
-              className="max-w-[8rem]  px-3 py-2 text-s border "
+              className="max-w-[8rem]   px-3 pt-2 pb-8 text-s border "
             />
             <input
               type="text"
@@ -1032,7 +1037,7 @@ const GridTablePersonel = () => {
                   surname: e.target.value,
                 }))
               }
-              className="max-w-[8rem]  px-3 py-2 text-s border "
+              className="max-w-[8rem]  px-3 pt-2 pb-8 text-s border "
             />
             <input
               type="tel"
@@ -1044,7 +1049,7 @@ const GridTablePersonel = () => {
                   p_telefon1: e.target.value,
                 }))
               }
-              className="max-w-[8rem] px-3 py-2 text-s border "
+              className="max-w-[8rem] px-3 pt-2 pb-8 text-s border "
             />
             <input
               type="tel"
@@ -1056,10 +1061,10 @@ const GridTablePersonel = () => {
                   p_telefon2: e.target.value,
                 }))
               }
-              className="max-w-[8rem] px-3 py-2 text-s border "
+              className="max-w-[8rem] px-3 pt-2 pb-8 text-s border "
             />
             <input
-              type="number"
+              type="text"
               placeholder="TC kimlik no"
               value={newRowData.TC}
               onChange={(e) =>
@@ -1068,7 +1073,7 @@ const GridTablePersonel = () => {
                   TC: e.target.value,
                 }))
               }
-              className="max-w-[8rem]  px-3 py-2 text-s border "
+              className="max-w-[8.5rem]  px-3 pt-2 pb-8 text-s border "
             />
             <input
               type="text"
@@ -1080,7 +1085,7 @@ const GridTablePersonel = () => {
                   kan_grubu: e.target.value,
                 }))
               }
-              className="max-w-[8rem]  px-3 py-2 text-s border "
+              className="max-w-[8rem]  px-3 pt-2 pb-8 text-s border "
             />
             <input
               type="text"
@@ -1092,7 +1097,7 @@ const GridTablePersonel = () => {
                   ikamet_adresi: e.target.value,
                 }))
               }
-              className="max-w-[13rem]  px-3 py-2 text-s border "
+              className="max-w-[13rem]  px-3 pt-2 pb-8 text-s border "
             />
             <Menu as="div" className="relative inline-block text-left ">
               <div>
@@ -1173,7 +1178,7 @@ const GridTablePersonel = () => {
                   proje_saha_adresi: e.target.value,
                 }))
               }
-              className="max-w-[13rem]  px-3 py-2 text-s border "
+              className="max-w-[13rem]  px-3 pt-2 pb-8 text-s border "
             />
             <input
               type="text"
@@ -1185,10 +1190,10 @@ const GridTablePersonel = () => {
                   ADAK_adı_soyadı: e.target.value,
                 }))
               }
-              className="max-w-[12rem] px-3 py-2 text-s border "
+              className="max-w-[12rem] px-3 pt-2 pb-8 text-s border "
             />
             <input
-              type="number"
+              type="tel"
               placeholder="Aranacak Kişi Telefon no"
               value={newRowData.ADAK_telefon}
               onChange={(e) =>
@@ -1197,7 +1202,7 @@ const GridTablePersonel = () => {
                   ADAK_telefon: e.target.value,
                 }))
               }
-              className="max-w-[12rem]  px-3 py-2 text-s border "
+              className="max-w-[12rem]  px-3 pt-2 pb-8 text-s border "
             />
             <input
               type="text"
@@ -1209,11 +1214,11 @@ const GridTablePersonel = () => {
                   ADAK_Bağı: e.target.value,
                 }))
               }
-              className="max-w-[12rem]  px-3 py-2 text-s border "
+              className="max-w-[12rem]  px-3 pt-2 pb-8 text-s border "
             />
             <Menu as="div" className="relative inline-block text-left">
               <div>
-                <Menu.Button className="inline-flex justify-center gap-x-1.5  bg-white px-3 py-2  text-gray-400 shadow-sm  hover:bg-gray-50 max-w-[13rem]  border">
+                <Menu.Button className="inline-flex justify-center gap-x-1.5  bg-white px-3 pt-[0.5rem] pb-[2rem]  text-gray-400 shadow-sm  hover:bg-gray-50 min-w-[13rem]  border">
                   {newRowData.merkez_id ? "Merkez Seçildi" : "Merkez Seç"}
                   <ChevronDownIcon
                     className="-mr-1 h-5 w-5 text-gray-400"
