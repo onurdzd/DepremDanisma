@@ -49,15 +49,6 @@ const GridTableKurum = () => {
             selection: true,
             sorting: true,
           }}
-          actions={[
-            {
-              icon: "save",
-              tooltip: "Save User",
-              onClick: (event, rowData) => {
-                // Kaydet bölümü
-              },
-            },
-          ]}
           columns={[
             {
               title: "Id",
