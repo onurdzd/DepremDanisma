@@ -21,7 +21,7 @@ const Mui = () => {
             filtering: true,
             search: true,
             selection: true,
-            sorting: true
+            sorting: true,
           }}
           actions={[
             {
@@ -33,16 +33,31 @@ const Mui = () => {
             },
           ]}
           columns={[
-            { title: "Adı", field: "kurum_adi" ,validate: (rowData) =>
-            rowData.kurum_adi === undefined || rowData.kurum_adi === ""
-              ? "Zorunlu"
-              : true,},
-            { title: "Soyadı", field: "surname" },
-          { title: "Doğum Yılı", field: "birthYear", type: "numeric" /*checkbox vs olabiliyor*/},
             {
-              title: "Doğum Yeri",
-              field: "birthCity",
-              lookup: { 34: "İstanbul", 63: "Şanlıurfa" },
+              title: "Id",
+              field: "kurum_id",
+              type: "numeric" /*checkbox vs olabiliyor*/,
+              validate: (rowData) =>
+                rowData.kurum_id === undefined || rowData.kurum_id === ""
+                  ? "Zorunlu"
+                  : true,
+            },
+            {
+              title: "Adı",
+              field: "kurum_adi",
+              validate: (rowData) =>
+                rowData.kurum_adi === undefined || rowData.kurum_adi === ""
+                  ? "Zorunlu"
+                  : true,
+            },
+            {
+              title: "Kurum Adı Kısaltma",
+              field: "kurum_adi_kisaltma",
+              validate: (rowData) =>
+                rowData.kurum_adi_kisaltma === undefined ||
+                rowData.kurum_adi_kisaltma === ""
+                  ? "Zorunlu"
+                  : true,
             },
           ]}
           data={data}

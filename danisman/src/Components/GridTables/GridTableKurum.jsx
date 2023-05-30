@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Mui from "./Mui";
 
 const GridTableKurum = () => {
   const [data, setData] = useState([
@@ -60,6 +61,7 @@ const GridTableKurum = () => {
 
   return (
     <div className=" w-[80vw]   p-4">
+      <Mui></Mui>
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr>
