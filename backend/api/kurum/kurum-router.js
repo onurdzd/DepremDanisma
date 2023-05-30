@@ -50,7 +50,7 @@ router.delete("/:id", async (req, res, next) => {
 router.put("/:id", async (req, res, next) => {
   try {
     await Kurum.change(req.body, req.params.id);
-    res.status(201).json({ message: `${req.params.id} id nolu kurum silindi` });
+    res.status(201).json({ message: `${req.params.id} id nolu kurum güncellendi` });
   } catch (error) {
     next(error);
   }
