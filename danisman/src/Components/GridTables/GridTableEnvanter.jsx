@@ -67,7 +67,7 @@ const GridTableEnvanter = () => {
               title: "Envanter Tür",
               field: "envanter_tur",
               validate: (rowData) =>
-                rowData.envanter_adi === undefined || rowData.envanter_adi === ""
+                rowData.envanter_tur === undefined || rowData.envanter_tur === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -79,7 +79,7 @@ const GridTableEnvanter = () => {
               title: "Envanter Adet",
               field: "envanter_adet",
               validate: (rowData) =>
-                rowData.envanter_adi === undefined || rowData.envanter_adi === ""
+                rowData.envanter_adet === undefined || rowData.envanter_adet === ""
                   ? "Zorunlu"
                   : true
             },
