@@ -31,21 +31,20 @@ const GridTablePersonel = () => {
     setScrollPosition(scrollLeft);
   };
 
-  const [merkezIsimAl, setMerkezIsimAl] = useState([]);
+  const [merkezIsimAl,setMerkezIsimAl]=useState([])
   let merkezIsimleri = [];
-  useEffect(() => {
+  useEffect(()=>{
     axios
-      .get("http://localhost:9000/api/merkez")
-      .then((res) => setMerkezIsimAl(res.data));
-  }, []);
+    .get("http://localhost:9000/api/merkez")
+    .then((res) => setMerkezIsimAl(res.data));
+  },[])
 
-  merkezIsimAl.map((item) =>
-    merkezIsimleri.push({
-      merkez_id: item.merkez_id,
-      merkez_isim: item.merkez_isim,
-    })
-  );
-
+  merkezIsimAl.map(item=>merkezIsimleri.push({
+    merkez_id: item.merkez_id,
+    merkez_isim: item.merkez_isim,
+  })
+);
+  
   const uniqueMerkez = [];
 
   const unique = merkezIsimleri.filter((element) => {
@@ -1264,6 +1263,788 @@ const GridTablePersonel = () => {
             </Menu>
           </div>
         )}
+        <div className="font-medium text-lg mt-4">Database Personel Sayısı: <span className="text-red-400">{data.length}</span></div>
+        <div>
+          <input
+            className="border p-1 mt-2 rounded text-lg font-sans font-bold"
+            type="text"
+            placeholder="Arama yapın..."
+            value={filterValue}
+            onChange={handleFilter}
+          />
+        </div>
+        <div>
+          <table className="min-w-full bg-white border border-gray-300 table-fixed ">
+            <thead>
+              <tr>
+                <th className="min-w-[8rem]  px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium ">
+                  İşlemler
+                </th>
+                <th className=" min-w-[8rem]  px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium ">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center "
+                  >
+                    Personel ID
+                    <span className="ml-1 w-1/4 cursor-pointer ">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[8rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Ad
+                    <span className="ml-1 w-1/4 cursor-pointer ">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[8rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Soyad
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[8rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Telefon No
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[8rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Telefon No-2
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[8rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    TC Kimlik No
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[8rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Kan Grubu
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[13rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    İkamet Adresi
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[9rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Çalışma Durumu
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[13rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Proje Saha Adresi
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[12rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Acil Durumda Aranacak kişi Adı Soyadı
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[12rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Acil Durumda Aranacak kişi telefon no
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[12rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Acil Durumda Aranacak kişi Bağı
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+                <th className=" min-w-[13rem] px-3 py-2 text-s border bg-sky-800 bg-opacity-80 font-medium">
+                  <div
+                    onClick={() => {
+                      handleSort("personel_id");
+                      setSortToggle(!sortToggle);
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    Merkez
+                    <span className="ml-1 w-1/4 cursor-pointer">
+                      {sortToggle ? (
+                        <>
+                          <BsFillFileArrowDownFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowDownFill>
+                        </>
+                      ) : (
+                        <>
+                          <BsFillFileArrowUpFill
+                            className="text-gray-400  hover:text-slate-200  "
+                            size="20"
+                          ></BsFillFileArrowUpFill>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody className="text-center">
+              {paginatedData.map((row, index) => (
+                <tr key={index}>
+                  {" "}
+                  <td className="px-4 py-2 border-b">
+                    <div className="flex flex-row ">
+                      {editingRowId === row.personel_id ? (
+                        <button
+                          onClick={() => stopEditing()}
+                          className=" hover:bg-slate-300 hover:text-slate-200  text-white font-bold py-1 px-2 rounded "
+                        >
+                          <BiSave
+                            className="text-gray-500  hover:text-gray-700 "
+                            size="22"
+                          ></BiSave>
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => startEditing(row.personel_id)}
+                          className=" hover:bg-slate-300  hover:text-slate-200  text-white font-bold py-1 px-2 rounded "
+                        >
+                          <BiEdit
+                            className="text-gray-500  hover:text-gray-700 "
+                            size="22"
+                          ></BiEdit>
+                        </button>
+                      )}
+                      <button
+                        onClick={() => deleteRow(row.personel_id)}
+                        className=" hover:bg-slate-300 hover:text-slate-200  text-white font-bold py-1 px-2 rounded"
+                      >
+                        <MdDeleteOutline
+                          className="text-gray-500  hover:text-gray-700 "
+                          size="23"
+                        ></MdDeleteOutline>
+                      </button>
+                    </div>
+                  </td>
+                  <td className="px-4 py-2 border-b">{row.personel_id}</td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="text"
+                        value={row.firstname}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            firstname: e.target.value,
+                          })
+                        }
+                        className="border rounded border-yellow-500 px-2 py-1 "
+                      />
+                    ) : (
+                      row.firstname
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="text"
+                        value={row.surname}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            surname: e.target.value,
+                          })
+                        }
+                        className="border rounded border-yellow-500 px-2 py-1"
+                      />
+                    ) : (
+                      row.surname
+                    )}
+                  </td>{" "}
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="tel"
+                        value={row.p_telefon1}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            p_telefon1: e.target.value,
+                          })
+                        }
+                        className="border rounded border-yellow-500 px-2 py-1"
+                      />
+                    ) : (
+                      row.p_telefon1
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="tel"
+                        value={row.p_telefon2}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            p_telefon2: e.target.value,
+                          })
+                        }
+                        className="border rounded px-2 py-1"
+                      />
+                    ) : (
+                      row.p_telefon2
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="text"
+                        value={row.TC}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            TC: e.target.value,
+                          })
+                        }
+                        className="border rounded border-yellow-500 px-2 py-1"
+                      />
+                    ) : (
+                      row.TC
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="text"
+                        value={row.kan_grubu}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            kan_grubu: e.target.value,
+                          })
+                        }
+                        className="border rounded border-yellow-500 px-2 py-1"
+                      />
+                    ) : (
+                      row.kan_grubu
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="text"
+                        value={row.ikamet_adresi}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            ikamet_adresi: e.target.value,
+                          })
+                        }
+                        className="border rounded border-yellow-500 px-2 py-1"
+                      />
+                    ) : (
+                      row.ikamet_adresi
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id
+                      ? !editToggle && (
+                          <input
+                            type="text"
+                            value={row.calisma_durumu}
+                            className="border rounded border-yellow-500 px-2 py-1"
+                          />
+                        )
+                      : row.calisma_durumu == 1
+                      ? "Çalışıyor"
+                      : "Çalışmıyor"}
+                    {editToggle && (
+                      <Menu
+                        as="div"
+                        className="relative inline-block text-left"
+                      >
+                        <div>
+                          <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                            Çalışma Durumu Seç
+                            <ChevronDownIcon
+                              className="-mr-1 h-5 w-5 text-gray-400"
+                              aria-hidden="true"
+                            />
+                          </Menu.Button>
+                        </div>
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                          <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <div className="py-1">
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <a
+                                    onClick={() =>
+                                      updateRow(row.personel_id, {
+                                        calisma_durumu: 0,
+                                      })
+                                    }
+                                    href="#"
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-100 text-gray-900"
+                                        : "text-gray-700",
+                                      "block px-4 py-2 text-sm"
+                                    )}
+                                  >
+                                    Çalışmıyor
+                                  </a>
+                                )}
+                              </Menu.Item>
+                            </div>
+                            <div className="py-1">
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <a
+                                    onClick={() =>
+                                      updateRow(row.personel_id, {
+                                        calisma_durumu: 1,
+                                      })
+                                    }
+                                    href="#"
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-100 text-gray-900"
+                                        : "text-gray-700",
+                                      "block px-4 py-2 text-sm"
+                                    )}
+                                  >
+                                    Çalışıyor
+                                  </a>
+                                )}
+                              </Menu.Item>
+                            </div>
+                          </Menu.Items>
+                        </Transition>
+                      </Menu>
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="text"
+                        value={row.proje_saha_adresi}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            proje_saha_adresi: e.target.value,
+                          })
+                        }
+                        className="border rounded border-yellow-500 px-2 py-1"
+                      />
+                    ) : (
+                      row.proje_saha_adresi
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="text"
+                        value={row.ADAK_adı_soyadı}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            ADAK_adı_soyadı: e.target.value,
+                          })
+                        }
+                        className="border rounded border-yellow-500 px-2 py-1"
+                      />
+                    ) : (
+                      row.ADAK_adı_soyadı
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="text"
+                        value={row.ADAK_telefon}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            ADAK_telefon: e.target.value,
+                          })
+                        }
+                        className="border rounded border-yellow-500 px-2 py-1"
+                      />
+                    ) : (
+                      row.ADAK_telefon
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.personel_id ? (
+                      <input
+                        type="text"
+                        value={row.ADAK_Bağı}
+                        onChange={(e) =>
+                          updateRow(row.personel_id, {
+                            ADAK_Bağı: e.target.value,
+                          })
+                        }
+                        className="border rounded border-yellow-500 px-2 py-1"
+                      />
+                    ) : (
+                      row.ADAK_Bağı
+                    )}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {editingRowId === row.merkez_id
+                      ? !editToggle && (
+                          <input
+                            type="text"
+                            value={row.merkez_isim}
+                            className="border rounded border-yellow-500 px-2 py-1"
+                          />
+                        )
+                      : row.merkez_isim}
+                    {editToggle && (
+                      <Menu
+                        as="div"
+                        className="relative inline-block text-left"
+                      >
+                        <div>
+                          <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                            Merkez Seç
+                            <ChevronDownIcon
+                              className="-mr-1 h-5 w-5 text-gray-400"
+                              aria-hidden="true"
+                            />
+                          </Menu.Button>
+                        </div>
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                          <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <div className="py-1">
+                              {unique.map((item, index) => (
+                                <div key={index}>
+                                  <Menu.Item>
+                                    {({ active }) => (
+                                      <a
+                                        onClick={() =>
+                                          updateRow(row.personel_id, {
+                                            merkez_id: item.merkez_id,
+                                          })
+                                        }
+                                        href="#"
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-100 text-gray-900"
+                                            : "text-gray-700",
+                                          "block px-4 py-2 text-sm"
+                                        )}
+                                      >
+                                        {item.merkez_isim}
+                                      </a>
+                                    )}
+                                  </Menu.Item>
+                                </div>
+                              ))}
+                            </div>
+                          </Menu.Items>
+                        </Transition>
+                      </Menu>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+            {/* row data bitiş */}
+          </table>
+        </div>
         {/* pagination sayfa number */}
         <div className="flex justify-center mt-4">
           {Array.from({ length: totalPages }, (_, index) => index + 1).map(
