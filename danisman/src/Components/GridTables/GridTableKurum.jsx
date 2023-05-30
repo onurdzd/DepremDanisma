@@ -46,7 +46,6 @@ const GridTableKurum = () => {
           options={{
             filtering: true,
             search: true,
-            selection: true,
             sorting: true,
           }}
           columns={[
