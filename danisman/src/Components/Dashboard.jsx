@@ -1,42 +1,57 @@
 import { useState } from "react";
-import DanisanEkle from "./DashboardComponents/DanisanEkle.jsx";
-import DanismanEkle from "./DashboardComponents/DanismanEkle.jsx";
-import EnvanterEkle from "./DashboardComponents/EnvanterEkle.jsx";
-import BilgiGuncelle from "./DashboardComponents/BilgiGuncelle.jsx";
+
+import GridTableEnvanter from "./GridTables/GridTableEnvanter";
+import GridTablePersonel from "./GridTables/GridTablePersonel";
+import GridTableMerkez from "./GridTables/GridTableMerkez";
+import GridTableKurum from "./GridTables/GridTableKurum";
+import GridTableHizmet from "./GridTables/GridTableHizmet";
 
 const Dashboard = () => {
   const [sayfaAdi, setSayfaAdi] = useState("");
 
   return (
-    <div className="">
-      <div className=" text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("danisanekle")}>Danışan Ekle</a>
-        </button>
+    <div className="h-full w-[90vw]">
+      <div className="flex mb-6 justify-center rounded-none border-b-8 border-blue-gray-50 bg-transparent p-0 font-bold">
+        <div className="ml-5 mt-2 mx-12 text-xl px-8 text-gray-600  dark:text-gray-800  rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
+          <button>
+            <a onClick={() => setSayfaAdi("merkeztablo")}>Merkez Tablo</a>
+          </button>
+        </div>
+        <div className=" ml-5 mt-2 mx-12 text-xl px-8  text-gray-600 dark:text-gray-800 rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
+          <button>
+            <a onClick={() => setSayfaAdi("personeltablo")}>Personel Tablo</a>
+          </button>
+        </div>
+        <div className="ml-5 mt-2 mx-12 text-xl px-8 text-gray-600 dark:text-gray-800   rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
+          <button>
+            <a onClick={() => setSayfaAdi("envantertablo")}>Envanter Tablo</a>
+          </button>
+        </div>
+        <div className="ml-5 mt-2 mx-12 text-lg px-8 text-gray-600 dark:text-gray-800   rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
+          <button>
+            <a onClick={() => setSayfaAdi("kurumtablo")}>Kurum Tablo</a>
+          </button>
+        </div>
+        <div className="ml-5 mt-2 mx-12 text-lg px-8 text-gray-600 dark:text-gray-800   rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
+          <button>
+            <a onClick={() => setSayfaAdi("hizmettablo")}>Hizmet Tablo</a>
+          </button>
+        </div>
       </div>
-      <div className=" text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("danismanekle")}>Danışman Ekle</a>
-        </button>
-      </div>
-      <div className=" text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("envanterekle")}>Envanter Ekle</a>
-        </button>
-      </div>
-      <div className=" text-red-300 ">
-        <button>
-          <a onClick={() => setSayfaAdi("bilgiguncelle")}>Bilgi Güncelle</a>
-        </button>
-      </div>
-      {sayfaAdi == "danisanekle" ? (
-        <DanisanEkle></DanisanEkle>
-      ) : sayfaAdi == "danismanekle" ? (
-        <DanismanEkle></DanismanEkle>
-      ) : sayfaAdi == "envanterekle" ? (
-        <EnvanterEkle> </EnvanterEkle>
-      ) : sayfaAdi == "bilgiguncelle" ? (
-        <BilgiGuncelle></BilgiGuncelle>
+      {sayfaAdi == "" ? (
+        <div className="text-xl font-bold text-center h-full flex flex-col justify-center">
+          Lütfen üst menüden seçim yapın
+        </div>
+      ) : sayfaAdi == "merkeztablo" ? (
+        <GridTableMerkez />
+      ) : sayfaAdi == "personeltablo" ? (
+        <GridTablePersonel />
+      ) : sayfaAdi == "envantertablo" ? (
+        <GridTableEnvanter />
+      ) : sayfaAdi == "kurumtablo" ? (
+        <GridTableKurum />
+      ) : sayfaAdi == "hizmettablo" ? (
+        <GridTableHizmet />
       ) : null}
     </div>
   );
