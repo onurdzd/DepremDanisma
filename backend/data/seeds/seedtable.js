@@ -195,7 +195,7 @@ exports.seed = async function (knex) {
   await knex("envanter").insert([
     {
       envanter_adi: "Araba",
-      tür: "Araç",
+      envanter_tur: "Araç",
       envanter_aciklama:
         "2 tane araba var birisi peronelin ulaşımı için diğeride danışanların hizmetinde kullanılıyor",
       envanter_adet: 2,
