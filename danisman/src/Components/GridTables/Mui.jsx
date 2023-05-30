@@ -13,6 +13,32 @@ const Mui = () => {
     dataAl();
   }, []);
 
+  const [merkezIsimAl, setMerkezIsimAl] = useState([]);
+  let merkezIsimleri = [];
+  useEffect(() => {
+    axios
+      .get("http://localhost:9000/api/merkez")
+      .then((res) => setMerkezIsimAl(res.data));
+  }, []);
+
+  merkezIsimAl.map((item) =>
+    merkezIsimleri.push({
+      merkez_id: item.merkez_id,
+      merkez_isim: item.merkez_isim,
+    })
+  );
+
+  const uniqueMerkez = [];
+
+  const unique = merkezIsimleri.filter((element) => {
+    const isDuplicate = uniqueMerkez.includes(element.merkez_id);
+    if (!isDuplicate) {
+      uniqueMerkez.push(element.merkez_id);
+      return true;
+    }
+    return false;
+  });
+
   return (
     <>
       <div style={{ maxWidth: "100%" }}>
@@ -37,10 +63,7 @@ const Mui = () => {
               title: "Id",
               field: "kurum_id",
               type: "numeric" /*checkbox vs olabiliyor*/,
-              validate: (rowData) =>
-                rowData.kurum_id === undefined || rowData.kurum_id === ""
-                  ? "Zorunlu"
-                  : true,
+              editable: false,
             },
             {
               title: "Adı",
@@ -59,27 +82,51 @@ const Mui = () => {
                   ? "Zorunlu"
                   : true,
             },
+            {
+              title: "Kurum Açıklama",
+              field: "kurum_aciklama",
+            },
+            {
+              title: "Kurum Link",
+              field: "kurum_link",
+            },
+            {
+              title: "Kurum Logo Link",
+              field: "kurum_logo_link",
+            },
+            {
+              title: "Bağlı Olduğu Merkez",
+              field: "merkez_id",
+              render: (rowData) =>
+                unique.find((item) => item.merkez_id == rowData.merkez_id)
+                  ?.merkez_isim,
+              validate: (rowData) =>
+                rowData.merkez_id === undefined || rowData.merkez_id === ""
+                  ? "Zorunlu"
+                  : true,
+            },
           ]}
           data={data}
-          title="Demo Title"
+          title="Kurum Tablo"
           editable={{
-            onRowAdd: (newData) =>
-              new Promise((resolve, reject) => {
-                setTimeout(() => {
-                  /* setData([...data, newData]); */
-                  resolve();
-                }, 1000);
-              }),
-            onRowUpdate: (newData, oldData) =>
-              new Promise((resolve, reject) => {
-                setTimeout(() => {
-                  const dataUpdate = [...data];
-                  const index = oldData.tableData.id;
-                  dataUpdate[index] = newData;
-                  setData([...dataUpdate]);
-                  resolve();
-                }, 1000);
-              }),
+            onRowAdd: async (newData) => {
+              await axios.post("http://localhost:9000/api/kurum", newData);
+              dataAl();
+            },
+            onRowUpdate: async (newData, oldData) => {
+              await axios.put(
+                `http://localhost:9000/api/kurum/${oldData.kurum_id}`,
+                {
+                  kurum_aciklama: newData.kurum_aciklama,
+                  kurum_adi: newData.kurum_adi,
+                  kurum_adi_kisaltma: newData.kurum_adi_kisaltma,
+                  kurum_link: newData.kurum_link,
+                  kurum_logo_link: newData.kurum_logo_link,
+                  merkez_id: newData.merkez_id,
+                }
+              );
+              dataAl();
+            },
             onRowDelete: (oldData) =>
               new Promise((resolve, reject) => {
                 setTimeout(() => {
