@@ -39,6 +39,12 @@ const GridTableHizmet = () => {
     return false;
   });
 
+  const obj = {};
+
+  unique.forEach((element) => {
+    obj[`${element.merkez_id}`] = element.merkez_isim;
+  });
+
   return (
     <>
       <div style={{ maxWidth: "100%" }}>
@@ -46,18 +52,8 @@ const GridTableHizmet = () => {
           options={{
             filtering: true,
             search: true,
-            selection: true,
             sorting: true,
           }}
-          actions={[
-            {
-              icon: "save",
-              tooltip: "Save User",
-              onClick: (event, rowData) => {
-                // Kaydet bölümü
-              },
-            },
-          ]}
           columns={[
             {
               title: "Veri Giriş Tarihi",
@@ -98,7 +94,7 @@ const GridTableHizmet = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
-              lookup: unique.map(item=>item.merkez_isim)      
+              lookup: obj      
             },
           ]}
           data={data}
