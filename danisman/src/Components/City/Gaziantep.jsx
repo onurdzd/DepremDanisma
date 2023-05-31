@@ -37,7 +37,7 @@ const Gaziantep = () => {
         setKurumData(res.data?.filter((elem) => elem.sehir_isim == sehir))
       );
   }, []);
-console.log(envanterData)
+
   envanterData?.map(item=> aracSayisi.push(item.envanter_adet))
 
   return (
@@ -100,7 +100,7 @@ console.log(envanterData)
         {kurumData.map((item, index) => (
           <>
             <p key={index} className="ml-2">
-              {item.kurum_isim}
+              {item.kurum_adi}
             </p>
             <p key={index} className="ml-2">
               {item.kurum_aciklama}
