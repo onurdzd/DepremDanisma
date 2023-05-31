@@ -44,6 +44,7 @@ const GridTableHizmet = () => {
   unique.forEach((element) => {
     obj[`${element.merkez_id}`] = element.merkez_isim;
   });
+  console.log(obj);
 
   return (
     <>
@@ -55,6 +56,12 @@ const GridTableHizmet = () => {
             sorting: true,
           }}
           columns={[
+            {
+              title: "Id",
+              field: "hizmet_id",
+              type: "numeric" /*checkbox vs olabiliyor*/,
+              editable: false,
+            },
             {
               title: "Veri Giriş Tarihi",
               field: "hizmet_created_at",
@@ -94,7 +101,7 @@ const GridTableHizmet = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
-              lookup: obj      
+              lookup: obj,
             },
           ]}
           data={data}
