@@ -74,7 +74,7 @@ const GridTablePersonel = () => {
             {
               title: "Telefon",
               field: "p_telefon1",
-              type:"numeric",
+              type: "numeric",
               validate: (rowData) =>
                 rowData.p_telefon1 === undefined || rowData.p_telefon1 === ""
                   ? "Zorunlu"
@@ -83,76 +83,78 @@ const GridTablePersonel = () => {
             {
               title: "Telefon 2",
               field: "p_telefon2",
-              type:"numeric",
+              type: "numeric",
             },
             {
               title: "TC",
               field: "TC",
-              type:"numeric",
+              type: "numeric",
               validate: (rowData) =>
-              rowData.TC === undefined || rowData.TC === ""
-                ? "Zorunlu"
-                : true,
+                rowData.TC === undefined || rowData.TC === ""
+                  ? "Zorunlu"
+                  : true,
             },
             {
               title: "Kan Grubu",
               field: "kan_grubu",
               validate: (rowData) =>
-              rowData.kan_grubu === undefined || rowData.kan_grubu === ""
-                ? "Zorunlu"
-                : true,
+                rowData.kan_grubu === undefined || rowData.kan_grubu === ""
+                  ? "Zorunlu"
+                  : true,
             },
             {
               title: "İkamet Adresi",
               field: "ikamet_adresi",
               validate: (rowData) =>
-              rowData.ikamet_adresi === undefined || rowData.ikamet_adresi === ""
-                ? "Zorunlu"
-                : true,
+                rowData.ikamet_adresi === undefined ||
+                rowData.ikamet_adresi === ""
+                  ? "Zorunlu"
+                  : true,
             },
             {
               title: "Çalışma Durumu",
               field: "calisma_durumu",
               validate: (rowData) =>
-              rowData.calisma_durumu === undefined || rowData.calisma_durumu === ""
-                ? "Zorunlu"
-                : true,
-<<<<<<< HEAD
-=======
-              lookup: {0:"Çalışmıyor",1:"Çalışıyor"}
->>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
+                rowData.calisma_durumu === undefined ||
+                rowData.calisma_durumu === ""
+                  ? "Zorunlu"
+                  : true,
+              lookup: { 0: "Çalışmıyor", 1: "Çalışıyor" },
             },
             {
               title: "Proje Saha Adresi",
               field: "proje_saha_adresi",
               validate: (rowData) =>
-              rowData.proje_saha_adresi === undefined || rowData.proje_saha_adresi === ""
-                ? "Zorunlu"
-                : true,
+                rowData.proje_saha_adresi === undefined ||
+                rowData.proje_saha_adresi === ""
+                  ? "Zorunlu"
+                  : true,
             },
             {
               title: "Acil Durumda Aranacak Kişi Ad Soyad",
               field: "ADAK_adı_soyadı",
               validate: (rowData) =>
-              rowData.ADAK_adı_soyadı=== undefined || rowData.ADAK_adı_soyadı=== ""
-                ? "Zorunlu"
-                : true,
+                rowData.ADAK_adı_soyadı === undefined ||
+                rowData.ADAK_adı_soyadı === ""
+                  ? "Zorunlu"
+                  : true,
             },
             {
               title: "Acil Durumda Aranacak Kişi Telefon",
               field: "ADAK_telefon",
               validate: (rowData) =>
-              rowData.ADAK_telefon=== undefined || rowData.ADAK_telefon=== ""
-                ? "Zorunlu"
-                : true,
+                rowData.ADAK_telefon === undefined ||
+                rowData.ADAK_telefon === ""
+                  ? "Zorunlu"
+                  : true,
             },
             {
               title: "Acil Durumda Aranacak Kişi İle Bağı",
               field: "ADAK_Bağı",
               validate: (rowData) =>
-              rowData.ADAK_Bağı=== undefined || rowData.ADAK_Bağı=== ""
-                ? "Zorunlu"
-                : true,
+                rowData.ADAK_Bağı === undefined || rowData.ADAK_Bağı === ""
+                  ? "Zorunlu"
+                  : true,
             },
             {
               title: "Bağlı Olduğu Merkez",
@@ -164,10 +166,7 @@ const GridTablePersonel = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
-<<<<<<< HEAD
-=======
-              lookup: unique.map(item=>item.merkez_isim)  
->>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
+              lookup: unique.map((item) => item.merkez_isim),
             },
           ]}
           data={data}
@@ -198,9 +197,12 @@ const GridTablePersonel = () => {
               );
               dataAl();
             },
-            onRowDelete:async (oldData) =>{
-            await axios.delete(`http://localhost:9000/api/personel/${oldData.personel_id}`);
-            dataAl();}
+            onRowDelete: async (oldData) => {
+              await axios.delete(
+                `http://localhost:9000/api/personel/${oldData.personel_id}`
+              );
+              dataAl();
+            },
           }}
         />
       </div>

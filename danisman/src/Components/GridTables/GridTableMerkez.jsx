@@ -13,19 +13,20 @@ const GridTableMerkez = () => {
     dataAl();
   }, []);
 
-  const [sehirIsimAl,setSehirIsimAl]=useState([])
+  const [sehirIsimAl, setSehirIsimAl] = useState([]);
   let sehirIsimleri = [];
-  useEffect(()=>{
+  useEffect(() => {
     axios
-    .get("http://localhost:9000/api/sehir")
-    .then((res) => setSehirIsimAl(res.data));
-  },[])
+      .get("http://localhost:9000/api/sehir")
+      .then((res) => setSehirIsimAl(res.data));
+  }, []);
 
-  sehirIsimAl.map(item=>sehirIsimleri.push({
-    sehir_id: item.sehir_id,
-    sehir_isim: item.sehir_isim,
-  })
-);
+  sehirIsimAl.map((item) =>
+    sehirIsimleri.push({
+      sehir_id: item.sehir_id,
+      sehir_isim: item.sehir_isim,
+    })
+  );
 
   const uniqueSehir = [];
 
@@ -65,7 +66,7 @@ const GridTableMerkez = () => {
             {
               title: "Merkez Telefon",
               field: "m_telefon1",
-              type:"numeric",
+              type: "numeric",
               validate: (rowData) =>
                 rowData.m_telefon1 === undefined || rowData.m_telefon1 === ""
                   ? "Zorunlu"
@@ -74,45 +75,46 @@ const GridTableMerkez = () => {
             {
               title: "Merkez Telefon 2",
               field: "m_telefon2",
-              type:"numeric",
+              type: "numeric",
             },
             {
               title: "Merkez Adresi",
               field: "merkez_adres",
               validate: (rowData) =>
-                rowData.merkez_adres === undefined || rowData.merkez_adres === ""
+                rowData.merkez_adres === undefined ||
+                rowData.merkez_adres === ""
                   ? "Zorunlu"
-                  : true
+                  : true,
             },
             {
               title: "Merkez Koordinat X",
               field: "merkez_kordinati_x",
-              type:"numeric",
+              type: "numeric",
               validate: (rowData) =>
-              rowData.merkez_kordinati_x === undefined || rowData.merkez_kordinati_x === ""
-                ? "Zorunlu"
-                : true
+                rowData.merkez_kordinati_x === undefined ||
+                rowData.merkez_kordinati_x === ""
+                  ? "Zorunlu"
+                  : true,
             },
             {
               title: "Merkez Koordinat Y",
               field: "merkez_kordinati_y",
-              type:"numeric",
+              type: "numeric",
               validate: (rowData) =>
-              rowData.merkez_kordinati_y === undefined || rowData.merkez_kordinati_y === ""
-                ? "Zorunlu"
-                : true
+                rowData.merkez_kordinati_y === undefined ||
+                rowData.merkez_kordinati_y === ""
+                  ? "Zorunlu"
+                  : true,
             },
             {
               title: "Hizmet Başlangıç Tarihi",
               field: "hizmet_baslangıc_tarihi",
-              type:"date",
-<<<<<<< HEAD
-=======
+              type: "date",
               validate: (rowData) =>
-                rowData.hizmet_baslangıc_tarihi === undefined || rowData.hizmet_baslangıc_tarihi === ""
+                rowData.hizmet_baslangıc_tarihi === undefined ||
+                rowData.hizmet_baslangıc_tarihi === ""
                   ? "Zorunlu"
                   : true,
->>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
             },
             {
               title: "Şehir",
@@ -124,10 +126,7 @@ const GridTableMerkez = () => {
                 rowData.sehir_id === undefined || rowData.sehir_id === ""
                   ? "Zorunlu"
                   : true,
-<<<<<<< HEAD
-=======
-                lookup: unique.map(item=>item.sehir_isim)  
->>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
+              lookup: unique.map((item) => item.sehir_isim),
             },
           ]}
           data={data}
@@ -153,9 +152,12 @@ const GridTableMerkez = () => {
               );
               dataAl();
             },
-            onRowDelete:async (oldData) =>{
-            await axios.delete(`http://localhost:9000/api/merkez/${oldData.merkez_id}`);
-            dataAl();}
+            onRowDelete: async (oldData) => {
+              await axios.delete(
+                `http://localhost:9000/api/merkez/${oldData.merkez_id}`
+              );
+              dataAl();
+            },
           }}
         />
       </div>

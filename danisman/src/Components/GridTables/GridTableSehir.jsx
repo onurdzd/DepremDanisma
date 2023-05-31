@@ -46,7 +46,8 @@ const GridTableSehir = () => {
               field: "sehir_merkezi_kordinati_x",
               type: "numeric",
               validate: (rowData) =>
-                rowData.sehir_merkezi_kordinati_x === undefined || rowData.sehir_merkezi_kordinati_x === ""
+                rowData.sehir_merkezi_kordinati_x === undefined ||
+                rowData.sehir_merkezi_kordinati_x === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -55,9 +56,10 @@ const GridTableSehir = () => {
               field: "sehir_merkezi_kordinati_y",
               type: "numeric",
               validate: (rowData) =>
-              rowData.sehir_merkezi_kordinati_y === undefined || rowData.sehir_merkezi_kordinati_y === ""
-                ? "Zorunlu"
-                : true,
+                rowData.sehir_merkezi_kordinati_y === undefined ||
+                rowData.sehir_merkezi_kordinati_y === ""
+                  ? "Zorunlu"
+                  : true,
             },
           ]}
           data={data}

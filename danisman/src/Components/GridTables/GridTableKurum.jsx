@@ -94,10 +94,7 @@ const GridTableKurum = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
-<<<<<<< HEAD
-=======
-              lookup: unique.map(item=>item.merkez_isim)      
->>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
+              lookup: unique.map((item) => item.merkez_isim),
             },
           ]}
           data={data}
@@ -121,9 +118,12 @@ const GridTableKurum = () => {
               );
               dataAl();
             },
-            onRowDelete:async (oldData) =>{
-            await axios.delete(`http://localhost:9000/api/kurum/${oldData.kurum_id}`);
-            dataAl();}
+            onRowDelete: async (oldData) => {
+              await axios.delete(
+                `http://localhost:9000/api/kurum/${oldData.kurum_id}`
+              );
+              dataAl();
+            },
           }}
         />
       </div>
