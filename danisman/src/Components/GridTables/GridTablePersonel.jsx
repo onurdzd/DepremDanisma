@@ -117,6 +117,7 @@ const GridTablePersonel = () => {
               rowData.calisma_durumu === undefined || rowData.calisma_durumu === ""
                 ? "Zorunlu"
                 : true,
+              lookup: {0:"Çalışmıyor",1:"Çalışıyor"}
             },
             {
               title: "Proje Saha Adresi",
