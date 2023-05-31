@@ -20,7 +20,6 @@ exports.up = function (knex) {
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
     })
-
     .createTable("sehir", (t) => {
       t.increments("sehir_id");
       t.string("sehir_isim", 20).notNullable().unique();
@@ -68,7 +67,6 @@ exports.up = function (knex) {
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
     })
-
     .createTable("kurum", (t) => {
       t.increments("kurum_id");
       t.string("kurum_adi", 128).notNullable();

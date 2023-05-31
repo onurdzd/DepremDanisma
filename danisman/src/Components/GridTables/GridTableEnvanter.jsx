@@ -93,6 +93,10 @@ const GridTableEnvanter = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
+<<<<<<< HEAD
+=======
+              lookup: unique.map(item=>item.merkez_isim)      
+>>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
             },
           ]}
           data={data}

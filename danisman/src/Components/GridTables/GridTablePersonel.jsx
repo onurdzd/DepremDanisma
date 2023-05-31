@@ -117,6 +117,10 @@ const GridTablePersonel = () => {
               rowData.calisma_durumu === undefined || rowData.calisma_durumu === ""
                 ? "Zorunlu"
                 : true,
+<<<<<<< HEAD
+=======
+              lookup: {0:"Çalışmıyor",1:"Çalışıyor"}
+>>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
             },
             {
               title: "Proje Saha Adresi",
@@ -160,6 +164,10 @@ const GridTablePersonel = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
+<<<<<<< HEAD
+=======
+              lookup: unique.map(item=>item.merkez_isim)  
+>>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
             },
           ]}
           data={data}

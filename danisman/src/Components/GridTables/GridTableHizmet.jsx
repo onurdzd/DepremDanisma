@@ -89,7 +89,11 @@ const GridTableHizmet = () => {
                   : true,
             },
             {
+<<<<<<< HEAD
               title: "Bağlı olduğu Merkez",
+=======
+              title: "Bağlı Olduğu Merkez",
+>>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
               field: "merkez_id",
               render: (rowData) =>
                 unique.find((item) => item.merkez_id == rowData.merkez_id)
@@ -98,6 +102,10 @@ const GridTableHizmet = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
+<<<<<<< HEAD
+=======
+              lookup: unique.map(item=>item.merkez_isim)      
+>>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
             },
           ]}
           data={data}

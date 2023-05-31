@@ -106,6 +106,13 @@ const GridTableMerkez = () => {
               title: "Hizmet Başlangıç Tarihi",
               field: "hizmet_baslangıc_tarihi",
               type:"date",
+<<<<<<< HEAD
+=======
+              validate: (rowData) =>
+                rowData.hizmet_baslangıc_tarihi === undefined || rowData.hizmet_baslangıc_tarihi === ""
+                  ? "Zorunlu"
+                  : true,
+>>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
             },
             {
               title: "Şehir",
@@ -117,6 +124,10 @@ const GridTableMerkez = () => {
                 rowData.sehir_id === undefined || rowData.sehir_id === ""
                   ? "Zorunlu"
                   : true,
+<<<<<<< HEAD
+=======
+                lookup: unique.map(item=>item.sehir_isim)  
+>>>>>>> c5e2973425e284dd578c12bafa7824774cc18650
             },
           ]}
           data={data}
