@@ -8,7 +8,7 @@ const Gaziantep = () => {
   const [envanterData, setEnvanterData] = useState([]);
   const [kurumData, setKurumData] = useState([]);
   const sehir = "Gaziantep";
-  const aracSayisi=[]
+  const aracSayisi = [];
 
   useEffect(() => {
     axios
@@ -24,21 +24,21 @@ const Gaziantep = () => {
     axios
       .get("http://localhost:9000/api/merkez")
       .then((res) =>
-      setMerkezData(res.data?.filter((elem) => elem.sehir_isim == sehir))
+        setMerkezData(res.data?.filter((elem) => elem.sehir_isim == sehir))
       );
-      axios
+    axios
       .get("http://localhost:9000/api/envanter")
       .then((res) =>
         setEnvanterData(res.data?.filter((elem) => elem.sehir_isim == sehir))
       );
-      axios
+    axios
       .get("http://localhost:9000/api/kurum")
       .then((res) =>
         setKurumData(res.data?.filter((elem) => elem.sehir_isim == sehir))
       );
   }, []);
 
-  envanterData?.map(item=> aracSayisi.push(item.envanter_adet))
+  envanterData?.map((item) => aracSayisi.push(item.envanter_adet));
 
   return (
     <div className="flex flex-col justify-center flex-1 w-[45vw] mt-4 mx-auto pl-2 bg-slate-100 border rounded-3xl border-solid border-gray-50 pr-2 shadow-2xl dark:bg-cyan-900 max-w-fit ">
@@ -85,13 +85,9 @@ const Gaziantep = () => {
         <p className="ml-2 font-medium">Araç Sayısı</p>
       </div>
       <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
-        {envanterData.map((item, index) => (
-          <>
-            <p key={index} className="ml-2">
-              {aracSayisi?.reduce((a,b)=>a+b)}
-            </p>
-          </>
-        ))}
+        <>
+          <p className="ml-2">{aracSayisi?.reduce((a, b) => a + b, 0)}</p>
+        </>
       </div>
       <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">İş Birliği Yapılan Kurumlar</p>
