@@ -102,6 +102,15 @@ exports.seed = async function (knex) {
       hizmet_baslangıc_tarihi: "08-03-2023",
       sehir_id: 7,
     },
+    {
+      merkez_isim: "İbb afet kordinasyon merkezi2",
+      m_telefon1: 25332890011,
+      merkez_adres: "İskenderun2",
+      merkez_kordinati_x: 36.54023,
+      merkez_kordinati_y: 36.540473,
+      hizmet_baslangıc_tarihi: "01-03-2023",
+      sehir_id: 1,
+    },
   ]);
   await knex("personel").insert([
     {
@@ -144,7 +153,7 @@ exports.seed = async function (knex) {
       ADAK_adı_soyadı: "ahmet abb",
       ADAK_telefon: 05444342444,
       ADAK_Bağı: "Baba",
-      merkez_id: 1,
+      merkez_id: 2,
     },
     {
       firstname: "meltem",
@@ -158,7 +167,7 @@ exports.seed = async function (knex) {
       ADAK_adı_soyadı: "mehmet abb",
       ADAK_telefon: 05442342444,
       ADAK_Bağı: "Kuzen",
-      merkez_id: 1,
+      merkez_id: 2,
     },
     {
       firstname: "fatih",
@@ -191,6 +200,7 @@ exports.seed = async function (knex) {
   ]);
   await knex("kurum").insert([
     { kurum_adi: "İzmit Belediyesi", kurum_adi_kisaltma: "İB", merkez_id: 1 },
+    { kurum_adi: "İzmit Belediyesi2", kurum_adi_kisaltma: "İB2", merkez_id: 2 },
   ]);
   await knex("envanter").insert([
     {
@@ -201,6 +211,14 @@ exports.seed = async function (knex) {
       envanter_adet: 2,
       merkez_id: 1,
     },
+    {
+      envanter_adi: "Araba2",
+      envanter_tur: "Araç2",
+      envanter_aciklama:
+        "22 tane araba var birisi peronelin ulaşımı için diğeride danışanların hizmetinde kullanılıyor",
+      envanter_adet: 21,
+      merkez_id: 2,
+    }
   ]);
   await knex("hizmet").insert([
     {
@@ -214,6 +232,12 @@ exports.seed = async function (knex) {
       hizmet_tipi: "Sağlık Tedavi Desteği",
       erisilen_kisi_sayisi: 10,
       merkez_id: 1,
+    },
+    {
+      donem: "02-2023",
+      hizmet_tipi: "Psikolojik Destek2",
+      erisilen_kisi_sayisi: 21,
+      merkez_id: 2,
     },
   ]);
 };
