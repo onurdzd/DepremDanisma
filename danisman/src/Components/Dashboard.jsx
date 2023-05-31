@@ -4,6 +4,7 @@ import GridTableEnvanter from "./GridTables/GridTableEnvanter";
 import GridTablePersonel from "./GridTables/GridTablePersonel";
 import GridTableMerkez from "./GridTables/GridTableMerkez";
 import GridTableKurum from "./GridTables/GridTableKurum";
+import GridTableSehir from "./GridTables/GridTableSehir";
 
 import GridTableHizmet from "./GridTables/GridTableHizmet";
 
@@ -33,10 +34,14 @@ const Dashboard = () => {
             <a onClick={() => setSayfaAdi("kurumtablo")}>Kurum Tablo</a>
           </button>
         </div>
-
         <div className="ml-5 mt-2 mx-12 text-lg px-8 text-gray-600 dark:text-gray-800   rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
           <button>
             <a onClick={() => setSayfaAdi("hizmettablo")}>Hizmet Tablo</a>
+          </button>
+        </div>
+        <div className="ml-5 mt-2 mx-12 text-lg px-8 text-gray-600 dark:text-gray-800   rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50 ">
+          <button>
+            <a onClick={() => setSayfaAdi("sehirtablo")}>Şehir Tablo</a>
           </button>
         </div>
       </div>
@@ -54,7 +59,9 @@ const Dashboard = () => {
         <GridTableKurum />
       ) : sayfaAdi == "hizmettablo" ? (
         <GridTableHizmet />
-      ) : null}
+      ) : sayfaAdi == "sehirtablo" ? (
+        <GridTableSehir />
+      ): null}
     </div>
   );
 };
