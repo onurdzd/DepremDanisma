@@ -89,7 +89,7 @@ const GridTableHizmet = () => {
                   : true,
             },
             {
-              title: "Bağlı olduğu Merkez",
+              title: "Bağlı Olduğu Merkez",
               field: "merkez_id",
               render: (rowData) =>
                 unique.find((item) => item.merkez_id == rowData.merkez_id)
