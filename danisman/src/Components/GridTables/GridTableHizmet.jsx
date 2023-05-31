@@ -98,6 +98,7 @@ const GridTableHizmet = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
+              lookup: unique.map(item=>item.merkez_isim)      
             },
           ]}
           data={data}
