@@ -39,6 +39,12 @@ const GridTableKurum = () => {
     return false;
   });
 
+  const obj = {};
+
+  unique.forEach((element) => {
+    obj[`${element.merkez_id}`] = element.merkez_isim;
+  });
+
   return (
     <>
       <div style={{ maxWidth: "100%" }}>
@@ -110,7 +116,7 @@ const GridTableKurum = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
-              lookup: unique.map((item) => item.merkez_isim),
+              lookup: obj,
             },
           ]}
           data={data}

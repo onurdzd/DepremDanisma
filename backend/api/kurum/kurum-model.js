@@ -3,7 +3,7 @@ const db = require("../../data/dbconfig");
 const getAll = () => {
   return db("kurum as k")
     .leftJoin("merkez as m", "m.merkez_id", "k.merkez_id")
-    .leftJoin("sehir as s", "s.sehir_id", "m.sehir_id").select("k.kurum_id","k.kurum_adi","k.kurum_adi_kisaltma","k.kurum_aciklama","k.kurum_link","k.kurum_logo_link","k.merkez_id","s.sehir_id")
+    .leftJoin("sehir as s", "s.sehir_id", "m.sehir_id").select("k.kurum_id","k.kurum_adi","k.kurum_adi_kisaltma","k.kurum_aciklama","k.kurum_link","k.kurum_logo_link","k.merkez_id","s.sehir_id","s.sehir_isim")
 };
 const getById = async (kurum_id) => {
   return db("kurum as k").where("k.kurum_id", kurum_id).first();

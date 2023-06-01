@@ -39,6 +39,12 @@ const GridTableMerkez = () => {
     return false;
   });
 
+  const obj = {};
+
+  unique.forEach((element) => {
+    obj[`${element.sehir_id}`] = element.sehir_isim;
+  });
+
   return (
     <>
       <div>
@@ -145,7 +151,7 @@ const GridTableMerkez = () => {
                 rowData.sehir_id === undefined || rowData.sehir_id === ""
                   ? "Zorunlu"
                   : true,
-              lookup: unique.map((item) => item.sehir_isim),
+              lookup: obj,
             },
           ]}
           data={data}
