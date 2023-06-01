@@ -14,6 +14,7 @@ import Login from "./Login";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
 const Header = () => {
   return (
     <header className="text-xl w-screen bg-white mx-auto pb-5 pt-5">
