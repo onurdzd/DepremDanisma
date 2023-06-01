@@ -99,7 +99,7 @@ exports.seed = async function (knex) {
       merkez_adres: "İskenderun",
       merkez_kordinati_x: 36.540673,
       merkez_kordinati_y: 36.540673,
-      hizmet_baslangıc_tarihi: "08-03-2023",
+      hizmet_baslangıc_tarihi: "08.03.2023",
       sehir_id: 7,
     },
     {
@@ -108,7 +108,7 @@ exports.seed = async function (knex) {
       merkez_adres: "İskenderun2",
       merkez_kordinati_x: 36.54023,
       merkez_kordinati_y: 36.540473,
-      hizmet_baslangıc_tarihi: "01-03-2023",
+      hizmet_baslangıc_tarihi: "01.03.2023",
       sehir_id: 1,
     },
   ]);
