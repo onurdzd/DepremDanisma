@@ -1,6 +1,7 @@
 import MaterialTable from "@material-table/core";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { tr } from "date-fns/locale";
 
 const GridTableMerkez = () => {
   const [data, setData] = useState([]);
@@ -135,6 +136,7 @@ const GridTableMerkez = () => {
               title: "Hizmet Başlangıç Tarihi",
               field: "hizmet_baslangıc_tarihi",
               type: "date",
+              dateSetting:{locale:tr},
               validate: (rowData) =>
                 rowData.hizmet_baslangıc_tarihi === undefined ||
                 rowData.hizmet_baslangıc_tarihi === ""

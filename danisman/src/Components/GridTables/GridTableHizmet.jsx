@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import MaterialTable from "@material-table/core";
+import { tr } from "date-fns/locale";
 
 const GridTableHizmet = () => {
   const [data, setData] = useState([]);
@@ -79,7 +80,10 @@ const GridTableHizmet = () => {
             },
             {
               title: "Veri Giriş Tarihi",
+              type:"date",
+              dateSetting:{locale:tr},
               field: "hizmet_created_at",
+              editable:false
             },
             {
               title: "Hizmet Tarihi",
