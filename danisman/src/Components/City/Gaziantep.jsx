@@ -9,6 +9,7 @@ const Gaziantep = () => {
   const [kurumData, setKurumData] = useState([]);
   const sehir = "Gaziantep";
   const aracSayisi = [];
+  const ulasilanKisiSayisi = [];
 
   useEffect(() => {
     axios
@@ -39,6 +40,9 @@ const Gaziantep = () => {
   }, []);
 
   envanterData?.map((item) => aracSayisi.push(item.envanter_adet));
+
+  hizmetData?.map((item) => ulasilanKisiSayisi.push(item.erisilen_kisi_sayisi));
+  console.log(ulasilanKisiSayisi);
 
   return (
     <div className="flex flex-col justify-center flex-1 w-[45vw] mt-4 mx-auto pl-2 bg-slate-100 border rounded-3xl border-solid border-gray-50 pr-2 shadow-2xl dark:bg-cyan-900 max-w-fit ">
@@ -103,6 +107,16 @@ const Gaziantep = () => {
             </p>
           </>
         ))}
+      </div>
+      <div className="bg-slate-100 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+        <p className="ml-2 font-medium">Ulaşılan Kişi Sayısı</p>
+      </div>
+      <div className="bg-slate-100 mt-3  mb-4 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+        <>
+          <p className="ml-2">
+            {ulasilanKisiSayisi?.reduce((a, b) => a + b, 0)}
+          </p>
+        </>
       </div>
     </div>
   );

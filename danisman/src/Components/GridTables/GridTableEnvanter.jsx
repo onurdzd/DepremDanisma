@@ -38,7 +38,7 @@ const GridTableEnvanter = () => {
     }
     return false;
   });
-  
+
   const obj = {};
 
   unique.forEach((element) => {
@@ -65,7 +65,8 @@ const GridTableEnvanter = () => {
               title: "Envanter Adı",
               field: "envanter_adi",
               validate: (rowData) =>
-                rowData.envanter_adi === undefined || rowData.envanter_adi === ""
+                rowData.envanter_adi === undefined ||
+                rowData.envanter_adi === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -73,7 +74,8 @@ const GridTableEnvanter = () => {
               title: "Envanter Tür",
               field: "envanter_tur",
               validate: (rowData) =>
-                rowData.envanter_tur === undefined || rowData.envanter_tur === ""
+                rowData.envanter_tur === undefined ||
+                rowData.envanter_tur === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -85,9 +87,10 @@ const GridTableEnvanter = () => {
               title: "Envanter Adet",
               field: "envanter_adet",
               validate: (rowData) =>
-                rowData.envanter_adet === undefined || rowData.envanter_adet === ""
+                rowData.envanter_adet === undefined ||
+                rowData.envanter_adet === ""
                   ? "Zorunlu"
-                  : true
+                  : true,
             },
             {
               title: "Bağlı Olduğu Merkez",
@@ -99,7 +102,7 @@ const GridTableEnvanter = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
-              lookup:obj    
+              lookup: obj,
             },
           ]}
           data={data}
@@ -122,9 +125,12 @@ const GridTableEnvanter = () => {
               );
               dataAl();
             },
-            onRowDelete:async (oldData) =>{
-            await axios.delete(`http://localhost:9000/api/envanter/${oldData.envanter_id}`);
-            dataAl();}
+            onRowDelete: async (oldData) => {
+              await axios.delete(
+                `http://localhost:9000/api/envanter/${oldData.envanter_id}`
+              );
+              dataAl();
+            },
           }}
         />
       </div>
