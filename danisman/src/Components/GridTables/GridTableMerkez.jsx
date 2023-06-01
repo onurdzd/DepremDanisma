@@ -41,12 +41,29 @@ const GridTableMerkez = () => {
 
   return (
     <>
-      <div style={{ maxWidth: "100%" }}>
+      <div>
+        {/* style={{ maxWidth: "100%" }} */}
         <MaterialTable
           options={{
             filtering: true,
             search: true,
             sorting: true,
+            // selection: true,
+            showSelectAllCheckbox: false,
+            showTextRowsSelected: false,
+            grouping: true,
+            // pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
+            filterCellStyle: { padding: "6px" },
+            columnsButton: true,
+            toolbarButtonColor: "#007bff",
+
+            rowStyle: (data, index) =>
+              index % 2 === 0 ? { background: "#f5f5f5" } : null,
+            headerStyle: {
+              background: "#f44336e4",
+              color: "#fff",
+              borderWidth: "1px",
+            },
           }}
           columns={[
             {
@@ -54,6 +71,7 @@ const GridTableMerkez = () => {
               field: "merkez_id",
               type: "numeric" /*checkbox vs olabiliyor*/,
               editable: false,
+              filterPlaceholder: "merkez_id",
             },
             {
               title: "Merkez İsim",
@@ -62,6 +80,7 @@ const GridTableMerkez = () => {
                 rowData.merkez_isim === undefined || rowData.merkez_isim === ""
                   ? "Zorunlu"
                   : true,
+              filterPlaceholder: "Merkez İsimi",
             },
             {
               title: "Merkez Telefon",
@@ -159,6 +178,7 @@ const GridTableMerkez = () => {
               dataAl();
             },
           }}
+          enableGrouping
         />
       </div>
     </>

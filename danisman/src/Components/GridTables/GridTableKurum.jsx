@@ -47,6 +47,22 @@ const GridTableKurum = () => {
             filtering: true,
             search: true,
             sorting: true,
+
+            showSelectAllCheckbox: false,
+            showTextRowsSelected: false,
+            grouping: true,
+            // pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
+            filterCellStyle: { padding: "6px" },
+            columnsButton: true,
+            toolbarButtonColor: "#007bff",
+
+            rowStyle: (data, index) =>
+              index % 2 === 0 ? { background: "#f5f5f5" } : null,
+            headerStyle: {
+              background: "#f44336e4",
+              color: "#fff",
+              borderWidth: "1px",
+            },
           }}
           columns={[
             {
