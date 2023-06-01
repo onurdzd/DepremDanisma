@@ -178,9 +178,9 @@ const router = createBrowserRouter([
   {
     path: "/iletisim",
     element: (
-      <div className="h-screen ">
+      <div className="h-screen flex flex-col ">
         <Header />
-        <div className="mt-8 pl-6">
+        <div className="flex justify-center h-full">
           <İletisim />
         </div>
         <Footer />
