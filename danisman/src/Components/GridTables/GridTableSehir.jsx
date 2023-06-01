@@ -21,6 +21,22 @@ const GridTableSehir = () => {
             filtering: true,
             search: true,
             sorting: true,
+
+            showSelectAllCheckbox: false,
+            showTextRowsSelected: false,
+            grouping: true,
+            // pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
+            filterCellStyle: { padding: "6px" },
+            columnsButton: true,
+            toolbarButtonColor: "#007bff",
+
+            rowStyle: (data, index) =>
+              index % 2 === 0 ? { background: "#f5f5f5" } : null,
+            headerStyle: {
+              background: "#f44336e4",
+              color: "#fff",
+              borderWidth: "1px",
+            },
           }}
           columns={[
             {
@@ -46,7 +62,8 @@ const GridTableSehir = () => {
               field: "sehir_merkezi_kordinati_x",
               type: "numeric",
               validate: (rowData) =>
-                rowData.sehir_merkezi_kordinati_x === undefined || rowData.sehir_merkezi_kordinati_x === ""
+                rowData.sehir_merkezi_kordinati_x === undefined ||
+                rowData.sehir_merkezi_kordinati_x === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -55,9 +72,10 @@ const GridTableSehir = () => {
               field: "sehir_merkezi_kordinati_y",
               type: "numeric",
               validate: (rowData) =>
-              rowData.sehir_merkezi_kordinati_y === undefined || rowData.sehir_merkezi_kordinati_y === ""
-                ? "Zorunlu"
-                : true,
+                rowData.sehir_merkezi_kordinati_y === undefined ||
+                rowData.sehir_merkezi_kordinati_y === ""
+                  ? "Zorunlu"
+                  : true,
             },
           ]}
           data={data}
