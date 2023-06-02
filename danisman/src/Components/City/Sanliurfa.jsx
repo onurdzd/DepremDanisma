@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { HiOutlineArrowLeft } from "react-icons/hi";
 
 const Sanliurfa = () => {
   const [personelData, setPersonelData] = useState([]);
@@ -7,6 +9,8 @@ const Sanliurfa = () => {
   const [hizmetData, setHizmetData] = useState([]);
   const [envanterData, setEnvanterData] = useState([]);
   const [kurumData, setKurumData] = useState([]);
+
+  let navigate = useNavigate();
   const sehir = "Sanliurfa";
   const aracSayisi = [];
   const ulasilanKisiSayisi = [];
@@ -44,11 +48,22 @@ const Sanliurfa = () => {
   hizmetData?.map((item) => ulasilanKisiSayisi.push(item.erisilen_kisi_sayisi));
 
   return (
-    <div className="flex flex-col justify-center flex-1 w-[45vw] mt-4 mx-auto pl-2 bg-slate-100 border rounded-3xl border-solid border-gray-50 pr-2 shadow-2xl dark:bg-cyan-900 max-w-fit ">
-      <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+    <div className="flex flex-col  w-[45vw] my-6  mx-8  pl-2 bg-slate-100 border rounded-3xl border-solid border-gray-50 pr-2 shadow-2xl dark:bg-cyan-900 max-w-fit ">
+      <div className="flex ">
+        <button
+          className="flex basis-2/5  bg-none border-none mt-8 mb-3 pr-1 cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          <HiOutlineArrowLeft className="w-8 h-6 text-gray-100 inline-block" />
+        </button>
+        <p className="  pt-7 pl-2 basis-3/5 inline-block text-xl text-slate-200">
+          ŞANLIURFA
+        </p>
+      </div>
+      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">Personel Adı Soyadı</p>
       </div>
-      <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         {personelData.map((item, index) => (
           <>
             <p key={index} className="ml-2">
@@ -57,10 +72,10 @@ const Sanliurfa = () => {
           </>
         ))}
       </div>
-      <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">Merkezlerimiz</p>
       </div>
-      <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         {merkezData.map((item, index) => (
           <>
             <p key={index} className="ml-2">
@@ -69,10 +84,10 @@ const Sanliurfa = () => {
           </>
         ))}
       </div>
-      <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">Merkez Telefon Numaraları</p>
       </div>
-      <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         {merkezData.map((item, index) => (
           <>
             <p key={index} className="ml-2">
@@ -84,18 +99,18 @@ const Sanliurfa = () => {
           </>
         ))}
       </div>
-      <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">Araç Sayısı</p>
       </div>
-      <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <>
           <p className="ml-2">{aracSayisi?.reduce((a, b) => a + b, 0)}</p>
         </>
       </div>
-      <div className="bg-slate-100 mt-3  w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">İş Birliği Yapılan Kurumlar</p>
       </div>
-      <div className="bg-slate-100 mt-3  mb-4 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 mb-4 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         {kurumData.map((item, index) => (
           <>
             <p key={index} className="ml-2">
@@ -107,10 +122,10 @@ const Sanliurfa = () => {
           </>
         ))}
       </div>
-      <div className="bg-slate-100 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 w-[40vw] h-auto flex-1 text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">Ulaşılan Kişi Sayısı</p>
       </div>
-      <div className="bg-slate-100 mt-3  mb-4 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 mb-10 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <>
           <p className="ml-2">
             {ulasilanKisiSayisi?.reduce((a, b) => a + b, 0)}

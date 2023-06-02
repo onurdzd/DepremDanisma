@@ -2,29 +2,60 @@ import "./App.css";
 import { ReactComponent as Harita } from "../src/assets/vectormap.svg";
 import SehirİsimleriEkle from "./Components/SehirİisimleriEkle.jsx";
 import axios from "axios";
+import { MdPeopleAlt, MdPerson } from "react-icons/md";
 import { useState, useEffect } from "react";
 
-
 function App() {
-
   const [hizmetData, setHizmetData] = useState([]);
 
-  let ulasilanKisiSayisi =0
+  let ulasilanKisiSayisi = 0;
 
   useEffect(() => {
     axios
-  .get("http://localhost:9000/api/hizmet")
-  .then((res) =>
-    setHizmetData(res.data)
-  )},[])
+      .get("http://localhost:9000/api/hizmet")
+      .then((res) => setHizmetData(res.data));
+  }, []);
 
-  hizmetData.forEach(item=> ulasilanKisiSayisi+=item.erisilen_kisi_sayisi)
+  hizmetData.forEach(
+    (item) => (ulasilanKisiSayisi += item.erisilen_kisi_sayisi)
+  );
 
   return (
-    <div className="flex flex-col items-center mt-8 flex-grow justify-center">
+    <div className="flex flex-col mb-6 items-center mt-5 flex-grow justify-center">
       <Harita />
       <SehirİsimleriEkle />
-      <div className="font-sans font-semibold text-[4rem] mt-8 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-emerald-700 to-indigo-700 "><h1>Ulaşılan Kişi Sayısı: <span className="text-[3.5rem]">{ulasilanKisiSayisi}</span></h1></div>
+      <div className="font-sans  flex font-semibold text-[4rem] bg-white px-10 py-1 rounded-xl ">
+        <div className="flex  flex-col mr-10 ml-2 ">
+          <img className="max-w-[9rem] py-4 px-6 ml-4 " src="logo.jpg" />
+          <p className="text-sm text-center">
+            Travma ve Afet Ruh Sağlığı <br /> Çalışmaları Derneği
+          </p>
+        </div>
+
+        <div>
+          <p className="text-base font-medium text-blue-900 my-5">
+            28 MART'TAN İTİBAREN
+          </p>
+          <div className="flex flex-row">
+            <span className="ml-2 font-light mt-1 ">
+              <MdPerson className="text-2xl mr-6"></MdPerson>{" "}
+            </span>
+            <span className="text-3xl font-normal ">{ulasilanKisiSayisi}</span>
+            <p className=" text-base  text-black mt-3 font-normal mr-1 ">
+              Kişi
+            </p>
+          </div>
+          <div className="flex flex-row mt-4">
+            <span className="ml-2 font-light mt-1 ">
+              <MdPeopleAlt className="text-2xl mr-6"></MdPeopleAlt>{" "}
+            </span>
+            <span className="text-3xl font-normal ">{ulasilanKisiSayisi}</span>
+            <p className=" text-base  text-black mt-3 font-normal mr-1 ">
+              Etkinlik
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

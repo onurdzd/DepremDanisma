@@ -18,16 +18,20 @@ import Osmaniye from "./Components/City/Osmaniye.jsx";
 import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 import Footer from "./Components/Footer.jsx";
 
-const localToken=JSON.parse(localStorage.getItem("user"))
+const localToken = JSON.parse(localStorage.getItem("user"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="flex flex-col  items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <App />
-        <Footer />
+      <div className="flex flex-row items-center bg-slate-100 h-screen w-screen">
+        <div className="flex bg-white h-screen flex-col basis-1/5">
+          <Header />
+          <Footer />
+        </div>
+        <div className="basis-4/5">
+          <App />
+        </div>
       </div>
     ),
   },
@@ -35,143 +39,175 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <>
-      <div className="h-screen flex flex-col justify-between">
-        <Header />
-        <div className="flex-grow flex flex-col items-center mt-8 pl-6">
-        {localToken ? <Dashboard/> : <div className="h-full flex flex-col justify-center font-bold text-xl">Dashboard ekranına ulaşmak için önce giriş yapın</div>}
+        <div className="flex  items-center bg-slate-100  ">
+          <div className="flex fixed  bg-white h-screen flex-col basis-1/5">
+            <Header />
+            <Footer />
+          </div>
+
+          <div className="flex ml-80    bg-slate-100 basis-4/5 ">
+            {localToken ? (
+              <Dashboard />
+            ) : (
+              <div className="flex ml-80   bg-slate-100 basis-2/3">
+                Dashboard ekranına ulaşmak için önce giriş yapın
+              </div>
+            )}
+          </div>
         </div>
-        <Footer />
-      </div> 
       </>
     ),
   },
   {
     path: "/adana",
     element: (
-      <div className="flex flex-col items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
+      <div className="flex items-center bg-slate-100   ">
+        <div className="flex fixed  bg-white h-screen flex-col basis-2/12">
+          <Header />
+          <Footer />
+        </div>
+
+        <div className="flex ml-80  items-center  bg-slate-100 basis-10/12   ">
           <App />
           <Adana />
         </div>
-        <Footer />
       </div>
     ),
   },
   {
     path: "/osmaniye",
     element: (
-      <div className="flex flex-col items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
+      <div className="flex  items-center bg-slate-100   ">
+        <div className="flex fixed bg-white h-screen flex-col basis-2/12 ">
+          <Header />
+          <Footer />
+        </div>
+
+        <div className="flex ml-80 items-center bg-slate-100 basis-10/12    ">
           <App />
           <Osmaniye />
         </div>
-        <Footer />
       </div>
     ),
   },
   {
     path: "/hatay",
     element: (
-      <div className="flex flex-col items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
+      <div className="flex  items-center bg-slate-100 ">
+        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+          <Header />
+          <Footer />
+        </div>
+
+        <div className="flex ml-80 items-center bg-slate-100 basis-10/12 ">
           <App />
           <Hatay />
         </div>
-        <Footer />
       </div>
     ),
   },
   {
     path: "/gaziantep",
     element: (
-      <div className="flex flex-col items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
+      <div className="flex  items-center bg-slate-100 ">
+        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+          <Header />
+          <Footer />
+        </div>
+        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
           <App />
           <Gaziantep />
         </div>
-        <Footer />
       </div>
     ),
   },
   {
     path: "/kilis",
     element: (
-      <div className="flex flex-col items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
+      <div className="flex  items-center bg-slate-100 ">
+        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+          <Header />
+          <Footer />
+        </div>
+        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
           <App />
           <Kilis />
         </div>
-        <Footer />
       </div>
     ),
   },
   {
     path: "/sanliurfa",
     element: (
-      <div className="flex flex-col items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
+      <div className="flex  items-center bg-slate-100 ">
+        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+          <Header />
+          <Footer />
+        </div>
+        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
           <App />
           <Sanliurfa />
         </div>
-        <Footer />
       </div>
     ),
   },
   {
     path: "/adiyaman",
     element: (
-      <div className="flex flex-col items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
+      <div className="flex  items-center bg-slate-100 ">
+        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+          <Header />
+          <Footer />
+        </div>
+        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
           <App />
           <Adiyaman />
         </div>
-        <Footer />
       </div>
     ),
   },
   {
     path: "/kahramanmaras",
     element: (
-      <div className="flex flex-col items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
+      <div className="flex  items-center bg-slate-100 ">
+        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+          <Header />
+          <Footer />
+        </div>
+        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
           <App />
           <Kahramanmaras />
         </div>
-        <Footer />
       </div>
     ),
   },
   {
     path: "/diyarbakir",
     element: (
-      <div className="flex flex-col items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
+      <div className="flex  items-center bg-slate-100 ">
+        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+          <Header />
+          <Footer />
+        </div>
+        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
           <App />
           <Diyarbakir />
         </div>
-        <Footer />
       </div>
     ),
   },
   {
     path: "/malatya",
     element: (
-      <div className="flex flex-col items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
+      <div className="flex  items-center bg-slate-100 ">
+        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+          <Header />
+          <Footer />
+        </div>
+        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
           <App />
           <Malatya />
         </div>
-        <Footer />
       </div>
     ),
   },
