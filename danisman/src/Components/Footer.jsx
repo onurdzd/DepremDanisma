@@ -7,27 +7,8 @@ import {
 const Footer = () => {
   return (
     <>
-      <section className="bg-white w-full mt-12">
-        <div className="max-w-screen-xl px-4 py-3 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-          <nav className="flex flex-wrap justify-center -mx-5 -my-2">
-            <div className="px-5 py-2">
-              <a
-                href={"/"}
-                className="text-base leading-6 text-gray-500 hover:text-gray-900"
-              >
-                Anasayfa
-              </a>
-            </div>
-
-            <div className="px-5 py-2">
-              <a
-                href={"/iletisim"}
-                className="text-base leading-6 text-gray-500 hover:text-gray-900"
-              >
-                İletişim
-              </a>
-            </div>
-          </nav>
+      <section className="w-full basis-1/12 ">
+        <div className="max-w-screen-xl text-end px-4 py-1 mx-auto  overflow-hidden sm:px-1 lg:px-1">
           <div className=" flex  justify-center  ">
             <a href="https://twitter.com/tardeorgtr">
               <FontAwesomeIcon
@@ -56,7 +37,7 @@ const Footer = () => {
               />
             </a>
           </div>
-          <p className="mt-8 text-base leading-6 text-center text-gray-400">
+          <p className=" text-xs leading-1 text-center text-gray-400">
             © 2023 Tüm Hakları Saklıdır.
           </p>
         </div>
