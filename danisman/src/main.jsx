@@ -39,17 +39,17 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <>
-        <div className="flex  items-center bg-slate-100  ">
-          <div className="flex fixed  bg-white h-screen flex-col basis-1/5">
+        <div className="flex  items-center bg-slate-100 w-[100vw]  ">
+          <div className="flex fixed  bg-white h-[100vh] w-[18vw] flex-col basis-1/5">
             <Header />
             <Footer />
           </div>
 
-          <div className="flex ml-80    bg-slate-100 basis-4/5 ">
+          <div className="flex  ml-[22rem]  bg-slate-100 basis-4/5 ">
             {localToken ? (
               <Dashboard />
             ) : (
-              <div className="flex ml-80   bg-slate-100 basis-2/3">
+              <div className="flex  bg-slate-100 basis-2/3">
                 Dashboard ekranına ulaşmak için önce giriş yapın
               </div>
             )}
