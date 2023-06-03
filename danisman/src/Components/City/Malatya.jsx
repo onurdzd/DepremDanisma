@@ -46,7 +46,7 @@ const Malatya = () => {
   hizmetData?.map((item) => ulasilanKisiSayisi.push(item.erisilen_kisi_sayisi));
 
   return (
-    <div className="flex flex-col   w-[45vw] my-6  mx-8  pl-2 bg-slate-100 border rounded-3xl border-solid border-gray-50 pr-2 shadow-2xl dark:bg-cyan-900 max-w-fit ">
+    <div className="flex flex-col   w-[25vw] my-6  mx-8  pl-2 bg-slate-100 border rounded-3xl border-solid border-gray-50 pr-2 shadow-2xl dark:bg-cyan-900 max-w-fit ">
       <div className="flex ">
         <button
           className="flex basis-2/5  bg-none border-none mt-8 mb-3 pr-1 cursor-pointer"
@@ -58,10 +58,10 @@ const Malatya = () => {
           MALATYA
         </p>
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[24vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">Personel Adı Soyadı</p>
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[24vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         {personelData.map((item, index) => (
           <>
             <p key={index} className="ml-2">
@@ -70,10 +70,10 @@ const Malatya = () => {
           </>
         ))}
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[24vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">Merkezlerimiz</p>
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[24vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         {merkezData.map((item, index) => (
           <>
             <p key={index} className="ml-2">
@@ -82,10 +82,10 @@ const Malatya = () => {
           </>
         ))}
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[24vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">Merkez Telefon Numaraları</p>
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-240vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         {merkezData.map((item, index) => (
           <>
             <p key={index} className="ml-2">
@@ -97,18 +97,18 @@ const Malatya = () => {
           </>
         ))}
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[24vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">Araç Sayısı</p>
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[24vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <>
           <p className="ml-2">{aracSayisi?.reduce((a, b) => a + b, 0)}</p>
         </>
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 w-[24vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">İş Birliği Yapılan Kurumlar</p>
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 mb-4 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 mb-4 w-[24vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         {kurumData.map((item, index) => (
           <>
             <p key={index} className="ml-2">
@@ -120,10 +120,10 @@ const Malatya = () => {
           </>
         ))}
       </div>
-      <div className="bg-slate-100 w-[40vw] h-auto flex-1 text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 w-[24vw] h-auto flex-1 text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <p className="ml-2 font-medium">Ulaşılan Kişi Sayısı</p>
       </div>
-      <div className="bg-slate-100 mt-3 flex-1 mb-10 w-[40vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
+      <div className="bg-slate-100 mt-3 flex-1 mb-10 w-[24vw] h-auto  text-left border  border-solid   border-gray-200 rounded-lg text-gray-700">
         <>
           <p className="ml-2">
             {ulasilanKisiSayisi?.reduce((a, b) => a + b, 0)}
