@@ -24,8 +24,8 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="flex flex-row items-center bg-slate-100 h-screen w-screen">
-        <div className="flex bg-white h-screen flex-col basis-1/5">
+      <div className="flex flex-row items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw]">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-1/5">
           <Header />
           <Footer />
         </div>
@@ -61,13 +61,13 @@ const router = createBrowserRouter([
   {
     path: "/adana",
     element: (
-      <div className="flex items-center bg-slate-100   ">
-        <div className="flex fixed  bg-white h-screen flex-col basis-2/12">
+      <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw]   ">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-2/12 ">
           <Header />
           <Footer />
         </div>
 
-        <div className="flex ml-80  items-center  bg-slate-100 basis-10/12   ">
+        <div className="flex     bg-slate-100 basis-10/12   ">
           <App />
           <Adana />
         </div>
@@ -77,13 +77,12 @@ const router = createBrowserRouter([
   {
     path: "/osmaniye",
     element: (
-      <div className="flex  items-center bg-slate-100   ">
-        <div className="flex fixed bg-white h-screen flex-col basis-2/12 ">
+      <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw] ">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-2/12 ">
           <Header />
           <Footer />
         </div>
-
-        <div className="flex ml-80 items-center bg-slate-100 basis-10/12    ">
+        <div className="flex   bg-slate-100 basis-10/12">
           <App />
           <Osmaniye />
         </div>
@@ -93,13 +92,12 @@ const router = createBrowserRouter([
   {
     path: "/hatay",
     element: (
-      <div className="flex  items-center bg-slate-100 ">
-        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+      <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw] ">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-2/12 ">
           <Header />
           <Footer />
         </div>
-
-        <div className="flex ml-80 items-center bg-slate-100 basis-10/12 ">
+        <div className="flex   bg-slate-100 basis-10/12">
           <App />
           <Hatay />
         </div>
@@ -109,12 +107,12 @@ const router = createBrowserRouter([
   {
     path: "/gaziantep",
     element: (
-      <div className="flex  items-center bg-slate-100 ">
-        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+      <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw] ">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-2/12 ">
           <Header />
           <Footer />
         </div>
-        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
+        <div className="flex   bg-slate-100 basis-10/12">
           <App />
           <Gaziantep />
         </div>
@@ -124,12 +122,12 @@ const router = createBrowserRouter([
   {
     path: "/kilis",
     element: (
-      <div className="flex  items-center bg-slate-100 ">
-        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+      <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw] ">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-2/12 ">
           <Header />
           <Footer />
         </div>
-        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
+        <div className="flex   bg-slate-100 basis-10/12">
           <App />
           <Kilis />
         </div>
@@ -139,12 +137,12 @@ const router = createBrowserRouter([
   {
     path: "/sanliurfa",
     element: (
-      <div className="flex  items-center bg-slate-100 ">
-        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+      <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw] ">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-2/12 ">
           <Header />
           <Footer />
         </div>
-        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
+        <div className="flex   bg-slate-100 basis-10/12">
           <App />
           <Sanliurfa />
         </div>
@@ -154,12 +152,12 @@ const router = createBrowserRouter([
   {
     path: "/adiyaman",
     element: (
-      <div className="flex  items-center bg-slate-100 ">
-        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+      <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw] ">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-2/12 ">
           <Header />
           <Footer />
         </div>
-        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
+        <div className="flex   bg-slate-100 basis-10/12">
           <App />
           <Adiyaman />
         </div>
@@ -169,12 +167,12 @@ const router = createBrowserRouter([
   {
     path: "/kahramanmaras",
     element: (
-      <div className="flex  items-center bg-slate-100 ">
-        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+      <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw] ">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-2/12 ">
           <Header />
           <Footer />
         </div>
-        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
+        <div className="flex   bg-slate-100 basis-10/12">
           <App />
           <Kahramanmaras />
         </div>
@@ -184,12 +182,12 @@ const router = createBrowserRouter([
   {
     path: "/diyarbakir",
     element: (
-      <div className="flex  items-center bg-slate-100 ">
-        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+      <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw] ">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-2/12 ">
           <Header />
           <Footer />
         </div>
-        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
+        <div className="flex   bg-slate-100 basis-10/12">
           <App />
           <Diyarbakir />
         </div>
@@ -199,12 +197,12 @@ const router = createBrowserRouter([
   {
     path: "/malatya",
     element: (
-      <div className="flex  items-center bg-slate-100 ">
-        <div className="flex fixed bg-white h-screen flex-col basis-2/12">
+      <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw] ">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-2/12 ">
           <Header />
           <Footer />
         </div>
-        <div className="flex ml-80 items-center bg-slate-100 basis-10/12">
+        <div className="flex   bg-slate-100 basis-10/12">
           <App />
           <Malatya />
         </div>
