@@ -22,7 +22,7 @@ function App() {
   );
 
   return (
-    <div className="flex flex-col mt-5 mr-4 pb-10 flex-grow bg-[url('mapZone.png')] rounded-3xl  ">
+    <div className="flex flex-col mt-5 mr-4 flex-grow bg-[url('mapZone.png')] rounded-3xl  ">
       <Harita />
       <SehirİsimleriEkle />
       <div className=" flex flex-row mt-36 justify-between mx-6">
@@ -63,7 +63,7 @@ function App() {
           </div>
         </div>
         {isAnasayfa && (
-          <div className="bg-amber-300 bg-opacity-30 w-[16vw] h-[42vh] mt-[-11rem] rounded-3xl">
+          <div className="bg-amber-300 bg-opacity-30 w-[16vw] h-[42vh] mt-[-15rem] rounded-3xl">
             <button className="mt-8 w-[13vw] mx-7 px-6 py-2 bg-amber-300 rounded-xl inline-block text-sm font-bold text-blue-900">
               GÖNÜLLÜ OL
             </button>
