@@ -17,14 +17,16 @@ const Header = () => {
     <div className="flex text-xl w-full items-center">
       <div className=" mx-10 flex w-full ">
         <div className="ml-7 flex w-full items-center">
-          <img className="max-h-[125px] py-4" src="logo2.jpg" />
-          <div >
-          <p className="text-5xl font-mono font-normal text-opacity-90 text-[#162270]">
-            Affan
-          </p>
-          <p className="text-base font-thin font-mono">
-            Psikososyal Destek Projesi{" "}
-          </p>
+          <a href="/">
+            <img className="max-h-[125px] py-4" src="logo2.jpg" />
+          </a>
+          <div>
+            <p className="text-5xl font-mono font-normal text-opacity-90 text-[#162270]">
+              Affan
+            </p>
+            <p className="text-base font-thin font-mono">
+              Psikososyal Destek Projesi{" "}
+            </p>
           </div>
         </div>
         <div className="flex  mt-4 w-full ">

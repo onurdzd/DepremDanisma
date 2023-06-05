@@ -29,6 +29,7 @@ function App() {
         <div className="font-sans  flex  font-semibold text-[4rem] bg-white px-10 py-1 rounded-xl ">
           <div className="flex  flex-col mr-10 ml-2 ">
             <img className="max-w-[9rem] pt-4 pb-2 px-6 ml-4 " src="logo.jpg" />
+
             <p className="text-xs text-center ">
               Travma ve Afet Ruh Sağlığı <br /> Çalışmaları Derneği
             </p>
