@@ -24,13 +24,13 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="flex flex-row items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw]">
+      <div className="flex flex-row items-center bg-slate-100 rounded-[2rem] w-[90vw] h-[90vh]">
         <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-1/5">
           <Header />
-          <Footer />
         </div>
-        <div className="basis-4/5">
+        <div className="basis-4/5 h-full flex flex-col ">
           <App />
+          <Footer />
         </div>
       </div>
     ),
@@ -39,20 +39,19 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <>
-        <div className="flex  items-center bg-slate-100 w-[100vw]  ">
-          <div className="flex fixed  bg-white h-[100vh] w-[18vw] flex-col basis-1/5">
+        <div className="flex items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw]">
+          <div className="flex bg-white rounded-l-[2rem] h-full w-[18vw] flex-col ">
             <Header />
-            <Footer />
           </div>
-
-          <div className="flex  ml-[22rem]  bg-slate-100 basis-4/5 ">
+          <div className="flex flex-col h-full bg-slate-100 rounded-[2rem] p-4">
             {localToken ? (
               <Dashboard />
             ) : (
-              <div className="flex  bg-slate-100 basis-2/3">
+              <div className="flex h-full bg-slate-100 ">
                 Dashboard ekranına ulaşmak için önce giriş yapın
               </div>
             )}
+             <Footer />
           </div>
         </div>
       </>
@@ -66,8 +65,7 @@ const router = createBrowserRouter([
           <Header />
           <Footer />
         </div>
-
-        <div className="flex     bg-slate-100 basis-10/12   ">
+        <div className="flex bg-slate-100 basis-10/12   ">
           <App />
           <Adana />
         </div>

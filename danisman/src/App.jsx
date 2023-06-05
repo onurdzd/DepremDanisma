@@ -21,7 +21,7 @@ function App() {
   );
 
   return (
-    <div className="flex flex-col  mt-5 flex-grow ">
+    <div className="flex flex-col mt-5 flex-grow ">
       <Harita />
       <SehirİsimleriEkle />
       <div className=" flex flex-row mt-20 justify-between mx-6">
