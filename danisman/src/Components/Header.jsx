@@ -171,19 +171,21 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="bg-amber-300 bg-opacity-30 max-h-80  mt-14 rounded-3xl">
-          <button className="mt-4 mx-11 px-10 py-2 bg-amber-300 rounded-xl inline-block text-sm font-bold text-blue-900">
-            Destek İster Misin?
-          </button>
-          <img
-            className="max-h-[20rem] py-4 px-11  min-h-full min-w-full  "
-            src="Group.png
+        <div className="flex flex-col justify-around ">
+          <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-14 rounded-3xl">
+            <button className="mt-4 mx-11 px-1 w-max py-2 bg-amber-300 rounded-xl inline-block text-sm font-bold text-blue-900">
+              Destek İster Misin?
+            </button>
+            <img
+              className="max-h-[20rem] py-6 px-8  min-h-full min-w-full  "
+              src="Group.png
             "
-          />
-        </div>
-        <div className="text-xs text-center mt-3 bg-slate-100 rounded-xl px-2">
-          İstanbul Bilgi Üniversitesi Travma ve Affet <br />
-          Ruh Sağlığı Programı İşbirliği ile
+            />
+          </div>
+          <div className="text-xs text-center mt-3 bg-slate-100 rounded-2xl px-2">
+            İstanbul Bilgi Üniversitesi Travma ve Affet <br />
+            Ruh Sağlığı Programı İşbirliği ile
+          </div>
         </div>
       </div>
     </header>

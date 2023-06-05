@@ -10,6 +10,7 @@ function App() {
 
   let ulasilanKisiSayisi = 0;
 
+  const isAnasayfa = window.location.pathname === "/";
   useEffect(() => {
     axios
       .get("http://localhost:9000/api/hizmet")
@@ -21,14 +22,14 @@ function App() {
   );
 
   return (
-    <div className="flex flex-col mt-5 flex-grow ">
+    <div className="flex flex-col mt-5 mr-4 pb-10 flex-grow bg-[url('mapZone.png')] rounded-3xl  ">
       <Harita />
       <SehirİsimleriEkle />
-      <div className=" flex flex-row mt-20 justify-between mx-6">
+      <div className=" flex flex-row mt-36 justify-between mx-6">
         <div className="font-sans  flex  font-semibold text-[4rem] bg-white px-10 py-1 rounded-xl ">
           <div className="flex  flex-col mr-10 ml-2 ">
-            <img className="max-w-[9rem] py-4 px-6 ml-4 " src="logo.jpg" />
-            <p className="text-sm text-center">
+            <img className="max-w-[9rem] pt-4 pb-2 px-6 ml-4 " src="logo.jpg" />
+            <p className="text-xs text-center ">
               Travma ve Afet Ruh Sağlığı <br /> Çalışmaları Derneği
             </p>
           </div>
@@ -61,16 +62,17 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="bg-amber-300 bg-opacity-30 w-[16vw] h-[40vh] mt-[-16rem] rounded-3xl">
-          <button className="mt-8 w-[13vw] mx-7 px-10 py-3 bg-amber-300 rounded-xl inline-block text-sm font-bold text-blue-900">
-            GÖNÜLLÜ OL
-          </button>
-          <img
-            className="max-h-[20vh] py-6   min-h-full min-w-full  "
-            src="ilust.png
-            "
-          />
-        </div>
+        {isAnasayfa && (
+          <div className="bg-amber-300 bg-opacity-30 w-[16vw] h-[42vh] mt-[-11rem] rounded-3xl">
+            <button className="mt-8 w-[13vw] mx-7 px-6 py-2 bg-amber-300 rounded-xl inline-block text-sm font-bold text-blue-900">
+              GÖNÜLLÜ OL
+            </button>
+            <img
+              className="max-h-[28vh] py-3   min-h-full min-w-full"
+              src="ilust.png"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
