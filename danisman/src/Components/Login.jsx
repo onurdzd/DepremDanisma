@@ -71,10 +71,10 @@ export default function NewEntry() {
       {/* Buton */}
 
       {isLoggedIn ? (
-        <div className="flex items-center">
+        <div className="flex items-center"> 
           <button
             onClick={handleLogout} // Use handleLogout instead of openModal
-            className="px-8 py-1  font-normal text-base text-[#5161c5]  rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+            className="flex items-center px-8 font-normal text-base text-[#5161c5]  rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
           >
             <BsArrowBarLeft className="inline-block mr-2 h-5 w-5 text-amber-300" />
             Çıkış Yap
