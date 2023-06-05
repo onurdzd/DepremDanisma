@@ -7,7 +7,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <section className="w-full basis-1/12 ">
+      <section className="w-full ">
         <div className="max-w-screen-xl text-end px-4 py-1 mx-auto  overflow-hidden sm:px-1 lg:px-1">
           <div className=" flex  justify-center  ">
             <a href="https://twitter.com/tardeorgtr">
@@ -38,7 +38,7 @@ const Footer = () => {
             </a>
           </div>
           <p className=" text-xs leading-1 text-center text-gray-400">
-            © 2023 Tüm Hakları Saklıdır.
+            <button className="underline font-semibold">KVKK ve Gizlilik Sözleşmesi  ile Kullanım Koşulları © TARDE 2023</button>
           </p>
         </div>
       </section>

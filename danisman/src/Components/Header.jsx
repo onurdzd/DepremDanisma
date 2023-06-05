@@ -25,7 +25,7 @@ const Header = () => {
             Psikososyal <br /> Destek Projesi{" "}
           </p>
         </div>
-        <div className="flex flex-col justify-around mt-10  ">
+        <div className="flex flex-col justify-around mt-4  ">
           <div className="mt-4 ml-6 flex flex-row">
             <div className="  text-blue-300  ">
               <div className="mb-2">
