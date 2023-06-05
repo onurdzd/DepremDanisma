@@ -210,12 +210,14 @@ const router = createBrowserRouter([
   {
     path: "/iletisim",
     element: (
-      <div className="h-screen flex flex-col ">
-        <Header />
-        <div className="flex justify-center h-full">
-          <İletisim />
+        <div className="flex flex-row items-center bg-slate-100 rounded-[2rem] w-[90vw] h-[90vh]">
+        <div className="flex bg-white h-[90vh] rounded-l-[2rem] flex-col basis-1/5">
+          <Header />
         </div>
+        <div className="basis-4/5 h-full flex flex-col justify-between">
+        <İletisim />
         <Footer />
+        </div>
       </div>
     ),
   },

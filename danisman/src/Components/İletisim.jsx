@@ -1,7 +1,7 @@
 const İletisim = () => {
   return (
     <>
-      <div className="basis-auto w-full flex flex-col items-center justify-evenly">
+      <div className="w-full h-full flex flex-col items-center justify-evenly">
         <div className="text-center text-2xl text-sky-800 font-bold font-serif italic"><h1>İLETİŞİM BİLGİLERİMİZ</h1></div>
         <div className="flex flex-col flex-wrap justify-center">
           <div className="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
