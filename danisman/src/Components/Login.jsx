@@ -8,7 +8,8 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { RxDashboard} from "react-icons/rx";
+import { RxDashboard } from "react-icons/rx";
+import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
 
 const validationSchema = yup.object().shape({
   username: yup.string().required("Username boş olamaz"),
@@ -70,21 +71,28 @@ export default function NewEntry() {
       {/* Buton */}
 
       {isLoggedIn ? (
-        <div className="flex items-center">
-        <button
-          onClick={handleLogout} // Use handleLogout instead of openModal
-          className="px-6 py-1 ml-10 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
-        >
-          Çıkış Yap
-        </button>
-        <div title="Dashboard" onClick={()=>navigate("/dashboard")} className="ml-2 cursor-pointer hover:scale-125">
-        <RxDashboard></RxDashboard></div>
+        <div className="flex items-center"> 
+          <button
+            onClick={handleLogout} // Use handleLogout instead of openModal
+            className="flex items-center px-8 font-normal text-base text-[#5161c5]  rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+          >
+            <BsArrowBarLeft className="inline-block mr-2 h-5 w-5 text-amber-300" />
+            Çıkış Yap
+          </button>
+          <div
+            title="Dashboard"
+            onClick={() => navigate("/dashboard")}
+            className="ml-2 cursor-pointer hover:scale-125"
+          >
+            <RxDashboard></RxDashboard>
+          </div>
         </div>
       ) : (
         <button
           onClick={openModal}
-          className="px-6 py-1 ml-10 font-light text-lg text-zinc-800 bg-slate-100 rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-sky-700"
+          className="px-8 py-1  font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
         >
+          <BsArrowBarRight className="inline-block mr-2 h-5 w-5 text-amber-300" />
           Giriş Yap
         </button>
       )}

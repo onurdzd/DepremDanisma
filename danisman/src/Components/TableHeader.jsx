@@ -14,39 +14,39 @@ function classNames(...classes) {
 
 const Header = () => {
   return (
-    <header className=" text-xl basis-11/12 ">
-      <div className=" mx-10 flex flex-col">
-        <div className="ml-7 ">
-
+    <div className="flex text-xl w-full items-center">
+      <div className=" mx-10 flex w-full ">
+        <div className="ml-7 flex w-full items-center">
           <a href="/">
             <img className="max-h-[125px] py-4" src="logo2.jpg" />
           </a>
-
-          <p className="text-5xl font-mono font-normal text-opacity-90 text-[#162270]">
-            Affan
-          </p>
-          <p className="text-base font-thin font-mono">
-            Psikososyal <br /> Destek Projesi{" "}
-          </p>
+          <div>
+            <p className="text-5xl font-mono font-normal text-opacity-90 text-[#162270]">
+              Affan
+            </p>
+            <p className="text-base font-thin font-mono">
+              Psikososyal Destek Projesi{" "}
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col justify-around mt-8  ">
-          <div className="mt-4 ml-6 flex flex-row">
-            <div className="  text-blue-300  ">
+        <div className="flex  mt-4 w-full ">
+          <div className="mt-4 ml-6 flex w-full ">
+            <div className="flex justify-end w-full items-center text-blue-300 ">
               <div className="mb-2">
                 <a
                   href={"/"}
-                  className="px-8 py-1  font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+                  className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
                 >
                   <IoMapSharp className="inline-block mr-2 h-5 w-5 text-blue-950" />
-                  Anasayfa
+                  Harita Bilgileri
                 </a>
               </div>
               <div className="mb-2">
                 <Menu as="div" className="relative inline-block text-left">
                   <div>
-                    <Menu.Button className="px-8 py-1  font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
+                    <Menu.Button className="flex items-center px-8  font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
                       <IoSettingsSharp className="inline-block mr-2 h-5 w-5 text-amber-300" />
-                      Biz Kimiz?
+                      Sistem Ayarları
                       <ChevronDownIcon
                         className="-mr-4 h-5 w-5 text-gray-400 inline"
                         aria-hidden="true"
@@ -142,22 +142,22 @@ const Header = () => {
               <div className="mb-2">
                 <a
                   href={"/"}
-                  className="px-8 py-1  font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+                  className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
                 >
                   <RiHandHeartFill className="inline-block mr-2 h-5 w-5 text-amber-300" />
-                  Gönüllü Ol
+                  Gönüllüler
                 </a>
               </div>
               <div className="mb-2">
                 <a
                   href={"/iletisim"}
-                  className="px-8 py-1  font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+                  className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
                 >
                   <BsFillTelephoneFill className="inline-block mr-2 h-5 w-5 text-amber-300" />
                   İletişim
                 </a>
               </div>
-              <div className="mb-5">
+              <div className="mb-2">
                 <Login />
               </div>
               <ToastContainer
@@ -175,24 +175,8 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-around ">
-          <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-16 rounded-3xl">
-            <button className="mt-4 mx-11 px-1 w-max py-2 bg-amber-300 rounded-xl inline-block text-sm font-bold text-blue-900">
-              Destek İster Misin?
-            </button>
-            <img
-              className="max-h-[20rem] py-6 px-8  min-h-full min-w-full  "
-              src="Group.png
-            "
-            />
-          </div>
-          <div className="text-xs text-center mt-3 bg-slate-100 rounded-2xl py-3 px-2  font-extralight">
-            İstanbul Bilgi Üniversitesi Travma ve Affet <br />
-            Ruh Sağlığı Programı İşbirliği ile
-          </div>
-        </div>
       </div>
-    </header>
+    </div>
   );
 };
 

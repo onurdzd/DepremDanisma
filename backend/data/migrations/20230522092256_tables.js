@@ -20,7 +20,6 @@ exports.up = function (knex) {
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
     })
-
     .createTable("sehir", (t) => {
       t.increments("sehir_id");
       t.string("sehir_isim", 20).notNullable().unique();
@@ -68,7 +67,6 @@ exports.up = function (knex) {
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
     })
-
     .createTable("kurum", (t) => {
       t.increments("kurum_id");
       t.string("kurum_adi", 128).notNullable();
@@ -101,7 +99,7 @@ exports.up = function (knex) {
     .createTable("hizmet", (t) => {
       t.increments("hizmet_id");
       t.timestamp("hizmet_created_at").defaultTo(knex.fn.now());
-      t.dateTime("donem");
+      t.string("donem");
       t.string("hizmet_tipi", 50).notNullable();
       t.integer("erisilen_kisi_sayisi", 5).notNullable();
       t.integer("merkez_id")

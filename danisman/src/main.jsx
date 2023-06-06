@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import "./index.css";
 import Dashboard from "./Components/Dashboard.jsx";
 import Header from "./Components/Header.jsx";
+import TableHeader from "./Components/TableHeader.jsx";
 import İletisim from "./Components/İletisim.jsx";
 import Adana from "./Components/City/Adana.jsx";
 import Adiyaman from "./Components/City/Adiyaman.jsx";
@@ -18,16 +19,20 @@ import Osmaniye from "./Components/City/Osmaniye.jsx";
 import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 import Footer from "./Components/Footer.jsx";
 
-const localToken=JSON.parse(localStorage.getItem("user"))
+const localToken = JSON.parse(localStorage.getItem("user"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="flex flex-col  items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <App />
-        <Footer />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10">
+        <div className="flex bg-white h-screen  rounded-l-[2rem] flex-col basis-1/5 ">
+          <Header />
+        </div>
+        <div className="basis-4/5  h-screen mt-5 mr-4  flex flex-col bg-[url('mapZone.png')] rounded-3xl ">
+          <App />
+          <Footer />
+        </div>
       </div>
     ),
   },
@@ -35,155 +40,225 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <>
-      <div className="h-screen flex flex-col justify-between">
-        <Header />
-        <div className="flex-grow flex flex-col items-center mt-8 pl-6">
-        {localToken ? <Dashboard/> : <div className="h-full flex flex-col justify-center font-bold text-xl">Dashboard ekranına ulaşmak için önce giriş yapın</div>}
+        <div className="p-5 flex flex-col items-center bg-slate-100 rounded-[2rem] h-[90vh] w-[90vw]">
+          <div className="w-full pt-2 bg-white rounded-[2rem]">
+            <TableHeader />
+          </div>
+          <div className="flex flex-col h-full w-full bg-slate-100 rounded-[2rem] p-4 ">
+            {localToken ? (
+              <Dashboard />
+            ) : (
+              <div className="flex h-full bg-slate-100 ">
+                Dashboard ekranına ulaşmak için önce giriş yapın
+              </div>
+            )}
+            <Footer />
+          </div>
         </div>
-        <Footer />
-      </div> 
       </>
     ),
   },
   {
     path: "/adana",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Adana />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10  ">
+        <div className="flex bg-white h-screen  rounded-l-[2rem] flex-col basis-2/12 ">
+          <Header />
         </div>
-        <Footer />
+        <div className="flex flex-col  h-screen ">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
+            <App />
+            <Adana />
+          </div>
+          <div className="mt-12">
+            <Footer />
+          </div>
+        </div>
       </div>
     ),
   },
   {
     path: "/osmaniye",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Osmaniye />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10">
+        <div className="flex bg-white h-screen rounded-l-[2rem] flex-col basis-2/12 ">
+          <Header />
         </div>
-        <Footer />
+        <div className="flex flex-col  h-screen ">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
+            <App />
+            <Osmaniye />
+          </div>
+          <div className="mt-12">
+            <Footer />
+          </div>
+        </div>
       </div>
     ),
   },
   {
     path: "/hatay",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Hatay />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10">
+        <div className="flex bg-white h-screen rounded-l-[2rem] flex-col basis-2/12 ">
+          <Header />
         </div>
-        <Footer />
+        <div className="flex flex-col  h-screen ">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
+            <App />
+            <Hatay />
+          </div>
+          <div className="mt-12">
+            <Footer />
+          </div>
+        </div>
       </div>
     ),
   },
   {
     path: "/gaziantep",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Gaziantep />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10 ">
+        <div className="flex bg-white h-screen rounded-l-[2rem] flex-col basis-2/12 ">
+          <Header />
         </div>
-        <Footer />
+        <div className="flex flex-col  h-screen ">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
+            <App />
+            <Gaziantep />
+          </div>
+          <div className="mt-12">
+            <Footer />
+          </div>
+        </div>
       </div>
     ),
   },
   {
     path: "/kilis",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Kilis />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10  ">
+        <div className="flex bg-white h-screen  rounded-l-[2rem] flex-col basis-2/12 ">
+          <Header />
         </div>
-        <Footer />
+        <div className="flex flex-col  h-screen ">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
+            <App />
+            <Kilis />
+          </div>
+          <div className="mt-12">
+            <Footer />
+          </div>
+        </div>
       </div>
     ),
   },
   {
     path: "/sanliurfa",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Sanliurfa />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10  ">
+        <div className="flex bg-white h-screen rounded-l-[2rem] flex-col basis-2/12 ">
+          <Header />
         </div>
-        <Footer />
+        <div className="flex flex-col  h-screen ">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
+            <App />
+            <Sanliurfa />
+          </div>
+          <div className="mt-12">
+            <Footer />
+          </div>
+        </div>
       </div>
     ),
   },
   {
     path: "/adiyaman",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Adiyaman />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10  ">
+        <div className="flex bg-white h-screen rounded-l-[2rem] flex-col basis-2/12 ">
+          <Header />
         </div>
-        <Footer />
+        <div className="flex flex-col  h-screen ">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
+            <App />
+            <Adiyaman />
+          </div>
+          <div className="mt-12">
+            <Footer />
+          </div>
+        </div>
       </div>
     ),
   },
   {
     path: "/kahramanmaras",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Kahramanmaras />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10">
+        <div className="flex bg-white h-screen rounded-l-[2rem] flex-col basis-2/12 ">
+          <Header />
         </div>
-        <Footer />
+        <div className="flex flex-col  h-screen ">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
+            <App />
+            <Kahramanmaras />
+          </div>
+          <div className="mt-12">
+            <Footer />
+          </div>
+        </div>
       </div>
     ),
   },
   {
     path: "/diyarbakir",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Diyarbakir />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10">
+        <div className="flex bg-white h-screen rounded-l-[2rem] flex-col basis-2/12 ">
+          <Header />
         </div>
-        <Footer />
+        <div className="flex flex-col  h-screen ">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
+            <App />
+            <Diyarbakir />
+          </div>
+          <div className="mt-12">
+            <Footer />
+          </div>
+        </div>
       </div>
     ),
   },
   {
     path: "/malatya",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Malatya />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10 ">
+        <div className="flex bg-white h-screen rounded-l-[2rem] flex-col basis-2/12 ">
+          <Header />
         </div>
-        <Footer />
+        <div className="flex flex-col  h-screen ">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
+            <App />
+            <Malatya />
+          </div>
+          <div className="mt-12">
+            <Footer />
+          </div>
+        </div>
       </div>
     ),
   },
   {
     path: "/iletisim",
     element: (
-      <div className="h-screen ">
-        <Header />
-        <div className="mt-8 pl-6">
-          <İletisim />
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20  mt-40 mb-10">
+        <div className="flex bg-white h-screen rounded-l-[2rem] flex-col basis-1/5">
+          <Header />
         </div>
-        <Footer />
+        <div className="basis-4/5 h-screen mt-5 mr-4  flex flex-col bg-[url('mapZone.png')] rounded-3xl">
+          <İletisim />
+          <Footer />
+        </div>
       </div>
     ),
   },

@@ -1,18 +1,19 @@
 const İletisim = () => {
   return (
     <>
-      <div class="grow-0 shrink-0 basis-auto w-full lg:w-7/12 content-center">
-        <div class="flex flex-wrap">
-          <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
-            <div class="flex items-start">
-              <div class="shrink-0">
-                <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+      <div className="w-full h-full flex flex-col items-center justify-evenly">
+        <div className="text-center text-2xl text-sky-800 font-bold font-serif italic"><h1>İLETİŞİM BİLGİLERİMİZ</h1></div>
+        <div className="flex flex-col flex-wrap justify-center">
+          <div className="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+            <div className="flex items-start">
+              <div className="shrink-0">
+                <div className="p-8 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                   {/* <svg
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fas"
                     data-icon="headset"
-                    class="w-5 text-white"
+                    className="w-5 text-white"
                     role="img"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
@@ -24,23 +25,23 @@ const İletisim = () => {
                   </svg> */}
                 </div>
               </div>
-              <div class="grow ml-6">
-                <p class="font-bold mb-1">Technical support</p>
-                <p class="text-gray-500">support@example.com</p>
-                <p class="text-gray-500">+1 234-567-89</p>
+              <div className="grow ml-6">
+                <p className="font-bold mb-1">Genel Merkez</p>
+                <p className="text-gray-500">support@example.com</p>
+                <p className="text-gray-500">+1 234-567-89</p>
               </div>
             </div>
           </div>
-          <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
-            <div class="flex items-start">
-              <div class="shrink-0">
-                <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+          <div className="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+            <div className="flex items-start">
+              <div className="shrink-0">
+                <div className="p-8 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                   {/* <svg
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fas"
                     data-icon="dollar-sign"
-                    class="w-3 text-white"
+                    className="w-3 text-white"
                     role="img"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 288 512"
@@ -52,23 +53,23 @@ const İletisim = () => {
                   </svg> */}
                 </div>
               </div>
-              <div class="grow ml-6">
-                <p class="font-bold mb-1">Sales questions</p>
-                <p class="text-gray-500">sales@example.com</p>
-                <p class="text-gray-500">+1 234-567-89</p>
+              <div className="grow ml-6">
+                <p className="font-bold mb-1">Merkez-1</p>
+                <p className="text-gray-500">sales@example.com</p>
+                <p className="text-gray-500">+1 234-567-89</p>
               </div>
             </div>
           </div>
-          <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
-            <div class="flex align-start">
-              <div class="shrink-0">
-                <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+          <div className="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+            <div className="flex align-start">
+              <div className="shrink-0">
+                <div className="p-8 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                   {/* <svg
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fas"
                     data-icon="newspaper"
-                    class="w-5 text-white"
+                    className="w-5 text-white"
                     role="img"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512"
@@ -80,38 +81,10 @@ const İletisim = () => {
                   </svg> */}
                 </div>
               </div>
-              <div class="grow ml-6">
-                <p class="font-bold mb-1">Press</p>
-                <p class="text-gray-500">press@example.com</p>
-                <p class="text-gray-500">+1 234-567-89</p>
-              </div>
-            </div>
-          </div>
-          <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
-            <div class="flex align-start">
-              <div class="shrink-0">
-                <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
-                  {/* <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fas"
-                    data-icon="bug"
-                    class="w-5 text-white"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z"
-                    ></path>
-                  </svg> */}
-                </div>
-              </div>
-              <div class="grow ml-6">
-                <p class="font-bold mb-1">Bug report</p>
-                <p class="text-gray-500">bugs@example.com</p>
-                <p class="text-gray-500">+1 234-567-89</p>
+              <div className="grow ml-6">
+                <p className="font-bold mb-1">Merkez-2</p>
+                <p className="text-gray-500">press@example.com</p>
+                <p className="text-gray-500">+1 234-567-89</p>
               </div>
             </div>
           </div>

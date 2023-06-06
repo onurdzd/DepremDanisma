@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import MaterialTable from "@material-table/core";
+import { tr } from "date-fns/locale";
 
 const GridTableHizmet = () => {
   const [data, setData] = useState([]);
@@ -39,6 +40,13 @@ const GridTableHizmet = () => {
     return false;
   });
 
+  const obj = {};
+
+  unique.forEach((element) => {
+    obj[`${element.merkez_id}`] = element.merkez_isim;
+  });
+  console.log(obj);
+
   return (
     <>
       <div style={{ maxWidth: "100%" }}>
@@ -46,22 +54,36 @@ const GridTableHizmet = () => {
           options={{
             filtering: true,
             search: true,
-            selection: true,
             sorting: true,
-          }}
-          actions={[
-            {
-              icon: "save",
-              tooltip: "Save User",
-              onClick: (event, rowData) => {
-                // Kaydet bölümü
-              },
+            showSelectAllCheckbox: false,
+            showTextRowsSelected: false,
+            grouping: true,
+            // pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
+            filterCellStyle: { padding: "6px" },
+            columnsButton: true,
+            toolbarButtonColor: "#007bff",
+
+            rowStyle: (data, index) =>
+              index % 2 === 0 ? { background: "#f5f5f5" } : null,
+            headerStyle: {
+              background: "#f44336e4",
+              color: "#fff",
+              borderWidth: "1px",
             },
-          ]}
+          }}
           columns={[
             {
+              title: "Id",
+              field: "hizmet_id",
+              type: "numeric" /*checkbox vs olabiliyor*/,
+              editable: false,
+            },
+            {
               title: "Veri Giriş Tarihi",
+              type:"date",
+              dateSetting:{locale:tr},
               field: "hizmet_created_at",
+              editable:false
             },
             {
               title: "Hizmet Tarihi",
@@ -89,7 +111,7 @@ const GridTableHizmet = () => {
                   : true,
             },
             {
-              title: "Bağlı olduğu Merkez",
+              title: "Bağlı Olduğu Merkez",
               field: "merkez_id",
               render: (rowData) =>
                 unique.find((item) => item.merkez_id == rowData.merkez_id)
@@ -98,6 +120,7 @@ const GridTableHizmet = () => {
                 rowData.merkez_id === undefined || rowData.merkez_id === ""
                   ? "Zorunlu"
                   : true,
+              lookup: obj,
             },
           ]}
           data={data}
