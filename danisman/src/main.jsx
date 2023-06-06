@@ -41,15 +41,15 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <div className="bg-slate-100 p-4 rounded-[2rem] ">
-        <div className="p-2 flex flex-col items-center bg-white   rounded-[2rem] h-[90vh] overflow-auto w-[90vw]">
+      <div className="bg-slate-100 p-4 h-[90vh] rounded-[2rem] ">
+        <div className="p-2 flex flex-col items-center bg-white rounded-[2rem] h-[85vh] overflow-auto w-[90vw] mb-6">
           <div className=" pt-1 bg-white rounded-[2rem]  ">
             <TableHeader />
           </div>
-          <div className="flex flex-col w-full h-[68vh] bg-white  border-2 rounded-[1rem] ">
+          <div className="flex flex-col w-full h-[60vh] bg-white border-2 rounded-[1rem] ">
             {localToken ? (
               <>
-                <div className="font-thin text-xs pb-2 text-right mr-2">
+                <div className="font-thin text-xs pb-2 text-right mr-2 ">
                   * ADAK-Acil Durumlarda Aranacak Kişi
                 </div>
                 <Dashboard />
