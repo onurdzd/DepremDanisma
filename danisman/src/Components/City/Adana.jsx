@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { HiOutlineArrowLeft } from "react-icons/hi";
+// import { HiOutlineArrowLeft } from "react-icons/hi";
 import { TbPointFilled } from "react-icons/tb";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 const Adana = () => {
@@ -129,42 +129,42 @@ const Adana = () => {
         </table>
       </div> */}
 
-      <div class="flex flex-col   mt-6">
-        <div class="-m-1.5  overflow-x-auto ">
-          <div class="p-6 min-w-full inline-block  align-middle">
-            <div class="overflow-hidden rounded-xl">
-              <table class="min-w-full  border-collapse border   border-slate-200 ">
+      <div className="flex flex-col   mt-6">
+        <div className="-m-1.5  overflow-x-auto ">
+          <div className="p-6 min-w-full inline-block  align-middle">
+            <div className="overflow-hidden rounded-xl">
+              <table className="min-w-full  border-collapse border   border-slate-200 ">
                 <thead>
                   <tr className="bg-slate-100">
                     <th
                       scope="col"
-                      class="px-6 py-3 text-left text-xs  border border-slate-200 font-medium text-gray-500 uppercase"
+                      className="px-6 py-3 text-left text-xs  border border-slate-200 font-medium text-gray-500 uppercase"
                     >
                       ARAÇ SAYISI
                     </th>
                     <th
                       scope="col"
-                      class="px-6 py-3 text-left text-xs font-medium border border-slate-200 text-gray-500 uppercase"
+                      className="px-6 py-3 text-left text-xs font-medium border border-slate-200 text-gray-500 uppercase"
                     >
                       ADET
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="  hover:bg-gray-100 ">
-                    <td class="px-6 py-4 border border-slate-200 whitespace-nowrap text-sm font-normal text-gray-800 ">
+                  <tr className="  hover:bg-gray-100 ">
+                    <td className="px-6 py-4 border border-slate-200 whitespace-nowrap text-sm font-normal text-gray-800 ">
                       Gezici Karavan
                     </td>
-                    <td class="px-6 py-4 border border-slate-200 whitespace-nowrap text-sm text-gray-800 ">
+                    <td className="px-6 py-4 border border-slate-200 whitespace-nowrap text-sm text-gray-800 ">
                       {aracSayisi?.reduce((a, b) => a + b, 0)}
                     </td>
                   </tr>
 
-                  <tr class=" hover:bg-gray-100 ">
-                    <td class="px-6 py-4 border border-slate-200 whitespace-nowrap text-sm font-normal text-gray-800 ">
+                  <tr className=" hover:bg-gray-100 ">
+                    <td className="px-6 py-4 border border-slate-200 whitespace-nowrap text-sm font-normal text-gray-800 ">
                       Binek Araç
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap border border-slate-200 text-sm text-gray-800 ">
+                    <td className="px-6 py-4 whitespace-nowrap border border-slate-200 text-sm text-gray-800 ">
                       {aracSayisi?.reduce((a, b) => a + b, 0)}
                     </td>
                   </tr>
@@ -175,24 +175,24 @@ const Adana = () => {
         </div>
       </div>
 
-      <div class="flex flex-col mt-6">
-        <div class="-m-1.5 overflow-x-auto">
-          <div class="p-6 min-w-full inline-block align-middle">
-            <div class="overflow-hidden rounded-xl">
-              <table class="min-w-full divide-y divide-gray-200 ">
+      <div className="flex flex-col mt-6">
+        <div className="-m-1.5 overflow-x-auto">
+          <div className="p-6 min-w-full inline-block align-middle">
+            <div className="overflow-hidden rounded-xl">
+              <table className="min-w-full divide-y divide-gray-200 ">
                 <thead>
                   <tr className="bg-slate-100">
                     <th
                       scope="col"
-                      class="px-6 py-3 text-left text-xs border border-slate-200 font-medium text-gray-500 uppercase"
+                      className="px-6 py-3 text-left text-xs border border-slate-200 font-medium text-gray-500 uppercase"
                     >
                       İŞ BİRLİĞİ YAPILAN KURUMLAR
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="odd:bg-white  hover:bg-gray-100 ">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium border border-slate-200 text-gray-800 ">
+                  <tr className="odd:bg-white  hover:bg-gray-100 ">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border border-slate-200 text-gray-800 ">
                       {kurumData.map((item, index) => (
                         <>
                           <p key={index} className="ml-2">
@@ -210,7 +210,7 @@ const Adana = () => {
                   <tr className="bg-slate-100">
                     <th
                       scope="col"
-                      class="px-6 py-3 text-left text-xs border border-slate-200 font-medium text-gray-500 uppercase"
+                      className="px-6 py-3 text-left text-xs border border-slate-200 font-medium text-gray-500 uppercase"
                     >
                       TEŞEKKÜRLER
                     </th>
