@@ -13,7 +13,6 @@ const Footer = () => {
               KVKK ve Gizlilik Sözleşmesi ile Kullanım Koşulları © TARDE 2023
             </button>
           </p>
-
         <div className="max-w-screen-xl text-end px-4 py-1 mx-auto  overflow-hidden sm:px-1 lg:px-1">
           {/* <div className=" flex  justify-center  ">
             <a href="https://twitter.com/tardeorgtr">
