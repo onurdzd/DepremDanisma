@@ -7,7 +7,7 @@
 const Footer = () => {
   return (
     <>
-      <section className="w-full ">
+      <section className="w-full mt-5">
       <p className=" text-xs leading-1 text-center text-gray-400">
             <button className="underline font-semibold">
               KVKK ve Gizlilik Sözleşmesi ile Kullanım Koşulları © TARDE 2023
