@@ -17,7 +17,11 @@ const Header = () => {
     <header className=" text-xl basis-11/12 ">
       <div className=" mx-10 flex flex-col">
         <div className="ml-7 ">
-          <img className="max-h-[125px] py-5" src="logo2.jpg" />
+
+          <a href="/">
+            <img className="max-h-[125px] py-4" src="logo2.jpg" />
+          </a>
+
           <p className="text-5xl font-mono font-normal text-opacity-90 text-[#162270]">
             Affan
           </p>
