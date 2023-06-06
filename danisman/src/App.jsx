@@ -23,20 +23,17 @@ function App() {
 
   return (
 
-    <div className="flex flex-col mt-5 mr-4 flex-grow bg-[url('mapZone.png')] rounded-3xl  ">
-
+    <div className="flex flex-col mt-5 mr-4 flex-grow  rounded-3xl  ">
       <Harita />
       <SehirİsimleriEkle />
-      <div className=" flex flex-row mt-36 justify-between mx-6">
+      <div className=" flex flex-row mt-20 justify-between mx-6">
         <div className="font-sans  flex  font-semibold text-[4rem] bg-white px-10 py-1 rounded-xl ">
           <div className="flex  flex-col mr-10 ml-2 ">
             <img className="max-w-[9rem] pt-4 pb-2 px-6 ml-4 " src="logo.jpg" />
-
             <p className="text-xs text-center ">
               Travma ve Afet Ruh Sağlığı <br /> Çalışmaları Derneği
             </p>
           </div>
-
           <div>
             <p className="text-base font-medium text-blue-900 my-5">
               28 MART'TAN İTİBAREN
