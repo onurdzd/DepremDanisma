@@ -1,6 +1,6 @@
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+// import { Fragment } from "react";
+// import { Menu, Transition } from "@headlessui/react";
+// import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./Login";
@@ -8,9 +8,9 @@ import { IoMapSharp, IoSettingsSharp } from "react-icons/io5";
 import { RiHandHeartFill } from "react-icons/ri";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+// function classNames(...classes) {
+//   return classes.filter(Boolean).join(" ");
+// }
 
 const Header = () => {
   return (
@@ -40,8 +40,17 @@ const Header = () => {
                   Anasayfa
                 </a>
               </div>
+              <div className="mb-2 ">
               <div className="mb-2">
-                <Menu as="div" className="relative inline-block text-left">
+                <a
+                  href={"/hakkimizda"}
+                  className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+                >
+                  <IoSettingsSharp className="inline-block mr-1 h-5 w-5 text-amber-300" />
+                  Hakkımızda
+                </a>
+              </div>
+                {/* <Menu as="div" className="relative inline-block text-left">
                   <div>
                     <Menu.Button className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
                       <IoSettingsSharp className="inline-block mr-1 h-5 w-5 text-amber-300" />
@@ -136,7 +145,7 @@ const Header = () => {
                       </div>
                     </Menu.Items>
                   </Transition>
-                </Menu>
+                </Menu> */}
               </div>
               <div className="mb-2">
                 <a

@@ -18,6 +18,7 @@ import Malatya from "./Components/City/Malatya.jsx";
 import Osmaniye from "./Components/City/Osmaniye.jsx";
 import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 import Footer from "./Components/Footer.jsx";
+import Hakkimizda from "./Components/Hakkimizda.jsx";
 
 const localToken = JSON.parse(localStorage.getItem("user"));
 
@@ -59,6 +60,22 @@ const router = createBrowserRouter([
                 Dashboard ekranına ulaşmak için önce giriş yapın
               </div>
             )}
+          </div>
+        </div>
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/hakkimizda",
+    element: (
+      <div className="h-[96vh] w-[80vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem]  pb-2 ">
+          <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('mapZone.png')] rounded-3xl bg-cover">
+            <Hakkimizda />
           </div>
         </div>
         <Footer />
