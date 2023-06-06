@@ -58,7 +58,7 @@ const GridTableMerkez = () => {
             // selection: true,
             showSelectAllCheckbox: false,
             showTextRowsSelected: false,
-            grouping: true,
+
             // pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
             filterCellStyle: { padding: "6px" },
             columnsButton: true,
@@ -136,7 +136,7 @@ const GridTableMerkez = () => {
               title: "Hizmet Başlangıç Tarihi",
               field: "hizmet_baslangıc_tarihi",
               type: "date",
-              dateSetting:{locale:tr},
+              dateSetting: { locale: tr },
               validate: (rowData) =>
                 rowData.hizmet_baslangıc_tarihi === undefined ||
                 rowData.hizmet_baslangıc_tarihi === ""
