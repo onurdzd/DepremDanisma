@@ -7,12 +7,12 @@
 const Footer = () => {
   return (
     <>
-      <section className="w-full mt-5">
-      <p className=" text-xs leading-1 text-center text-gray-400">
-            <button className="underline font-semibold">
-              KVKK ve Gizlilik Sözleşmesi ile Kullanım Koşulları © TARDE 2023
-            </button>
-          </p>
+      <section className="w-full mt-2">
+        <p className=" text-xs leading-1 text-center text-gray-400">
+          <button className="underline font-semibold">
+            KVKK ve Gizlilik Sözleşmesi ile Kullanım Koşulları © TARDE 2023
+          </button>
+        </p>
         <div className="max-w-screen-xl text-end px-4 py-1 mx-auto  overflow-hidden sm:px-1 lg:px-1">
           {/* <div className=" flex  justify-center  ">
             <a href="https://twitter.com/tardeorgtr">
