@@ -55,7 +55,7 @@ const GridTablePersonel = () => {
             sorting: true,
             showSelectAllCheckbox: false,
             showTextRowsSelected: false,
-            grouping: true,
+
             // pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
             filterCellStyle: { padding: "6px" },
             columnsButton: true,
@@ -153,7 +153,7 @@ const GridTablePersonel = () => {
                   : true,
             },
             {
-              title: "Acil Durumda Aranacak Kişi Ad Soyad",
+              title: "ADAK Ad Soyad",
               field: "ADAK_adı_soyadı",
               validate: (rowData) =>
                 rowData.ADAK_adı_soyadı === undefined ||
@@ -162,7 +162,7 @@ const GridTablePersonel = () => {
                   : true,
             },
             {
-              title: "Acil Durumda Aranacak Kişi Telefon",
+              title: "ADAK Telefon",
               field: "ADAK_telefon",
               validate: (rowData) =>
                 rowData.ADAK_telefon === undefined ||
@@ -171,7 +171,7 @@ const GridTablePersonel = () => {
                   : true,
             },
             {
-              title: "Acil Durumda Aranacak Kişi İle Bağı",
+              title: "ADAK İle Bağı",
               field: "ADAK_Bağı",
               validate: (rowData) =>
                 rowData.ADAK_Bağı === undefined || rowData.ADAK_Bağı === ""
@@ -192,7 +192,7 @@ const GridTablePersonel = () => {
             },
           ]}
           data={data}
-          title="Personel Tablo"
+          title="Personel Tablo  "
           editable={{
             onRowAdd: async (newData) => {
               await axios.post("http://localhost:9000/api/personel", newData);
