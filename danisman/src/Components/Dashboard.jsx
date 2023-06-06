@@ -45,7 +45,7 @@ const Dashboard = () => {
         </div>
       </div>
       {sayfaAdi == "" ? (
-        <div className="text-xl font-bold text-center h-full  flex flex-col justify-center">
+        <div className="text-xl mt-[-2rem] font-bold text-center h-full  flex flex-col justify-center">
           Lütfen üst menüden seçim yapın
         </div>
       ) : sayfaAdi == "merkeztablo" ? (
