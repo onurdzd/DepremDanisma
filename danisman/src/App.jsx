@@ -22,7 +22,7 @@ function App() {
   );
 
   return (
-    <div className="flex flex-col mt-5 mr-4 pb-10 flex-grow bg-[url('mapZone.png')] rounded-3xl  ">
+    <div className="flex flex-col mt-10 mr-4 mb-10 flex-grow   ">
       <Harita />
       <SehirİsimleriEkle />
       <div className=" flex flex-row mt-36 justify-between mx-6">
