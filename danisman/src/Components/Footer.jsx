@@ -45,7 +45,7 @@ const Footer = () => {
             </a>
 
           </div>
-
+  */}
         </div>
       </section>
     </>
