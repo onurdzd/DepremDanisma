@@ -17,7 +17,11 @@ const Header = () => {
     <header className=" text-xl basis-11/12 ">
       <div className=" mx-10 flex flex-col">
         <div className="ml-7 ">
-          <img className="max-h-[125px] py-4" src="logo2.jpg" />
+
+          <a href="/">
+            <img className="max-h-[125px] py-4" src="logo2.jpg" />
+          </a>
+
           <p className="text-5xl font-mono font-normal text-opacity-90 text-[#162270]">
             Affan
           </p>
@@ -25,7 +29,7 @@ const Header = () => {
             Psikososyal <br /> Destek Projesi{" "}
           </p>
         </div>
-        <div className="flex flex-col justify-around mt-4  ">
+        <div className="flex flex-col justify-around mt-8  ">
           <div className="mt-4 ml-6 flex flex-row">
             <div className="  text-blue-300  ">
               <div className="mb-2">
@@ -172,7 +176,7 @@ const Header = () => {
           </div>
         </div>
         <div className="flex flex-col justify-around ">
-          <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-14 rounded-3xl">
+          <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-16 rounded-3xl">
             <button className="mt-4 mx-11 px-1 w-max py-2 bg-amber-300 rounded-xl inline-block text-sm font-bold text-blue-900">
               Destek İster Misin?
             </button>
@@ -182,7 +186,7 @@ const Header = () => {
             "
             />
           </div>
-          <div className="text-xs text-center mt-3 bg-slate-100 rounded-2xl px-2">
+          <div className="text-xs text-center mt-3 bg-slate-100 rounded-2xl py-3 px-2  font-extralight">
             İstanbul Bilgi Üniversitesi Travma ve Affet <br />
             Ruh Sağlığı Programı İşbirliği ile
           </div>
