@@ -57,7 +57,7 @@ const GridTableHizmet = () => {
             sorting: true,
             showSelectAllCheckbox: false,
             showTextRowsSelected: false,
-            grouping: true,
+
             // pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
             filterCellStyle: { padding: "6px" },
             columnsButton: true,
@@ -80,10 +80,10 @@ const GridTableHizmet = () => {
             },
             {
               title: "Veri Giriş Tarihi",
-              type:"date",
-              dateSetting:{locale:tr},
+              type: "date",
+              dateSetting: { locale: tr },
               field: "hizmet_created_at",
-              editable:false
+              editable: false,
             },
             {
               title: "Hizmet Tarihi",

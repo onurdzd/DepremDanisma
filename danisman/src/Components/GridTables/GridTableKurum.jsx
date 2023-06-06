@@ -56,7 +56,7 @@ const GridTableKurum = () => {
 
             showSelectAllCheckbox: false,
             showTextRowsSelected: false,
-            grouping: true,
+
             // pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
             filterCellStyle: { padding: "6px" },
             columnsButton: true,
