@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <div>
-      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20 mt-40 mb-10">
+      <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-20 mt-40">
         <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
           <Header />
         </div>
@@ -41,25 +41,23 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <>
-
+      <div>
         <div className="p-5 flex flex-col items-center bg-slate-100 rounded-[2rem] h-[90vh] overflow-auto w-[90vw]">
           <div className=" pt-2 bg-white rounded-[2rem] ">
             <TableHeader />
           </div>
-          <div className="flex flex-col w-full bg-slate-100 rounded-[2rem] p-4">
-
+          <div className="flex flex-col w-full h-[50vh] bg-slate-100 rounded-[2rem] p-4">
             {localToken ? (
               <Dashboard />
             ) : (
-              <div className="flex  bg-slate-100 ">
+              <div className="flex justify-center h-full items-center font-bold text-xl bg-slate-100 ">
                 Dashboard ekranına ulaşmak için önce giriş yapın
               </div>
             )}
           </div>
-            <Footer />
         </div>
-      </>
+            <Footer />
+      </div>
     ),
   },
   {
