@@ -21,12 +21,10 @@ const GridTableSehir = () => {
             filtering: true,
             search: true,
             sorting: true,
-
             showSelectAllCheckbox: false,
             showTextRowsSelected: false,
 
             // pageSizeOptions: [2, 5, 10, 20, 25, 50, 100],
-            filterCellStyle: { padding: "6px" },
             columnsButton: true,
             toolbarButtonColor: "#007bff",
 
@@ -37,6 +35,8 @@ const GridTableSehir = () => {
               color: "#fff",
               borderWidth: "1px",
             },
+            padding: "dense",
+            filterCellStyle: { padding: "1px" },
           }}
           columns={[
             {
