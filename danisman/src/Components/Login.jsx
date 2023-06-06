@@ -74,15 +74,15 @@ export default function NewEntry() {
         <div className="flex items-center"> 
           <button
             onClick={handleLogout} // Use handleLogout instead of openModal
-            className="flex items-center px-8 font-normal text-base text-[#5161c5]  rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+            className="mt-1 flex items-center px-3 font-normal text-base text-[#5161c5]  rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
           >
-            <BsArrowBarLeft className="inline-block mt-4 mr-2 h-5 w-5 text-amber-300" />
+            <BsArrowBarLeft className=" mr-2 h-5 w-5 text-amber-300" />
             Çıkış Yap
           </button>
           <div
             title="Dashboard"
             onClick={() => navigate("/dashboard")}
-            className="ml-2 cursor-pointer hover:scale-125"
+            className="mt-2 cursor-pointer hover:scale-125"
           >
             <RxDashboard></RxDashboard>
           </div>
