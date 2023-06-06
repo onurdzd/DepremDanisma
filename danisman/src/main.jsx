@@ -25,7 +25,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="h-[90vh] w-[90vw]">
+      <div className="h-[95vh] w-[90vw]">
       <div className="flex flex-row items-center bg-white rounded-[2rem]  pb-10 ">
         <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
           <Header />

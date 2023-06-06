@@ -29,8 +29,8 @@ const Header = () => {
             Psikososyal <br /> Destek Projesi{" "}
           </p>
         </div>
-        <div className="flex flex-col justify-around mt-8  ">
-          <div className="mt-4 ml-6 flex flex-row">
+        <div className="flex flex-col justify-around mt-5  ">
+          <div className="ml-6 flex flex-row">
             <div className="  text-blue-300  ">
               <div className="mb-2">
                 <a
@@ -176,7 +176,7 @@ const Header = () => {
           </div>
         </div>
         <div className="flex flex-col justify-around ">
-          <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-16 rounded-3xl">
+          <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-5 rounded-3xl">
             <button className="mt-4 mx-11 px-1 w-max py-2 bg-amber-300 rounded-xl inline-block text-sm font-bold text-blue-900">
               Destek İster Misin?
             </button>

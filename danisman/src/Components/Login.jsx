@@ -76,7 +76,7 @@ export default function NewEntry() {
             onClick={handleLogout} // Use handleLogout instead of openModal
             className="flex items-center px-8 font-normal text-base text-[#5161c5]  rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
           >
-            <BsArrowBarLeft className="inline-block mr-2 h-5 w-5 text-amber-300" />
+            <BsArrowBarLeft className="inline-block mt-4 mr-2 h-5 w-5 text-amber-300" />
             Çıkış Yap
           </button>
           <div
