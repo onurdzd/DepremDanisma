@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         <div className="flex bg-white h-screen  rounded-l-[2rem] flex-col basis-1/5 ">
           <Header />
         </div>
-        <div className="basis-4/5  h-screen  flex flex-col ">
+        <div className="basis-4/5  h-screen mt-5 mr-4  flex flex-col bg-[url('mapZone.png')] rounded-3xl ">
           <App />
           <Footer />
         </div>
@@ -40,11 +40,13 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <>
+
         <div className="p-5 flex flex-col items-center bg-slate-100 rounded-[2rem] h-[90vh] overflow-auto w-[90vw]">
           <div className=" pt-2 bg-white rounded-[2rem] ">
             <TableHeader />
           </div>
           <div className="flex flex-col w-full bg-slate-100 rounded-[2rem] p-4">
+
             {localToken ? (
               <Dashboard />
             ) : (
@@ -66,7 +68,7 @@ const router = createBrowserRouter([
           <Header />
         </div>
         <div className="flex flex-col  h-screen ">
-          <div className="flex bg-slate-100 h-screen  basis-10/12">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
             <App />
             <Adana />
           </div>
@@ -85,7 +87,7 @@ const router = createBrowserRouter([
           <Header />
         </div>
         <div className="flex flex-col  h-screen ">
-          <div className="flex bg-slate-100 h-screen  basis-10/12">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
             <App />
             <Osmaniye />
           </div>
@@ -104,7 +106,7 @@ const router = createBrowserRouter([
           <Header />
         </div>
         <div className="flex flex-col  h-screen ">
-          <div className="flex bg-slate-100 h-screen  basis-10/12">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
             <App />
             <Hatay />
           </div>
@@ -123,7 +125,7 @@ const router = createBrowserRouter([
           <Header />
         </div>
         <div className="flex flex-col  h-screen ">
-          <div className="flex bg-slate-100 h-screen  basis-10/12">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
             <App />
             <Gaziantep />
           </div>
@@ -142,7 +144,7 @@ const router = createBrowserRouter([
           <Header />
         </div>
         <div className="flex flex-col  h-screen ">
-          <div className="flex bg-slate-100 h-screen  basis-10/12">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
             <App />
             <Kilis />
           </div>
@@ -161,7 +163,7 @@ const router = createBrowserRouter([
           <Header />
         </div>
         <div className="flex flex-col  h-screen ">
-          <div className="flex bg-slate-100 h-screen  basis-10/12">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
             <App />
             <Sanliurfa />
           </div>
@@ -180,7 +182,7 @@ const router = createBrowserRouter([
           <Header />
         </div>
         <div className="flex flex-col  h-screen ">
-          <div className="flex bg-slate-100 h-screen  basis-10/12">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
             <App />
             <Adiyaman />
           </div>
@@ -199,7 +201,7 @@ const router = createBrowserRouter([
           <Header />
         </div>
         <div className="flex flex-col  h-screen ">
-          <div className="flex bg-slate-100 h-screen  basis-10/12">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
             <App />
             <Kahramanmaras />
           </div>
@@ -218,7 +220,7 @@ const router = createBrowserRouter([
           <Header />
         </div>
         <div className="flex flex-col  h-screen ">
-          <div className="flex bg-slate-100 h-screen  basis-10/12">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
             <App />
             <Diyarbakir />
           </div>
@@ -237,7 +239,7 @@ const router = createBrowserRouter([
           <Header />
         </div>
         <div className="flex flex-col  h-screen ">
-          <div className="flex bg-slate-100 h-screen  basis-10/12">
+          <div className="flex  h-screen mt-5 mr-4  basis-10/12 bg-[url('mapZone.png')] rounded-3xl">
             <App />
             <Malatya />
           </div>
@@ -255,7 +257,7 @@ const router = createBrowserRouter([
         <div className="flex bg-white h-screen rounded-l-[2rem] flex-col basis-1/5">
           <Header />
         </div>
-        <div className="basis-4/5 h-full flex flex-col justify-between">
+        <div className="basis-4/5 h-screen mt-5 mr-4  flex flex-col bg-[url('mapZone.png')] rounded-3xl">
           <İletisim />
           <Footer />
         </div>
