@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import logo2 from "../assets/logo2.jpg";
+import logo3 from "../assets/logo3.svg";
+import logo4 from "../assets/logo4.svg";
+import logo5 from "../assets/logo5.svg";
 const Form = () => {
   const {
     register,
@@ -16,9 +18,9 @@ const Form = () => {
   const [supportPerson, setSupportPerson] = useState("");
   const [relationship, setRelationship] = useState("");
   return (
-    <div className="flex ">
-      <div className="flex flex-col basis-2/3">
-        <h1 className="font-bold ml-10 mt-4 text-5xl text-blue-950">
+    <div className="flex  ">
+      <div className="  basis-2/3">
+        <h1 className="font-bold ml-10 mt-10 text-5xl text-blue-950">
           Pisikolojik Destek <br /> Almak İçin <br />
           Başvurun
         </h1>
@@ -211,11 +213,19 @@ const Form = () => {
               BAŞVURUMU GÖNDER
             </button>
           </div>
-          <p className="text-sm font-thin">* Zorunlu bilgi</p>
+          <p className="text-sm font-thin pb-8">* Zorunlu bilgi</p>
         </form>
       </div>
-      <div className="basis-1/3">
-        <img className="h-[10rem]  mt-2 py-4 ml-5 " src={logo2} />
+      <div className="flex flex-col basis-1/3">
+        <div className=" ">
+          <img className="h-[11rem]  mt-16 py-4 ml-5 " src={logo3} />
+        </div>
+        <div className="">
+          <img className="h-[12rem]  mt-2 py-4 ml-5 " src={logo4} />
+        </div>
+        <div className="">
+          <img className="h-[12rem]  mt-2 py-4 ml-5 " src={logo5} />
+        </div>
       </div>
     </div>
   );

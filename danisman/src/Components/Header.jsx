@@ -88,7 +88,7 @@ const Header = () => {
               src={Group}
             />
           </div>
-          <div className="text-xs text-center mt-1 bg-slate-100 rounded-2xl py-2  font-extralight">
+          <div className="text-xs text-center mt-3 bg-slate-100 rounded-2xl py-3  font-extralight">
             İstanbul Bilgi Üniversitesi Travma ve Affet <br />
             Ruh Sağlığı Programı İşbirliği ile
           </div>

@@ -29,14 +29,14 @@ function Hakkimizda() {
       <div className="w-full flex flex-col items-center">
         <div className="flex flex-col items-center w-full">
           <div className="flex justify-between ml-[6.6rem] mr-[3rem]">
-            <p className="font-thin mt-4 text-[32px] leading-[45px] w-[55%] pt-10">
+            <p className="font-thin mt-4 text-[32px] leading-[45px] w-[55%] text-gray-500  pt-10">
               Affan kötülükten uzak durandır. Besleyicidir, Bağımsızdır,
               Çeşitlidir, Barışseverdir, Kapsayıcıdır
             </p>
             <img src={SagUst} className=" w-44 mt-[-8rem]"></img>
           </div>
           <div className="flex justify-between ml-[6.6rem] mb-14 mr-[3rem]">
-            <p className="font-light mt-14 text-sm leading-6 w-[48%]">
+            <p className="font-light mt-14 text-sm leading-6 w-[48%] ">
               Affan, Travma ve Afet Ruh Sağlığı Çalışmaları Derneği (TARDE)
               bünyesinde Kahramanmaraş Pazarcık merkezli deprem sonrası Maraş,
               Hatay, Antep, İskenderun, Osmaniye, Diyarbakır, Urfa, Adıyaman,
@@ -46,7 +46,7 @@ function Hakkimizda() {
               Sağlığı Programı tarafından desteklenen psikososyal destek hizmeti
               projesidir.
             </p>
-            <img src={SagOrta} className="h-52"></img>
+            <img src={SagOrta} className="h-52 mt-[-2rem]"></img>
           </div>
         </div>
       </div>
@@ -90,10 +90,10 @@ function Hakkimizda() {
               </div>
             </div>
           </div>
-          <div className="bg-amber-300  bg-opacity-30 w-[14rem] h-[15.8rem] mt-[-1.5rem]  rounded-3xl">
+          <div className="bg-amber-300  bg-opacity-30 w-[14rem] h-[15.8rem] mt-[-1.6rem] pb-1  rounded-3xl">
             <a
               href={"/gonullu"}
-              className="mt-6 w-[12.4rem] mx-3 px-6 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
+              className="mt-6 w-[12.4rem] mx-3 px-14 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
             >
               GÖNÜLLÜ OL
             </a>
