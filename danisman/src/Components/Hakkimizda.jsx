@@ -23,29 +23,13 @@ function Hakkimizda() {
    <>
       <h1 className="pt-10 text-6xl text-blue-950 font-bold block ml-10 h-full">hakkımızda</h1>
       <div className="w-full flex flex-col items-center">
-      <div className="flex flex-col items-center w-[70%]">
-        <div className="flex items-end">   <p className="font-light mt-4 text-sm leading-relaxed ">
-        Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.
-        Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı
-        oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden
-        beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl
-        boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden
-        elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da
-        içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus
-        PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık
-        yazılımları ile popüler olmuştur.
-      </p><img src={SagUst}></img></div>
-      <div className="flex items-start">
-      <p className="font-light mt-4 text-sm leading-relaxed">
-        Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek
-        değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum
-        pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın
-        zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü
-        yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı
-        endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen
-        bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı
-        galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte
-        metinler olarak kullanıldı.
+      <div className="flex flex-col items-center w-full">
+        <div className="flex justify-evenly"><p className="font-thin mt-4 text-[32px] leading-[45px] w-[50%] pt-10">
+        Affan kötülükten uzak durandır. Besleyicidir, Bağımsızdır, Çeşitlidir, Barışseverdir, Kapsayıcıdır
+      </p><img src={SagUst} className=""></img></div>
+      <div className="flex justify-evenly w-full">
+      <p className="font-light mt-4 text-sm leading-6 w-[50%]">
+      Affan, Travma ve Afet Ruh Sağlığı Çalışmaları Derneği (TARDE) bünyesinde Kahramanmaraş Pazarcık merkezli deprem sonrası Maraş, Hatay, Antep, İskenderun, Osmaniye, Diyarbakır, Urfa, Adıyaman, Malatya’daki merkezlerde depremden etkilenen bireylere yönelik ücretsiz psikolojik destek hizmeti sunan, İstanbul Bilgi Üniversitesi Travma ve Afet Ruh Sağlığı Çalışmaları Uygulamalı Ruh Sağlığı Programı tarafından desteklenen psikososyal destek hizmeti projesidir.
       </p>
    <img src={SagOrta}></img>
       </div>
