@@ -67,7 +67,7 @@ function App() {
               GÖNÜLLÜ OL
             </button>
             <img
-              className="max-h-[28vh] py-3   min-h-full min-w-full"
+              className="max-h-[15rem] py-3   min-h-full min-w-full"
               src="ilust.png"
             />
           </div>
