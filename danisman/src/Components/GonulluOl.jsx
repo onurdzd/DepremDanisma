@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import logo3 from "../assets/logo3.svg";
+import logo6 from "../assets/logo6.svg";
 const GonulluOl = () => {
   const {
     register,
@@ -13,11 +14,10 @@ const GonulluOl = () => {
     // Form submission logic here
     console.log(data);
   };
-  const [supportPerson, setSupportPerson] = useState("");
-  const [relationship, setRelationship] = useState("");
+
   return (
-    <div>
-      <div className="flex flex-col">
+    <div className="flex  ">
+      <div className="basis-2/3">
         <h1 className="font-bold ml-10 mt-4 text-5xl text-blue-950">
           Sahada Destek <br /> Olmak İçin <br />
           Gönüllü Ol
@@ -200,6 +200,14 @@ const GonulluOl = () => {
           </div>
           <p className="text-sm font-thin">* Zorunlu bilgi</p>
         </form>
+      </div>
+      <div className="flex flex-col basis-1/3">
+        <div className=" ">
+          <img className="h-[11rem]  mt-16 py-4 ml-5 " src={logo3} />
+        </div>
+        <div className="">
+          <img className="h-[16rem]  mt-2 py-4 ml-5 " src={logo6} />
+        </div>
       </div>
     </div>
   );
