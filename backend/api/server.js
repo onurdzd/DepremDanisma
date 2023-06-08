@@ -31,7 +31,7 @@ server.use("/api/user", userRouter);
 server.use("/api/personel",User.isValidToken, personelRouter);
 server.use("/api/sehir",User.isValidToken, sehirRouter);
 server.use("/api/merkez",User.isValidToken,  merkezRouter);
-server.use("/api/hizmet",User.isValidToken,  hizmetRouter);
+server.use("/api/hizmet",hizmetRouter);
 server.use("/api/kurum",User.isValidToken,  kurumRouter);
 server.use("/api/envanter",User.isValidToken,  envanterRouter);
 server.use("/api/auth", authRouter);

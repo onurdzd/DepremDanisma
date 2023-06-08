@@ -8,11 +8,7 @@ const GridTableHizmet = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:9000/api/hizmet",{
-        headers: {
-          'Authorization': `${localToken.localToken?.token}` 
-        }
-      })
+      .get("http://localhost:9000/api/hizmet")
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
