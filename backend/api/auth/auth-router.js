@@ -4,7 +4,7 @@ const userModel = require("../../api/users/users-model");
 const bcryptjs = require("bcryptjs");
 const utils = require("../../secret/utils");
 
-router.get("/", async (req, res, next) => {
+router.get("/",mw.isValidToken, async (req, res, next) => {
   try {
     const usermodel = await userModel.getAll();
     res.status(201).json(usermodel);
@@ -41,8 +41,7 @@ router.post(
         username: req.body.username,
         password: bcryptjs.hashSync(req.body.password, 8),
       };
-
-      const token = utils.createUserToken(payload, "1d");
+      const token = utils.createUserToken(payload, "10d");
       res.json({
         message: `welcome ${payload.username}`,
         token: token,

@@ -13,6 +13,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 // }
 
 const Header = () => {
+
   return (
     <header className=" text-xl basis-11/12 ">
       <div className=" mx-5 flex flex-col">

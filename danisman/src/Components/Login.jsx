@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,14 +15,15 @@ const validationSchema = yup.object().shape({
   username: yup.string().required("Username boş olamaz"),
   password: yup.string().required("Password boş olamaz"),
 });
-export default function NewEntry() {
+export default function Login() {
   const [showModal, setShowModal] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("user")); // Check if user exists in localStorage
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   let navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
+
   const {
     register,
     handleSubmit,
@@ -40,8 +41,6 @@ export default function NewEntry() {
           password: data.password,
         })
         .then((res) => localStorage.setItem("user", JSON.stringify(res.data)));
-
-      setIsLoggedIn(true); // Başarılı oturum açtıktan sonra isLoggedIn'i true olarak ayarla
       navigate("/dashboard");
       closeModal();
       toast.success("Giriş yapıldı");
@@ -65,11 +64,25 @@ export default function NewEntry() {
     navigate("/"); // çıkış yapınca ana sayfaya yönlendir
     toast.info("Çıkış yapıldı");
   };
+  
+const [localToken,setLocalToken]=useState(JSON.parse(localStorage.getItem("user")))
+const localTokenCheck = async()=>{
+  await axios
+.get("http://localhost:9000/api/auth",{
+  headers: {
+    'Authorization': `${localToken?.token}` 
+  }
+})
+.then((res) => {res.data && 
+  setLocalToken(JSON.parse(localStorage.getItem("user"))) ;
+  setIsLoggedIn(true);
+})}
+
+useEffect(()=>{localTokenCheck()},[])
 
   return (
     <div className="flex justify-center">
       {/* Buton */}
-
       {isLoggedIn ? (
         <div className="flex items-center">
           <button
@@ -90,13 +103,12 @@ export default function NewEntry() {
       ) : (
         <button
           onClick={openModal}
-          className="px-8 py-1  font-normal ttext-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+          className="mt-1 flex items-center px-3 font-normal text-sm text-[#5161c5]  rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
         >
-          <BsArrowBarRight className="inline-block mr-2 h-5 w-5 text-amber-300" />
+          <BsArrowBarRight className=" mr-2 h-5 w-5 text-amber-300" />
           Giriş Yap
         </button>
       )}
-
       {/* Modal Ekranı */}
       {showModal && (
         <div className="fixed z-10 inset-0 overflow-y-auto">
@@ -108,14 +120,12 @@ export default function NewEntry() {
             >
               <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
             </div>
-
             <span
               className="hidden sm:inline-block sm:align-middle sm:h-screen"
               aria-hidden="true"
             >
               &#8203;
             </span>
-
             <div
               className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
               role="dialog"

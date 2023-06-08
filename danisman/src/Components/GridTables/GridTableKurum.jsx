@@ -2,12 +2,16 @@ import MaterialTable from "@material-table/core";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const GridTableKurum = () => {
+const GridTableKurum = (localToken) => {
   const [data, setData] = useState([]);
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:9000/api/kurum")
+      .get("http://localhost:9000/api/kurum",{
+        headers: {
+          'Authorization': `${localToken.localToken?.token}` 
+        }
+      })
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
@@ -17,7 +21,11 @@ const GridTableKurum = () => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/merkez")
+      .get("http://localhost:9000/api/merkez",{
+        headers: {
+          'Authorization': `${localToken.localToken?.token}` 
+        }
+      })
       .then((res) => setMerkezIsimAl(res.data));
   }, []);
 

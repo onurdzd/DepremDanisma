@@ -12,7 +12,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Header = () => {
+const TableHeader = () => {
   return (
     <div className="flex text-xl w-full h-[15vh] items-center">
       <div className=" mx-10 flex w-full ">
@@ -172,4 +172,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default TableHeader;
