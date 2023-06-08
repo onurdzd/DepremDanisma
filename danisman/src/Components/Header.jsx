@@ -7,19 +7,20 @@ import Login from "./Login";
 import { IoMapSharp, IoSettingsSharp } from "react-icons/io5";
 import { RiHandHeartFill } from "react-icons/ri";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import Logo from "../assets/Logo.svg";
+import Group from "../assets/Group.png";
 
 // function classNames(...classes) {
 //   return classes.filter(Boolean).join(" ");
 // }
 
 const Header = () => {
-
   return (
     <header className=" text-xl basis-11/12 ">
       <div className=" mx-5 flex flex-col">
         <div className="ml-7 ">
           <a href="/">
-            <img className="max-h-[200px] mt-2 py-4" src="Logo.svg" />
+            <img className="max-h-[200px] mt-2 py-4" src={Logo} />
           </a>
         </div>
         <div className="flex flex-col justify-around mt-5  ">
@@ -184,8 +185,7 @@ const Header = () => {
             </button>
             <img
               className="max-h-[20rem] py-2 px-8  min-h-full min-w-full  "
-              src="Group.png
-            "
+              src={Group}
             />
           </div>
           <div className="text-xs text-center mt-1 bg-slate-100 rounded-2xl py-2  font-extralight">

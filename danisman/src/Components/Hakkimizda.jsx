@@ -1,8 +1,10 @@
 import axios from "axios";
 import { MdPeopleAlt, MdPerson } from "react-icons/md";
 import { useState, useEffect } from "react";
-import SagUst from "../../public/sagust.svg";
-import SagOrta from "../../public/sagorta.png";
+import SagUst from "../assets/sagust.svg";
+import SagOrta from "../assets/sagorta.png";
+import GonulluOlLogo from "../assets/ilust.png";
+import TardeLogo from "../assets/logo.jpg";
 
 function Hakkimizda() {
   const [hizmetData, setHizmetData] = useState([]);
@@ -54,7 +56,7 @@ function Hakkimizda() {
             <div className="flex flex-col mr-10 ml-2  ">
               <img
                 className="max-w-[9rem] pt-2 pb-2 px-6 ml-4 "
-                src="logo.jpg"
+                src={TardeLogo}
               />
               <p className="text-xs text-center ">
                 Travma ve Afet Ruh Sağlığı <br /> Çalışmaları Derneği
@@ -94,7 +96,7 @@ function Hakkimizda() {
             </button>
             <img
               className="max-h-[15rem] py-3 min-h-full min-w-full"
-              src="ilust.png"
+              src={GonulluOlLogo}
             />
           </div>
         </div>
