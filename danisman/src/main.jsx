@@ -5,7 +5,6 @@ import App from "./App.jsx";
 import "./index.css";
 import Dashboard from "./Components/Dashboard.jsx";
 import Header from "./Components/Header.jsx";
-import TableHeader from "./Components/TableHeader.jsx";
 import İletisim from "./Components/İletisim.jsx";
 import Adana from "./Components/City/Adana.jsx";
 import Adiyaman from "./Components/City/Adiyaman.jsx";
@@ -21,7 +20,16 @@ import Footer from "./Components/Footer.jsx";
 import Hakkimizda from "./Components/Hakkimizda.jsx";
 import Form from "./Components/Destekbasvuru.jsx";
 
-const localToken = JSON.parse(localStorage.getItem("user"));
+// const [localToken,setLocalToken]=useState("")
+// const localTokenCheck = async()=>{
+//   await axios
+// .get("http://localhost:9000/api/user",{
+//   headers: {
+//     'Authorization': `${localToken.localToken.localToken?.token}` 
+//   }
+// })
+// .then((res) => {res.data && setLocalToken(JSON.parse(localStorage.getItem("user")))})}
+// useEffect(()=>{localTokenCheck()},[])
 
 const router = createBrowserRouter([
   {
@@ -43,28 +51,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <div className="bg-slate-100 p-4 h-[90vh] rounded-[2rem] ">
-        <div className="p-2 flex flex-col items-center bg-white rounded-[2rem] h-[85vh] overflow-auto w-[90vw] mb-6">
-          <div className=" pt-1 bg-white rounded-[2rem]  ">
-            <TableHeader />
-          </div>
-          <div className="flex flex-col w-full h-[60vh] bg-white border-2 rounded-[1rem] ">
-            {localToken ? (
-              <>
-                <div className="font-thin text-xs pb-2 text-right mr-2 ">
-                  * ADAK-Acil Durumlarda Aranacak Kişi
-                </div>
                 <Dashboard />
-              </>
-            ) : (
-              <div className="flex justify-center h-full items-center font-bold text-xl bg-slate-100 ">
-                Dashboard ekranına ulaşmak için önce giriş yapın
-              </div>
-            )}
-          </div>
-        </div>
-        <Footer />
-      </div>
     ),
   },
   {
@@ -87,7 +74,7 @@ const router = createBrowserRouter([
     path: "/hakkimizda",
     element: (
       <div className="h-[96vh] w-[80vw]">
-        <div className="flex flex-row items-center bg-white rounded-[2rem]  pb-2 ">
+        <div className="flex flex-row items-start bg-white rounded-[2rem]  pb-2 ">
           <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>

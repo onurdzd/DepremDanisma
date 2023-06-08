@@ -2,12 +2,16 @@ import MaterialTable from "@material-table/core";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const GridTableSehir = () => {
+const GridTableSehir = (localToken) => {
   const [data, setData] = useState([]);
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:9000/api/sehir")
+      .get("http://localhost:9000/api/sehir",{
+        headers: {
+          'Authorization': `${localToken.localToken?.token}` 
+        }
+      })
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();

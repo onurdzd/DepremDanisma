@@ -4,6 +4,8 @@ import SehirİsimleriEkle from "./Components/SehirİisimleriEkle.jsx";
 import axios from "axios";
 import { MdPeopleAlt, MdPerson } from "react-icons/md";
 import { useState, useEffect } from "react";
+import ilust from "./assets/ilust.png";
+import TardeLogo from "./assets/logo.jpg";
 
 function App() {
   const [hizmetData, setHizmetData] = useState([]);
@@ -28,7 +30,10 @@ function App() {
       <div className=" flex flex-row mt-14 pb-3 justify-between mx-6">
         <div className="font-sans  flex  font-semibold text-[4rem] bg-white px-6 py-1 rounded-xl ">
           <div className="flex  flex-col mr-10 ml-2 ">
-            <img className="max-w-[9rem] pt-2 pb-2 px-6 ml-4 " src="logo.jpg" />
+            <img
+              className="max-w-[9rem] pt-2 pb-2 px-6 ml-4 "
+              src={TardeLogo}
+            />
             <p className="text-xs text-center ">
               Travma ve Afet Ruh Sağlığı <br /> Çalışmaları Derneği
             </p>
@@ -62,13 +67,13 @@ function App() {
           </div>
         </div>
         {isAnasayfa && (
-          <div className="bg-amber-300 bg-opacity-30 w-[14vw] h-[35vh] mt-[-9.5rem]  mr-18 rounded-3xl">
-            <button className="mt-8 w-[12vw] mx-3 px-6 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900">
+          <div className="bg-amber-300 bg-opacity-30 w-[14rem] h-[15.8rem] mt-[-9.5rem]  mr-18 rounded-3xl">
+            <button className="mt-8 w-[12.4rem] mx-3 px-6 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900">
               GÖNÜLLÜ OL
             </button>
             <img
-              className="max-h-[28vh] py-3   min-h-full min-w-full"
-              src="ilust.png"
+              className="max-h-[15rem] py-3   min-h-full min-w-full"
+              src={ilust}
             />
           </div>
         )}

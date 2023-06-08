@@ -2,12 +2,16 @@ import MaterialTable from "@material-table/core";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const GridTableEnvanter = () => {
+const GridTableEnvanter = (localToken) => {
   const [data, setData] = useState([]);
-
+  
   const dataAl = async () =>
     await axios
-      .get("http://localhost:9000/api/envanter")
+      .get("http://localhost:9000/api/envanter",{
+        headers: {
+          'Authorization': `${localToken.localToken?.token}` 
+        }
+      })
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
@@ -17,7 +21,11 @@ const GridTableEnvanter = () => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/merkez")
+      .get("http://localhost:9000/api/merkez",{
+        headers: {
+          'Authorization': `${localToken.localToken?.token}` 
+        }
+      })
       .then((res) => setMerkezIsimAl(res.data));
   }, []);
 

@@ -7,6 +7,8 @@ import Login from "./Login";
 import { IoMapSharp, IoSettingsSharp } from "react-icons/io5";
 import { RiHandHeartFill } from "react-icons/ri";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import Logo from "../assets/Logo.svg";
+import Group from "../assets/Group.png";
 
 // function classNames(...classes) {
 //   return classes.filter(Boolean).join(" ");
@@ -18,15 +20,8 @@ const Header = () => {
       <div className=" mx-5 flex flex-col">
         <div className="ml-7 ">
           <a href="/">
-            <img className="max-h-[125px] py-4" src="logo2.jpg" />
+            <img className="max-h-[200px] mt-2 py-4" src={Logo} />
           </a>
-
-          <p className="text-4xl font-mono font-normal text-opacity-90 text-[#162270]">
-            Affan
-          </p>
-          <p className="text-sm font-thin font-mono ">
-            Psikososyal <br /> Destek Projesi{" "}
-          </p>
         </div>
         <div className="flex flex-col justify-around mt-5  ">
           <div className="ml-6 flex flex-row">
@@ -185,16 +180,17 @@ const Header = () => {
         </div>
         <div className="flex flex-col justify-around ">
           <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-5 rounded-3xl">
+
             <a
               href={"/basvuru"}
               className="mt-4 mx-11 px-1 w-max py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
             >
               Destek İster Misin?
             </a>
+
             <img
               className="max-h-[20rem] py-2 px-8  min-h-full min-w-full  "
-              src="Group.png
-            "
+              src={Group}
             />
           </div>
           <div className="text-xs text-center mt-1 bg-slate-100 rounded-2xl py-2  font-extralight">
