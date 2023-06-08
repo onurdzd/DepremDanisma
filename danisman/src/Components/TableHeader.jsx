@@ -7,6 +7,7 @@ import Login from "./Login";
 import { IoMapSharp, IoSettingsSharp } from "react-icons/io5";
 import { RiHandHeartFill } from "react-icons/ri";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import DashboardLogo from "../assets/Dashboard_logo.svg";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -18,7 +19,7 @@ const TableHeader = () => {
       <div className=" mx-10 flex w-full ">
         <div className=" flex w-full items-center">
           <a href="/">
-            <img className="max-h-[150px] py-4" src="Dashboard_logo.svg" />
+            <img className="max-h-[150px] py-4" src={DashboardLogo} />
           </a>
         </div>
         <div className="flex  mt-4 w-full ">
