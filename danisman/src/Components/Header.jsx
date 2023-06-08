@@ -1,6 +1,3 @@
-// import { Fragment } from "react";
-// import { Menu, Transition } from "@headlessui/react";
-// import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./Login";
@@ -9,10 +6,6 @@ import { RiHandHeartFill } from "react-icons/ri";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import Logo from "../assets/Logo.svg";
 import Group from "../assets/Group.png";
-
-// function classNames(...classes) {
-//   return classes.filter(Boolean).join(" ");
-// }
 
 const Header = () => {
   return (
@@ -45,106 +38,10 @@ const Header = () => {
                     Hakkımızda
                   </a>
                 </div>
-                {/* <Menu as="div" className="relative inline-block text-left">
-                  <div>
-                    <Menu.Button className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
-                      <IoSettingsSharp className="inline-block mr-1 h-5 w-5 text-amber-300" />
-                      Biz Kimiz?
-                      <ChevronDownIcon
-                        className="-mr-4 h-5 w-5 text-gray-400 inline"
-                        aria-hidden="true"
-                      />
-                    </Menu.Button>
-                  </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute left-24 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <div className="py-1">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="https://tarde.org.tr/wp-content/uploads/2018/11/travma-ve-afet-ruh-sagligi-calismalari-dernegi.pdf"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700",
-                                "block px-4 py-2 text-sm"
-                              )}
-                            >
-                              Tüzük
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="https://tarde.org.tr/yonetim-kurulu/"
-                              target="_blank"
-                              rel="noreferrer"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700",
-                                "block px-4 py-2 text-sm"
-                              )}
-                            >
-                              Yönetim Kurulu
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="https://tarde.org.tr/uyelerimiz/"
-                              target="_blank"
-                              rel="noreferrer"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700",
-                                "block px-4 py-2 text-sm"
-                              )}
-                            >
-                              Üyelerimiz
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <form
-                          method="POST"
-                          action="https://tarde.org.tr/komiteler/"
-                          target="_blank"
-                        >
-                          <Menu.Item>
-                            {({ active }) => (
-                              <button
-                                type="submit"
-                                className={classNames(
-                                  active
-                                    ? "bg-gray-100 text-gray-900"
-                                    : "text-gray-700",
-                                  "block w-full px-4 py-2 text-left text-sm"
-                                )}
-                              >
-                                Komisyonlar
-                              </button>
-                            )}
-                          </Menu.Item>
-                        </form>
-                      </div>
-                    </Menu.Items>
-                  </Transition>
-                </Menu> */}
               </div>
               <div className="mb-2">
                 <a
-                  href={"/gönüllü"}
+                  href={"/gonullu"}
                   className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
                 >
                   <RiHandHeartFill className="inline-block mr-1 h-5 w-5 text-amber-300" />
@@ -186,7 +83,6 @@ const Header = () => {
             >
               Destek İster Misin?
             </a>
-
             <img
               className="max-h-[20rem] py-2 px-8  min-h-full min-w-full  "
               src={Group}

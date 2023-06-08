@@ -19,7 +19,7 @@ import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 import Footer from "./Components/Footer.jsx";
 import Hakkimizda from "./Components/Hakkimizda.jsx";
 import Form from "./Components/Destekbasvuru.jsx";
-import Form2 from "./Components/Gönüllüol.jsx";
+import GonulluOl from "./Components/GonulluOl.jsx";
 
 const router = createBrowserRouter([
   {
@@ -59,15 +59,15 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/gönüllü",
+    path: "/gonullu",
     element: (
       <div className="h-[96vh] w-[80vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem]  pb-2 ">
           <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('mapZone.png')] rounded-3xl bg-cover">
-            <Form2 />
+          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
+            <GonulluOl />
           </div>
         </div>
         <Footer />

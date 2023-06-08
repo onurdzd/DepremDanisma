@@ -92,7 +92,7 @@ function Hakkimizda() {
           </div>
           <div className="bg-amber-300  bg-opacity-30 w-[14rem] h-[15.8rem] mt-[-1.5rem]  rounded-3xl">
             <a
-              href={"/gönüllü"}
+              href={"/gonullu"}
               className="mt-6 w-[12.4rem] mx-3 px-6 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
             >
               GÖNÜLLÜ OL

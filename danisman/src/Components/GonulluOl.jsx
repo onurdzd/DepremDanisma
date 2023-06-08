@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const Form2 = () => {
+const GonulluOl = () => {
   const {
     register,
     handleSubmit,
@@ -205,4 +205,4 @@ const Form2 = () => {
   );
 };
 
-export default Form2;
+export default GonulluOl;
