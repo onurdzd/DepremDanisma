@@ -78,7 +78,7 @@ const localTokenCheck = async()=>{
   setIsLoggedIn(true);
 })}
 
-useEffect(()=>{localTokenCheck()},[])
+useEffect(()=>{localToken && localTokenCheck()},[])
 
   return (
     <div className="flex justify-center">
