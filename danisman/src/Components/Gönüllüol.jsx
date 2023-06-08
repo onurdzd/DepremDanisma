@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import logo2 from "../assets/logo2.jpg";
-const Form = () => {
+
+const Form2 = () => {
   const {
     register,
     handleSubmit,
@@ -16,11 +16,11 @@ const Form = () => {
   const [supportPerson, setSupportPerson] = useState("");
   const [relationship, setRelationship] = useState("");
   return (
-    <div className="flex ">
-      <div className="flex flex-col basis-2/3">
+    <div>
+      <div className="flex flex-col">
         <h1 className="font-bold ml-10 mt-4 text-5xl text-blue-950">
-          Pisikolojik Destek <br /> Almak İçin <br />
-          Başvurun
+          Sahada Destek <br /> Olmak İçin <br />
+          Gönüllü Ol
         </h1>
         <form
           className="w-full ml-20 max-w-md"
@@ -102,7 +102,7 @@ const Form = () => {
               htmlFor="city"
               className="block text-gray-700 font-bold mb-2"
             >
-              Yaşadığınız İl*
+              Sahada Çalışmak İstediğiniz İl*
             </label>
             <input
               type="text"
@@ -116,66 +116,53 @@ const Form = () => {
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
-          <div className="mb-4 flex flex-col">
-            <label className="block text-gray-700 font-bold mb-2">
-              Destek alacak Kişi*
+          <div className="mb-4">
+            <label
+              htmlFor="dateb"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Sahada Çalışmak İstediğiniz Tarih Başlangıcı*
             </label>
-            <div className="flex flex-row ">
-              <div className="mr-6">
-                <input
-                  type="checkbox"
-                  id="myself"
-                  value="myself"
-                  {...register("supportPerson", { required: true })}
-                  checked={supportPerson === "myself"}
-                  onChange={(e) => setSupportPerson(e.target.value)}
-                />
-                <label htmlFor="myself" className="ml-2  font-light">
-                  Kendim
-                </label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="relative"
-                  value="relative"
-                  {...register("supportPerson", { required: true })}
-                  checked={supportPerson === "relative"}
-                  onChange={(e) => setSupportPerson(e.target.value)}
-                />
-                <label htmlFor="relative" className="ml-2 font-light">
-                  Yakınım
-                </label>
-              </div>
-            </div>
-            {errors.supportPerson && (
-              <p className="text-red-500">Bu alan gereklidir.</p>
+            <input
+              type="date"
+              id="dateb"
+              {...register("dateb", { required: true })}
+              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                errors.dateb && "border-red-500"
+              }`}
+            />
+            {errors.dateb && (
+              <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
-          {supportPerson === "relative" && (
-            <div className="mb-4">
-              <label
-                htmlFor="relationship"
-                className="block text-gray-700 font-bold mb-2"
-              >
-                Yakınlık Dereceniz
-              </label>
-              <input
-                type="text"
-                id="relationship"
-                className="appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                value={relationship}
-                onChange={(e) => setRelationship(e.target.value)}
-              />
-            </div>
-          )}
+
+          <div className="mb-4">
+            <label
+              htmlFor="datebi"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Sahada Çalışmak İstediğiniz Tarih Bitişi*
+            </label>
+            <input
+              type="date"
+              id="datebi"
+              {...register("datebi", { required: true })}
+              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                errors.datebi && "border-red-500"
+              }`}
+            />
+            {errors.datebi && (
+              <span className="text-red-500">Bu alan zorunludur.</span>
+            )}
+          </div>
 
           <div className="mb-4">
             <label
               htmlFor="reason"
               className="block text-gray-700 font-bold mb-2"
             >
-              Başvuru nedeninizi kıssaca anlatır mısınız?*
+              Sahada gönüllü çalışma motivasyonunuzu <br /> kısaca anlatır
+              mısınız? *
             </label>
             <textarea
               id="reason"
@@ -203,7 +190,7 @@ const Form = () => {
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
-          <div className="flex items-center my-6">
+          <div className="flex items-center my-6 ">
             <button
               type="submit"
               className="bg-amber-300 hover:bg-amber-400 text-blue-950 font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
@@ -214,11 +201,8 @@ const Form = () => {
           <p className="text-sm font-thin">* Zorunlu bilgi</p>
         </form>
       </div>
-      <div className="basis-1/3">
-        <img className="h-[10rem]  mt-2 py-4 ml-5 " src={logo2} />
-      </div>
     </div>
   );
 };
 
-export default Form;
+export default Form2;
