@@ -18,7 +18,7 @@ const Form = () => {
   const [supportPerson, setSupportPerson] = useState("");
   const [relationship, setRelationship] = useState("");
   return (
-    <div className="flex  ">
+    <div className="flex   ">
       <div className="  basis-2/3">
         <h1 className="font-bold ml-10 mt-10 text-5xl text-blue-950">
           Pisikolojik Destek <br /> Almak İçin <br />
@@ -216,14 +216,14 @@ const Form = () => {
           <p className="text-sm font-thin pb-8">* Zorunlu bilgi</p>
         </form>
       </div>
-      <div className="flex flex-col basis-1/3">
-        <div className=" ">
+      <div className="flex flex-col basis-1/3 ">
+        <div className="hidden md:block ">
           <img className="h-[11rem]  mt-16 py-4 ml-5 " src={logo3} />
         </div>
         <div className="">
           <img className="h-[12rem]  mt-2 py-4 ml-5 " src={logo4} />
         </div>
-        <div className="">
+        <div className="hidden md:block ">
           <img className="h-[12rem]  mt-2 py-4 ml-5 " src={logo5} />
         </div>
       </div>

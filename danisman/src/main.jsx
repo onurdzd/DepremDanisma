@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <div className="h-[96vh] w-[80vw]">
-        <div className="flex flex-row items-center bg-white rounded-[2rem] pb-2 ">
+        <div className="md:flex md:flex-row items-center bg-white rounded-[2rem] pb-2 ">
           <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
@@ -45,8 +45,8 @@ const router = createBrowserRouter([
   {
     path: "/basvuru",
     element: (
-      <div className="h-[96vh] w-[80vw]">
-        <div className="flex flex-row bg-white rounded-[2rem]  pb-2 ">
+      <div className="h-[96vh] w-[80vw] ">
+        <div className=" md:flex md:flex-row bg-white rounded-[2rem]  pb-2  ">
           <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
     path: "/gonullu",
     element: (
       <div className="h-[96vh] w-[80vw]">
-        <div className="flex flex-row  bg-white rounded-[2rem]  pb-2 ">
+        <div className="  bg-white rounded-[2rem]  pb-2 md:flex md:flex-row ">
           <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
     path: "/hakkimizda",
     element: (
       <div className="h-[96vh] w-[80vw]">
-        <div className="flex flex-row items-start bg-white rounded-[2rem]  pb-2 ">
+        <div className="md:flex md:flex-row  items-start bg-white rounded-[2rem]  pb-2 ">
           <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
