@@ -62,12 +62,12 @@ function App() {
           </div>
         </div>
         {isAnasayfa && (
-          <div className="bg-amber-300 bg-opacity-30 w-[14vw] h-[35vh] mt-[-9.5rem]  mr-18 rounded-3xl">
-            <button className="mt-8 w-[12vw] mx-3 px-6 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900">
+          <div className="bg-amber-300 bg-opacity-30 w-[14rem] h-[15.8rem] mt-[-9.5rem]  mr-18 rounded-3xl">
+            <button className="mt-8 w-[12.4rem] mx-3 px-6 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900">
               GÖNÜLLÜ OL
             </button>
             <img
-              className="max-h-[28vh] py-3   min-h-full min-w-full"
+              className="max-h-[15rem] py-3   min-h-full min-w-full"
               src="ilust.png"
             />
           </div>

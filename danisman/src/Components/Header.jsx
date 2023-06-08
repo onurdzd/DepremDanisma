@@ -178,8 +178,8 @@ const Header = () => {
         </div>
         <div className="flex flex-col justify-around ">
           <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-5 rounded-3xl">
-            <button className="mt-4 mx-11 px-1 w-max py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900">
-              Destek İster Misin?
+            <button className="mt-4 mx-6 px-2 w-max py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900">
+              <p className="mx-4">DESTEK İSTER MİSİN?</p>
             </button>
             <img
               className="max-h-[20rem] py-2 px-8  min-h-full min-w-full  "
