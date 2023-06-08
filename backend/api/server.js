@@ -1,7 +1,7 @@
 const express = require("express");
 const server = express();
 const cors = require("cors");
-const User=require("./auth/auth-middleware")
+const Auth=require("./auth/auth-middleware")
 
 require("dotenv").config();
 
@@ -27,13 +27,13 @@ server.get("/", (req, res) => {
   res.send("deneme");
 });
 
-server.use("/api/user", userRouter);
-server.use("/api/personel",User.isValidToken, personelRouter);
-server.use("/api/sehir",User.isValidToken, sehirRouter);
-server.use("/api/merkez",User.isValidToken,  merkezRouter);
+server.use("/api/user",Auth.isValidToken, userRouter);
+server.use("/api/personel",Auth.isValidToken, personelRouter);
+server.use("/api/sehir", sehirRouter);
+server.use("/api/merkez",  merkezRouter);
 server.use("/api/hizmet",hizmetRouter);
-server.use("/api/kurum",User.isValidToken,  kurumRouter);
-server.use("/api/envanter",User.isValidToken,  envanterRouter);
+server.use("/api/kurum",  kurumRouter);
+server.use("/api/envanter",envanterRouter);
 server.use("/api/auth", authRouter);
 
 server.use((err, req, res, next) => {
