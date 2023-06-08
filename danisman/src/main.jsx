@@ -40,7 +40,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('mapZone.png')] rounded-3xl bg-cover">
+          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
             <App />
           </div>
         </div>
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('mapZone.png')] rounded-3xl bg-cover">
+          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
             <Form />
           </div>
         </div>
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('mapZone.png')] rounded-3xl bg-cover">
+          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
             <Hakkimizda />
           </div>
         </div>
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="flex flex-col bg-[url('mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
             <div className="flex mt-2 mr-4 basis-10/12  ">
               <App />
               <Adana />
@@ -113,7 +113,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="flex flex-col bg-[url('mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
             <div className="flex mt-2 mr-4 basis-10/12  ">
               <App />
               <Osmaniye />
@@ -132,7 +132,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="flex flex-col bg-[url('mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
             <div className="flex mt-2 mr-4 basis-10/12  ">
               <App />
               <Hatay />
@@ -151,7 +151,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="flex flex-col bg-[url('mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
             <div className="flex mt-2 mr-4 basis-10/12  ">
               <App />
               <Gaziantep />
@@ -170,7 +170,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="flex flex-col bg-[url('mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
             <div className="flex mt-2 mr-4 basis-10/12  ">
               <App />
               <Kilis />
@@ -189,7 +189,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="flex flex-col bg-[url('mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
             <div className="flex mt-2 mr-4 basis-10/12  ">
               <App />
               <Sanliurfa />
@@ -208,7 +208,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="flex flex-col bg-[url('mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
             <div className="flex mt-2 mr-4 basis-10/12  ">
               <App />
               <Adiyaman />
@@ -227,7 +227,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="flex flex-col bg-[url('mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
             <div className="flex mt-2 mr-4 basis-10/12  ">
               <App />
               <Kahramanmaras />
@@ -246,7 +246,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="flex flex-col bg-[url('mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
             <div className="flex mt-2 mr-4 basis-10/12  ">
               <App />
               <Diyarbakir />
@@ -265,7 +265,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="flex flex-col bg-[url('mapZone.png')] rounded-3xl mt-3 mr-5 bg-cover">
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5 bg-cover">
             <div className="flex mt-2 mr-4 basis-10/12  ">
               <App />
               <Malatya />
@@ -284,7 +284,7 @@ const router = createBrowserRouter([
           <div className="flex bg-white h-full rounded-l-[2rem]  flex-col basis-1/5 ">
             <Header />
           </div>
-          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('mapZone.png')] rounded-3xl bg-cover">
+          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
             <İletisim />
           </div>
         </div>
