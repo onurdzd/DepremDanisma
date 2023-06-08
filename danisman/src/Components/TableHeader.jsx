@@ -16,9 +16,9 @@ const Header = () => {
   return (
     <div className="flex text-xl w-full h-[15vh] items-center">
       <div className=" mx-10 flex w-full ">
-        <div className="ml-7 flex w-full items-center">
+        <div className=" flex w-full items-center">
           <a href="/">
-            <img className=" py-4" src="Dashboard_logo.svg" />
+            <img className="max-h-[150px] py-4" src="Dashboard_logo.svg" />
           </a>
         </div>
         <div className="flex  mt-4 w-full ">
