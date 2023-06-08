@@ -1,4 +1,5 @@
 import { ToastContainer } from "react-toastify";
+import { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./Login";
 import { IoMapSharp, IoSettingsSharp } from "react-icons/io5";
@@ -8,17 +9,32 @@ import Logo from "../assets/Logo.svg";
 import Group from "../assets/Group.png";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <header className=" text-xl basis-11/12 ">
       <div className=" mx-5 flex flex-col">
-        <div className="ml-7 ">
-          <a href="/">
-            <img className="max-h-[200px] mt-2 py-4" src={Logo} />
+        <div className="ml-7 flex  ">
+          <a href="/" className="basis-2/3">
+            <img className="max-h-[200px] mt-2 py-4 " src={Logo} />
           </a>
+          <button
+            className="block md:hidden basis-1/3 text-5xl  text-blue-300 focus:outline-none"
+            onClick={toggleMenu}
+          >
+            &#8801;
+          </button>
         </div>
-        <div className="flex flex-col justify-around mt-5  ">
-          <div className="ml-6 flex flex-row">
-            <div className="  text-blue-300  ">
+        <div
+          className={`md:flex flex flex-col justify-around mt-5 ${
+            isMenuOpen ? "block" : "hidden"
+          }`}
+        >
+          <div className="ml-6 flex flex-row ">
+            <div className="  text-blue-300   ">
               <div className="mb-2">
                 <a
                   href={"/"}
@@ -75,22 +91,24 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-around ">
-          <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-5 rounded-3xl">
-            <a
-              href={"/basvuru"}
-              className="mt-4 mx-11 px-1 w-max py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
-            >
-              Destek İster Misin?
-            </a>
-            <img
-              className="max-h-[20rem] py-2 px-8  min-h-full min-w-full  "
-              src={Group}
-            />
-          </div>
-          <div className="text-xs text-center mt-3 bg-slate-100 rounded-2xl py-3  font-extralight">
-            İstanbul Bilgi Üniversitesi Travma ve Affet <br />
-            Ruh Sağlığı Programı İşbirliği ile
+        <div className="hidden md:block ">
+          <div className="flex flex-col justify-around  ">
+            <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-5 rounded-3xl">
+              <a
+                href={"/basvuru"}
+                className="mt-4 mx-11 px-1 w-max py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
+              >
+                Destek İster Misin?
+              </a>
+              <img
+                className="max-h-[20rem]  py-2 px-8  min-h-full min-w-full  "
+                src={Group}
+              />
+            </div>
+            <div className="text-xs text-center mt-3 bg-slate-100 rounded-2xl py-3  font-extralight">
+              İstanbul Bilgi Üniversitesi Travma ve Affet <br />
+              Ruh Sağlığı Programı İşbirliği ile
+            </div>
           </div>
         </div>
       </div>
