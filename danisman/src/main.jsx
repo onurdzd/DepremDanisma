@@ -21,17 +21,6 @@ import Hakkimizda from "./Components/Hakkimizda.jsx";
 import Form from "./Components/Destekbasvuru.jsx";
 import Form2 from "./Components/Gönüllüol.jsx";
 
-// const [localToken,setLocalToken]=useState("")
-// const localTokenCheck = async()=>{
-//   await axios
-// .get("http://localhost:9000/api/user",{
-//   headers: {
-//     'Authorization': `${localToken.localToken.localToken?.token}`
-//   }
-// })
-// .then((res) => {res.data && setLocalToken(JSON.parse(localStorage.getItem("user")))})}
-// useEffect(()=>{localTokenCheck()},[])
-
 const router = createBrowserRouter([
   {
     path: "/",
