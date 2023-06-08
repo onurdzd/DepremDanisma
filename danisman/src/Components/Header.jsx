@@ -19,14 +19,8 @@ const Header = () => {
       <div className=" mx-5 flex flex-col">
         <div className="ml-7 ">
           <a href="/">
-            <img className="max-h-[125px] py-4" src="logo2.jpg" />
+            <img className="max-h-[200px] mt-2 py-4" src="Logo.svg" />
           </a>
-          <p className="text-4xl font-mono font-normal text-opacity-90 text-[#162270]">
-            Affan
-          </p>
-          <p className="text-sm font-thin font-mono ">
-            Psikososyal <br /> Destek Projesi{" "}
-          </p>
         </div>
         <div className="flex flex-col justify-around mt-5  ">
           <div className="ml-6 flex flex-row">
@@ -41,15 +35,15 @@ const Header = () => {
                 </a>
               </div>
               <div className="mb-2 ">
-              <div className="mb-2">
-                <a
-                  href={"/hakkimizda"}
-                  className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
-                >
-                  <IoSettingsSharp className="inline-block mr-1 h-5 w-5 text-amber-300" />
-                  Hakkımızda
-                </a>
-              </div>
+                <div className="mb-2">
+                  <a
+                    href={"/hakkimizda"}
+                    className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+                  >
+                    <IoSettingsSharp className="inline-block mr-1 h-5 w-5 text-amber-300" />
+                    Hakkımızda
+                  </a>
+                </div>
                 {/* <Menu as="div" className="relative inline-block text-left">
                   <div>
                     <Menu.Button className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
@@ -185,8 +179,8 @@ const Header = () => {
         </div>
         <div className="flex flex-col justify-around ">
           <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-5 rounded-3xl">
-            <button className="mt-4 mx-11 px-1 w-max py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900">
-              Destek İster Misin?
+            <button className="mt-4 mx-6 px-2 w-max py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900">
+              <p className="mx-4">DESTEK İSTER MİSİN?</p>
             </button>
             <img
               className="max-h-[20rem] py-2 px-8  min-h-full min-w-full  "

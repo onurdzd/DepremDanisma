@@ -16,18 +16,10 @@ const TableHeader = () => {
   return (
     <div className="flex text-xl w-full h-[15vh] items-center">
       <div className=" mx-10 flex w-full ">
-        <div className="ml-7 flex w-full items-center">
+        <div className=" flex w-full items-center">
           <a href="/">
-            <img className="max-h-[125px] py-4" src="logo2.jpg" />
+            <img className="max-h-[150px] py-4" src="Dashboard_logo.svg" />
           </a>
-          <div>
-            <p className="text-5xl font-mono font-normal text-opacity-90 text-[#162270]">
-              Affan
-            </p>
-            <p className="text-base font-thin font-mono">
-              Psikososyal Destek Projesi{" "}
-            </p>
-          </div>
         </div>
         <div className="flex  mt-4 w-full ">
           <div className="mt-4 ml-6 flex w-full ">
