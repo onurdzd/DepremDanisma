@@ -3,12 +3,16 @@ import axios from "axios";
 import MaterialTable from "@material-table/core";
 import { tr } from "date-fns/locale";
 
-const GridTableHizmet = () => {
+const GridTableHizmet = (localToken) => {
   const [data, setData] = useState([]);
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:9000/api/hizmet")
+      .get("http://localhost:9000/api/hizmet",{
+        headers: {
+          'Authorization': `${localToken.localToken?.token}` 
+        }
+      })
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
@@ -18,7 +22,11 @@ const GridTableHizmet = () => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/merkez")
+      .get("http://localhost:9000/api/merkez",{
+        headers: {
+          'Authorization': `${localToken.localToken?.token}` 
+        }
+      })
       .then((res) => setMerkezIsimAl(res.data));
   }, []);
 

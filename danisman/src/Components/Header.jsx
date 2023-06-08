@@ -13,6 +13,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 // }
 
 const Header = () => {
+
   return (
     <header className=" text-xl basis-11/12 ">
       <div className=" mx-5 flex flex-col">
@@ -20,7 +21,6 @@ const Header = () => {
           <a href="/">
             <img className="max-h-[125px] py-4" src="logo2.jpg" />
           </a>
-
           <p className="text-4xl font-mono font-normal text-opacity-90 text-[#162270]">
             Affan
           </p>

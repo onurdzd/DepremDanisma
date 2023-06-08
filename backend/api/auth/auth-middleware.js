@@ -1,5 +1,6 @@
 const userModel = require("../../api/users/users-model");
 const bcryptjs = require("bcryptjs");
+const jwt=require("jsonwebtoken")
 
 const validatePayload = (req, res, next) => {
   try {
@@ -60,9 +61,34 @@ const passwordCheck = async (req, res, next) => {
   }
 };
 
+const isValidToken=async(req,res,next)=>{
+  try {
+    const token=await req.headers.authorization
+    if (token) {
+        jwt.verify(token, "shh", (err, decodedJWT) => {
+          if (err) {
+            res.status(401).json({
+              message: "Zaman aşımı/Hatalı token.Yeniden login olmalısın.",
+            });
+          } else {
+            req.decodedJWT = decodedJWT;
+            next();
+          }
+        });
+      }else{
+        res.status(401).json({
+          message: "Önce login olmalısın"
+        })
+      }
+  } catch (error) {
+    next()
+  }
+}
+
 module.exports = {
   validatePayload,
   usernameCheck,
   passwordCheck,
   usernameExist,
+  isValidToken
 };

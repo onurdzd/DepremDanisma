@@ -3,12 +3,16 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { tr } from "date-fns/locale";
 
-const GridTableMerkez = () => {
+const GridTableMerkez = (localToken) => {
   const [data, setData] = useState([]);
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:9000/api/merkez")
+      .get("http://localhost:9000/api/merkez",{
+        headers: {
+          'Authorization': `${localToken.localToken?.token}` 
+        }
+      })
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
@@ -18,7 +22,11 @@ const GridTableMerkez = () => {
   let sehirIsimleri = [];
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/sehir")
+      .get("http://localhost:9000/api/sehir",{
+        headers: {
+          'Authorization': `${localToken.localToken?.token}` 
+        }
+      })
       .then((res) => setSehirIsimAl(res.data));
   }, []);
 
