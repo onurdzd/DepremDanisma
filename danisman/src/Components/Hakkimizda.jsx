@@ -91,9 +91,12 @@ function Hakkimizda() {
             </div>
           </div>
           <div className="bg-amber-300  bg-opacity-30 w-[14rem] h-[15.8rem] mt-[-1.5rem]  rounded-3xl">
-            <button className="mt-6 w-[12.4rem] mx-3 px-6 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900">
+            <a
+              href={"/gönüllü"}
+              className="mt-6 w-[12.4rem] mx-3 px-6 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
+            >
               GÖNÜLLÜ OL
-            </button>
+            </a>
             <img
               className="max-h-[15rem] py-3 min-h-full min-w-full"
               src={GonulluOlLogo}
