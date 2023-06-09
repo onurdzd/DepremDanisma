@@ -1,5 +1,4 @@
 import { ToastContainer } from "react-toastify";
-import { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./Login";
 import { IoMapSharp, IoSettingsSharp } from "react-icons/io5";
@@ -8,12 +7,8 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import Logo from "../assets/Logo.svg";
 import Group from "../assets/Group.png";
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+const Header = (props) => {
+ 
   return (
     <header className=" text-xl basis-11/12 ">
       <div className=" mx-5 flex flex-col">
@@ -23,14 +18,14 @@ const Header = () => {
           </a>
           <button
             className="block md:hidden basis-1/3 text-5xl  text-blue-300 focus:outline-none"
-            onClick={toggleMenu}
+            onClick={props.toggleMenu}
           >
             &#8801;
           </button>
         </div>
         <div
           className={`md:flex flex flex-col justify-around mt-5 ${
-            isMenuOpen ? "block" : "hidden"
+            props.isMenuOpen ? "block" : "hidden"
           }`}
         >
           <div className="ml-6 flex flex-row ">
