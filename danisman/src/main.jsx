@@ -25,9 +25,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
+
       <>
       <App /></>
        
+
     ),
   },
   {
@@ -37,15 +39,15 @@ const router = createBrowserRouter([
   {
     path: "/basvuru",
     element: (
-      <div className="h-[96vh] sm:w-[80vw] ">
-        <div className=" md:flex md:flex-row sm:bg-white sm:rounded-[2rem]  pb-2  ">
+      <div className="h-[100vh] sm:h-[96vh] sm:w-[80vw] ">
+        <div className=" md:flex md:flex-row sm:bg-white  bg-[url('/src/assets/mapZone.png')] sm:bg-none sm:rounded-[2rem]  pb-2  ">
           <div
             className="flex sm:bg-white sm
-          :h-full rounded-l-[2rem] flex-col basis-1/5 "
+          :h-full sm:rounded-l-[2rem] flex-col basis-1/5 "
           >
             <Header />
           </div>
-          <div className="basis-4/5  h-full sm:mt-3 sm:mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
+          <div className="basis-4/5  h-full sm:mt-3 sm:mx-4  flex flex-col sm:bg-[url('/src/assets/mapZone.png')] sm:rounded-3xl bg-cover">
             <Form />
           </div>
         </div>
