@@ -6,7 +6,11 @@ body {
   background-image: url("/src/assets/Desktop-Landing.png");
   background-size: cover;
 }
-
+@media (width< 640px) {
+  body {
+    background-image: none;
+  }
+}
 .label-text {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
