@@ -46,7 +46,7 @@ const TableHeader = () => {
                       />
                     </Menu.Button>
                   </div>
-                  <Transition
+                  {/* <Transition
                     as={Fragment}
                     enter="transition ease-out duration-100"
                     enterFrom="transform opacity-0 scale-95"
@@ -129,7 +129,7 @@ const TableHeader = () => {
                         </form>
                       </div>
                     </Menu.Items>
-                  </Transition>
+                  </Transition> */}
                 </Menu>
               </div>
               <div className="mb-2">
