@@ -31,7 +31,6 @@ const Header = (props) => {
           <div className="ml-6 flex flex-row ">
             <div className="  text-blue-300   ">
               <div className="mb-2">
-                <Link to={"/"}>
                   <a
                     href={"/"}
                     className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
@@ -39,7 +38,6 @@ const Header = (props) => {
                     <IoMapSharp className="inline-block mr-1 h-5 w-5 text-blue-950" />
                     Anasayfa
                   </a>
-                </Link>
               </div>
               <div className="mb-2 ">
                 <div className="mb-2">
