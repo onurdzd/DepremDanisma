@@ -51,7 +51,7 @@ const Kahramanmaras = () => {
           <AiOutlineMenuUnfold className="w-5 h-6 text-gray-700 inline-block" />
         </button>
         <p className="  pt-7 text-[#162270] basis-11/12 inline-block text-xl font-bold">
-          GAZİANTEP
+          KAHRAMANMARAŞ
         </p>
       </div>
       <div className=" mt-3 flex  w-[24vw]  text-left text-gray-700">
