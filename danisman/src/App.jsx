@@ -8,6 +8,7 @@ import ilust from "./assets/ilust.png";
 import TardeLogo from "./assets/logo.jpg";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import { Link } from "react-router-dom";
 
 function App() {
   const [hizmetData, setHizmetData] = useState([]);
@@ -81,12 +82,13 @@ function App() {
               </div>
               {isAnasayfa && (
                 <div className="bg-amber-300 bg-opacity-30 w-[14rem] h-[15.8rem] mt-[-9.5rem]  mr-18 rounded-3xl">
+                   <Link to={"/gonullu"}>
                   <a
                     href={"/gonullu"}
                     className="mt-8 w-[12.4rem] mx-3 px-14 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
                   >
                     GÖNÜLLÜ OL
-                  </a>
+                  </a></Link>
                   <img
                     className="max-h-[15rem] py-3   min-h-full min-w-full"
                     src={ilust}

@@ -5,6 +5,7 @@ import SagUst from "../assets/sagust.svg";
 import SagOrta from "../assets/sagorta.png";
 import GonulluOlLogo from "../assets/ilust.png";
 import TardeLogo from "../assets/logo.jpg";
+import { Link } from "react-router-dom";
 
 function Hakkimizda() {
   const [hizmetData, setHizmetData] = useState([]);
@@ -94,12 +95,13 @@ function Hakkimizda() {
             </div>
           </div>
           <div className="bg-amber-300 w-[16rem]  bg-opacity-30 sm:w-[14rem] h-[18rem] md:h-[15.8rem] mt-[-1.6rem] pb-1 ml-[4rem] md:ml-0 rounded-3xl">
+          <Link to={"/gonullu"}>
             <a
               href={"/gonullu"}
               className="mt-6 w-[12.4rem] mx-3 px-14 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
             >
               GÖNÜLLÜ OL
-            </a>
+            </a></Link>
             <img
               className="max-h-[15rem] py-3 min-h-full min-w-full"
               src={GonulluOlLogo}
