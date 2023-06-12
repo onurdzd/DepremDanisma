@@ -6,6 +6,7 @@ import { RiHandHeartFill } from "react-icons/ri";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import Logo from "../assets/Logo.svg";
 import Group from "../assets/Group.png";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
  
@@ -13,9 +14,10 @@ const Header = (props) => {
     <header className=" text-xl basis-11/12 ">
       <div className=" mx-5 flex flex-col">
         <div className="ml-7 flex  ">
+          <Link to={"/"}>
           <a href="/" className="basis-2/3">
             <img className="max-h-[200px] mt-2 py-4 " src={Logo} />
-          </a>
+          </a></Link>
           <button
             className="block md:hidden basis-1/3 text-5xl  text-blue-300 focus:outline-none"
             onClick={props.toggleMenu}
@@ -41,6 +43,7 @@ const Header = (props) => {
               </div>
               <div className="mb-2 ">
                 <div className="mb-2">
+                <Link to={"/hakkimizda"}>
                   <a
                     href={"/hakkimizda"}
                     className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
@@ -48,6 +51,7 @@ const Header = (props) => {
                     <IoSettingsSharp className="inline-block mr-1 h-5 w-5 text-amber-300" />
                     Hakkımızda
                   </a>
+                  </Link>
                 </div>
               </div>
               <div className="mb-2">
