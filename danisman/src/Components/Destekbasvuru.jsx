@@ -20,12 +20,12 @@ const Form = () => {
   return (
     <div className="flex   ">
       <div className="  basis-2/3">
-        <h1 className="font-bold ml-10 mt-10 text-5xl text-blue-950">
+        <h1 className="font-bold ml-10 mt-4 text-5xl text-blue-950">
           Pisikolojik Destek <br /> Almak İçin <br />
           Başvurun
         </h1>
         <form
-          className="w-full ml-20 max-w-md"
+          className="w-full ml-11 sm:ml-20   max-w-md"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="mb-4 mt-8">
@@ -220,7 +220,7 @@ const Form = () => {
         <div className="hidden md:block ">
           <img className="h-[11rem]  mt-16 py-4 ml-5 " src={logo3} />
         </div>
-        <div className="">
+        <div className="hidden md:block ">
           <img className="h-[12rem]  mt-2 py-4 ml-5 " src={logo4} />
         </div>
         <div className="hidden md:block ">
