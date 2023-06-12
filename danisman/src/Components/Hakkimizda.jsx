@@ -23,20 +23,21 @@ function Hakkimizda() {
 
   return (
     <>
-      <h1 className="pt-10 text-6xl text-blue-950 font-bold block ml-10 h-full">
+      <h1 className="pt-10 text-5xl md:text-6xl text-blue-950 font-bold block  ml-16 md:ml-10 h-full">
         hakkımızda
       </h1>
       <div className="w-full flex flex-col items-center">
         <div className="flex flex-col items-center w-full">
-          <div className="flex justify-between ml-[6.6rem] mr-[3rem]">
-            <p className="font-thin mt-4 text-[32px] leading-[45px] w-[55%] text-gray-500  pt-10">
+          <div className="md:flex justify-between ml-[4rem] md:ml-[6.6rem] mr-[3rem]">
+            <p className="font-thin mt-4 text-[32px] leading-[45px] md:w-[55%] text-gray-500  pt-10">
               Affan kötülükten uzak durandır. Besleyicidir, Bağımsızdır,
               Çeşitlidir, Barışseverdir, Kapsayıcıdır
             </p>
-            <img src={SagUst} className=" w-44 mt-[-8rem]"></img>
+
+            <img src={SagUst} className=" w-44 mt-[-8rem] hidden md:block" />
           </div>
-          <div className="flex justify-between ml-[6.6rem] mb-14 mr-[3rem]">
-            <p className="font-light mt-14 text-sm leading-6 w-[48%] ">
+          <div className="md:flex md:justify-between ml-[4rem] md:ml-[6.6rem] mb-14 mr-[4rem] md:mr-[3rem]">
+            <p className="font-light mt-14 text-sm leading-6 md:w-[48%] ">
               Affan, Travma ve Afet Ruh Sağlığı Çalışmaları Derneği (TARDE)
               bünyesinde Kahramanmaraş Pazarcık merkezli deprem sonrası Maraş,
               Hatay, Antep, İskenderun, Osmaniye, Diyarbakır, Urfa, Adıyaman,
@@ -46,24 +47,26 @@ function Hakkimizda() {
               Sağlığı Programı tarafından desteklenen psikososyal destek hizmeti
               projesidir.
             </p>
-            <img src={SagOrta} className="h-52 mt-[-2rem]"></img>
+
+            <img src={SagOrta} className="h-52 mt-[-2rem] hidden md:block" />
           </div>
         </div>
       </div>
       <div className="flex flex-col mt-1  mr-6 flex-grow  rounded-3xl  ">
-        <div className=" flex flex-row mt-[-2rem] pb-12 justify-between ml-[5rem]">
-          <div className="font-sans flex  font-semibold text-[4rem] bg-white px-6 py-1 h-[11rem] rounded-xl ">
+        <div className=" flex flex-col md:flex-row mt-[-2rem] pb-12 justify-between sm:ml-[5rem]">
+          <div className="font-sans flex flex-col sm:flex-row font-semibold text-[4rem] bg-white md:px-6 mr-14 ml-[4rem] sm:ml-0 py-1 md:h-[11rem]  rounded-xl mb-10 md:mb-0">
             <div className="flex flex-col mr-10 ml-2  ">
+              {" "}
               <img
                 className="max-w-[9rem] pt-2 pb-2 px-6 ml-4 "
                 src={TardeLogo}
               />
-              <p className="text-xs text-center ">
+              <p className="text-xs text-center ml-4 md:ml-0">
                 Travma ve Afet Ruh Sağlığı <br /> Çalışmaları Derneği
               </p>
             </div>
             <div>
-              <p className="text-sm font-medium text-blue-900 my-4">
+              <p className="text-sm font-medium text-blue-900 my-4 ml-6 sm:ml-0">
                 28 MART'TAN İTİBAREN
               </p>
               <div className="flex flex-row">
@@ -90,7 +93,7 @@ function Hakkimizda() {
               </div>
             </div>
           </div>
-          <div className="bg-amber-300  bg-opacity-30 w-[14rem] h-[15.8rem] mt-[-1.6rem] pb-1  rounded-3xl">
+          <div className="bg-amber-300 w-[16rem]  bg-opacity-30 sm:w-[14rem] h-[18rem] md:h-[15.8rem] mt-[-1.6rem] pb-1 ml-[4rem] md:ml-0 rounded-3xl">
             <a
               href={"/gonullu"}
               className="mt-6 w-[12.4rem] mx-3 px-14 py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
