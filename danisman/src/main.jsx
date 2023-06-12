@@ -31,11 +31,11 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/dashboard",
+    path: "dashboard",
     element: <Dashboard />,
   },
   {
-    path: "/basvuru",
+    path: "basvuru",
     element: (
       <div className="h-[100vh] sm:h-[96vh] sm:w-[80vw] ">
         <div className=" md:flex md:flex-row sm:bg-white  bg-[url('/src/assets/mapZone.png')] sm:bg-none sm:rounded-[2rem]  pb-2  ">
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/gonullu",
+    path: "gonullu",
     element: (
       <div className="h-[96vh] w-[80vw]">
         <div className="  bg-white rounded-[2rem]  pb-2 md:flex md:flex-row ">
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/hakkimizda",
+    path: "hakkimizda",
     element: (
       <div className="h-[96vh] w-[80vw]">
         <div className="md:flex md:flex-row  items-start bg-white rounded-[2rem]  pb-2 ">
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/adana",
+    path: "adana",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -105,7 +105,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/osmaniye",
+    path: "osmaniye",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -124,7 +124,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/hatay",
+    path: "hatay",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-2  ">
@@ -143,7 +143,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/gaziantep",
+    path: "gaziantep",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -162,7 +162,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/kilis",
+    path: "kilis",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -181,7 +181,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/sanliurfa",
+    path: "sanliurfa",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -200,7 +200,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/adiyaman",
+    path: "adiyaman",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -219,7 +219,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/kahramanmaras",
+    path: "kahramanmaras",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -238,7 +238,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/diyarbakir",
+    path: "diyarbakir",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -257,7 +257,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/malatya",
+    path: "malatya",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -276,7 +276,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/iletisim",
+    path: "iletisim",
     element: (
       <div className="h-[96vh] w-[80vw]">
         <div className="flex h-[100vh] flex-row items-center bg-white rounded-[2rem]  pt-4 pb-6">
