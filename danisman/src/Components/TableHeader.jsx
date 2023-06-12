@@ -29,14 +29,13 @@ const TableHeader = () => {
           <div className="mt-4 ml-6 flex w-full ">
             <div className="flex justify-end w-full items-center text-blue-300 ">
               <div className="mb-2">
-              <Link to={"/"}>
                 <a
                   href={"/"}
                   className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
                 >
                   <IoMapSharp className="inline-block mr-2 h-5 w-5 text-blue-950" />
                   Harita Bilgileri
-                </a></Link>
+                </a>
               </div>
               <div className="mb-2">
                 <Menu as="div" className="relative inline-block text-left">
