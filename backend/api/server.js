@@ -1,6 +1,7 @@
 const express = require("express");
 const server = express();
 const cors = require("cors");
+const Auth=require("./auth/auth-middleware")
 
 require("dotenv").config();
 
@@ -23,16 +24,16 @@ const envanterRouter = require("./envanter/envanter-router");
 server.use(express.json());
 
 server.get("/", (req, res) => {
-  res.send("asdasd");
+  res.send("deneme");
 });
 
-server.use("/api/user", userRouter);
-server.use("/api/personel", personelRouter);
+server.use("/api/user",Auth.isValidToken, userRouter);
+server.use("/api/personel",Auth.isValidToken, personelRouter);
 server.use("/api/sehir", sehirRouter);
-server.use("/api/merkez", merkezRouter);
-server.use("/api/hizmet", hizmetRouter);
-server.use("/api/kurum", kurumRouter);
-server.use("/api/envanter", envanterRouter);
+server.use("/api/merkez",  merkezRouter);
+server.use("/api/hizmet",hizmetRouter);
+server.use("/api/kurum",  kurumRouter);
+server.use("/api/envanter",envanterRouter);
 server.use("/api/auth", authRouter);
 
 server.use((err, req, res, next) => {

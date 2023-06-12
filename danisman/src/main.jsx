@@ -17,42 +17,90 @@ import Malatya from "./Components/City/Malatya.jsx";
 import Osmaniye from "./Components/City/Osmaniye.jsx";
 import Sanliurfa from "./Components/City/Sanliurfa.jsx";
 import Footer from "./Components/Footer.jsx";
-
-const localToken=JSON.parse(localStorage.getItem("user"))
+import Hakkimizda from "./Components/Hakkimizda.jsx";
+import Form from "./Components/Destekbasvuru.jsx";
+import GonulluOl from "./Components/GonulluOl.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="flex flex-col  items-center bg-slate-100 h-screen w-screen">
-        <Header />
-        <App />
+
+      <>
+      <App /></>
+       
+
+    ),
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/basvuru",
+    element: (
+      <div className="h-[100vh] sm:h-[96vh] sm:w-[80vw] ">
+        <div className=" md:flex md:flex-row sm:bg-white  bg-[url('/src/assets/mapZone.png')] sm:bg-none sm:rounded-[2rem]  pb-2  ">
+          <div
+            className="flex sm:bg-white sm
+          :h-full sm:rounded-l-[2rem] flex-col basis-1/5 "
+          >
+            <Header />
+          </div>
+          <div className="basis-4/5  h-full sm:mt-3 sm:mx-4  flex flex-col sm:bg-[url('/src/assets/mapZone.png')] sm:rounded-3xl bg-cover">
+            <Form />
+          </div>
+        </div>
         <Footer />
       </div>
     ),
   },
   {
-    path: "/dashboard",
+    path: "/gonullu",
     element: (
-      <>
-      <div className="h-screen flex flex-col justify-between">
-        <Header />
-        <div className="flex-grow flex flex-col items-center mt-8 pl-6">
-        {localToken ? <Dashboard/> : <div className="h-full flex flex-col justify-center font-bold text-xl">Dashboard ekranına ulaşmak için önce giriş yapın</div>}
+      <div className="h-[96vh] w-[80vw]">
+        <div className="  bg-white rounded-[2rem]  pb-2 md:flex md:flex-row ">
+          <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
+            <GonulluOl />
+          </div>
         </div>
         <Footer />
-      </div> 
-      </>
+      </div>
+    ),
+  },
+  {
+    path: "/hakkimizda",
+    element: (
+      <div className="h-[96vh] w-[80vw]">
+        <div className="md:flex md:flex-row  items-start bg-white rounded-[2rem]  pb-2 ">
+          <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
+            <Hakkimizda />
+          </div>
+        </div>
+        <Footer />
+      </div>
     ),
   },
   {
     path: "/adana",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Adana />
+      <div className="h-[96vh] w-[85vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
+          <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
+            <div className="flex mt-2 mr-4 basis-10/12  ">
+              <App />
+              <Adana />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -61,11 +109,17 @@ const router = createBrowserRouter([
   {
     path: "/osmaniye",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Osmaniye />
+      <div className="h-[96vh] w-[85vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
+          <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
+            <div className="flex mt-2 mr-4 basis-10/12  ">
+              <App />
+              <Osmaniye />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -74,11 +128,17 @@ const router = createBrowserRouter([
   {
     path: "/hatay",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Hatay />
+      <div className="h-[96vh] w-[85vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-2  ">
+          <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
+            <div className="flex mt-2 mr-4 basis-10/12  ">
+              <App />
+              <Hatay />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -87,11 +147,17 @@ const router = createBrowserRouter([
   {
     path: "/gaziantep",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Gaziantep />
+      <div className="h-[96vh] w-[85vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
+          <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
+            <div className="flex mt-2 mr-4 basis-10/12  ">
+              <App />
+              <Gaziantep />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -100,11 +166,17 @@ const router = createBrowserRouter([
   {
     path: "/kilis",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Kilis />
+      <div className="h-[96vh] w-[85vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
+          <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
+            <div className="flex mt-2 mr-4 basis-10/12  ">
+              <App />
+              <Kilis />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -113,11 +185,17 @@ const router = createBrowserRouter([
   {
     path: "/sanliurfa",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Sanliurfa />
+      <div className="h-[96vh] w-[85vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
+          <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
+            <div className="flex mt-2 mr-4 basis-10/12  ">
+              <App />
+              <Sanliurfa />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -126,11 +204,17 @@ const router = createBrowserRouter([
   {
     path: "/adiyaman",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Adiyaman />
+      <div className="h-[96vh] w-[85vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
+          <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
+            <div className="flex mt-2 mr-4 basis-10/12  ">
+              <App />
+              <Adiyaman />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -139,11 +223,17 @@ const router = createBrowserRouter([
   {
     path: "/kahramanmaras",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Kahramanmaras />
+      <div className="h-[96vh] w-[85vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
+          <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
+            <div className="flex mt-2 mr-4 basis-10/12  ">
+              <App />
+              <Kahramanmaras />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -152,11 +242,17 @@ const router = createBrowserRouter([
   {
     path: "/diyarbakir",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Diyarbakir />
+      <div className="h-[96vh] w-[85vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
+          <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover">
+            <div className="flex mt-2 mr-4 basis-10/12  ">
+              <App />
+              <Diyarbakir />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -165,11 +261,17 @@ const router = createBrowserRouter([
   {
     path: "/malatya",
     element: (
-      <div className="flex flex-col h-screen w-[90vw]">
-        <Header />
-        <div className="flex justify-between flex-grow w-[85vw] mx-auto">
-          <App />
-          <Malatya />
+      <div className="h-[96vh] w-[85vw]">
+        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
+          <div className="flex bg-white h-full  rounded-l-[2rem] flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5 bg-cover">
+            <div className="flex mt-2 mr-4 basis-10/12  ">
+              <App />
+              <Malatya />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -178,10 +280,14 @@ const router = createBrowserRouter([
   {
     path: "/iletisim",
     element: (
-      <div className="h-screen ">
-        <Header />
-        <div className="mt-8 pl-6">
-          <İletisim />
+      <div className="h-[96vh] w-[80vw]">
+        <div className="flex h-[100vh] flex-row items-center bg-white rounded-[2rem]  pt-4 pb-6">
+          <div className="flex bg-white h-full rounded-l-[2rem]  flex-col basis-1/5 ">
+            <Header />
+          </div>
+          <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
+            <İletisim />
+          </div>
         </div>
         <Footer />
       </div>
