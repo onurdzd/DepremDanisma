@@ -19,10 +19,10 @@ const TableHeader = () => {
     <div className="flex text-xl w-full h-[15vh] items-center">
       <div className=" mx-10 flex w-full ">
         <div className=" flex w-full items-center">
-        <Link to={"/gonullu"}>
-          <a href="/">
-            <img className="max-h-[150px] py-4" src={DashboardLogo} />
-          </a>
+          <Link to={"/gonullu"}>
+            <a href="/">
+              <img className="max-h-[150px] py-4" src={DashboardLogo} />
+            </a>
           </Link>
         </div>
         <div className="flex  mt-4 w-full ">
@@ -36,6 +36,16 @@ const TableHeader = () => {
                   <IoMapSharp className="inline-block mr-2 h-5 w-5 text-blue-950" />
                   Harita Bilgileri
                 </a>
+              </div>
+              <div>
+                <Link to="/gelenbasvuru">
+                  <a
+                    href={"/gelenbasvuru"}
+                    className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+                  >
+                    Başvurular
+                  </a>
+                </Link>
               </div>
               <div className="mb-2">
                 <Menu as="div" className="relative inline-block text-left">
@@ -137,23 +147,25 @@ const TableHeader = () => {
               </div>
               <div className="mb-2">
                 <Link to="/gonullu">
-                <a
-                  href={"/gonullu"}
-                  className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
-                >
-                  <RiHandHeartFill className="inline-block mr-2 h-5 w-5 text-amber-300" />
-                  Gönüllüler
-                </a></Link>
+                  <a
+                    href={"/gonullu"}
+                    className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+                  >
+                    <RiHandHeartFill className="inline-block mr-2 h-5 w-5 text-amber-300" />
+                    Gönüllüler
+                  </a>
+                </Link>
               </div>
               <div className="mb-2">
-              <Link to="/iletisim">
-                <a
-                  href={"/iletisim"}
-                  className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
-                >
-                  <BsFillTelephoneFill className="inline-block mr-2 h-5 w-5 text-amber-300" />
-                  İletişim
-                </a></Link>
+                <Link to="/iletisim">
+                  <a
+                    href={"/iletisim"}
+                    className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+                  >
+                    <BsFillTelephoneFill className="inline-block mr-2 h-5 w-5 text-amber-300" />
+                    İletişim
+                  </a>
+                </Link>
               </div>
               <div className="mb-2 ">
                 <Login />
