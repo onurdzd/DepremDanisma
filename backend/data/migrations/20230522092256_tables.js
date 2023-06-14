@@ -109,6 +109,27 @@ exports.up = function (knex) {
         .inTable("merkez")
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
+    })
+    .createTable("gonullu", (t) => {
+      t.increments("gonullu_id");
+      t.timestamp("gonullu_basvuru_zamani").defaultTo(knex.fn.now());
+      t.string("gonullu_ad", 20).notNullable();
+      t.string("gonullu_soyad", 20).notNullable();
+      t.integer("gonullu_tel_no", 10).notNullable().unsigned();
+      t.string("gonullu_calismak_istedigi_il", 20).notNullable();
+      t.dateTime("gonullu_baslangic_tarihi").notNullable();
+      t.dateTime("gonullu_bitis_tarihi").notNullable();
+      t.string("gonullu_motivasyon_aciklama", 500).notNullable();
+    })
+    .createTable("danisan", (t) => {
+      t.increments("danisan_id");
+      t.timestamp("danisan_basvuru_zamani").defaultTo(knex.fn.now());
+      t.string("danisan_ad", 20).notNullable();
+      t.string("danisan_soyad", 20).notNullable();
+      t.integer("danisan_tel_no", 10).notNullable().unsigned();
+      t.string("danisan_il", 20).notNullable();
+      t.boolean("danisan_kisi").notNullable();
+      t.string("danisan_aciklama", 500).notNullable();
     });
 };
 
@@ -118,6 +139,8 @@ exports.up = function (knex) {
  */
 exports.down = function (knex) {
   return knex.schema
+    .dropTableIfExists("danisan")
+    .dropTableIfExists("gonullu")
     .dropTableIfExists("hizmet")
     .dropTableIfExists("envanter")
     .dropTableIfExists("kurum")

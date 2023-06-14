@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import logo3 from "../assets/logo3.svg";
 import logo6 from "../assets/logo6.svg";
+import axios from "axios";
+
 const GonulluOl = () => {
   const {
     register,
@@ -10,9 +12,16 @@ const GonulluOl = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    // Form submission logic here
-    console.log(data);
+  const onSubmit = async (data) => {
+    await axios.post("http://localhost:9000/api/gonullu", {
+      gonullu_ad: data.gonullu_ad,
+      gonullu_soyad: data.gonullu_soyad,
+      gonullu_calismak_istedigi_il: data.gonullu_calismak_istedigi_il,
+      gonullu_tel_no: data.gonullu_tel_no,
+      gonullu_baslangic_tarihi: data.gonullu_baslangic_tarihi,
+      gonullu_bitis_tarihi: data.gonullu_bitis_tarihi,
+      gonullu_motivasyon_aciklama: data.gonullu_motivasyon_aciklama,
+    });
   };
 
   return (
@@ -28,150 +37,150 @@ const GonulluOl = () => {
         >
           <div className="mb-4 mt-8">
             <label
-              htmlFor="name"
+              htmlFor="gonullu_ad"
               className="block text-gray-700 font-bold mb-2"
             >
               Adınız*
             </label>
             <input
               type="text"
-              id="name"
-              {...register("name", { required: true })}
+              id="gonullu_ad"
+              {...register("gonullu_ad", { required: true })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.name && "border-red-500"
+                errors.gonullu_ad && "border-red-500"
               }`}
             />
-            {errors.name && (
+            {errors.gonullu_ad && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
           <div className="mb-4">
             <label
-              htmlFor="surname"
+              htmlFor="gonullu_soyad"
               className="block text-gray-700 font-bold mb-2"
             >
               Soyadınız*
             </label>
             <input
               type="text"
-              id="surname"
-              {...register("surname", { required: true })}
+              id="gonullu_soyad"
+              {...register("gonullu_soyad", { required: true })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.surname && "border-red-500"
+                errors.gonullu_soyad && "border-red-500"
               }`}
             />
-            {errors.surname && (
+            {errors.gonullu_soyad && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
           <div className="mb-4">
             <label
-              htmlFor="phoneNumber"
+              htmlFor="gonullu_tel_no"
               className="block text-gray-700 font-bold mb-2"
             >
               İletişim Numaranız*
             </label>
             <input
               type="tel"
-              id="phoneNumber"
-              {...register("phoneNumber", {
+              id="gonullu_tel_no"
+              {...register("gonullu_tel_no", {
                 required: true,
-                minLength: 11,
-                maxLength: 11,
+                minLength: 10,
+                maxLength: 10,
               })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.phoneNumber && "border-red-500"
+                errors.gonullu_tel_no && "border-red-500"
               }`}
             />
-            {errors.phoneNumber?.type === "required" && (
+            {errors.gonullu_tel_no?.type === "required" && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
-            {errors.phoneNumber?.type === "minLength" && (
+            {errors.gonullu_tel_no?.type === "minLength" && (
               <span className="text-red-500">
-                Telefon numarası 11 karakter olmalıdır.
+                Telefon numarası 10 karakter olmalıdır.
               </span>
             )}
-            {errors.phoneNumber?.type === "maxLength" && (
+            {errors.gonullu_tel_no?.type === "maxLength" && (
               <span className="text-red-500">
-                Telefon numarası 11 karakter olmalıdır.
+                Telefon numarası 10 karakter olmalıdır.
               </span>
             )}
           </div>
           <div className="mb-4">
             <label
-              htmlFor="city"
+              htmlFor="gonullu_calismak_istedigi_il"
               className="block text-gray-700 font-bold mb-2"
             >
               Sahada Çalışmak İstediğiniz İl*
             </label>
             <input
               type="text"
-              id="city"
-              {...register("city", { required: true })}
+              id="gonullu_calismak_istedigi_il"
+              {...register("gonullu_calismak_istedigi_il", { required: true })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.city && "border-red-500"
+                errors.gonullu_calismak_istedigi_il && "border-red-500"
               }`}
             />
-            {errors.city && (
+            {errors.gonullu_calismak_istedigi_il && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
           <div className="mb-4">
             <label
-              htmlFor="dateb"
+              htmlFor="gonullu_baslangic_tarihi"
               className="block text-gray-700 font-bold mb-2"
             >
               Sahada Çalışmak İstediğiniz Tarih Başlangıcı*
             </label>
             <input
               type="date"
-              id="dateb"
-              {...register("dateb", { required: true })}
+              id="gonullu_baslangic_tarihi"
+              {...register("gonullu_baslangic_tarihi", { required: true })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.dateb && "border-red-500"
+                errors.gonullu_baslangic_tarihi && "border-red-500"
               }`}
             />
-            {errors.dateb && (
+            {errors.gonullu_baslangic_tarihi && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
 
           <div className="mb-4">
             <label
-              htmlFor="datebi"
+              htmlFor="gonullu_bitis_tarihi"
               className="block text-gray-700 font-bold mb-2"
             >
               Sahada Çalışmak İstediğiniz Tarih Bitişi*
             </label>
             <input
               type="date"
-              id="datebi"
-              {...register("datebi", { required: true })}
+              id="gonullu_bitis_tarihi"
+              {...register("gonullu_bitis_tarihi", { required: true })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.datebi && "border-red-500"
+                errors.gonullu_bitis_tarihi && "border-red-500"
               }`}
             />
-            {errors.datebi && (
+            {errors.gonullu_bitis_tarihi && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
 
           <div className="mb-4">
             <label
-              htmlFor="reason"
+              htmlFor="gonullu_motivasyon_aciklama"
               className="block text-gray-700 font-bold mb-2"
             >
               Sahada gönüllü çalışma motivasyonunuzu <br /> kısaca anlatır
               mısınız? *
             </label>
             <textarea
-              id="reason"
-              {...register("reason", { required: true })}
+              id="gonullu_motivasyon_aciklama"
+              {...register("gonullu_motivasyon_aciklama", { required: true })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.reason && "border-red-500"
+                errors.gonullu_motivasyon_aciklama && "border-red-500"
               }`}
             ></textarea>
-            {errors.reason && (
+            {errors.gonullu_motivasyon_aciklama && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>

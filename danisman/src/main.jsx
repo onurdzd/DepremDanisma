@@ -20,6 +20,7 @@ import Footer from "./Components/Footer.jsx";
 import Hakkimizda from "./Components/Hakkimizda.jsx";
 import Form from "./Components/Destekbasvuru.jsx";
 import GonulluOl from "./Components/GonulluOl.jsx";
+import GelenBasvurular from "./Components/GelenBasvurular.jsx";
 
 const router = createHashRouter([
   {
@@ -33,6 +34,10 @@ const router = createHashRouter([
   {
     path: "dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "gelenbasvuru",
+    element: <GelenBasvurular />,
   },
   {
     path: "basvuru",
