@@ -1,25 +1,30 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import logo3 from "../assets/logo3.svg";
 import logo4 from "../assets/logo4.svg";
 import logo5 from "../assets/logo5.svg";
+import axios from "axios";
+import { toast } from "react-toastify";
+
 const DestekBasvuru = () => {
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
+    toast.success("Başvurunuz gönderildi");
     await axios.post("http://localhost:9000/api/danisan", {
       danisan_ad: data.danisan_ad,
       danisan_soyad: data.danisan_soyad,
       danisan_tel_no: data.danisan_tel_no,
       danisan_il: data.danisan_il,
       danisan_aciklama: data.danisan_aciklama,
+      danisan_kisi: data.supportPerson[0] == "myself" ? true : false,
     });
+    reset();
   };
   const [supportPerson, setSupportPerson] = useState("");
   const [relationship, setRelationship] = useState("");
@@ -80,6 +85,7 @@ const DestekBasvuru = () => {
               İletişim Numaranız*
             </label>
             <input
+              placeholder="örn:555 555 55 55"
               type="tel"
               id="danisan_tel_no"
               {...register("danisan_tel_no", {

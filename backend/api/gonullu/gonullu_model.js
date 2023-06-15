@@ -24,7 +24,7 @@ const change = async (updateGonullu, id) => {
 };
 
 const remove = (gonullu_id) => {
-  return db("gonullu").where("envanter_id", gonullu_id).delete();
+  return db("gonullu").where("gonullu_id", gonullu_id).delete();
 };
 
 module.exports = {
