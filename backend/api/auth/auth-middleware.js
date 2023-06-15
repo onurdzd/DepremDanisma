@@ -47,6 +47,7 @@ const usernameExist = async (req, res, next) => {
 };
 
 const passwordCheck = async (req, res, next) => {
+  console.log(req.body)
   try {
     const { password } = req.body;
     const existUser = await userModel.getBy({ username: req.body.username });

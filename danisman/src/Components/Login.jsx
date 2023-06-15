@@ -36,7 +36,7 @@ export default function Login() {
   const onSubmit = async (data) => {
     try {
       await axios
-        .post("http://localhost:9000/api/auth/login", {
+        .post("http://localhost:10000/api/auth/login", {
           username: data.username,
           password: data.password,
         })
@@ -68,7 +68,7 @@ export default function Login() {
 const [localToken,setLocalToken]=useState(JSON.parse(localStorage.getItem("user")))
 const localTokenCheck = async()=>{
   await axios
-.get("http://localhost:9000/api/auth",{
+.get("http://localhost:10000/api/auth",{
   headers: {
     'Authorization': `${localToken?.token}` 
   }

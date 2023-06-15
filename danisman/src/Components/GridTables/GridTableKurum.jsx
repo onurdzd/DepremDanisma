@@ -7,7 +7,7 @@ const GridTableKurum = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:9000/api/kurum",{
+      .get("http://localhost:10000/api/kurum",{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -21,7 +21,7 @@ const GridTableKurum = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/merkez",{
+      .get("http://localhost:10000/api/merkez",{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -131,12 +131,12 @@ const GridTableKurum = (localToken) => {
           title="Kurum Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("http://localhost:9000/api/kurum", newData);
+              await axios.post("http://localhost:10000/api/kurum", newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `http://localhost:9000/api/kurum/${oldData.kurum_id}`,
+                `http://localhost:10000/api/kurum/${oldData.kurum_id}`,
                 {
                   kurum_aciklama: newData.kurum_aciklama,
                   kurum_adi: newData.kurum_adi,
@@ -150,7 +150,7 @@ const GridTableKurum = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `http://localhost:9000/api/kurum/${oldData.kurum_id}`
+                `http://localhost:10000/api/kurum/${oldData.kurum_id}`
               );
               dataAl();
             },
