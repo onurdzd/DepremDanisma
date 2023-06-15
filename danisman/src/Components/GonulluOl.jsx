@@ -1,18 +1,19 @@
-import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import logo3 from "../assets/logo3.svg";
 import logo6 from "../assets/logo6.svg";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const GonulluOl = () => {
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
+    toast.success("Talebiniz gönderildi");
     await axios.post("http://localhost:9000/api/gonullu", {
       gonullu_ad: data.gonullu_ad,
       gonullu_soyad: data.gonullu_soyad,
@@ -22,6 +23,7 @@ const GonulluOl = () => {
       gonullu_bitis_tarihi: data.gonullu_bitis_tarihi,
       gonullu_motivasyon_aciklama: data.gonullu_motivasyon_aciklama,
     });
+    reset();
   };
 
   return (
@@ -81,6 +83,7 @@ const GonulluOl = () => {
               İletişim Numaranız*
             </label>
             <input
+              placeholder="örn:555 555 55 55"
               type="tel"
               id="gonullu_tel_no"
               {...register("gonullu_tel_no", {
