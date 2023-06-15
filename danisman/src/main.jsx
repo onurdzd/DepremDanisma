@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 import Dashboard from "./Components/Dashboard.jsx";
@@ -22,7 +22,7 @@ import Form from "./Components/Destekbasvuru.jsx";
 import GonulluOl from "./Components/GonulluOl.jsx";
 import GelenBasvurular from "./Components/GelenBasvurular.jsx";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: (
@@ -100,18 +100,7 @@ const router = createHashRouter([
     path: "/adana",
     element: (
       <div className="h-[96vh] w-[85vw]">
-        <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
-          <div className="flex  h-full  rounded-l-[2rem] flex-col basis-1/5 ">
-            <Header />
-          </div>
-          <div className="flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl mt-3 mr-5  bg-cover ">
-            <div className="flex mt-2 mr-4 basis-10/12  ">
-              <App />
-              <Adana />
-            </div>
-          </div>
-        </div>
-        <Footer />
+        <App/>
       </div>
     ),
   },

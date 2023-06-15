@@ -9,6 +9,7 @@ import TardeLogo from "./assets/logo.jpg";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { Link } from "react-router-dom";
+import Adana from "./Components/City/Adana";
 
 function App() {
   const [hizmetData, setHizmetData] = useState([]);
@@ -39,7 +40,10 @@ function App() {
         </div>
         <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
           <div className="flex flex-col mt-3  mr-6 flex-grow  rounded-3xl  ">
+          <div className="flex mt-2  ">
             <Harita />
+            {window.location.pathname=="/adana" && <Adana></Adana>}
+            </div>
             <SehirİsimleriEkle />
             <div className=" flex flex-row mt-14 pb-3 justify-between mx-6">
               <div className="font-sans  flex  font-semibold text-[4rem] bg-white px-6 py-1 rounded-xl ">
