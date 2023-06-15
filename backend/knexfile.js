@@ -4,7 +4,7 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 const sharedConfig = {
-  client: 'pg',
+  client: 'sqlite3',
   useNullAsDefault: true,
   migrations: { directory: './data/migrations' },
   pool: { afterCreate: (conn, done) => conn.run('PRAGMA foreign_keys = ON', done) },
