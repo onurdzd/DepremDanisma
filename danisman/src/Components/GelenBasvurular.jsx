@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import GridTableGonullu from "./GridTables/GridTableGonullu";
-import GridTableSehir from "./GridTables/GridTableSehir";
+import GridTableDanisan from "./GridTables/GridTableDanisan";
 import axios from "axios";
 import TableHeader from "./TableHeader";
 import Footer from "./Footer";
@@ -49,7 +49,7 @@ const GelenBasvurular = () => {
                     <div className=" ml-5  mx-12 text-xl px-8  text-gray-600 dark:text-gray-800 rounded-xl hover:bg-slate-700 hover:text-gray-200 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
                       <button>
                         <a onClick={() => setSayfaAdi("destekisteyentablo")}>
-                          Destek Talep Tablosu
+                          Danisan Talep Tablosu
                         </a>
                       </button>
                     </div>
@@ -61,7 +61,7 @@ const GelenBasvurular = () => {
                   ) : sayfaAdi == "gonullutablo" ? (
                     <GridTableGonullu localToken={localToken} />
                   ) : sayfaAdi == "destekisteyentablo" ? (
-                    <GridTableSehir localToken={localToken} />
+                    <GridTableDanisan localToken={localToken} />
                   ) : null}
                 </div>
               </>
