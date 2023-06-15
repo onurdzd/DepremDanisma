@@ -42,7 +42,7 @@ const Hatay = () => {
   hizmetData?.map((item) => ulasilanKisiSayisi.push(item.erisilen_kisi_sayisi));
 
   return (
-    <div className="flex flex-col  w-[25vw]  my-6  mx-8  pl-2 bg-white border rounded-xl border-solid border-gray-50 pr-2 shadow-2xl ">
+    <div className="flex flex-col  w-[20vw]  my-6  mx-8  pl-2 bg-white border rounded-xl border-solid border-gray-50 pr-2 shadow-2xl ">
       <div className="flex ">
         <button
           className="flex basis-1/12  bg-none border-none mt-8 mb-3 pr-1 cursor-pointer "

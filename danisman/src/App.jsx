@@ -8,8 +8,17 @@ import ilust from "./assets/ilust.png";
 import TardeLogo from "./assets/logo.jpg";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Adana from "./Components/City/Adana";
+import Sanliurfa from "./Components/City/Sanliurfa";
+import Osmaniye from "./Components/City/Osmaniye";
+import Hatay from "./Components/City/Hatay";
+import Kilis from "./Components/City/Kilis";
+import Gaziantep from "./Components/City/Gaziantep";
+import Diyarbakir from "./Components/City/Diyarbakir";
+import Malatya from "./Components/City/Malatya";
+import Kahramanmaras from "./Components/City/Kahramanmaras";
+import Adiyaman from "./Components/City/Adiyaman";
 
 function App() {
   const [hizmetData, setHizmetData] = useState([]);
@@ -22,6 +31,9 @@ function App() {
   let ulasilanKisiSayisi = 0;
 
   const isAnasayfa = window.location.pathname === "/";
+
+  let { sehir } = useParams();
+
   useEffect(() => {
     axios
       .get("http://localhost:9000/api/hizmet")
@@ -42,7 +54,16 @@ function App() {
           <div className="flex flex-col mt-3  mr-6 flex-grow  rounded-3xl  ">
           <div className="flex mt-2  ">
             <Harita />
-            {window.location.pathname=="/adana" && <Adana></Adana>}
+            {sehir=="adana" && <Adana></Adana>}
+            {sehir=="sanliurfa" && <Sanliurfa></Sanliurfa>}
+            {sehir=="osmaniye" && <Osmaniye></Osmaniye>}
+            {sehir=="hatay" && <Hatay></Hatay>}
+            {sehir=="kilis" && <Kilis></Kilis>}
+            {sehir=="gaziantep" && <Gaziantep></Gaziantep>}
+            {sehir=="diyarbakir" && <Diyarbakir></Diyarbakir>}
+            {sehir=="malatya" && <Malatya></Malatya>}
+            {sehir=="kahramanmaras" && <Kahramanmaras></Kahramanmaras>}
+            {sehir=="adiyaman" && <Adiyaman></Adiyaman>}
             </div>
             <SehirİsimleriEkle />
             <div className=" flex flex-row mt-14 pb-3 justify-between mx-6">
