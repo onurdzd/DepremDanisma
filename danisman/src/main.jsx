@@ -97,7 +97,7 @@ const router = createHashRouter([
     ),
   },
   {
-    path: "adana",
+    path: "/adana",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -116,7 +116,7 @@ const router = createHashRouter([
     ),
   },
   {
-    path: "osmaniye",
+    path: "/osmaniye",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -135,7 +135,7 @@ const router = createHashRouter([
     ),
   },
   {
-    path: "hatay",
+    path: "/hatay",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-2  ">
@@ -154,7 +154,7 @@ const router = createHashRouter([
     ),
   },
   {
-    path: "gaziantep",
+    path: "/gaziantep",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -173,7 +173,7 @@ const router = createHashRouter([
     ),
   },
   {
-    path: "kilis",
+    path: "/kilis",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -192,7 +192,7 @@ const router = createHashRouter([
     ),
   },
   {
-    path: "sanliurfa",
+    path: "/sanliurfa",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -211,7 +211,7 @@ const router = createHashRouter([
     ),
   },
   {
-    path: "adiyaman",
+    path: "/adiyaman",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -230,7 +230,7 @@ const router = createHashRouter([
     ),
   },
   {
-    path: "kahramanmaras",
+    path: "/kahramanmaras",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -249,7 +249,7 @@ const router = createHashRouter([
     ),
   },
   {
-    path: "diyarbakir",
+    path: "/diyarbakir",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">
@@ -268,7 +268,7 @@ const router = createHashRouter([
     ),
   },
   {
-    path: "malatya",
+    path: "/malatya",
     element: (
       <div className="h-[96vh] w-[85vw]">
         <div className="flex flex-row items-center bg-white rounded-[2rem] w-[90vw] pb-5  ">

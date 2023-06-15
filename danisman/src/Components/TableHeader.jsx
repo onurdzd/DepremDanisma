@@ -19,11 +19,9 @@ const TableHeader = () => {
     <div className="flex text-xl w-full h-[15vh] items-center">
       <div className=" mx-10 flex w-full ">
         <div className=" flex w-full items-center">
-          <Link to={"/gonullu"}>
             <a href="/">
               <img className="max-h-[150px] py-4" src={DashboardLogo} />
             </a>
-          </Link>
         </div>
         <div className="flex  mt-4 w-full ">
           <div className="mt-4 ml-6 flex w-full ">
