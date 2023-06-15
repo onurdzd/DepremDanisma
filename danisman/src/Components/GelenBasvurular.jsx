@@ -13,7 +13,7 @@ const GelenBasvurular = () => {
   );
   const localTokenCheck = async () => {
     await axios
-      .get("http://localhost:9000/api/auth", {
+      .get("http://localhost:10000/api/auth", {
         headers: {
           Authorization: `${localToken?.token}`,
         },

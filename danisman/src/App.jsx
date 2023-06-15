@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/hizmet")
+      .get("http://localhost:10000/api/hizmet")
       .then((res) => setHizmetData(res.data));
   }, []);
 
