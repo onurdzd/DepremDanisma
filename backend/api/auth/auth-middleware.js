@@ -20,6 +20,7 @@ const usernameCheck = async (req, res, next) => {
   try {
     let { username } = req.body;
     const existUser = await userModel.getBy({ username: username });
+    console.log(existUser)
     if (!existUser) {
       res.status(404).json({ message: "no registered users" });
     } else {
