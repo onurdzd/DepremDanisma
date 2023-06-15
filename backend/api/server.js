@@ -21,6 +21,7 @@ const hizmetRouter = require("./hizmet/hizmet-router");
 const kurumRouter = require("./kurum/kurum-router");
 const envanterRouter = require("./envanter/envanter-router");
 const gonulluRouter = require("./gonullu/gonullu_router");
+const danisanRouter = require("./danisan/danisan-router");
 
 server.use(express.json());
 
@@ -37,6 +38,7 @@ server.use("/api/kurum", kurumRouter);
 server.use("/api/envanter", envanterRouter);
 server.use("/api/auth", authRouter);
 server.use("/api/gonullu", gonulluRouter);
+server.use("/api/danisan", danisanRouter);
 
 server.use((err, req, res, next) => {
   res.status(err.status || 500).json({
