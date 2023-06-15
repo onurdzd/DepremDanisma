@@ -43,7 +43,18 @@ const TableHeader = () => {
                     href={"/gelenbasvuru"}
                     className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
                   >
+                    <RiHandHeartFill className="inline-block mr-2 h-5 w-5 text-amber-300" />
                     Başvurular
+                  </a>
+                </Link>
+              </div>
+              <div className="">
+                <Link to="/dashboard">
+                  <a
+                    href={"/dashboard"}
+                    className="flex items-center px-2 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
+                  >
+                    Dashboard
                   </a>
                 </Link>
               </div>
@@ -145,17 +156,7 @@ const TableHeader = () => {
                   </Transition> */}
                 </Menu>
               </div>
-              <div className="mb-2">
-                <Link to="/gonullu">
-                  <a
-                    href={"/gonullu"}
-                    className="flex items-center px-8 font-normal text-base text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
-                  >
-                    <RiHandHeartFill className="inline-block mr-2 h-5 w-5 text-amber-300" />
-                    Gönüllüler
-                  </a>
-                </Link>
-              </div>
+
               <div className="mb-2">
                 <Link to="/iletisim">
                   <a
