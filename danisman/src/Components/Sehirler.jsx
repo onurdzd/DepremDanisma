@@ -18,23 +18,23 @@ const Sehirler = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:10000/api/hizmet")
+      .get("http://localhost:9000/api/hizmet")
       .then((res) =>{
         setHizmetData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))}
       );
       
     axios
-      .get("http://localhost:10000/api/merkez")
+      .get("http://localhost:9000/api/merkez")
       .then((res) =>
         setMerkezData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))
       );
     axios
-      .get("http://localhost:10000/api/envanter")
+      .get("http://localhost:9000/api/envanter")
       .then((res) =>
         setEnvanterData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))
       );
     axios
-      .get("http://localhost:10000/api/kurum")
+      .get("http://localhost:9000/api/kurum")
       .then((res) =>
         setKurumData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))
       );

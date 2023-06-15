@@ -7,7 +7,7 @@ const GridTableSehir = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:10000/api/sehir",{
+      .get("http://localhost:9000/api/sehir",{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -86,12 +86,12 @@ const GridTableSehir = (localToken) => {
           title="Sehir Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("http://localhost:10000/api/sehir", newData);
+              await axios.post("http://localhost:9000/api/sehir", newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `http://localhost:10000/api/sehir/${oldData.sehir_id}`,
+                `http://localhost:9000/api/sehir/${oldData.sehir_id}`,
                 {
                   sehir_aciklama: newData.sehir_aciklama,
                   sehir_isim: newData.sehir_isim,
@@ -103,7 +103,7 @@ const GridTableSehir = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `http://localhost:10000/api/sehir/${oldData.sehir_id}`
+                `http://localhost:9000/api/sehir/${oldData.sehir_id}`
               );
               dataAl();
             },

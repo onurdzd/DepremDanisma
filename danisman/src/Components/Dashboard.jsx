@@ -15,7 +15,7 @@ const Dashboard = () => {
   const [localToken,setLocalToken]=useState(JSON.parse(localStorage.getItem("user")))
 const localTokenCheck = async()=>{
   await axios
-.get("http://localhost:10000/api/auth",{
+.get("http://localhost:9000/api/auth",{
   headers: {
     'Authorization': `${localToken?.token}` 
   }

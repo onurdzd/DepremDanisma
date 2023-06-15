@@ -14,7 +14,7 @@ const GonulluOl = () => {
 
   const onSubmit = async (data) => {
     toast.success("Talebiniz gönderildi");
-    await axios.post("http://localhost:10000/api/gonullu", {
+    await axios.post("http://localhost:9000/api/gonullu", {
       gonullu_ad: data.gonullu_ad,
       gonullu_soyad: data.gonullu_soyad,
       gonullu_calismak_istedigi_il: data.gonullu_calismak_istedigi_il,

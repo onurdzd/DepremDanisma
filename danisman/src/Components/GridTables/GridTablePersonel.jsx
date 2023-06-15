@@ -7,7 +7,7 @@ const GridTablePersonel = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:10000/api/personel",{
+      .get("http://localhost:9000/api/personel",{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -21,7 +21,7 @@ const GridTablePersonel = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("http://localhost:10000/api/merkez",{
+      .get("http://localhost:9000/api/merkez",{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -201,12 +201,12 @@ const GridTablePersonel = (localToken) => {
           title="Personel Tablo  "
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("http://localhost:10000/api/personel", newData);
+              await axios.post("http://localhost:9000/api/personel", newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `http://localhost:10000/api/personel/${oldData.personel_id}`,
+                `http://localhost:9000/api/personel/${oldData.personel_id}`,
                 {
                   firstname: newData.firstname,
                   surname: newData.surname,
@@ -227,7 +227,7 @@ const GridTablePersonel = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `http://localhost:10000/api/personel/${oldData.personel_id}`
+                `http://localhost:9000/api/personel/${oldData.personel_id}`
               );
               dataAl();
             },
