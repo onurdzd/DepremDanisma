@@ -221,14 +221,23 @@ const GridTablePersonel = (localToken) => {
                   ADAK_telefon: newData.ADAK_telefon,
                   ADAK_Bağı: newData.ADAK_Bağı,
                   merkez_id: newData.merkez_id,
+                },{
+                  headers: {
+                    'Authorization': `${localToken.localToken?.token}` 
+                  }
                 }
               );
               dataAl();
             },
             onRowDelete: async (oldData) => {
+              console.log(oldData.personel_id)
               await axios.delete(
                 `http://localhost:10000/api/personel/${oldData.personel_id}`
-              );
+                ,{
+                  headers: {
+                    'Authorization': `${localToken.localToken?.token}` 
+                  }
+                });
               dataAl();
             },
           }}

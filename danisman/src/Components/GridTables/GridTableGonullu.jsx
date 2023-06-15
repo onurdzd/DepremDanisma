@@ -179,7 +179,6 @@ const GridTableGonullu = (localToken) => {
               dataAl();
             },
             onRowDelete: async (oldData) => {
-              console.log(oldData.gonullu_id)
               await axios.delete(
                 `http://localhost:10000/api/gonullu/${oldData.gonullu_id}`
               );

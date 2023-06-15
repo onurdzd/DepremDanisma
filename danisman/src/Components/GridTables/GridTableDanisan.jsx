@@ -128,7 +128,7 @@ const GridTableDanisan = (localToken) => {
                 rowData.danisan_kisi === ""
                   ? "Zorunlu"
                   : true,
-              lookup: { 0: "Kendim", 1: "Yakınım" },
+              lookup: { 1: "Kendim", 0: "Yakınım" },
             },
 
             {

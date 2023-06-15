@@ -49,7 +49,6 @@ const GridTableHizmet = (localToken) => {
   unique.forEach((element) => {
     obj[`${element.merkez_id}`] = element.merkez_isim;
   });
-  console.log(obj);
 
   return (
     <>
