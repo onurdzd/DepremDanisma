@@ -39,7 +39,6 @@ router.post("/", async (req, res, next) => {
 
 router.delete("/:id", async (req, res, next) => {
   try {
-    console.log(req.params.id);
     await Envanter.remove(req.params.id);
     res
       .status(201)
@@ -54,7 +53,7 @@ router.put("/:id", async (req, res, next) => {
     await Envanter.change(req.body, req.params.id);
     res
       .status(201)
-      .json({ message: `${req.params.id} id nolu envanter silindi` });
+      .json({ message: `${req.params.id} id nolu envanter düzenlendi` });
   } catch (error) {
     next(error);
   }

@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import logo3 from "../assets/logo3.svg";
 import logo4 from "../assets/logo4.svg";
 import logo5 from "../assets/logo5.svg";
-const Form = () => {
+import axios from "axios";
+import { toast } from "react-toastify";
+
+const DestekBasvuru = () => {
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    // Form submission logic here
-    console.log(data);
+  const onSubmit = async (data) => {
+    toast.success("Başvurunuz gönderildi");
+    await axios.post("https://depremdanismabackend.onrender.com/api/danisan", {
+      danisan_ad: data.danisan_ad,
+      danisan_soyad: data.danisan_soyad,
+      danisan_tel_no: data.danisan_tel_no,
+      danisan_il: data.danisan_il,
+      danisan_aciklama: data.danisan_aciklama,
+      danisan_kisi: data.supportPerson[0] == "myself" ? true : false,
+    });
+    reset();
   };
   const [supportPerson, setSupportPerson] = useState("");
   const [relationship, setRelationship] = useState("");
@@ -37,84 +48,85 @@ const Form = () => {
             </label>
             <input
               type="text"
-              id="name"
-              {...register("name", { required: true })}
+              id="danisan_ad"
+              {...register("danisan_ad", { required: true })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.name && "border-red-500"
+                errors.danisan_ad && "border-red-500"
               }`}
             />
-            {errors.name && (
+            {errors.danisan_ad && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
           <div className="mb-4">
             <label
-              htmlFor="surname"
+              htmlFor="danisan_soyad"
               className="block text-gray-700 font-bold mb-2"
             >
               Soyadınız*
             </label>
             <input
               type="text"
-              id="surname"
-              {...register("surname", { required: true })}
+              id="danisan_soyad"
+              {...register("danisan_soyad", { required: true })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.surname && "border-red-500"
+                errors.danisan_soyad && "border-red-500"
               }`}
             />
-            {errors.surname && (
+            {errors.danisan_soyad && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
           <div className="mb-4">
             <label
-              htmlFor="phoneNumber"
+              htmlFor="danisan_tel_no"
               className="block text-gray-700 font-bold mb-2"
             >
               İletişim Numaranız*
             </label>
             <input
+              placeholder="örn:555 555 55 55"
               type="tel"
-              id="phoneNumber"
-              {...register("phoneNumber", {
+              id="danisan_tel_no"
+              {...register("danisan_tel_no", {
                 required: true,
-                minLength: 11,
-                maxLength: 11,
+                minLength: 10,
+                maxLength: 10,
               })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.phoneNumber && "border-red-500"
+                errors.danisan_tel_no && "border-red-500"
               }`}
             />
-            {errors.phoneNumber?.type === "required" && (
+            {errors.danisan_tel_no?.type === "required" && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
-            {errors.phoneNumber?.type === "minLength" && (
+            {errors.danisan_tel_no?.type === "minLength" && (
               <span className="text-red-500">
-                Telefon numarası 11 karakter olmalıdır.
+                Telefon numarası 10 karakter olmalıdır.
               </span>
             )}
-            {errors.phoneNumber?.type === "maxLength" && (
+            {errors.danisan_tel_no?.type === "maxLength" && (
               <span className="text-red-500">
-                Telefon numarası 11 karakter olmalıdır.
+                Telefon numarası 10 karakter olmalıdır.
               </span>
             )}
           </div>
           <div className="mb-4">
             <label
-              htmlFor="city"
+              htmlFor="danisan_il"
               className="block text-gray-700 font-bold mb-2"
             >
               Yaşadığınız İl*
             </label>
             <input
               type="text"
-              id="city"
-              {...register("city", { required: true })}
+              id="danisan_il"
+              {...register("danisan_il", { required: true })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.city && "border-red-500"
+                errors.danisan_il && "border-red-500"
               }`}
             />
-            {errors.city && (
+            {errors.danisan_il && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
@@ -174,19 +186,19 @@ const Form = () => {
 
           <div className="mb-4">
             <label
-              htmlFor="reason"
+              htmlFor="danisan_aciklama"
               className="block text-gray-700 font-bold mb-2"
             >
               Başvuru nedeninizi kıssaca anlatır mısınız?*
             </label>
             <textarea
-              id="reason"
-              {...register("reason", { required: true })}
+              id="danisan_aciklama"
+              {...register("danisan_aciklama", { required: true })}
               className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.reason && "border-red-500"
+                errors.danisan_aciklama && "border-red-500"
               }`}
             ></textarea>
-            {errors.reason && (
+            {errors.danisan_aciklama && (
               <span className="text-red-500">Bu alan zorunludur.</span>
             )}
           </div>
@@ -231,4 +243,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default DestekBasvuru;

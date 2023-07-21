@@ -39,7 +39,6 @@ router.post("/", async (req, res, next) => {
 
 router.delete("/:id", async (req, res, next) => {
   try {
-    console.log(req.params.id);
     await Merkez.remove(req.params.id);
     res
       .status(201)
