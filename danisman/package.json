@@ -18,6 +18,7 @@
     "@heroicons/react": "^2.0.18",
     "@hookform/resolvers": "^3.1.0",
     "axios": "^1.4.0",
+    "date-fns": "^2.30.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "material-table": "^2.0.3",
