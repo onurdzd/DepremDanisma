@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://depremdanismabackend.onrender.com//api/hizmet")
+      .get("https://depremdanismabackend.onrender.com/api/hizmet")
       .then((res) => setHizmetData(res.data));
   }, []);
 

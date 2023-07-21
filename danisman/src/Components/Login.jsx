@@ -68,7 +68,7 @@ export default function Login() {
 const [localToken,setLocalToken]=useState(JSON.parse(localStorage.getItem("user")))
 const localTokenCheck = async()=>{
   await axios
-.get("https://depremdanismabackend.onrender.com//api/auth",{
+.get("https://depremdanismabackend.onrender.com/api/auth",{
   headers: {
     'Authorization': `${localToken?.token}` 
   }

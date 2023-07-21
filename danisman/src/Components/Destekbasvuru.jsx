@@ -16,7 +16,7 @@ const DestekBasvuru = () => {
 
   const onSubmit = async (data) => {
     toast.success("Başvurunuz gönderildi");
-    await axios.post("https://depremdanismabackend.onrender.com//api/danisan", {
+    await axios.post("https://depremdanismabackend.onrender.com/api/danisan", {
       danisan_ad: data.danisan_ad,
       danisan_soyad: data.danisan_soyad,
       danisan_tel_no: data.danisan_tel_no,

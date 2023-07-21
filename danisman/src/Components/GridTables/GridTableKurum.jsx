@@ -7,7 +7,7 @@ const GridTableKurum = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("https://depremdanismabackend.onrender.com//api/kurum",{
+      .get("https://depremdanismabackend.onrender.com/api/kurum",{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -21,7 +21,7 @@ const GridTableKurum = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("https://depremdanismabackend.onrender.com//api/merkez",{
+      .get("https://depremdanismabackend.onrender.com/api/merkez",{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -131,12 +131,12 @@ const GridTableKurum = (localToken) => {
           title="Kurum Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("https://depremdanismabackend.onrender.com//api/kurum", newData);
+              await axios.post("https://depremdanismabackend.onrender.com/api/kurum", newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `https://depremdanismabackend.onrender.com//api/kurum/${oldData.kurum_id}`,
+                `https://depremdanismabackend.onrender.com/api/kurum/${oldData.kurum_id}`,
                 {
                   kurum_aciklama: newData.kurum_aciklama,
                   kurum_adi: newData.kurum_adi,
@@ -150,7 +150,7 @@ const GridTableKurum = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `https://depremdanismabackend.onrender.com//api/kurum/${oldData.kurum_id}`
+                `https://depremdanismabackend.onrender.com/api/kurum/${oldData.kurum_id}`
               );
               dataAl();
             },
