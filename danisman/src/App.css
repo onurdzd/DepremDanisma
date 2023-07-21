@@ -9,6 +9,7 @@ body {
 @media (width< 640px) {
   body {
     background-image: none;
+    display: inline;
   }
 }
 .label-text {
