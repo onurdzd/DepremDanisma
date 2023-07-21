@@ -12,7 +12,7 @@ import Footer from "./Components/Footer";
 function App() {
   const [hizmetData, setHizmetData] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  console.log("hatyy");
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -34,7 +34,7 @@ function App() {
     <div className="h-[96vh] w-[80vw]">
       <div className="md:flex md:flex-row items-center bg-white rounded-[2rem] pb-2 ">
         <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
-          <Header toggleMenu={toggleMenu} isMenuOpen={isMenuOpen}/>
+          <Header toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
         </div>
         <div className="basis-4/5  h-full mt-3 mr-4  flex flex-col bg-[url('/src/assets/mapZone.png')] rounded-3xl bg-cover">
           <div className="flex flex-col mt-3  mr-6 flex-grow  rounded-3xl  ">
