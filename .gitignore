@@ -1,2 +1,5 @@
+danisman/node_modules
+backend/node_modules
+
 backend/data/datalar.db3
-danisman/.gitignore
+backend/pnpm-lock.yaml
