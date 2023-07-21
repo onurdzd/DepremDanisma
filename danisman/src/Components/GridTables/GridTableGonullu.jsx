@@ -8,7 +8,7 @@ const GridTableGonullu = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("https://depremdanismabackend.onrender.com/api/gonullu", {
+      .get(`${import.meta.env.VITE_API_URL}/gonullu`, {
         headers: {
           Authorization: `${localToken.localToken?.token}`,
         },
@@ -22,7 +22,7 @@ const GridTableGonullu = (localToken) => {
   let gonulluIsimleri = [];
   useEffect(() => {
     axios
-      .get("https://depremdanismabackend.onrender.com/api/gonullu", {
+      .get(`${import.meta.env.VITE_API_URL}/gonullu`, {
         headers: {
           Authorization: `${localToken.localToken?.token}`,
         },
@@ -98,7 +98,7 @@ const GridTableGonullu = (localToken) => {
               field: "gonullu_soyad",
               validate: (rowData) =>
                 rowData.gonullu_soyad === undefined ||
-                rowData.gonullu_soyad === ""
+                  rowData.gonullu_soyad === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -108,7 +108,7 @@ const GridTableGonullu = (localToken) => {
               type: "numeric",
               validate: (rowData) =>
                 rowData.gonullu_tel_no === undefined ||
-                rowData.gonullu_tel_no === ""
+                  rowData.gonullu_tel_no === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -118,7 +118,7 @@ const GridTableGonullu = (localToken) => {
               field: "gonullu_calismak_istedigi_il",
               validate: (rowData) =>
                 rowData.gonullu_calismak_istedigi_il === undefined ||
-                rowData.gonullu_calismak_istedigi_il === ""
+                  rowData.gonullu_calismak_istedigi_il === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -129,7 +129,7 @@ const GridTableGonullu = (localToken) => {
               dateSetting: { locale: tr },
               validate: (rowData) =>
                 rowData.gonullu_baslangic_tarihi === undefined ||
-                rowData.gonullu_baslangic_tarihi === ""
+                  rowData.gonullu_baslangic_tarihi === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -140,7 +140,7 @@ const GridTableGonullu = (localToken) => {
               dateSetting: { locale: tr },
               validate: (rowData) =>
                 rowData.gonullu_bitis_tarihi === undefined ||
-                rowData.gonullu_bitis_tarihi === ""
+                  rowData.gonullu_bitis_tarihi === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -149,7 +149,7 @@ const GridTableGonullu = (localToken) => {
               field: "gonullu_motivasyon_aciklama",
               validate: (rowData) =>
                 rowData.gonullu_motivasyon_aciklama === undefined ||
-                rowData.gonullu_motivasyon_aciklama === ""
+                  rowData.gonullu_motivasyon_aciklama === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -158,12 +158,12 @@ const GridTableGonullu = (localToken) => {
           title="Gonullu Başvuru Tablosu"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("https://depremdanismabackend.onrender.com/api/gonullu", newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/gonullu`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `https://depremdanismabackend.onrender.com/api/gonullu/${oldData.gonullu_id}`,
+                `${import.meta.env.VITE_API_URL}/gonullu/${oldData.gonullu_id}`,
                 {
                   gonullu_ad: newData.gonullu_ad,
                   gonullu_soyad: newData.gonullu_soyad,
@@ -180,7 +180,7 @@ const GridTableGonullu = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `https://depremdanismabackend.onrender.com/api/gonullu/${oldData.gonullu_id}`
+                `${import.meta.env.VITE_API_URL}/gonullu/${oldData.gonullu_id}`
               );
               dataAl();
             },

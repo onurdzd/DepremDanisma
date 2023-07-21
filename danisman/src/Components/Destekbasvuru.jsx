@@ -16,7 +16,7 @@ const DestekBasvuru = () => {
 
   const onSubmit = async (data) => {
     toast.success("Başvurunuz gönderildi");
-    await axios.post("https://depremdanismabackend.onrender.com/api/danisan", {
+    await axios.post(`${import.meta.env.VITE_API_URL}/danisan`, {
       danisan_ad: data.danisan_ad,
       danisan_soyad: data.danisan_soyad,
       danisan_tel_no: data.danisan_tel_no,
@@ -50,9 +50,8 @@ const DestekBasvuru = () => {
               type="text"
               id="danisan_ad"
               {...register("danisan_ad", { required: true })}
-              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.danisan_ad && "border-red-500"
-              }`}
+              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.danisan_ad && "border-red-500"
+                }`}
             />
             {errors.danisan_ad && (
               <span className="text-red-500">Bu alan zorunludur.</span>
@@ -69,9 +68,8 @@ const DestekBasvuru = () => {
               type="text"
               id="danisan_soyad"
               {...register("danisan_soyad", { required: true })}
-              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.danisan_soyad && "border-red-500"
-              }`}
+              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.danisan_soyad && "border-red-500"
+                }`}
             />
             {errors.danisan_soyad && (
               <span className="text-red-500">Bu alan zorunludur.</span>
@@ -93,9 +91,8 @@ const DestekBasvuru = () => {
                 minLength: 10,
                 maxLength: 10,
               })}
-              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.danisan_tel_no && "border-red-500"
-              }`}
+              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.danisan_tel_no && "border-red-500"
+                }`}
             />
             {errors.danisan_tel_no?.type === "required" && (
               <span className="text-red-500">Bu alan zorunludur.</span>
@@ -122,9 +119,8 @@ const DestekBasvuru = () => {
               type="text"
               id="danisan_il"
               {...register("danisan_il", { required: true })}
-              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.danisan_il && "border-red-500"
-              }`}
+              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.danisan_il && "border-red-500"
+                }`}
             />
             {errors.danisan_il && (
               <span className="text-red-500">Bu alan zorunludur.</span>
@@ -194,9 +190,8 @@ const DestekBasvuru = () => {
             <textarea
               id="danisan_aciklama"
               {...register("danisan_aciklama", { required: true })}
-              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors.danisan_aciklama && "border-red-500"
-              }`}
+              className={`appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.danisan_aciklama && "border-red-500"
+                }`}
             ></textarea>
             {errors.danisan_aciklama && (
               <span className="text-red-500">Bu alan zorunludur.</span>
