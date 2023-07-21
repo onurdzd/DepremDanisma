@@ -12,6 +12,9 @@ exports.seed = async function (knex) {
   await knex("kurum").truncate();
   await knex("envanter").truncate();
   await knex("hizmet").truncate();
+  await knex("gonullu").truncate();
+  await knex("danisan").truncate();
+
   await knex("roles").insert([{ role_name: "admin" }, { role_name: "user" }]);
   await knex("users").insert([
     {
@@ -123,7 +126,7 @@ exports.seed = async function (knex) {
       calisma_durumu: true,
       proje_saha_adresi: "zort mahallesi zart sokak konteyner no:2",
       ADAK_adı_soyadı: "Mahmut Tuncer",
-      ADAK_telefon: 05444444444,
+      ADAK_telefon: 5444444444,
       ADAK_Bağı: "Anne",
       merkez_id: 1,
     },
@@ -137,7 +140,7 @@ exports.seed = async function (knex) {
       calisma_durumu: true,
       proje_saha_adresi: "zort mah konteyner no:2",
       ADAK_adı_soyadı: "ahmet Tuncer",
-      ADAK_telefon: 05444442444,
+      ADAK_telefon: 5444442444,
       ADAK_Bağı: "Baba",
       merkez_id: 1,
     },
@@ -151,7 +154,7 @@ exports.seed = async function (knex) {
       calisma_durumu: false,
       proje_saha_adresi: "zort konteyner no:2",
       ADAK_adı_soyadı: "ahmet abb",
-      ADAK_telefon: 05444342444,
+      ADAK_telefon: 5444342444,
       ADAK_Bağı: "Baba",
       merkez_id: 2,
     },
@@ -165,7 +168,7 @@ exports.seed = async function (knex) {
       calisma_durumu: false,
       proje_saha_adresi: "zort no:2",
       ADAK_adı_soyadı: "mehmet abb",
-      ADAK_telefon: 05442342444,
+      ADAK_telefon: 5442342444,
       ADAK_Bağı: "Kuzen",
       merkez_id: 2,
     },
@@ -179,7 +182,7 @@ exports.seed = async function (knex) {
       calisma_durumu: true,
       proje_saha_adresi: "no:2",
       ADAK_adı_soyadı: "abb",
-      ADAK_telefon: 05442341444,
+      ADAK_telefon: 5442341444,
       ADAK_Bağı: "Kuzen",
       merkez_id: 1,
     },
@@ -193,7 +196,7 @@ exports.seed = async function (knex) {
       calisma_durumu: true,
       proje_saha_adresi: "zort mahallesi zart sokak konteyner no:2",
       ADAK_adı_soyadı: "Mahmut Mert",
-      ADAK_telefon: 05444454444,
+      ADAK_telefon: 5444454444,
       ADAK_Bağı: "Anne",
       merkez_id: 1,
     },
@@ -218,7 +221,7 @@ exports.seed = async function (knex) {
         "22 tane araba var birisi peronelin ulaşımı için diğeride danışanların hizmetinde kullanılıyor",
       envanter_adet: 21,
       merkez_id: 2,
-    }
+    },
   ]);
   await knex("hizmet").insert([
     {
@@ -238,6 +241,27 @@ exports.seed = async function (knex) {
       hizmet_tipi: "Psikolojik Destek2",
       erisilen_kisi_sayisi: 21,
       merkez_id: 2,
+    },
+  ]);
+  await knex("gonullu").insert([
+    {
+      gonullu_ad: "Polat",
+      gonullu_soyad: "Alemdar",
+      gonullu_tel_no: 5332221100,
+      gonullu_calismak_istedigi_il: "Adana",
+      gonullu_baslangic_tarihi: "14.06.2023",
+      gonullu_bitis_tarihi: "14.08.2023",
+      gonullu_motivasyon_aciklama: "sonunu düşünen kahraman olamaz",
+    },
+  ]);
+  await knex("danisan").insert([
+    {
+      danisan_ad: "Süleyman",
+      danisan_soyad: "Çakır",
+      danisan_tel_no: 5443335566,
+      danisan_il: "Kahramanmaraş",
+      danisan_kisi: 0,
+      danisan_aciklama: "İstanbulun sefiri benim",
     },
   ]);
 };
