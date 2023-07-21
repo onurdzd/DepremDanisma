@@ -18,23 +18,23 @@ const Sehirler = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:10000/api/hizmet")
+      .get("https://depremdanismabackend.onrender.com//api/hizmet")
       .then((res) =>{
         setHizmetData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))}
       );
       
     axios
-      .get("http://localhost:10000/api/merkez")
+      .get("https://depremdanismabackend.onrender.com//api/merkez")
       .then((res) =>
         setMerkezData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))
       );
     axios
-      .get("http://localhost:10000/api/envanter")
+      .get("https://depremdanismabackend.onrender.com//api/envanter")
       .then((res) =>
         setEnvanterData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))
       );
     axios
-      .get("http://localhost:10000/api/kurum")
+      .get("https://depremdanismabackend.onrender.com//api/kurum")
       .then((res) =>
         setKurumData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))
       );

@@ -8,7 +8,7 @@ const GridTableGonullu = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:10000/api/gonullu", {
+      .get("https://depremdanismabackend.onrender.com//api/gonullu", {
         headers: {
           Authorization: `${localToken.localToken?.token}`,
         },
@@ -22,7 +22,7 @@ const GridTableGonullu = (localToken) => {
   let gonulluIsimleri = [];
   useEffect(() => {
     axios
-      .get("http://localhost:10000/api/gonullu", {
+      .get("https://depremdanismabackend.onrender.com//api/gonullu", {
         headers: {
           Authorization: `${localToken.localToken?.token}`,
         },
@@ -158,12 +158,12 @@ const GridTableGonullu = (localToken) => {
           title="Gonullu Başvuru Tablosu"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("http://localhost:10000/api/gonullu", newData);
+              await axios.post("https://depremdanismabackend.onrender.com//api/gonullu", newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `http://localhost:10000/api/gonullu/${oldData.gonullu_id}`,
+                `https://depremdanismabackend.onrender.com//api/gonullu/${oldData.gonullu_id}`,
                 {
                   gonullu_ad: newData.gonullu_ad,
                   gonullu_soyad: newData.gonullu_soyad,
@@ -180,7 +180,7 @@ const GridTableGonullu = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `http://localhost:10000/api/gonullu/${oldData.gonullu_id}`
+                `https://depremdanismabackend.onrender.com//api/gonullu/${oldData.gonullu_id}`
               );
               dataAl();
             },

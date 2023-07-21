@@ -8,7 +8,7 @@ const GridTableHizmet = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:10000/api/hizmet")
+      .get("https://depremdanismabackend.onrender.com//api/hizmet")
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
@@ -18,7 +18,7 @@ const GridTableHizmet = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("http://localhost:10000/api/merkez",{
+      .get("https://depremdanismabackend.onrender.com//api/merkez",{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -130,12 +130,12 @@ const GridTableHizmet = (localToken) => {
           title="Hizmet Tablosu"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("http://localhost:10000/api/hizmet", newData);
+              await axios.post("https://depremdanismabackend.onrender.com//api/hizmet", newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `http://localhost:10000/api/hizmet/${oldData.hizmet_id}`,
+                `https://depremdanismabackend.onrender.com//api/hizmet/${oldData.hizmet_id}`,
                 {
                   veri_giris_tarihi: newData.veri_giris_tarihi,
                   donem: newData.donem,
@@ -148,7 +148,7 @@ const GridTableHizmet = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `http://localhost:10000/api/hizmet/${oldData.hizmet_id}`
+                `https://depremdanismabackend.onrender.com//api/hizmet/${oldData.hizmet_id}`
               );
               dataAl();
             },

@@ -8,7 +8,7 @@ const GridTableMerkez = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:10000/api/merkez",{
+      .get("https://depremdanismabackend.onrender.com//api/merkez",{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -22,7 +22,7 @@ const GridTableMerkez = (localToken) => {
   let sehirIsimleri = [];
   useEffect(() => {
     axios
-      .get("http://localhost:10000/api/sehir",{
+      .get("https://depremdanismabackend.onrender.com//api/sehir",{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -168,12 +168,12 @@ const GridTableMerkez = (localToken) => {
           title="Merkez Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("http://localhost:10000/api/merkez", newData);
+              await axios.post("https://depremdanismabackend.onrender.com//api/merkez", newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `http://localhost:10000/api/merkez/${oldData.merkez_id}`,
+                `https://depremdanismabackend.onrender.com//api/merkez/${oldData.merkez_id}`,
                 {
                   m_telefon: newData.m_telefon,
                   m_telefon2: newData.m_telefon2,
@@ -189,7 +189,7 @@ const GridTableMerkez = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `http://localhost:10000/api/merkez/${oldData.merkez_id}`
+                `https://depremdanismabackend.onrender.com//api/merkez/${oldData.merkez_id}`
               );
               dataAl();
             },

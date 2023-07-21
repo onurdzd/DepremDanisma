@@ -36,7 +36,7 @@ export default function Login() {
   const onSubmit = async (data) => {
     try {
       await axios
-        .post("http://localhost:10000/api/auth/login", {
+        .post("https://depremdanismabackend.onrender.com/api/auth/login", {
           username: data.username,
           password: data.password,
         })
@@ -68,7 +68,7 @@ export default function Login() {
 const [localToken,setLocalToken]=useState(JSON.parse(localStorage.getItem("user")))
 const localTokenCheck = async()=>{
   await axios
-.get("http://localhost:10000/api/auth",{
+.get("https://depremdanismabackend.onrender.com//api/auth",{
   headers: {
     'Authorization': `${localToken?.token}` 
   }
@@ -173,7 +173,6 @@ useEffect(()=>{localToken && localTokenCheck()},[])
                         })}
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
                       />
-
                       <button
                         type="button"
                         onClick={togglePasswordVisibility}

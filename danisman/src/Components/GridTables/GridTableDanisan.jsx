@@ -7,7 +7,7 @@ const GridTableDanisan = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("http://localhost:10000/api/danisan", {
+      .get("https://depremdanismabackend.onrender.com//api/danisan", {
         headers: {
           Authorization: `${localToken.localToken?.token}`,
         },
@@ -21,7 +21,7 @@ const GridTableDanisan = (localToken) => {
   let danisanIsimleri = [];
   useEffect(() => {
     axios
-      .get("http://localhost:10000/api/danisan", {
+      .get("https://depremdanismabackend.onrender.com//api/danisan", {
         headers: {
           Authorization: `${localToken.localToken?.token}`,
         },
@@ -145,12 +145,12 @@ const GridTableDanisan = (localToken) => {
           title="Destek Başvuru Tablosu"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("http://localhost:10000/api/danisan", newData);
+              await axios.post("https://depremdanismabackend.onrender.com//api/danisan", newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `http://localhost:10000/api/danisan/${oldData.danisan_id}`,
+                `https://depremdanismabackend.onrender.com//api/danisan/${oldData.danisan_id}`,
                 {
                   danisan_ad: newData.danisan_ad,
                   danisan_soyad: newData.danisan_soyad,
@@ -164,7 +164,7 @@ const GridTableDanisan = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `http://localhost:10000/api/danisan/${oldData.danisan_id}`
+                `https://depremdanismabackend.onrender.com//api/danisan/${oldData.danisan_id}`
               );
               dataAl();
             },
