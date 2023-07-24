@@ -16,7 +16,7 @@ const GonulluOl = () => {
 
   const onSubmit = async (data) => {
     toast.success("Talebiniz gönderildi");
-    await axios.post("https://depremdanismabackend.onrender.com/api/gonullu", {
+    await axios.post(`${import.meta.env.VITE_API_URL}/gonullu`, {
       gonullu_ad: data.gonullu_ad,
       gonullu_soyad: data.gonullu_soyad,
       gonullu_calismak_istedigi_il: data.gonullu_calismak_istedigi_il,

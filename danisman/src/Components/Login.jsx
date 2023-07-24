@@ -36,7 +36,7 @@ export default function Login() {
   const onSubmit = async (data) => {
     try {
       await axios
-        .post("https://depremdanismabackend.onrender.com/api/auth/login", {
+        .post(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
           username: data.username,
           password: data.password,
         })
@@ -68,7 +68,7 @@ export default function Login() {
 const [localToken,setLocalToken]=useState(JSON.parse(localStorage.getItem("user")))
 const localTokenCheck = async()=>{
   await axios
-.get("https://depremdanismabackend.onrender.com/api/auth",{
+.get(`${import.meta.env.VITE_API_URL}/api/auth`,{
   headers: {
     'Authorization': `${localToken?.token}` 
   }

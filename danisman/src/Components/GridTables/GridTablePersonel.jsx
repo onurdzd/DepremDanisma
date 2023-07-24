@@ -7,7 +7,7 @@ const GridTablePersonel = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("https://depremdanismabackend.onrender.com/api/personel",{
+      .get(`${import.meta.env.VITE_API_URL}/api/personel`,{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -21,7 +21,7 @@ const GridTablePersonel = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("https://depremdanismabackend.onrender.com/api/merkez",{
+      .get(`${import.meta.env.VITE_API_URL}/merkez`,{
         headers: {
           'Authorization': `${localToken.localToken?.token}` 
         }
@@ -201,12 +201,12 @@ const GridTablePersonel = (localToken) => {
           title="Personel Tablo  "
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("https://depremdanismabackend.onrender.com/api/personel", newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/api/personel`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `https://depremdanismabackend.onrender.com/api/personel/${oldData.personel_id}`,
+                `${import.meta.env.VITE_API_URL}/api/personel/${oldData.personel_id}`,
                 {
                   firstname: newData.firstname,
                   surname: newData.surname,
@@ -232,7 +232,7 @@ const GridTablePersonel = (localToken) => {
             onRowDelete: async (oldData) => {
               console.log(oldData.personel_id)
               await axios.delete(
-                `https://depremdanismabackend.onrender.com/api/personel/${oldData.personel_id}`
+                `${import.meta.env.VITE_API_URL}/api/personel/${oldData.personel_id}`
                 ,{
                   headers: {
                     'Authorization': `${localToken.localToken?.token}` 

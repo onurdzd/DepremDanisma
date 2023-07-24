@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://depremdanismabackend.onrender.com/api/hizmet")
+      .get(`${import.meta.env.VITE_API_URL}/api/hizmet`)
       .then((res) => setHizmetData(res.data));
   }, []);
 
