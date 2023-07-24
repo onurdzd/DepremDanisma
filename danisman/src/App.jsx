@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/hizmet`)
+      .get(`${import.meta.env.VITE_API_URL}/hizmet`)
       .then((res) => setHizmetData(res.data));
   }, []);
 
