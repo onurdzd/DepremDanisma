@@ -7,9 +7,9 @@ const GridTableKurum = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("https://depremdanismabackend.onrender.com/api/kurum",{
+      .get(`${import.meta.env.VITE_API_URL}/kurum`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setData(res.data));
@@ -21,9 +21,9 @@ const GridTableKurum = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("https://depremdanismabackend.onrender.com/api/merkez",{
+      .get(`${import.meta.env.VITE_API_URL}api/merkez`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setMerkezIsimAl(res.data));
@@ -98,7 +98,7 @@ const GridTableKurum = (localToken) => {
               field: "kurum_adi_kisaltma",
               validate: (rowData) =>
                 rowData.kurum_adi_kisaltma === undefined ||
-                rowData.kurum_adi_kisaltma === ""
+                  rowData.kurum_adi_kisaltma === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -131,12 +131,12 @@ const GridTableKurum = (localToken) => {
           title="Kurum Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("https://depremdanismabackend.onrender.com/api/kurum", newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/kurum`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `https://depremdanismabackend.onrender.com/api/kurum/${oldData.kurum_id}`,
+                `${import.meta.env.VITE_API_URL}/kurum/${oldData.kurum_id}`,
                 {
                   kurum_aciklama: newData.kurum_aciklama,
                   kurum_adi: newData.kurum_adi,
@@ -150,7 +150,7 @@ const GridTableKurum = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `https://depremdanismabackend.onrender.com/api/kurum/${oldData.kurum_id}`
+                `${import.meta.env.VITE_API_URL}/kurum/${oldData.kurum_id}`
               );
               dataAl();
             },

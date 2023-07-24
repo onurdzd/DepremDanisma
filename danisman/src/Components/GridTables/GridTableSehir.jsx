@@ -7,9 +7,9 @@ const GridTableSehir = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("https://depremdanismabackend.onrender.com/api/sehir",{
+      .get(`${import.meta.env.VITE_API_URL}/sehir`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setData(res.data));
@@ -67,7 +67,7 @@ const GridTableSehir = (localToken) => {
               type: "numeric",
               validate: (rowData) =>
                 rowData.sehir_merkezi_kordinati_x === undefined ||
-                rowData.sehir_merkezi_kordinati_x === ""
+                  rowData.sehir_merkezi_kordinati_x === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -77,7 +77,7 @@ const GridTableSehir = (localToken) => {
               type: "numeric",
               validate: (rowData) =>
                 rowData.sehir_merkezi_kordinati_y === undefined ||
-                rowData.sehir_merkezi_kordinati_y === ""
+                  rowData.sehir_merkezi_kordinati_y === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -86,12 +86,12 @@ const GridTableSehir = (localToken) => {
           title="Sehir Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("https://depremdanismabackend.onrender.com/api/sehir", newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/sehir`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `https://depremdanismabackend.onrender.com/api/sehir/${oldData.sehir_id}`,
+                `${import.meta.env.VITE_API_URL}/sehir/${oldData.sehir_id}`,
                 {
                   sehir_aciklama: newData.sehir_aciklama,
                   sehir_isim: newData.sehir_isim,
@@ -103,7 +103,7 @@ const GridTableSehir = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `https://depremdanismabackend.onrender.com/api/sehir/${oldData.sehir_id}`
+                `${import.meta.env.VITE_API_URL}/sehir/${oldData.sehir_id}`
               );
               dataAl();
             },

@@ -8,7 +8,7 @@ const GridTableHizmet = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("https://depremdanismabackend.onrender.com/api/hizmet")
+      .get(`${import.meta.env.VITE_API_URL}/hizmet`)
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
@@ -18,9 +18,9 @@ const GridTableHizmet = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("https://depremdanismabackend.onrender.com/api/merkez",{
+      .get(`${import.meta.env.VITE_API_URL}/merkez`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setMerkezIsimAl(res.data));
@@ -109,7 +109,7 @@ const GridTableHizmet = (localToken) => {
               field: "erisilen_kisi_sayisi",
               validate: (rowData) =>
                 rowData.erisilen_kisi_sayisi === undefined ||
-                rowData.erisilen_kisi_sayisi === ""
+                  rowData.erisilen_kisi_sayisi === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -130,12 +130,12 @@ const GridTableHizmet = (localToken) => {
           title="Hizmet Tablosu"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("https://depremdanismabackend.onrender.com/api/hizmet", newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/hizmet`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `https://depremdanismabackend.onrender.com/api/hizmet/${oldData.hizmet_id}`,
+                `${import.meta.env.VITE_API_URL}/hizmet/${oldData.hizmet_id}`,
                 {
                   veri_giris_tarihi: newData.veri_giris_tarihi,
                   donem: newData.donem,
@@ -148,7 +148,7 @@ const GridTableHizmet = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `https://depremdanismabackend.onrender.com/api/hizmet/${oldData.hizmet_id}`
+                `${import.meta.env.VITE_API_URL}/hizmet/${oldData.hizmet_id}`
               );
               dataAl();
             },

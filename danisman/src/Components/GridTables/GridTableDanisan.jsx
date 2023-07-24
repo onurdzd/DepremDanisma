@@ -7,7 +7,7 @@ const GridTableDanisan = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get("https://depremdanismabackend.onrender.com/api/danisan", {
+      .get(`${import.meta.env.VITE_API_URL}/danisan`, {
         headers: {
           Authorization: `${localToken.localToken?.token}`,
         },
@@ -21,7 +21,7 @@ const GridTableDanisan = (localToken) => {
   let danisanIsimleri = [];
   useEffect(() => {
     axios
-      .get("https://depremdanismabackend.onrender.com/api/danisan", {
+      .get(`${import.meta.env.VITE_API_URL}/danisan`, {
         headers: {
           Authorization: `${localToken.localToken?.token}`,
         },
@@ -97,7 +97,7 @@ const GridTableDanisan = (localToken) => {
               field: "danisan_soyad",
               validate: (rowData) =>
                 rowData.danisan_soyad === undefined ||
-                rowData.danisan_soyad === ""
+                  rowData.danisan_soyad === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -107,7 +107,7 @@ const GridTableDanisan = (localToken) => {
               type: "numeric",
               validate: (rowData) =>
                 rowData.danisan_tel_no === undefined ||
-                rowData.danisan_tel_no === ""
+                  rowData.danisan_tel_no === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -125,7 +125,7 @@ const GridTableDanisan = (localToken) => {
               field: "danisan_kisi",
               validate: (rowData) =>
                 rowData.danisan_kisi === undefined ||
-                rowData.danisan_kisi === ""
+                  rowData.danisan_kisi === ""
                   ? "Zorunlu"
                   : true,
               lookup: { 1: "Kendim", 0: "Yakınım" },
@@ -136,7 +136,7 @@ const GridTableDanisan = (localToken) => {
               field: "danisan_aciklama",
               validate: (rowData) =>
                 rowData.danisan_aciklama === undefined ||
-                rowData.danisan_aciklama === ""
+                  rowData.danisan_aciklama === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -145,12 +145,12 @@ const GridTableDanisan = (localToken) => {
           title="Destek Başvuru Tablosu"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("https://depremdanismabackend.onrender.com/api/danisan", newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/danisan`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `https://depremdanismabackend.onrender.com/api/danisan/${oldData.danisan_id}`,
+                `${import.meta.env.VITE_API_URL}/danisan/${oldData.danisan_id}`,
                 {
                   danisan_ad: newData.danisan_ad,
                   danisan_soyad: newData.danisan_soyad,
@@ -164,7 +164,7 @@ const GridTableDanisan = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `https://depremdanismabackend.onrender.com/api/danisan/${oldData.danisan_id}`
+                `${import.meta.env.VITE_API_URL}/danisan/${oldData.danisan_id}`
               );
               dataAl();
             },

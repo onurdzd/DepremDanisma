@@ -4,12 +4,12 @@ import axios from "axios";
 
 const GridTableEnvanter = (localToken) => {
   const [data, setData] = useState([]);
-  
+
   const dataAl = async () =>
     await axios
-      .get("https://depremdanismabackend.onrender.com/api/envanter",{
+      .get(`${import.meta.env.VITE_API_URL}/envanter`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setData(res.data));
@@ -21,9 +21,9 @@ const GridTableEnvanter = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get("https://depremdanismabackend.onrender.com/api/merkez",{
+      .get(`${import.meta.env.VITE_API_URL}/merkez`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setMerkezIsimAl(res.data));
@@ -89,7 +89,7 @@ const GridTableEnvanter = (localToken) => {
               field: "envanter_adi",
               validate: (rowData) =>
                 rowData.envanter_adi === undefined ||
-                rowData.envanter_adi === ""
+                  rowData.envanter_adi === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -98,7 +98,7 @@ const GridTableEnvanter = (localToken) => {
               field: "envanter_tur",
               validate: (rowData) =>
                 rowData.envanter_tur === undefined ||
-                rowData.envanter_tur === ""
+                  rowData.envanter_tur === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -111,7 +111,7 @@ const GridTableEnvanter = (localToken) => {
               field: "envanter_adet",
               validate: (rowData) =>
                 rowData.envanter_adet === undefined ||
-                rowData.envanter_adet === ""
+                  rowData.envanter_adet === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -132,12 +132,12 @@ const GridTableEnvanter = (localToken) => {
           title="Envanter Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post("https://depremdanismabackend.onrender.com/api/envanter", newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/envanter`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `https://depremdanismabackend.onrender.com/api/envanter/${oldData.envanter_id}`,
+                `${import.meta.env.VITE_API_URL}/envanter/${oldData.envanter_id}`,
                 {
                   envanter_aciklama: newData.envanter_aciklama,
                   envanter_adi: newData.envanter_adi,
@@ -150,7 +150,7 @@ const GridTableEnvanter = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `https://depremdanismabackend.onrender.com/api/envanter/${oldData.envanter_id}`
+                `${import.meta.env.VITE_API_URL}/envanter/${oldData.envanter_id}`
               );
               dataAl();
             },

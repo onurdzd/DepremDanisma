@@ -13,7 +13,7 @@ const GelenBasvurular = () => {
   );
   const localTokenCheck = async () => {
     await axios
-      .get("https://depremdanismabackend.onrender.com/api/auth", {
+      .get(`${import.meta.env.VITE_API_URL}/api/auth`, {
         headers: {
           Authorization: `${localToken?.token}`,
         },
