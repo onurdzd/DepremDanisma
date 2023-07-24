@@ -10,7 +10,7 @@ const GridTableMerkez = (localToken) => {
     await axios
       .get(`${import.meta.env.VITE_API_URL}/api/merkez`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setData(res.data));
@@ -22,9 +22,9 @@ const GridTableMerkez = (localToken) => {
   let sehirIsimleri = [];
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/sehir`,{
+      .get(`${import.meta.env.VITE_API_URL}/api/sehir`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setSehirIsimAl(res.data));
@@ -116,7 +116,7 @@ const GridTableMerkez = (localToken) => {
               field: "merkez_adres",
               validate: (rowData) =>
                 rowData.merkez_adres === undefined ||
-                rowData.merkez_adres === ""
+                  rowData.merkez_adres === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -126,7 +126,7 @@ const GridTableMerkez = (localToken) => {
               type: "numeric",
               validate: (rowData) =>
                 rowData.merkez_kordinati_x === undefined ||
-                rowData.merkez_kordinati_x === ""
+                  rowData.merkez_kordinati_x === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -136,7 +136,7 @@ const GridTableMerkez = (localToken) => {
               type: "numeric",
               validate: (rowData) =>
                 rowData.merkez_kordinati_y === undefined ||
-                rowData.merkez_kordinati_y === ""
+                  rowData.merkez_kordinati_y === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -147,7 +147,7 @@ const GridTableMerkez = (localToken) => {
               dateSetting: { locale: tr },
               validate: (rowData) =>
                 rowData.hizmet_baslangıc_tarihi === undefined ||
-                rowData.hizmet_baslangıc_tarihi === ""
+                  rowData.hizmet_baslangıc_tarihi === ""
                   ? "Zorunlu"
                   : true,
             },

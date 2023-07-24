@@ -64,21 +64,23 @@ export default function Login() {
     navigate("/"); // çıkış yapınca ana sayfaya yönlendir
     toast.info("Çıkış yapıldı");
   };
-  
-const [localToken,setLocalToken]=useState(JSON.parse(localStorage.getItem("user")))
-const localTokenCheck = async()=>{
-  await axios
-.get(`${import.meta.env.VITE_API_URL}/api/auth`,{
-  headers: {
-    'Authorization': `${localToken?.token}` 
-  }
-})
-.then((res) => {res.data && 
-  setLocalToken(JSON.parse(localStorage.getItem("user"))) ;
-  setIsLoggedIn(true);
-})}
 
-useEffect(()=>{localToken && localTokenCheck()},[])
+  const [localToken, setLocalToken] = useState(JSON.parse(localStorage.getItem("user")))
+  const localTokenCheck = async () => {
+    await axios
+      .get(`${import.meta.env.VITE_API_URL}/api/auth`, {
+        headers: {
+          'Authorization': `${localToken?.token}`
+        }
+      })
+      .then((res) => {
+        res.data &&
+          setLocalToken(JSON.parse(localStorage.getItem("user")));
+        setIsLoggedIn(true);
+      })
+  }
+
+  useEffect(() => { localToken && localTokenCheck() }, [])
 
   return (
     <div className="flex justify-center">

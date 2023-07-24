@@ -97,7 +97,7 @@ const GridTableDanisan = (localToken) => {
               field: "danisan_soyad",
               validate: (rowData) =>
                 rowData.danisan_soyad === undefined ||
-                rowData.danisan_soyad === ""
+                  rowData.danisan_soyad === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -107,7 +107,7 @@ const GridTableDanisan = (localToken) => {
               type: "numeric",
               validate: (rowData) =>
                 rowData.danisan_tel_no === undefined ||
-                rowData.danisan_tel_no === ""
+                  rowData.danisan_tel_no === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -125,7 +125,7 @@ const GridTableDanisan = (localToken) => {
               field: "danisan_kisi",
               validate: (rowData) =>
                 rowData.danisan_kisi === undefined ||
-                rowData.danisan_kisi === ""
+                  rowData.danisan_kisi === ""
                   ? "Zorunlu"
                   : true,
               lookup: { 1: "Kendim", 0: "Yakınım" },
@@ -136,7 +136,7 @@ const GridTableDanisan = (localToken) => {
               field: "danisan_aciklama",
               validate: (rowData) =>
                 rowData.danisan_aciklama === undefined ||
-                rowData.danisan_aciklama === ""
+                  rowData.danisan_aciklama === ""
                   ? "Zorunlu"
                   : true,
             },

@@ -9,7 +9,7 @@ const GridTableKurum = (localToken) => {
     await axios
       .get(`${import.meta.env.VITE_API_URL}/api/kurum`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setData(res.data));
@@ -21,9 +21,9 @@ const GridTableKurum = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/merkez`,{
+      .get(`${import.meta.env.VITE_API_URL}api/merkez`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setMerkezIsimAl(res.data));
@@ -98,7 +98,7 @@ const GridTableKurum = (localToken) => {
               field: "kurum_adi_kisaltma",
               validate: (rowData) =>
                 rowData.kurum_adi_kisaltma === undefined ||
-                rowData.kurum_adi_kisaltma === ""
+                  rowData.kurum_adi_kisaltma === ""
                   ? "Zorunlu"
                   : true,
             },

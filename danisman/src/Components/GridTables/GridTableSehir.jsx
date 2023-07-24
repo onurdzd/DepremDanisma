@@ -9,7 +9,7 @@ const GridTableSehir = (localToken) => {
     await axios
       .get(`${import.meta.env.VITE_API_URL}/api/sehir`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setData(res.data));
@@ -67,7 +67,7 @@ const GridTableSehir = (localToken) => {
               type: "numeric",
               validate: (rowData) =>
                 rowData.sehir_merkezi_kordinati_x === undefined ||
-                rowData.sehir_merkezi_kordinati_x === ""
+                  rowData.sehir_merkezi_kordinati_x === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -77,7 +77,7 @@ const GridTableSehir = (localToken) => {
               type: "numeric",
               validate: (rowData) =>
                 rowData.sehir_merkezi_kordinati_y === undefined ||
-                rowData.sehir_merkezi_kordinati_y === ""
+                  rowData.sehir_merkezi_kordinati_y === ""
                   ? "Zorunlu"
                   : true,
             },

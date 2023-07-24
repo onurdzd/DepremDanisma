@@ -14,15 +14,16 @@ const Sehirler = () => {
   const aracSayisi = [];
   const ulasilanKisiSayisi = [];
 
-  let ilkHarfBuyukSehir=sehir.charAt(0).toUpperCase() + sehir.slice(1);
+  let ilkHarfBuyukSehir = sehir.charAt(0).toUpperCase() + sehir.slice(1);
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/hizmet`)
-      .then((res) =>{
-        setHizmetData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))}
+      .then((res) => {
+        setHizmetData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))
+      }
       );
-      
+
     axios
       .get(`${import.meta.env.VITE_API_URL}/merkez`)
       .then((res) =>

@@ -9,7 +9,7 @@ const GridTablePersonel = (localToken) => {
     await axios
       .get(`${import.meta.env.VITE_API_URL}/api/personel`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setData(res.data));
@@ -21,9 +21,9 @@ const GridTablePersonel = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/merkez`,{
+      .get(`${import.meta.env.VITE_API_URL}/api/merkez`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setMerkezIsimAl(res.data));
@@ -135,7 +135,7 @@ const GridTablePersonel = (localToken) => {
               field: "ikamet_adresi",
               validate: (rowData) =>
                 rowData.ikamet_adresi === undefined ||
-                rowData.ikamet_adresi === ""
+                  rowData.ikamet_adresi === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -144,7 +144,7 @@ const GridTablePersonel = (localToken) => {
               field: "calisma_durumu",
               validate: (rowData) =>
                 rowData.calisma_durumu === undefined ||
-                rowData.calisma_durumu === ""
+                  rowData.calisma_durumu === ""
                   ? "Zorunlu"
                   : true,
               lookup: { 0: "Çalışmıyor", 1: "Çalışıyor" },
@@ -154,7 +154,7 @@ const GridTablePersonel = (localToken) => {
               field: "proje_saha_adresi",
               validate: (rowData) =>
                 rowData.proje_saha_adresi === undefined ||
-                rowData.proje_saha_adresi === ""
+                  rowData.proje_saha_adresi === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -163,7 +163,7 @@ const GridTablePersonel = (localToken) => {
               field: "ADAK_adı_soyadı",
               validate: (rowData) =>
                 rowData.ADAK_adı_soyadı === undefined ||
-                rowData.ADAK_adı_soyadı === ""
+                  rowData.ADAK_adı_soyadı === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -172,7 +172,7 @@ const GridTablePersonel = (localToken) => {
               field: "ADAK_telefon",
               validate: (rowData) =>
                 rowData.ADAK_telefon === undefined ||
-                rowData.ADAK_telefon === ""
+                  rowData.ADAK_telefon === ""
                   ? "Zorunlu"
                   : true,
             },
@@ -221,11 +221,11 @@ const GridTablePersonel = (localToken) => {
                   ADAK_telefon: newData.ADAK_telefon,
                   ADAK_Bağı: newData.ADAK_Bağı,
                   merkez_id: newData.merkez_id,
-                },{
-                  headers: {
-                    'Authorization': `${localToken.localToken?.token}` 
-                  }
+                }, {
+                headers: {
+                  'Authorization': `${localToken.localToken?.token}`
                 }
+              }
               );
               dataAl();
             },
@@ -235,7 +235,7 @@ const GridTablePersonel = (localToken) => {
                 `${import.meta.env.VITE_API_URL}/api/personel/${oldData.personel_id}`
                 ,{
                   headers: {
-                    'Authorization': `${localToken.localToken?.token}` 
+                    'Authorization': `${localToken.localToken?.token}`
                   }
                 });
               dataAl();

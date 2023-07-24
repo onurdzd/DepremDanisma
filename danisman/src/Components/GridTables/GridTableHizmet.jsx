@@ -18,9 +18,9 @@ const GridTableHizmet = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/merkez`,{
+      .get(`${import.meta.env.VITE_API_URL}/api/merkez`,{
         headers: {
-          'Authorization': `${localToken.localToken?.token}` 
+          'Authorization': `${localToken.localToken?.token}`
         }
       })
       .then((res) => setMerkezIsimAl(res.data));
@@ -109,7 +109,7 @@ const GridTableHizmet = (localToken) => {
               field: "erisilen_kisi_sayisi",
               validate: (rowData) =>
                 rowData.erisilen_kisi_sayisi === undefined ||
-                rowData.erisilen_kisi_sayisi === ""
+                  rowData.erisilen_kisi_sayisi === ""
                   ? "Zorunlu"
                   : true,
             },
