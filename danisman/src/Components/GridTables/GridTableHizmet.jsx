@@ -8,7 +8,7 @@ const GridTableHizmet = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get(`${import.meta.env.VITE_API_URL}/api/hizmet`)
+      .get(`${import.meta.env.VITE_API_URL}/hizmet`)
       .then((res) => setData(res.data));
   useEffect(() => {
     dataAl();
@@ -18,7 +18,7 @@ const GridTableHizmet = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/merkez`,{
+      .get(`${import.meta.env.VITE_API_URL}/merkez`,{
         headers: {
           'Authorization': `${localToken.localToken?.token}`
         }
@@ -130,12 +130,12 @@ const GridTableHizmet = (localToken) => {
           title="Hizmet Tablosu"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post(`${import.meta.env.VITE_API_URL}/api/hizmet`, newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/hizmet`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `${import.meta.env.VITE_API_URL}/api/hizmet/${oldData.hizmet_id}`,
+                `${import.meta.env.VITE_API_URL}/hizmet/${oldData.hizmet_id}`,
                 {
                   veri_giris_tarihi: newData.veri_giris_tarihi,
                   donem: newData.donem,
@@ -148,7 +148,7 @@ const GridTableHizmet = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `${import.meta.env.VITE_API_URL}/api/hizmet/${oldData.hizmet_id}`
+                `${import.meta.env.VITE_API_URL}/hizmet/${oldData.hizmet_id}`
               );
               dataAl();
             },

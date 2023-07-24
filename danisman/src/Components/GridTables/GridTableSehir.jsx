@@ -7,7 +7,7 @@ const GridTableSehir = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get(`${import.meta.env.VITE_API_URL}/api/sehir`,{
+      .get(`${import.meta.env.VITE_API_URL}/sehir`,{
         headers: {
           'Authorization': `${localToken.localToken?.token}`
         }
@@ -86,12 +86,12 @@ const GridTableSehir = (localToken) => {
           title="Sehir Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post(`${import.meta.env.VITE_API_URL}/api/sehir`, newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/sehir`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `${import.meta.env.VITE_API_URL}/api/sehir/${oldData.sehir_id}`,
+                `${import.meta.env.VITE_API_URL}/sehir/${oldData.sehir_id}`,
                 {
                   sehir_aciklama: newData.sehir_aciklama,
                   sehir_isim: newData.sehir_isim,
@@ -103,7 +103,7 @@ const GridTableSehir = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `${import.meta.env.VITE_API_URL}/api/sehir/${oldData.sehir_id}`
+                `${import.meta.env.VITE_API_URL}/sehir/${oldData.sehir_id}`
               );
               dataAl();
             },

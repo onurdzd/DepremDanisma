@@ -7,7 +7,7 @@ const GridTableEnvanter = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get(`${import.meta.env.VITE_API_URL}/api/envanter`,{
+      .get(`${import.meta.env.VITE_API_URL}/envanter`,{
         headers: {
           'Authorization': `${localToken.localToken?.token}`
         }
@@ -21,7 +21,7 @@ const GridTableEnvanter = (localToken) => {
   let merkezIsimleri = [];
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/merkez`,{
+      .get(`${import.meta.env.VITE_API_URL}/merkez`,{
         headers: {
           'Authorization': `${localToken.localToken?.token}`
         }
@@ -132,12 +132,12 @@ const GridTableEnvanter = (localToken) => {
           title="Envanter Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post(`${import.meta.env.VITE_API_URL}/api/envanter`, newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/envanter`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `${import.meta.env.VITE_API_URL}/api/envanter/${oldData.envanter_id}`,
+                `${import.meta.env.VITE_API_URL}/envanter/${oldData.envanter_id}`,
                 {
                   envanter_aciklama: newData.envanter_aciklama,
                   envanter_adi: newData.envanter_adi,
@@ -150,7 +150,7 @@ const GridTableEnvanter = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `${import.meta.env.VITE_API_URL}/api/envanter/${oldData.envanter_id}`
+                `${import.meta.env.VITE_API_URL}/envanter/${oldData.envanter_id}`
               );
               dataAl();
             },

@@ -8,7 +8,7 @@ const GridTableMerkez = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get(`${import.meta.env.VITE_API_URL}/api/merkez`,{
+      .get(`${import.meta.env.VITE_API_URL}/merkez`,{
         headers: {
           'Authorization': `${localToken.localToken?.token}`
         }
@@ -22,7 +22,7 @@ const GridTableMerkez = (localToken) => {
   let sehirIsimleri = [];
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/sehir`,{
+      .get(`${import.meta.env.VITE_API_URL}/sehir`,{
         headers: {
           'Authorization': `${localToken.localToken?.token}`
         }
@@ -168,12 +168,12 @@ const GridTableMerkez = (localToken) => {
           title="Merkez Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post(`${import.meta.env.VITE_API_URL}/api/merkez`, newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/merkez`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `${import.meta.env.VITE_API_URL}/api/merkez/${oldData.merkez_id}`,
+                `${import.meta.env.VITE_API_URL}/merkez/${oldData.merkez_id}`,
                 {
                   m_telefon: newData.m_telefon,
                   m_telefon2: newData.m_telefon2,
@@ -189,7 +189,7 @@ const GridTableMerkez = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `${import.meta.env.VITE_API_URL}/api/merkez/${oldData.merkez_id}`
+                `${import.meta.env.VITE_API_URL}/merkez/${oldData.merkez_id}`
               );
               dataAl();
             },

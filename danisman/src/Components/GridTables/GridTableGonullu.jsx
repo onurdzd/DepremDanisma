@@ -8,7 +8,7 @@ const GridTableGonullu = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get(`${import.meta.env.VITE_API_URL}/api/gonullu`, {
+      .get(`${import.meta.env.VITE_API_URL}/gonullu`, {
         headers: {
           Authorization: `${localToken.localToken?.token}`,
         },
@@ -22,7 +22,7 @@ const GridTableGonullu = (localToken) => {
   let gonulluIsimleri = [];
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/gonullu`, {
+      .get(`${import.meta.env.VITE_API_URL}/gonullu`, {
         headers: {
           Authorization: `${localToken.localToken?.token}`,
         },
@@ -158,12 +158,12 @@ const GridTableGonullu = (localToken) => {
           title="Gonullu Başvuru Tablosu"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post(`${import.meta.env.VITE_API_URL}/api/gonullu`, newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/gonullu`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `${import.meta.env.VITE_API_URL}/api/gonullu/${oldData.gonullu_id}`,
+                `${import.meta.env.VITE_API_URL}/gonullu/${oldData.gonullu_id}`,
                 {
                   gonullu_ad: newData.gonullu_ad,
                   gonullu_soyad: newData.gonullu_soyad,
@@ -180,7 +180,7 @@ const GridTableGonullu = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `${import.meta.env.VITE_API_URL}/api/gonullu/${oldData.gonullu_id}`
+                `${import.meta.env.VITE_API_URL}/gonullu/${oldData.gonullu_id}`
               );
               dataAl();
             },

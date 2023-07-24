@@ -7,7 +7,7 @@ const GridTableKurum = (localToken) => {
 
   const dataAl = async () =>
     await axios
-      .get(`${import.meta.env.VITE_API_URL}/api/kurum`,{
+      .get(`${import.meta.env.VITE_API_URL}/kurum`,{
         headers: {
           'Authorization': `${localToken.localToken?.token}`
         }
@@ -131,12 +131,12 @@ const GridTableKurum = (localToken) => {
           title="Kurum Tablo"
           editable={{
             onRowAdd: async (newData) => {
-              await axios.post(`${import.meta.env.VITE_API_URL}/api/kurum`, newData);
+              await axios.post(`${import.meta.env.VITE_API_URL}/kurum`, newData);
               dataAl();
             },
             onRowUpdate: async (newData, oldData) => {
               await axios.put(
-                `${import.meta.env.VITE_API_URL}/api/kurum/${oldData.kurum_id}`,
+                `${import.meta.env.VITE_API_URL}/kurum/${oldData.kurum_id}`,
                 {
                   kurum_aciklama: newData.kurum_aciklama,
                   kurum_adi: newData.kurum_adi,
@@ -150,7 +150,7 @@ const GridTableKurum = (localToken) => {
             },
             onRowDelete: async (oldData) => {
               await axios.delete(
-                `${import.meta.env.VITE_API_URL}/api/kurum/${oldData.kurum_id}`
+                `${import.meta.env.VITE_API_URL}/kurum/${oldData.kurum_id}`
               );
               dataAl();
             },
