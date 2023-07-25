@@ -9,69 +9,46 @@ import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
-    <header className=" text-xl basis-11/12 ">
-      <div className=" mx-5 flex flex-col">
-        <div className="ml-7 flex  ">
-            <a href="/" className="basis-2/3">
-              <img className="max-h-[200px] mt-2 py-4 " src={Logo} />
-            </a>
+    <header className="basis-11/12 ">
+      <div className="mx-5 flex flex-col">
+        <div className="ml-7 mt-5">
+          <Link to={"/"}>
+            <img className="max-w-[150px]" src={Logo} />
+          </Link>
           <button
             className="block md:hidden basis-1/3 text-5xl  text-blue-300 focus:outline-none"
-            onClick={props.toggleMenu}
-          >
+            onClick={props.toggleMenu}>
             &#8801;
           </button>
         </div>
         <div
-          className={`md:flex flex flex-col justify-around mt-5 ${
-            props.isMenuOpen ? "block" : "hidden"
-          }`}
-        >
-          <div className="ml-6 flex flex-row ">
-            <div className="  text-blue-300   ">
-              <div className="mb-2">
-                  <a
-                    href={"/"}
-                    className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
-                  >
-                    <IoMapSharp className="inline-block mr-1 h-5 w-5 text-blue-950" />
-                    Anasayfa
-                  </a>
+          className={`md:flex flex flex-col justify-around my-5 ${props.isMenuOpen ? "block" : "hidden"}`} >
+          <div className="ml-6 flex flex-col gap-2">
+
+            <Link to={"/"}>
+              <div className="px-3 py-1 flex text-xs tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
+                <IoMapSharp className="mr-2 h-5 w-5 text-amber-300" />
+                Anasayfa
               </div>
-              <div className="mb-2 ">
-                <div className="mb-2">
-                  <Link to={"/hakkimizda"}>
-                    <a
-                      href={"/hakkimizda"}
-                      className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
-                    >
-                      <IoSettingsSharp className="inline-block mr-1 h-5 w-5 text-amber-300" />
-                      Hakkımızda
-                    </a>
-                  </Link>
-                </div>
+            </Link>
+            <Link to={"/hakkimizda"}>
+              <div className="px-3 py-1 flex text-xs tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
+                <IoSettingsSharp className="mr-2 h-5 w-5 text-amber-300" />
+                Hakkımızda
               </div>
-              <div className="mb-2">
-                <Link to={"/gonullu"}>
-                  <a
-                    href={"/gonullu"}
-                    className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
-                  >
-                    <RiHandHeartFill className="inline-block mr-1 h-5 w-5 text-amber-300" />
-                    Gönüllü Ol
-                  </a>
-                </Link>
+            </Link>
+            <Link to={"/"}>
+              <div className="px-3 py-1 flex text-xs tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
+                <RiHandHeartFill className="mr-2 h-5 w-5 text-amber-300" />
+                Gönüllü Ol
               </div>
-              <div className="mb-2">
-                <Link to={"/iletisim"}>
-                  <a
-                    href={"/iletisim"}
-                    className="px-8 py-1  font-normal text-sm text-[#5161c5]   rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
-                  >
-                    <BsFillTelephoneFill className="inline-block mr-1 h-5 w-5 text-amber-300" />
-                    İletişim
-                  </a>
-                </Link>
+            </Link>
+            <Link to={"/"}>
+              <div className="px-3 py-1 flex text-xs tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
+                <BsFillTelephoneFill className="mr-2 h-5 w-5 text-amber-300" />
+                İletişim
+              </div>
+            </Link>
           </div>
         </div>
         <div className="hidden md:block ">
@@ -96,8 +73,8 @@ const Header = (props) => {
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </div >
+    </header >
   );
 };
 
