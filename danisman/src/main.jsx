@@ -11,12 +11,24 @@ import Hakkimizda from "./Components/Hakkimizda.jsx";
 import Form from "./Components/Destekbasvuru.jsx";
 import GonulluOl from "./Components/GonulluOl.jsx";
 import GelenBasvurular from "./Components/GelenBasvurular.jsx";
-
+import { ToastContainer } from "react-toastify";
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
+        <ToastContainer
+          position="top-right"
+          autoClose={1500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover={false}
+          theme="light"
+        />
         <App />
       </>
     ),
@@ -53,7 +65,7 @@ const router = createBrowserRouter([
     element: (
       <div className="h-[100vh] sm:h-[96vh] sm:w-[80vw]">
         <div className=" md:flex md:flex-row sm:bg-white  bg-[url('/src/assets/mapZone.png')] sm:bg-none sm:rounded-[2rem]  pb-2  ">
-            <GonulluOl />
+          <GonulluOl />
         </div>
         <Footer />
       </div>
@@ -63,7 +75,7 @@ const router = createBrowserRouter([
     path: "hakkimizda",
     element: (
       <div className="h-[100vh] sm:h-[96vh] sm:w-[80vw]">
-            <Hakkimizda />
+        <Hakkimizda />
         <Footer />
       </div>
     ),
@@ -71,14 +83,14 @@ const router = createBrowserRouter([
   {
     path: "sehirler/:sehir",
     element: (
-        <App/>
+      <App />
     ),
   },
   {
     path: "iletisim",
     element: (
       <div className="h-[100vh] sm:h-[96vh] sm:w-[80vw]">
-            <İletisim />
+        <İletisim />
         <Footer />
       </div>
     ),

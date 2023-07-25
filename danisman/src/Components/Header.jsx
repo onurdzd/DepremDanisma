@@ -1,4 +1,3 @@
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./Login";
 import { IoMapSharp, IoSettingsSharp } from "react-icons/io5";
@@ -73,23 +72,6 @@ const Header = (props) => {
                     İletişim
                   </a>
                 </Link>
-              </div>
-              <div className="mb-5">
-                <Login />
-              </div>
-              <ToastContainer
-                position="top-right"
-                autoClose={1500}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover={false}
-                theme="light"
-              />
-            </div>
           </div>
         </div>
         <div className="hidden md:block ">
