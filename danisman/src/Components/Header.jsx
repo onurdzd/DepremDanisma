@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
-    <header className="basis-11/12 ">
-      <div className="mx-5 flex flex-col">
-        <div className="ml-7 mt-5">
+    <header className="basis-11/12">
+      <div className="mx-5 flex flex-col gap-y-5">
+        <div className="ml-7">
           <Link to={"/"}>
             <img className="max-w-[150px]" src={Logo} />
           </Link>
@@ -22,7 +22,7 @@ const Header = (props) => {
           </button>
         </div>
         <div
-          className={`md:flex flex flex-col justify-around my-5 ${props.isMenuOpen ? "block" : "hidden"}`} >
+          className={`md:flex flex flex-col grow justify-around ${props.isMenuOpen ? "block" : "hidden"}`} >
           <div className="ml-6 flex flex-col gap-2">
 
             <Link to={"/"}>
@@ -51,27 +51,22 @@ const Header = (props) => {
             </Link>
           </div>
         </div>
-        <div className="hidden md:block ">
-          <div className="flex flex-col justify-around  ">
-            <div className=" bg-amber-300 bg-opacity-30 max-h-80  mt-5 rounded-3xl">
-              <Link to={"/basvuru"}>
-                <a
-                  href={"/basvuru"}
-                  className="mt-4 mx-11 px-1 w-max py-2 bg-amber-300 rounded-xl inline-block text-xs font-bold text-blue-900"
-                >
-                  Destek İster Misin?
-                </a>
-              </Link>
-              <img
-                className="max-h-[20rem]  py-2 px-8  min-h-full min-w-full  "
-                src={Group}
-              />
+        <div className="hidden md:block bg-amber-300 pt-0.5 bg-opacity-30 rounded-2xl">
+          <Link to={"/basvuru"}>
+            <div
+              className="px-1 py-2 m-3 text-center bg-amber-300 rounded-xl text-xs font-bold text-blue-900"
+            >
+              Destek İster Misin?
             </div>
-            <div className="text-xs text-center mt-3 bg-slate-100 rounded-2xl py-3  font-extralight">
-              İstanbul Bilgi Üniversitesi Travma ve Affet <br />
-              Ruh Sağlığı Programı İşbirliği ile
-            </div>
-          </div>
+            <img
+              className="  py-2 px-3  "
+              src={Group}
+            />
+          </Link>
+        </div>
+        <div className="hidden md:block text-xs text-center bg-slate-100 rounded-xl py-3  font-extralight">
+          İstanbul Bilgi Üniversitesi Travma ve Afet
+          Ruh Sağlığı Programı İşbirliği ile
         </div>
       </div >
     </header >
