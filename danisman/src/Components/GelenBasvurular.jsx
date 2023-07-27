@@ -13,7 +13,7 @@ const GelenBasvurular = () => {
   );
   const localTokenCheck = async () => {
     await axios
-      .get(`${import.meta.env.VITE_API_URL}/api/auth`, {
+      .get(`${import.meta.env.VITE_API_URL}/auth`, {
         headers: {
           Authorization: `${localToken?.token}`,
         },

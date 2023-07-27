@@ -39,26 +39,24 @@ const Sehirler = () => {
       .then((res) =>
         setKurumData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))
       );
-  }, []);
+  }, [sehir]);
 
   envanterData?.map((item) => aracSayisi.push(item.envanter_adet));
 
   hizmetData?.map((item) => ulasilanKisiSayisi.push(item.erisilen_kisi_sayisi));
 
   return (
-    <div className="flex flex-col  w-[20vw]  my-6  mx-8  pl-2 bg-white border rounded-xl border-solid border-gray-50 pr-2 shadow-2xl ">
-      <div className="flex ">
+    <div className="transition flex flex-col sm:max-w-[300px] my-2 mx-2 pl-2 bg-white border rounded-xl border-solid border-gray-50 pr-2 shadow-2xl ">
+      <div className="flex items-center mt-2">
         <button
-          className="flex basis-1/12  bg-none border-none mt-8 mb-3 pr-1 cursor-pointer "
+          className="flex bg-none border-none pr-1 cursor-pointer "
           onClick={() => navigate("/")}
         >
           <AiOutlineMenuUnfold className="w-5 h-6 text-gray-700 inline-block" />
         </button>
-        <p className="  pt-7 text-[#162270] basis-11/12 inline-block text-xl font-bold">
-          ADANA
-        </p>
+        <h1 className="text-xl ml-1 font-medium">{ilkHarfBuyukSehir}</h1>
       </div>
-      <div className=" mt-3 flex  w-[24vw]  text-left text-gray-700">
+      <div className=" mt-1 flex text-left text-gray-700">
         <TbPointFilled className="mt-1 ml-2 basis-1/12 text-amber-300 " />
         {merkezData.map((item, index) => (
           <>
@@ -70,9 +68,9 @@ const Sehirler = () => {
       </div>
       <div className="flex flex-col   mt-6">
         <div className="-m-1.5  overflow-x-auto ">
-          <div className="p-6 min-w-full inline-block  align-middle">
+          <div className="p-3 inline-block  align-middle">
             <div className="overflow-hidden rounded-xl">
-              <table className="min-w-full  border-collapse border   border-slate-200 ">
+              <table className=" border-collapse border   border-slate-200 ">
                 <thead>
                   <tr className="bg-slate-100">
                     <th
@@ -89,7 +87,7 @@ const Sehirler = () => {
                     </th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody >
                   <tr className="  hover:bg-gray-100 ">
                     <td className="px-6 py-4 border border-slate-200 whitespace-nowrap text-sm font-normal text-gray-800 ">
                       Gezici Karavan
@@ -112,25 +110,25 @@ const Sehirler = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col mt-6">
+      <div className="flex flex-col mt-2">
         <div className="-m-1.5 overflow-x-auto">
-          <div className="p-6 min-w-full inline-block align-middle">
+          <div className="p-6 inline-block align-middle">
             <div className="overflow-hidden rounded-xl">
               <table className="min-w-full divide-y divide-gray-200 ">
                 <thead>
                   <tr className="bg-slate-100">
                     <th
                       scope="col"
-                      className="px-6 py-3 text-left text-xs border border-slate-200 font-medium text-gray-500 uppercase"
+                      className="px-2 py-2 text-left text-xs border border-slate-200 font-medium text-gray-500 uppercase"
                     >
-                      İŞ BİRLİĞİ YAPILAN KURUMLAR
+                      İŞ BİRLİĞİ YAPILAN KURUMLAR: {kurumData?.map((item,index)=><div key={index}>{item.kurum_adi}</div>)}
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="odd:bg-white  hover:bg-gray-100 ">
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border border-slate-200 text-gray-800 ">
-                      {kurumData.map((item, index) => (
+                      {kurumData?.map((item, index) => (
                         <>
                           <p key={index} className="ml-2">
                             {item.kurum_adi}
