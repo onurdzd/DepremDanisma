@@ -103,13 +103,14 @@ export default function Login() {
           </div>
         </div>
       ) : (
+        <div className="hidden lg:block">
         <button
           onClick={openModal}
           className="mt-1 flex items-center px-3 font-normal text-sm text-[#5161c5]  rounded-3xl border-solid border-slate-950 border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30"
         >
           <BsArrowBarRight className=" mr-2 h-5 w-5 text-amber-300" />
           Giriş Yap
-        </button>
+        </button></div>
       )}
       {/* Modal Ekranı */}
       {showModal && (
