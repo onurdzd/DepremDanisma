@@ -39,7 +39,7 @@ const Sehirler = () => {
       .then((res) =>
         setKurumData(res.data?.filter((elem) => elem.sehir_isim == ilkHarfBuyukSehir))
       );
-  }, []);
+  }, [sehir]);
 
   envanterData?.map((item) => aracSayisi.push(item.envanter_adet));
 
