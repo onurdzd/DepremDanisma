@@ -121,7 +121,7 @@ const Sehirler = () => {
                       scope="col"
                       className="px-2 py-2 text-left text-xs border border-slate-200 font-medium text-gray-500 uppercase"
                     >
-                      İŞ BİRLİĞİ YAPILAN KURUMLAR: {kurumData?.map((item,index)=><div key={index}>{item}</div>)}
+                      İŞ BİRLİĞİ YAPILAN KURUMLAR: {kurumData?.map((item,index)=><div key={index}>{item.kurum_adi}</div>)}
                     </th>
                   </tr>
                 </thead>
