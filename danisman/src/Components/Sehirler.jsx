@@ -128,7 +128,7 @@ const Sehirler = () => {
                 <tbody>
                   <tr className="odd:bg-white  hover:bg-gray-100 ">
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border border-slate-200 text-gray-800 ">
-                      {kurumData.map((item, index) => (
+                      {kurumData?.map((item, index) => (
                         <>
                           <p key={index} className="ml-2">
                             {item.kurum_adi}
