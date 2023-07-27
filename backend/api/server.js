@@ -26,7 +26,7 @@ const danisanRouter = require("./danisan/danisan-router");
 server.use(express.json());
 
 server.get("/", (req, res) => {
-  res.send("deneme");
+  res.send("Online");
 });
 
 server.use("/api/user", Auth.isValidToken, userRouter);

@@ -54,6 +54,7 @@ const Sehirler = () => {
         >
           <AiOutlineMenuUnfold className="w-5 h-6 text-gray-700 inline-block" />
         </button>
+        <h1 className="text-xl ml-1 font-medium">{ilkHarfBuyukSehir}</h1>
       </div>
       <div className=" mt-1 flex text-left text-gray-700">
         <TbPointFilled className="mt-1 ml-2 basis-1/12 text-amber-300 " />
@@ -120,7 +121,7 @@ const Sehirler = () => {
                       scope="col"
                       className="px-2 py-2 text-left text-xs border border-slate-200 font-medium text-gray-500 uppercase"
                     >
-                      İŞ BİRLİĞİ YAPILAN KURUMLAR
+                      İŞ BİRLİĞİ YAPILAN KURUMLAR: {kurumData?.map((item,index)=><div key={index}>{item}</div>)}
                     </th>
                   </tr>
                 </thead>

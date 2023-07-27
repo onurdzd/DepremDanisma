@@ -28,7 +28,7 @@ const Header = (props) => {
             props.isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <div className="ml-6 flex flex-row ">
+          <div className="flex flex-row items-center justify-center">
             <div className="  text-blue-300   ">
               <div className="mb-2">
                   <a
