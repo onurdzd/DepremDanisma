@@ -1,55 +1,22 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faFacebook,
-//   faInstagram,
-//   faTwitterSquare,
-// } from "@fortawesome/free-brands-svg-icons";
+
+import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.svg";
 const Footer = () => {
   return (
     <>
-      <section className="w-full sm:mt-2">
-        <div className="flex flex-col bg-sky-950  sm:bg-transparent">
-          <a href="/" className="basis-2/3 block sm:hidden ml-10">
-            <img className="max-h-[200px] mt-2 py-4 " src={Logo} />
-          </a>
-          <p className=" text-xs leading-1 text-center text-gray-400 sm:mr-0 w-full">
-            <button className="underline font-semibold max-w-[10rem] sm:max-w-none">
-              KVKK ve Gizlilik Sözleşmesi ile Kullanım Koşulları © TARDE 2023
-            </button>
+      <section className="sm:mb-5">
+        <div className="flex flex-col p-10 bg-theme-accend-blue sm:bg-transparent sm:p-2">
+          <Link to="/" >
+            <img className="max-h-[200px] m-t-5 filter brightness-0 invert fill-white sm:hidden" src={Logo} />
+          </Link>
+
+          <p className="text-xs block leading-1 sm:text-center text-white sm:text-theme-blue ">
+            <Link to="/kvkk-kullanim-kosullari"><span className="underline italic sm:max-w-none">KVKK ve Gizlilik Sözleşmesi ile Kullanım Koşulları</span></Link> © TARDE 2023
           </p>
+
         </div>
         <div className="max-w-screen-xl text-end px-4  mx-auto  overflow-hidden sm:px-1 lg:px-1">
-          {/* <div className=" flex  justify-center  ">
-            <a href="https://twitter.com/tardeorgtr">
-              <FontAwesomeIcon
-                className="pr-5 pt-2 h-5 text-gray-600 hover:text-gray-500"
-                icon={faTwitterSquare}
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/tardeorgtr/?hl=tr"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FontAwesomeIcon
-                className="pr-5 pt-2 h-5 text-gray-600 hover:text-gray-500"
-                icon={faInstagram}
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/tardeorgtr/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FontAwesomeIcon
-                className="pr-5 pt-2 h-5 text-gray-600 hover:text-gray-500"
-                icon={faFacebook}
-              />
-            </a>
 
-          </div>
-  */}
         </div>
       </section>
     </>

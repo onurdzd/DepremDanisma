@@ -12,7 +12,7 @@ const Header = (props) => {
     <header className="flex flex-col justify-between gap-y-5 mt-10 md:mt-5">
       <div className="ml-5">
         <Link to={"/"}>
-          <img className="max-w-[150px]" src={Logo} />
+          <img className="max-w-[200px]" src={Logo} />
         </Link>
         <button
           className="block md:hidden basis-1/3 text-5xl  text-blue-300 focus:outline-none"
@@ -22,29 +22,29 @@ const Header = (props) => {
       </div>
       <div
         className={`md:flex flex flex-col grow justify-around ${props.isMenuOpen ? "block" : "hidden"}`} >
-        <div className="ml-6 flex flex-col gap-2">
+        <div className="ml-6 mb-3 flex flex-col gap-1">
 
           <Link to={"/"}>
-            <div className="px-3 py-1 flex text-xs tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
-              <IoMapSharp className="mr-2 h-5 w-5 text-amber-300" />
+            <div className="px-3 py-1 flex text-[14px] tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
+              <IoMapSharp className="mr-5 h-5 w-5 text-amber-300" />
               Anasayfa
             </div>
           </Link>
           <Link to={"/hakkimizda"}>
-            <div className="px-3 py-1 flex text-xs tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
-              <IoSettingsSharp className="mr-2 h-5 w-5 text-amber-300" />
+            <div className="px-3 py-1 flex text-[14px] tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
+              <IoSettingsSharp className="mr-5 h-5 w-5 text-amber-300" />
               Hakkımızda
             </div>
           </Link>
           <Link to={"/"}>
-            <div className="px-3 py-1 flex text-xs tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
-              <RiHandHeartFill className="mr-2 h-5 w-5 text-amber-300" />
+            <div className="px-3 py-1 flex text-[14px] tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
+              <RiHandHeartFill className="mr-5 h-5 w-5 text-amber-300" />
               Gönüllü Ol
             </div>
           </Link>
           <Link to={"/"}>
-            <div className="px-3 py-1 flex text-xs tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
-              <BsFillTelephoneFill className="mr-2 h-5 w-5 text-amber-300" />
+            <div className="px-3 py-1 flex text-[14px] tracking-wider text-theme-dark rounded-lg border-spacing-8 hover:bg-amber-300 hover:bg-opacity-30">
+              <BsFillTelephoneFill className="mr-5 h-5 w-5 text-amber-300" />
               İletişim
             </div>
           </Link>
@@ -53,7 +53,7 @@ const Header = (props) => {
       <div className="hidden md:block bg-amber-300 pt-0.5 bg-opacity-30 rounded-2xl p-5">
         <Link to={"/basvuru"}>
           <div
-            className="py-3 my-5 text-center bg-amber-300 rounded-xl text-xs font-bold text-blue-900"
+            className="py-3 my-5 text-center bg-amber-300 rounded-xl text-[14px] font-bold text-blue-900"
           >
             DESTEK İSTER MİSİN?
           </div>

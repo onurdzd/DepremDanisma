@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         "theme-blue": "#243c5a",
+        "theme-accend-blue": "#3C4058",
         "theme-yellow": "#F6BE31",
         "theme-dark": "#000C5C",
       },
