@@ -17,18 +17,6 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <ToastContainer
-          position="top-right"
-          autoClose={1500}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover={false}
-          theme="light"
-        />
         <App />
       </>
     ),
@@ -99,6 +87,18 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <ToastContainer
+      position="top-right"
+      autoClose={1500}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover={false}
+      theme="light"
+    />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
