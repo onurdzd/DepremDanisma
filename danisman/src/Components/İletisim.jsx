@@ -10,7 +10,7 @@ const İletisim = () => {
   
   return (
     <>
-      <div className=" md:flex md:flex-row sm:bg-white  bg-[url('/src/assets/mapZone.png')] sm:bg-none sm:rounded-[2rem]  pb-2 items-center sm:min-h-full">
+      <div className=" md:flex md:flex-row sm:bg-white  bg-[url('/src/assets/mapZone.png')] sm:bg-none sm:rounded-[2rem]  pb-2 ">
         <div className="flex bg-white h-full rounded-l-[2rem] flex-col basis-1/5 ">
           <Header toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
         </div>
